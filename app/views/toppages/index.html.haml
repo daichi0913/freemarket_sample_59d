@@ -1,1 +1,67 @@
-kk
+.top-header
+  .top-header__box
+    .top-header__box__top
+      .form
+        = form_with url: toppages_path do |f|
+          = f.text_field :content, class: 'form__serch', placeholder: '何かお探しですか？？'
+          = f.submit :submit, class: 'btn'
+.top-header__box__bottom
+  %ul
+    %li.lia カテゴリーから探す
+    %li.lic ブランドから探す
+    %li.lib いいね！一覧
+    %li.lib お知らせ
+    %li.lib やることリスト
+    %li.lib マイページ
+.top-view
+
+.top-category
+  .top-category__a  人気のカテゴリー
+  .top-category__b
+   
+.top-category-item
+  
+.top-bland
+  .top-bland__a  人気のブランド
+.top-bland-item
+
+.top-botto-view
+.top-footer
+  .top-footer__content
+    %li.content__a
+      メルカリについて
+      %p 会社概要
+      %p 採用情報
+      %p プレスリリース
+      %p 公式ブログ
+      %p メルカリロゴ利用ガイドライン
+    %li.content__b
+      ヘルプ＆ガイド
+      %p メルカリガイド
+      %p らくらくメルカリ便
+      %p ゆうゆうメルカリ便
+      %p 大型メルカリ便
+      %p 車体取引ガイド 
+      %p メルカリあんしんあんぜん宣言！
+      %p 偽ブランド品撲滅への取り組み
+      %p メルカリボックス
+    %li.content__c
+      プライバシーと利用規約
+      %p プライバシーポリシー
+      %p メルカリ利用規約
+      %p 安心スマホサポート制度に関<br>する利用規約
+      %p コンプライアンスポリシー
+    %li
+      %p.content 個人データ安全管理に関わる基本<br>方針
+      %p 特定商取引に関する表記
+      %p 資金決済法に基づく表示
+      %p 法令順守と犯罪防止のために
+    %li.content__d
+      国
+      %p 日本
+      %p United States
+  .top-footer__bottom
+    .top-footer__bottom__box
+      %a.font-bottom
+        %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg", :alt=>"Mercari", :class=>"top-mercari_logo"}
+      %p ©2019 Mercari
