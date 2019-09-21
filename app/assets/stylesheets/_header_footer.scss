@@ -1,0 +1,56 @@
+.devise-header{
+  height: 128px;
+  text-align: center;
+  
+  &__image{
+    height: 49px;
+    width: 185px;
+    display: block;  
+    margin: auto;
+    padding: 40px 0;
+
+  }
+}
+
+.devise-footer{
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  height: 250px;
+  padding: 40px 0;
+  text-align: center;
+
+  &__box{
+    padding: 40px 0;
+    height: 220px;
+    width: 456px;
+
+
+
+
+  
+    &__menu{
+      &__list{
+        display: inline-block;  
+        color: currentColor;
+        margin: 0;
+        padding: 0;
+
+    
+      }
+    }
+
+    &__img{
+      text-align: center;
+
+
+    }
+
+    &__year{
+      font-size: 13px;
+    }
+  }
+}

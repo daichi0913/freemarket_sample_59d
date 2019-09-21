@@ -1,0 +1,29 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title FreemarketSample59d
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+
+  %header.devise-header
+    .devise-header__image
+      %img{:alt => "mercari", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3296506464"}/
+  = yield
+  %footer.devise-footer
+    .devise-footer__box
+      %ul.devise-footer__box__menu
+        %li.devise-footer__box__menu__list プライバシーポリシー
+        %li.devise-footer__box__menu__list メルカリ利用規約
+        %li.devise-footer__box__menu__list 特定商取引に関する表記
+
+
+      .devise-footer__box__img
+        %img{:alt => "mercari", :height => "65", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?3296506464", :width => "80"}/
+      .devise-footer__box__year
+        2019 Mercari
+
+
