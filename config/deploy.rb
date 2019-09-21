@@ -2,7 +2,7 @@
 lock "~> 3.11.1"
 
 set :application, "freemarket_sample_59d"
-set :repo_url, "git@example.com:daichi0913/freemarket_sample_59d.git"
+set :repo_url, "git@github.com:daichi0913/freemarket_sample_59d.git"
 
 
 # バージョンが変わっても共通で参照するディレクトリを指定
