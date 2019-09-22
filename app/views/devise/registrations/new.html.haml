@@ -1,36 +1,42 @@
-.body
-  -# = render partial: "shared/side_bar"
+.main
+  .contents
+    .contents__title 新規会員登録
+    .regi-box
 
-  .main
-    .contents
-      .contents__title 新規会員登録
-      .regi-box
-        .regi-box__btn.btn__email
-        .regi-box__btn.btn__fb
-        .regi-box__btn.btn__gm
-  
+      %a.regi-box__btn.btn__email{:href => "https://www.mercari.com/jp/signup/registration/"}
+        %i.icon-mail
+        メールアドレスで登録する
 
-      -# .namebox 
-      -#   Member:
-      -#   - @group.users.each do |user|
-      -#     = user.name
-      
-      
-      -# .edit__btn
-      -#   = link_to 'Edit', edit_group_path(@group) ,class: "btn"
+        %button#facebook-login.regi-box__btn.btn__fb
+          %i.icon-facebook
+          Facebookで登録する
 
-      -# = link_to edit_group_path(@group) do
-      -#   .edit__btn
-      -#     Edit
+        %button#google-login.regi-box__btn.btn__gm
+        "Googleで登録する"
 
 
-    -# .send__text
-    -#   .type_text
-    -#     = form_for [@group, @message] do |f|
-    -#       = f.text_field :content, class: 'input', placeholder: '  type a message'
-    -#       .image_tag
-    -#         = f.label :image, class: 'form__mask__image' do
-    -#           = fa_icon 'image', class: 'contents__btn--icon'
-    -#           = f.file_field :image, class: 'hidden'
-    -#         = f.submit 'Send', class: 'send'
+
+    -# .namebox 
+    -#   Member:
+    -#   - @group.users.each do |user|
+    -#     = user.name
+    
+    
+    -# .edit__btn
+    -#   = link_to 'Edit', edit_group_path(@group) ,class: "btn"
+
+    -# = link_to edit_group_path(@group) do
+    -#   .edit__btn
+    -#     Edit
+
+
+  -# .send__text
+  -#   .type_text
+  -#     = form_for [@group, @message] do |f|
+  -#       = f.text_field :content, class: 'input', placeholder: '  type a message'
+  -#       .image_tag
+  -#         = f.label :image, class: 'form__mask__image' do
+  -#           = fa_icon 'image', class: 'contents__btn--icon'
+  -#           = f.file_field :image, class: 'hidden'
+  -#         = f.submit 'Send', class: 'send'
 

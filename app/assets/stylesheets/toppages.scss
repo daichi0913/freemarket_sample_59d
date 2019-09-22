@@ -1,97 +1,370 @@
 // Place all the styles related to the toppages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//ここはヘッダー
 .top-header{
   height: 50px;
   width: 100vw;
+  .top-header-logo{
+    height: 52px;
+    width:133px;
+    float: left;
+    margin-left:10%;
+  }
   &__box{
     height: 100%;
     width: 72%;
-    background-color: aliceblue;
     margin: 0 auto;
     .form{
       float: right;
       margin-top: 7px;
     }
     .form__serch{
-      width:841px;
+      width:700px;
       height: 40px;
       background-color: #f5f5f5;
     }
     &__bottom{
       height:50px;
       width: 100vw;
-      background-color: aquamarine;
-      // flex-direction: row;
-      // display: flex;
       ul{
         width: 100%;
         flex-direction: row;
         display: flex;
         li{
-          width:170px;
+          width:12%;
           line-height: 50px;
           font-size: 14px;
           }
         .lia{
-          margin-left: 14%;
+          margin-left: 12%;
+          font-weight: bold;
+          transition: all;
+        }
+        .lia:hover .lia-li{
+          display: block;
+        }
+        .lia:hover,.lib:hover,.lic:hover{
+          color: rgb(0, 195, 255);
         }
         .lib{
-          width: 120px;
+          width: 8%;
           text-align: center;
         }
         .lic{
+          margin-left: 2%;
           margin-right: 180px;
+          font-weight: bold;
         }
       }
     }
   }
 }
 
+//ここはスライドショー
 .top-view{
   height: 390px;
-  width: 100vw;
-  background-color: aqua;
+  width: 100%;
+  background-color: #EEEEEE;
+  &__box{
+    width:680px;
+    height: 100%;
+    margin: 0 auto;
+    .top-view1{
+      max-width: 703px;
+      width: auto;
+      padding-top: 28px;
+  }
 }
+}
+//ここはカテゴリメニュー
 .top-category{
   height: 171px;
   width: 100vw;
-  background-color: bisque;
+  background-color: #ffffff;
   text-align: center;
   &__a{
-    font-size: 30px;
-    line-height: 156px;
+    font-size: 28px;
+    line-height: 161px;
+    height: 114px;
+    font-weight: bold;
+    color: #333333;
   }
   &__b{
     font-size: 14px;
+    .category0{
+      margin: 0 auto;
+      width:600px;
+      height:20px;
+      .category1{
+        background-color: #efefef;
+        float: left;
+        margin: 0 auto;
+        list-style: none;
+        margin-left: 12px;
+        font-weight: bold;
+        height: 30px;
+        padding: 0 10px 0 10px;
+        line-height: 30px;
+        border-radius: 15px;
+      }
+  }
+}}
+// ここはカテゴリのアイテム
+.top-category-item{
+  height: 2614px;
+  width: 100vw;
+  background-color:#f5f5f5;
+  &__box,&__box2,&__box3,&__box4{
+    height: 593px;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 42px;
+    .lady-name-box{
+      height: 33px;
+      width:100%;
+      .lady-name{
+        height: 33px;
+        width: 80%;
+        float: left;
+        font-weight: bold;
+        font-size: 24px;
+      }
+      .lady-details{
+        float: right;
+        width:17%;
+        font-size: 14px;
+        color: rgb(0, 195, 255);
+        padding: 5px 16px 5px 5px;
+      }
+    }
+    .top-category-item__item{
+      height:95%;
+      width:100%;
+      background-color: #f5f5f5;
+      display: flex;
+      // flex-direction: row;
+      flex-wrap: wrap;
 
+      &__box{
+        width:18%;
+        height: 252px;
+        background-color: #333333;
+        margin-left: 2%;
+      }
+    }
+  }
+  &__box2{
+    background-color: antiquewhite;
+    padding-top:  42px;
+    .mens-name-box{
+      height: 33px;
+      width:100%;
+      .mens-name{
+        height: 33px;
+        width: 80%;
+        float: left;
+        font-weight: bold;
+        font-size: 24px;
+      }
+      .mens-details{
+        float: right;
+        width:100px;
+        font-size: 14px;
+        color: rgb(0, 195, 255);
+        padding: 5px 16px 5px 5px;
+      }
+    }
+  }
+  &__box3{
+    background-color: antiquewhite;
+    padding-top:  42px;
+    .kaden-name-box{
+      height: 33px;
+      width:100%;
+      .kaden-name{
+        height: 33px;
+        width: 80%;
+        float: left;
+        font-weight: bold;
+        font-size: 24px;
+      }
+      .kaden-details{
+        float: right;
+        width:100px;
+        font-size: 14px;
+        color: rgb(0, 195, 255);
+        padding: 5px 16px 5px 5px;
+      }
+    }
+  }
+  &__box4{
+    background-color: #333333;
+    padding-top:  42px;
+    .goods-name-box{
+      height: 33px;
+      width:100%;
+      .goods-name{
+        height: 33px;
+        width: 80%;
+        float: left;
+        font-weight: bold;
+        font-size: 24px;
+      }
+      .goods-details{
+        float: right;
+        width:100px;
+        font-size: 14px;
+        color: rgb(0, 195, 255);
+        padding: 5px 16px 5px 5px;
+      }
+    }
   }
 }
-.top-category-item{
-  height: 2230px;
-  width: 100vw;
-  background-color: antiquewhite;
-}
+//ここはブランドのメニュー
 .top-bland{
-  height:171px;
+  height:161px;
   width: 100vw;
-  background-color: aqua;
+  background-color: #ffffff;
   text-align: center;
   &__a{
+    color: #333333;
     font-size: 30px;
-    line-height: 156px;
+    line-height: 160px;
+    font-weight: bold;
+    height: 114px;
+  }
+  &__b{
+    font-size: 14px;
+    .bland0{
+      margin: 0 auto;
+      width:400px;
+      height:20px;
+      .bland1{
+        background-color: #efefef;
+        float: left;
+        margin: 0 auto;
+        list-style: none;
+        margin-left: 12px;
+        font-weight: bold;
+        height: 30px;
+        padding: 0 10px 0 10px;
+        line-height: 30px;
+        border-radius: 15px;
+      }
+  }
   }
 }
+//ここはブランドのアイテム
+// .top-bland-item{
+//   height: 2230px;
+//   width: 100vw;
+//   background-color: #f5f5f5;
+// }
 .top-bland-item{
-  height: 2230px;
+  height: 2614px;
   width: 100vw;
-  background-color: antiquewhite;
+  background-color:#f5f5f5;
+  &__box,&__box2,&__box3,&__box4{
+    height: 593px;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 42px;
+    background-color: aquamarine;
+    .syaneru-name-box{
+      height: 33px;
+      width:100%;
+      .syaneru-name{
+        height: 33px;
+        width: 80%;
+        float: left;
+        font-weight: bold;
+        font-size: 24px;
+      }
+      .syaneru-details{
+        float: right;
+        width:100px;
+        font-size: 14px;
+        color: rgb(0, 195, 255);
+        padding: 5px 16px 5px 5px;
+      }
+    }
+  }
+  &__box2{
+    background-color: antiquewhite;
+    padding-top:  42px;
+    .ruiviton-name-box{
+      height: 33px;
+      width:100%;
+      .ruiviton-name{
+        height: 33px;
+        width: 80%;
+        float: left;
+        font-weight: bold;
+        font-size: 24px;
+      }
+      .ruiviton-details{
+        float: right;
+        width:100px;
+        font-size: 14px;
+        color: rgb(0, 195, 255);
+        padding: 5px 16px 5px 5px;
+      }
+    }
+  }
+  &__box3{
+    background-color: antiquewhite;
+    padding-top:  42px;
+    .syupurimu-name-box{
+      height: 33px;
+      width:100%;
+      .syupurimu-name{
+        height: 33px;
+        width: 80%;
+        float: left;
+        font-weight: bold;
+        font-size: 24px;
+      }
+      .syupurimu-details{
+        float: right;
+        width:100px;
+        font-size: 14px;
+        color: rgb(0, 195, 255);
+        padding: 5px 16px 5px 5px;
+      }
+    }
+  }
+  &__box4{
+    background-color: #333333;
+    padding-top:  42px;
+    .nike-name-box{
+      height: 33px;
+      width:100%;
+      .nike-name{
+        height: 33px;
+        width: 80%;
+        float: left;
+        font-weight: bold;
+        font-size: 24px;
+      }
+      .nike-details{
+        float: right;
+        width:100px;
+        font-size: 14px;
+        color: rgb(0, 195, 255);
+        padding: 5px 16px 5px 5px;
+      }
+    }
+  }
 }
+//ここはボトムにあるビュー
 .bottom-view{
   width:100vw;
   height: 260px;
   background-color: aquamarine;
 }
+//ここはフッター
 .top-footer{
   width: 100vw;
   height: 389px;
@@ -110,7 +383,6 @@
       font-weight: bold;
       width: 30%;
       margin-top: 18px;
-      // margin-left: 5px;
       p{
         font-size: 12px;
         margin-top: 15px;
@@ -148,7 +420,11 @@
       .font-bottom{
         position: relative;
         top:30px;
-        left:125px;
+        left:10%;
+      }
+      .font-bottom-icon{
+        height:30px;
+        width:30px;
       }
   }
 }
