@@ -20,40 +20,44 @@ body{
 
   &__title{
     height: 100%;
-    padding: 30px 40px;
+    // padding: 20px 30px;
     text-align: center;
     font-weight: bold;
     color: #333333;
     font-size: 22px;
     line-height: 1.5;
+    padding: 32px;
   }
 }
 
 .regi-box{
-  width: 50%;
   background-color: white;
   flex-direction: column;
+  display: block;
   // align-items: center;
   // padding: auto;
-  margin: 0 auto;
+  margin: auto;
   padding: 24px 16px 40px;
   border-top: 1px solid #f5f5f5;
 
   a{
-    border-radius: 5px;
+    width: 55%;
+    border-radius: 4px;
     position: relative;
+
+
 
 
   }
   &__btn{
     display: block;
-    width: 100%;
+    width: 700px;
     line-height: 48px;
     font-size: 14px;
     border: 1px solid transparent;
     cursor: pointer;
     text-align: center;
-    margin: 15px;
+    margin: 15px auto;
   }
 
 }
@@ -67,7 +71,7 @@ body{
       position: absolute;
       left:15px;
       top:15px;
-      font-size: 25px;
+      font-size: 22px;
 
     }
 
@@ -100,7 +104,7 @@ body{
       width: 20px;
       position: absolute;
       left:15px;
-      top:15px;
+      top:20px;
 
     }
   }
