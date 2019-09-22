@@ -3,14 +3,23 @@
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
+|email|string|null: false|
+|encrypted_password|string|null: false|
+|image|text|
+
+### Association
+- belongs_to :
+- belongs_to :user
+
+## User_detailsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
 |name_kanji|string|null: false|
 |name_kana|string|null: false|
 |birthdate|datetime|null: false|
-|email|string|null: false|
 |phone_number|integer|null: false|
 |address|text|null: false|
-|encrypted_password|string|null: false|
-|image|text|
 
 ### Association
 - belongs_to :
