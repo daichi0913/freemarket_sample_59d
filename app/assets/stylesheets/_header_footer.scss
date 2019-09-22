@@ -32,10 +32,10 @@
     &__menu{
       &__list{
         display: inline-block;  
-        color: currentColor;
+        color: #333;
         text-align: center;
         padding: 10px;
-        font-size: 10px;
+        font-size: 12px;
 
         // margin: 0;
         
@@ -49,12 +49,12 @@
 
     &__img{
       text-align: center;
-
+      margin: 15px;
 
     }
 
     &__year{
-      font-size: 10px;
+      font-size: 13px;
     }
   }
 }
