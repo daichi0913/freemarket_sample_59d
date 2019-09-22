@@ -16,20 +16,12 @@
 
 .devise-footer{
   background-color: #f5f5f5;
-  position: relative;
-  // right: 0;
-  // bottom: 0;
-  // left: 0;
-  // z-index: 1;
   height: 250px;
   padding: 40px 0;
   text-align: center;
 
   &__box{
     padding: 40px 0;
-    height: 220px;
-    width: 456px;
-    position: absolute;
     margin: auto;
 
 
@@ -41,8 +33,11 @@
       &__list{
         display: inline-block;  
         color: currentColor;
+        text-align: center;
+        padding: 10px;
+        font-size: 10px;
+
         // margin: 0;
-        // padding: 0;
         
         
         
@@ -59,7 +54,7 @@
     }
 
     &__year{
-      font-size: 13px;
+      font-size: 10px;
     }
   }
 }

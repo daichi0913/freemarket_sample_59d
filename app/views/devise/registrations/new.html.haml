@@ -3,16 +3,17 @@
     .contents__title 新規会員登録
     .regi-box
 
-      %a.regi-box__btn.btn__email{:href => "https://www.mercari.com/jp/signup/registration/"}
-        %i.icon-mail
-        メールアドレスで登録する
+      %a.regi-box__btn.btn__email
+    -# {:href => "https://www.mercari.com/jp/signup/registration/"}
+      -# %i.icon-mail
+      メールアドレスで登録する
 
-        %button#facebook-login.regi-box__btn.btn__fb
-          %i.icon-facebook
-          Facebookで登録する
+      %a.regi-box__btn.btn__fb
+        -# %i.icon-facebook
+      Facebookで登録する
 
-        %button#google-login.regi-box__btn.btn__gm
-        "Googleで登録する"
+      %a.regi-box__btn.btn__gm
+      Googleで登録する
 
 
 
