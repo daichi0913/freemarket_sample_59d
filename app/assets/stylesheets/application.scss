@@ -1,4 +1,7 @@
-@import "reset.scss";
+@import "./reset";
+@import "./variable";
 @import "font-awesome";
-@import "variable.scss";
-@import "header_footer.scss";
+@import "./header_footer.scss";
+@import "login.scss";
+@import "sign_up.scss";
+@import "toppages.scss";
