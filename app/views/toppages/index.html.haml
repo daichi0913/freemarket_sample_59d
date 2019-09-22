@@ -1,4 +1,8 @@
+//ここはヘッダー
 .top-header
+  .top-header__icon
+    %a
+      %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg",:alt=>"Mercari",:class=>"top-header-logo"}
   .top-header__box
     .top-header__box__top
       .form
@@ -7,25 +11,199 @@
           = f.submit :submit, class: 'btn'
 .top-header__box__bottom
   %ul
-    %li.lia カテゴリーから探す
+    %li.lia 
+      カテゴリーから探す
+      .lia-li  レディース
+      .lia-li  メンズ
+      .lia-li  ベビー・キッズ
+      .lia-li  インテリア・住まい・小物
+      .lia-li  本・音楽・ゲーム
     %li.lic ブランドから探す
     %li.lib いいね！一覧
     %li.lib お知らせ
     %li.lib やることリスト
     %li.lib マイページ
+///////////////////////
+//ここはスライドショー
 .top-view
-
+  .top-view__box
+    %img{:src=>"//www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?3296506464",:alt=>"メルカリなら新品も中古もお得！キャンプ用品 大特集！",:class=>"top-view1"}
+//////////////////////
+//ここはカテゴリメニュー
 .top-category
   .top-category__a  人気のカテゴリー
   .top-category__b
-   
+    %ul.category0
+      %li.category1
+        レディース
+      %li.category1
+        メンズ
+      %li.category1
+        家電・スマホ・カメラ
+      %li.category1
+        おもちゃ・ホビー・グッズ
+///////////////////////
+//ここはカテゴリーアイテム
 .top-category-item
-  
+  .top-category-item__box
+    .top-category-item__box__lady
+      .lady-name-box
+        .lady-name
+          レディース新着アイテム
+        .lady-details
+          もっと見る ＞
+    .top-category-item__item
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+        kk
+  .top-category-item__box2
+    .mens-name-box
+      .mens-name
+        メンズ新着アイテム
+      .mens-details
+        もっと見る ＞ 
+    .top-category-item__item
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+        kk
+  .top-category-item__box3
+    .kaden-name-box
+      .kaden-name
+        家電・スマホ・カメラ新着アイテム
+      .kaden-details
+        もっと見る ＞ 
+    .top-category-item__item
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+        kk
+  .top-category-item__box4
+    .goods-name-box
+      .goods-name
+        おもちゃ・ホビー・グッズ新着アイテム
+      .goods-details
+        もっと見る ＞ 
+    .top-category-item__item
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+        kk
+//ここはブランドメニュー
 .top-bland
   .top-bland__a  人気のブランド
+  .top-bland__b
+    %ul.bland0
+      %li.bland1
+        シャネル
+      %li.bland1
+        ルイヴィトン
+      %li.bland1
+        シュプリーム
+      %li.bland1
+        ナイキ
+/////////////////////
+//ここはブランドのアイテム
 .top-bland-item
-
-.top-botto-view
+  .top-bland-item__box
+    .top-bland-item__box__syaneru
+      .syaneru-name-box
+        .syaneru-name
+          シャネル新着アイテム
+        .syaneru-details
+          もっと見る ＞
+    .top-category-item__item
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+        kk
+  .top-bland-item__box2
+    .ruiviton-name-box
+      .ruiviton-name
+        ルイヴィトン新着アイテム
+      .ruiviton-details
+        もっと見る ＞ 
+    .top-category-item__item
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+        kk
+  .top-bland-item__box3
+    .syupurimu-name-box
+      .syupurimu-name
+        シュプリーム新着アイテム
+      .syupurimu-details
+        もっと見る ＞ 
+    .top-category-item__item
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+        kk
+  .top-bland-item__box4
+    .nike-name-box
+      .nike-name
+        ナイキ新着アイテム
+      .nike-details
+        もっと見る ＞ 
+    .top-category-item__item
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+      .top-category-item__item__box
+        kk
+      .top-category-item__item__box
+        kk
+/////////////////////
+//ここはボトムのビュー
+.top-bottom-view
+/////////////////////
+//ここはフッター
 .top-footer
   .top-footer__content
     %li.content__a
@@ -64,4 +242,8 @@
     .top-footer__bottom__box
       %a.font-bottom
         %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg", :alt=>"Mercari", :class=>"top-mercari_logo"}
+      %a.font-bottom-icon
+      =link_to "https://www.facebook.com/", class: "contents__btn  contents__btn--facebook" do
+        = fa_icon 'facebook', class: "contents__btn--icon"
       %p ©2019 Mercari
+//////////////////////////
