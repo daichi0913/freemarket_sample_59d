@@ -129,7 +129,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key:true|
+|buyer_id|references|null: false, foreign_key:true|
+|seller_id|references|null: false, foreign_key: true|
 |item_id|references|null: false, foreign_key: true|
 
 
