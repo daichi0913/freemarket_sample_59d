@@ -2,8 +2,6 @@
 
 |Column|Type|Options|
 |------|----|-------|
-
-
 |nickname|string|null: false|
 |name_kanji|string|null: false|
 |name_kana|string|null: false|
