@@ -4,59 +4,66 @@
   min-height: 100%;
 
 }
-  .main{
-    background-color: #f5f5f5;
-    width: 100%;
+.main{
+  background-color: #f5f5f5;
+  width: 100%;
 
+}
+.contents{
+  box-sizing: border-box;
+  background-color: white;
+  width: 55%;
+  margin: 0 auto;
+  text-align: center;
+  &__title{
+    height: 97px;
+    text-align: center;
+    color: #333333;
+    font-size: 22px;
+    line-height: 1.5;
+    display: inline-block;  
+    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   }
-    .contents{
-      box-sizing: border-box;
-      background-color: white;
-      width: 55%;
-      margin: 0 auto;
-      text-align: center;
+}
 
+.regi-box{
+  width: 50%;
+  background-color: white;
+  flex-direction: column;
+  // align-items: center;
+  // padding: auto;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+  border-top: 1px solid #f5f5f5;
+  &__btn{
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-align: center;
+  }
 
-
-
-
-    }
-      .contents__title{
-        height: 97px;
-        width: 700px;
-        color: #333333;
-        font-size: 22px;
-        line-height: 1.5;
-        display: inline-block;  
-        font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+}
+.btn{
+  &__email{
+    background-color: #EA352D;
+    transition: all ease-out .3s;
+    color: white;
+  }
+  &__fb{
+    background-color: #385185;
+    color: white;
+  }
+  &__gm{
+    background-color: #FFFFFF;
+    border: #979797 solid 1px;
+    color: #333;
+  }
+}
+.icon{
+  &__fb{
     
-      }
-      .regi-box{
-        width: 50%;
-        background-color: white;
-        flex-direction: column;
-        // align-items: center;
-        // padding: auto;
-        margin: 0 auto;
-      }
-    
-
-      
-        .regi-box__btn.btn__email{
-          display: block;
-          
-          background-color: #EA352D;
-
-
-
-        }
-        .regi-box__btn.btn__fb{
-          display: block;
-          background-color: #385185;
-
-
-        }
-        .regi-box__btn.btn__gm{
-          display: block;
-          background-color: #FFFFFF;
-        }
+  }
+}

@@ -1,28 +1,81 @@
-## usersテーブル
+## Usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 
 
-|user_name|string|null: false, foreign_key: true|
-|user_email|string|null: false, foreign_key: true|
-|user_pass|string|null: false, foreign_key: true|
-|user_image|string|null: false, foreign_key: true|
+|nickname|string|null: false|
+|name_kanji|string|null: false|
+|name_kana|string|null: false|
+|birthdate|datetime|null: false|
+|email|string|null: false|
+|phone_number|integer|null: false|
+|address|text|null: false|
+|encrypted_password|string|null: false|
+|image|text|
+
+### Association
+- belongs_to :
+- belongs_to :user
+
+
+## User_reviewsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|buyer_id|references|null: false, foreign_key:true|
+|seller_id|references|null: false, foreign_key:true|
+|review_status|integer|null: false|
+
+
+### Association
+- has_many :groups, through: :groups_users
+- has_many :groups_users
+
+
+
+## User_todo_listsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key:true|
+|text|text|null: false|
+|link|text|null: false|
+|image|text||
 
 
 
 ### Association
-- belongs_to :group
-- belongs_to :user
+- has_many :groups, through: :groups_users
+- has_many :groups_users
+- has_many :messages
 
 
-## categoriesテーブル
+## Notificationsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|parent_id|integer|null: false|
+|user_id|references|null: false, foreign_key:true|
+|text|text|null: false|
+|link|text|null: false|
+|image|text||
+|event|string||
+
+
+
+### Association
+- has_many :groups, through: :groups_users
+- has_many :groups_users
+- has_many :messages
+
+
+
+## categorysテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|parent_id|integer||
 |name|string|null: false|
-|brand_group_id|integer|null: false|
 
 ### Association
 - has_many :groups, through: :groups_users
@@ -34,18 +87,58 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|category_id|string/integer|null: false|
-|user_id|string/integer|null: false|
+|category_id|references|null: false, foreign_key:true|
+|user_id|references|null: false, foreign_key:true|
+|brand_id|references|null: false, foreign_key:true|
 |name|string/integer|null: false|
 |explain|string/integer|null: false|
-|state|string/integer|null: false|
-|charge_state|string/integer|null: false|
+|size|string||
+|item_status|string|null: false|
+|deal_status|string||
+|shipping_fee|string|null: false|
+|shipping_way|string|null: false|
 |region|string|null: false|
 |days|integer|null: false|
 |price|integer|null: false|
-|brand_id|integer|null: false|
+
+### Association
+- has_many :users, through: :groups_users
+- has_many :messages
+- has_many :groups_users
 
 
+## Item_imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_id|references|null: false, foreign_key: true|
+|image|text|null: false|
+
+### Association
+- belongs_to :group
+- belongs_to :user
+
+
+## Dealsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key:true|
+|item_id|references|null: false, foreign_key: true|
+
+
+### Association
+- has_many :groups, through: :groups_users
+- has_many :groups_users
+- has_many :messages
+
+
+
+
+## Likesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key:true|
+|item_id|references|null: false, foreign_key:true|
 
 
 ### Association
@@ -74,9 +167,21 @@
 |Column|Type|Options|
 |------|----|-------|
 |brand_group_id|references|null: false, foreign_key: true|
-|name|references|null: false, foreign_key: true|
+|name|string|null: false|
 
 
 ### Association
 - belongs_to :group
 - belongs_to :user
+
+## category_brandsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|brand_group_id|references|null: false, foreign_key: true|
+|name|string|null: false|
+
+### Association
+- belongs_to :group
+- belongs_to :user
+
+
