@@ -1,0 +1,39 @@
+.top-header
+  .top-header__icon
+    %a
+      %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg",:alt=>"Mercari",:class=>"top-header-logo"}
+  .top-header__box
+    .top-header__box__top
+      .form
+        = form_with url: toppages_path do |f|
+          = f.text_field :content, class: 'form__serch', placeholder: '何かお探しですか？？'
+          = f.submit :submit, class: 'btn'
+.top-header__box__bottom
+  %ul
+    %li.lia 
+      カテゴリーから探す
+      .lia-li  レディース
+      .lia-li  メンズ
+      .lia-li  ベビー・キッズ
+      .lia-li  インテリア・住まい・小物
+      .lia-li  本・音楽・ゲーム
+    %li.lic ブランドから探す
+    %li.lib いいね！一覧
+    %li.lib お知らせ
+    %li.lib やることリスト
+    %li.lib マイページ
+.second-header
+  %ul
+    %li.li1
+    メルカリ
+    %li.li2
+    icon-arrow-right
+    %li.li3
+    マイページ
+.main-page
+  .main-page_box
+  .main-page-r-content
+  .main-page-l-content
+
+
+    
