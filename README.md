@@ -167,6 +167,8 @@ entitiy-relation diagram : https://drive.google.com/file/d/191Btzn0iudYOZ4v3OPHS
 - belongs_to : item
 
 
+# 後に追加したいテーブル
+アソシエーションは未完成
 ## Likesテーブル
 
 |Column|Type|Options|
@@ -181,8 +183,6 @@ entitiy-relation diagram : https://drive.google.com/file/d/191Btzn0iudYOZ4v3OPHS
 
 
 
-# 後に追加したいテーブル
-アソシエーションは未完成
 ## Commentsテーブル
 
 |Column|Type|Options|
