@@ -1,10 +1,13 @@
 .login-panel{
+  width: 456px;
+  margin: 0 auto;
   background-color: white;
   &__no-account{
-    padding: 24px 32px;
+    padding: 40px 64px;
     text-align: center;
+    font-size: 14px;
     p{
-      font-size: 14px;
+      line-height: 14px;
     }
     a{
       display: block;
