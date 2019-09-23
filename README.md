@@ -1,3 +1,6 @@
+# TABLES
+entitiy-relation diagram : https://drive.google.com/file/d/191Btzn0iudYOZ4v3OPHS2UPIz09e-kzD/view?usp=sharing
+
 ## Usersテーブル
 
 |Column|Type|Options|
