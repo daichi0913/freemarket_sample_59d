@@ -1,0 +1,49 @@
+.main
+  .contents
+    .contents__title 新規会員登録
+    .regi-box
+
+      %a.regi-box__btn.btn__email 
+        %i.icon__email
+        = icon 'far', 'envelope'
+
+
+        メールアドレスで登録する
+
+      %a.regi-box__btn.btn__fb 
+        = icon 'fab', 'facebook-square'
+        Facebookで登録する
+
+
+
+      %a.regi-box__btn.btn__gm 
+        %img{:alt => "btn__gm", :src => "/assets/google-logo.png"}/
+        %i.icon__gm
+        Googleで登録する
+
+
+
+    -# .namebox 
+    -#   Member:
+    -#   - @group.users.each do |user|
+    -#     = user.name
+    
+    
+    -# .edit__btn
+    -#   = link_to 'Edit', edit_group_path(@group) ,class: "btn"
+
+    -# = link_to edit_group_path(@group) do
+    -#   .edit__btn
+    -#     Edit
+
+
+  -# .send__text
+  -#   .type_text
+  -#     = form_for [@group, @message] do |f|
+  -#       = f.text_field :content, class: 'input', placeholder: '  type a message'
+  -#       .image_tag
+  -#         = f.label :image, class: 'form__mask__image' do
+  -#           = fa_icon 'image', class: 'contents__btn--icon'
+  -#           = f.file_field :image, class: 'hidden'
+  -#         = f.submit 'Send', class: 'send'
+
