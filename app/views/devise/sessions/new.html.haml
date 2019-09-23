@@ -14,6 +14,7 @@
         .login-form__field
           %input{placeholder: "パズワード"}
         .login-form__field
+          =recaptcha_tags
         %button.login-form__btn{type: 'submit'} ログイン
         =link_to "パスワードをお忘れの方", "#"
 
