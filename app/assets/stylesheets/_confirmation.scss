@@ -45,13 +45,23 @@
     font-weight: 600;
   }
 
+
   .birthday-select-wrap{
-    display: flex;
     height: 48px;
-    max-width: 343px;
     width: 100%;
     padding: 0 10px;
+    display: flex;
+
+    &__month{
+
+    }
+
+    &__day{
+
+    }
+
   }
+
 
   .form-group{
     padding-bottom: 15px;
