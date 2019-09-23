@@ -28,41 +28,99 @@
       border-radius: 5px;
       border: 1px solid #cccccc;
     }
+    i.fas{
+      width: 10px;
+      height: 5px;
+      position: absolute;
+      right:150px;
+      top: 21px;
+      font-size: 80%;
+      color: #333333;
+    }
+    
+    .btn{
+      display: none;
+    }
     &__bottom{
       height:50px;
       width: 100vw;
       ul{
         width: 100%;
-        flex-direction: row;
         display: flex;
+        flex-wrap: wrap;
         li{
           width:12%;
-          line-height: 50px;
+          line-height: 47px;
           font-size: 14px;
           }
         .lia{
-          margin-left: 12%;
+          margin-left: 10%;
           font-weight: bold;
           transition: all;
+          i.fas{
+            color: red;
+          }
+          .lia-li{
+            background-color:white;
+            font-weight: normal;
+            padding-left: 15px;
+            color: #333333;
+            width:224px;
+            z-index: 1;
+            position: relative;
+          }
+          .lia-li:hover{
+            background-color:#FF3333;
+            color: white;
+          }
         }
         .lia:hover .lia-li{
           display: block;
         }
-        .lia:hover,.lib:hover,.lic:hover{
+        .lia:hover,.lic1:hover{
           color: rgb(0, 195, 255);
         }
         .lib{
-          width: 8%;
+          width: 10%;
           text-align: center;
+          .mypage{
+            height:15px;
+            width: 15px;
+            background-color: #333333;
+          }
         }
         .lic{
           margin-left: 2%;
-          margin-right: 180px;
+          margin-right: 13%;
           font-weight: bold;
         }
         .lic1{
           text-decoration: none;
           color: #333333;
+          i.fas{
+            color: red;
+          }
+          i.fa-heart,i.fa-bell,i.fa-circle{
+            font-size: 140%;
+            color: lightgray;
+          }
+          i.fa-heart:hover,i.fa-bell:hover,i.fa-circle:hover{
+            color: rgb(0, 195, 255);
+          }
+        }
+        .lic2{
+          text-decoration: none;
+          color: #333333;
+          i.fa-check{
+            font-size: 140%;
+            color: lightgray;
+          }
+          i.fa-check:hover{
+            color: rgb(0, 195, 255);
+          }
+        }
+        .lic2:hover{
+          color: rgb(0, 195, 255);
         }
       }
     }
@@ -402,10 +460,74 @@
   }
 }
 //ここはボトムにあるビュー
-.bottom-view{
-  width:100vw;
+.top-bottom-view{
+  width:100%;
   height: 260px;
-  background-color: aquamarine;
+  background-image: url(kkkkk.jpg);
+  position: relative;
+  z-index: 0;
+  &__left{
+    width:60%;
+    height: 100%;
+    margin: 0 auto;
+    &__text{
+      float: left;
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      width: 60%;
+      color: #EEEEEE;
+      p.text-a{
+        padding-top: 45px;
+        position: relative;
+        font-size: 24px;
+        width: 100%;
+        font-weight: bold;
+      }
+      p.text-b{
+        font-size: 35px;
+        width: 100%;
+        font-weight: bold;
+      }
+      .text-c{
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        img{
+          height:68px;
+          width: 68px;
+        }
+        .b{
+          width:  144px;
+          height: 40px;
+          margin: 15px 10px 0 10px;
+        }
+        .c{
+          width:  144px;
+          height: 40px;
+          margin-top: 15px;
+        }
+        .d{
+          height: 300px;
+          width: 260px;
+        }
+      }
+      // img{
+      //   height:68px;
+      //   width: 68px;
+      // }
+    }
+    &__image{
+      width:40%;
+      height:100%;
+      float: right;
+      .bottom-image{
+        width:100%;
+        height:100%;
+      }
+    }
+  }
 }
 //ここはフッター
 .top-footer{
@@ -421,17 +543,30 @@
     display: flex;
     list-style: none;
     font-family: Yugothic;
+    &__a{
+        .facebook{
+        height: 20px;
+        width: 20px;
+        position: relative;
+        font-size: 20px;
+      }
+    }
     li{
       font-size: 16px;
       font-weight: bold;
       width: 30%;
       margin-top: 18px;
       p{
+        font-family: arial;
         font-size: 12px;
         margin-top: 15px;
         text-align: left;
         font-weight: lighter;
         opacity: 0.8;
+        .logo{
+          position: absolute;
+          top: 30px;
+        }
       }
       p.content{
         margin-top:30px;
@@ -442,6 +577,9 @@
     }
     li .content__c{
       padding-left:40px;
+    }
+    p:hover{
+      text-decoration: white underline;
     }
   }
   &__bottom{
@@ -478,4 +616,40 @@
 .lic{
   text-decoration: none;
   color: rgb(0, 195, 255);
+}
+i.fab{
+  font-size: 30px;
+  margin-top:30px;
+  color: #EEEEEE;
+  margin-right: 20px;
+}
+.facebook-square{
+  height:30px;
+  width:30px;
+  background-color: #222222;
+  color: #222222;
+  font-size: 20px;
+}
+
+///////////////////////////////
+//////////////出品ボタン
+.button-box{
+  height: 160px;
+  width: 160px;
+  background-color: #ea352d;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 10;
+  border-radius: 80px;
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  line-height: 94px;
+  list-style: none;
+  i.fas{
+    font-size: 60px;
+    position: relative;
+    bottom: 30px;
+  }
 }

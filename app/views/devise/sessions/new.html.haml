@@ -1,21 +1,24 @@
 .main
-  .contents
-    .login-panel
-      .login-panel__no-account
-        %p アカウントをお持ちでない方はこちら
-        =link_to "新規会員登録", "#"
-      .login-panel__other-account
-        %button.login-panel__other-account__btn.btn__fb
-          %i.icon-facebook
-        %button.login-panel__other-account__btn.btn__gm
-      .login-form
-        .login-form__field
-          %input{placeholder: "メールアドレス"}
-        .login-form__field
-          %input{placeholder: "パズワード"}
-        .login-form__field
-        %button.login-form__btn{type: 'submit'} ログイン
-        =link_to "パスワードをお忘れの方", "#"
+  .login-panel
+    .login-panel__no-account
+      %p アカウントをお持ちでない方はこちら
+      =link_to "新規会員登録", "#"
+    .login-panel__other-account
+      %button.login-panel__other-account__btn.btn__fb
+        = icon 'fab', 'facebook-square'
+        Facebookでログイン
+      %button.login-panel__other-account__btn.btn__gm
+        %img{:alt => "btn__gm", :src => "/assets/google-logo.png"}/
+        Googleでログイン
+    .login-form
+      .login-form__field
+        %input{placeholder: "メールアドレス"}
+      .login-form__field
+        %input{placeholder: "パズワード"}
+      .login-form__field
+        =recaptcha_tags
+      %button.login-form__btn{type: 'submit'} ログイン
+      =link_to "パスワードをお忘れの方", "#"
 
 
 

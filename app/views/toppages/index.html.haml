@@ -5,33 +5,50 @@
       %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg",:alt=>"Mercari",:class=>"top-header-logo"}
   .top-header__box
     .top-header__box__top
-    .form
-      = form_with url: toppages_path do |f|
-        = f.text_field :content, class: 'form__serch', placeholder: '  何かお探しですか？'
-        -# = f.submit :submit, class: 'btn'
+    %form{:action=>"",:class=>"form"}
+      -# = form_with url: toppages_path do |f|
+      -#   = f.text_field :content, class: 'form__serch', placeholder: '  何かお探しですか？'
+      %input{:type=>"serch",:name=>"keyword",:class =>'form__serch', :placeholder =>'  何かお探しですか？'} 
+        %a.button
+          = icon"fas" ,"search"
+          -# <i class="fas fa-search"></i>
+          
 .top-header__box__bottom
   %ul
     %li.lia 
+      = icon"fas" ,"list-ul"
       カテゴリーから探す
       .lia-li レディース
+      -# %ul
+      -#   %li
+      -#     kk
       .lia-li  メンズ
       .lia-li  ベビー・キッズ
-      .lia-li  インテリア・住まい・小物
-      .lia-li  本・音楽・ゲーム
+      -# .lia-li  インテリア・住まい・小物
+      -# .lia-li  本・音楽・ゲーム
+      -# .lia-li  ハンドメイド
+      -# .lia-li  チケット
+      -# .lia-li  自動車・オートバイ
+      -# .lia-li  その他
     %li.lic 
       %a.lic1{ href:""}
+        = icon"fas" ,"tag"
         ブランドから探す
     %li.lib 
       %a.lic1{ href:""}
+        = icon"far" ,"heart"
         いいね！一覧
     %li.lib 
       %a.lic1{ href:""}
+        = icon"far" ,"bell"
         お知らせ
     %li.lib 
-      %a.lic1{ href:""}
+      %a.lic2{ href:""}
+        = icon"fas" ,"check"
         やることリスト
     %li.lib 
       %a.lic1{ href:""}
+        = icon"far" ,"circle"
         マイページ
 ///////////////////////
 //ここはスライドショー
@@ -244,17 +261,38 @@
 /////////////////////
 //ここはボトムのビュー
 .top-bottom-view
+  .top-bottom-view__left
+    .top-bottom-view__left__text
+      %p.text-a
+        スマホで簡単フリマアプリ
+      %p.text-b
+        今すぐ無料ダウンロード!
+      .text-c
+        %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/mercari_icon-f75780e32e41e052c8aaa8b446331cd8.png"}
+        %a{:href=>"https://itunes.apple.com/jp/app/id667861049?l=ja&amp;mt=8"}
+          %img.b{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg"}
+        %a{:href=>"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&amp;hl=ja"}
+          %img.c{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg"}
+      .text-d
+    .top-bottom-view__left__image
+      %img.bottom-image{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png"}
+      -# %img.d{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png"}
 /////////////////////
 //ここはフッター
 .top-footer
   .top-footer__content
     %li.content__a
       メルカリについて
-      %p 会社概要
+      %p.a 会社概要
       %p 採用情報
       %p プレスリリース
       %p 公式ブログ
       %p メルカリロゴ利用ガイドライン
+      %a.logo{:href=>"https://twitter.com/mercari_jp"}
+        = icon"fab" ,"twitter"
+      %a.logo{:href=>"https://www.facebook.com/mercari_jp"}
+        = icon"fab" ,"facebook-square"
+      -# %img.facebook{:src=>"https://msp.c.yimg.jp/yjimage?q=LzZRaocXyLG.GoDbUraI2fojmTdeHD8Pc.0EgRN5V_3yz0eETRKHJb5Bh0FRzX3spGWQGPFytFV5UHA5.4Hdv_yrVKmzmRqWHzE_59JmFzIzUn7SSAEZn9rJa5IpvZRBFSmeVoImxLp7_Wd_1w--&sig=138i2f161&x=227&y=222"}
     %li.content__b
       ヘルプ＆ガイド
       %p メルカリガイド
@@ -290,3 +328,9 @@
         
       %p ©2019 Mercari
 //////////////////////////
+
+///////////////////出品ボタン
+.button-box
+  %li 出品
+  %li
+  = icon"fas" ,"camera"
