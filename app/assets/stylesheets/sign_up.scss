@@ -36,12 +36,12 @@ body{
   display: block;
   // align-items: center;
   // padding: auto;
-  margin: auto;
+  // margin: auto;
   padding: 24px 16px 40px;
   border-top: 1px solid #f5f5f5;
 
   a{
-    width: 55%;
+    width: 51%;
     border-radius: 4px;
     position: relative;
 
@@ -71,7 +71,7 @@ body{
       position: absolute;
       left:15px;
       top:15px;
-      font-size: 22px;
+      font-size: 21px;
 
     }
 
@@ -103,8 +103,8 @@ body{
       height: 20px;
       width: 20px;
       position: absolute;
-      left:15px;
-      top:20px;
+      left:18px;
+      top:13px;
 
     }
   }
@@ -114,14 +114,14 @@ body{
     height: 50px;
     width: 50px;
     position: absolute;
-    left:15px;
+    left:18px;
     top:15px;
 
   }
 
   &__gm{
     position: absolute;
-    left:15px;
+    left:18px;
     top:15px;
 
   }
