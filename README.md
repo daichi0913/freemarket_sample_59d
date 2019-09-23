@@ -1,5 +1,17 @@
 # TABLES
 entitiy-relation diagram : https://drive.google.com/file/d/191Btzn0iudYOZ4v3OPHS2UPIz09e-kzD/view?usp=sharing
+- [Users](#Usersテーブル)
+- [User_details](#User_detailsテーブル)
+- [Cards](#Cardsテーブル)
+- [Categorys](#Categorysテーブル)
+- [Brands](#Brandsテーブル)
+- [Brand_groups](#Brand_groupsテーブル)
+- [Category_brands](#Category_brandsテーブル)
+- [Items](#Itemsテーブル)
+- [Item_images](#Item_imagesテーブル)
+- [Regions](#Regionsテーブル)
+- [Deals](#Dealsテーブル)
+
 
 ## Usersテーブル
 
@@ -88,7 +100,7 @@ entitiy-relation diagram : https://drive.google.com/file/d/191Btzn0iudYOZ4v3OPHS
 - has_many :messages
 
 
-## categorysテーブル
+## Categorysテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -101,7 +113,7 @@ entitiy-relation diagram : https://drive.google.com/file/d/191Btzn0iudYOZ4v3OPHS
 - has_many :items
   
 
-## brandsテーブル
+## Brandsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -125,7 +137,7 @@ entitiy-relation diagram : https://drive.google.com/file/d/191Btzn0iudYOZ4v3OPHS
 - has_many : brands
 
 
-## category_brandsテーブル
+## Category_brandsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
