@@ -46,8 +46,10 @@
           %span.form-require 必須
           %br/
 
-        -# .birthday-select-wrap
-        -#   = date_select(:birthday, :use_month_numbers=>true, :date_separator => '%s', :start_year=>1930, :end_year => Time.now.year, :default =>'1990-1-1'.to_date), '年','月') + '日生まれ'
+        .birthday-select-wrap
+          = fork.date_select :birthday, start_year: 1940, end_year: Time.current.year, use_month_numbers: true
+
+          -# != sprintf(date_select(:birthday, use_month_numbers: true, start_year: 1930, end_year: Time.now.year, prompt: '--', date_separator: '年'))
           -#   %i.icon-arrow-bottom
           -#   %select.select-default{:name => "year"}
           -# %span 年
@@ -63,11 +65,9 @@
           -# %span 日
 
           -# %input{:name => "birthday", :type => "hidden", :value => ""}/
-
-
-      .clearfix
-        %p.form-info-text
-          ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+        %p.text
+          ※ 本人情報は正しく入力してください。会員登録後、<br>
+          修正するにはお時間を頂く場合があります。
       .l-single-content
         %input{:name => "after_save_callback", :type => "hidden", :value => ""}/
         .form-group
@@ -79,6 +79,8 @@
 
           %button.btn-default.btn-red 次へ進む
           .form-group.text-right  本人情報の登録について
+          %i.icon-arrow-right
+
 
 
 
