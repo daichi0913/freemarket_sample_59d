@@ -56,49 +56,6 @@ entitiy-relation diagram : https://drive.google.com/file/d/191Btzn0iudYOZ4v3OPHS
 - belongs_to :user
 
 
-## User_reviewsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|buyer_id|references|null: false, foreign_key:true|
-|seller_id|references|null: false, foreign_key:true|
-|review_status|integer|null: false|
-
-### Association
-- has_many :groups, through: :groups_users
-- has_many :groups_users
-
-
-## User_todo_listsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|references|null: false, foreign_key:true|
-|text|text|null: false|
-|link|text|null: false|
-|image|text||
-
-### Association
-- has_many :groups, through: :groups_users
-- has_many :groups_users
-- has_many :messages
-
-
-## Notificationsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|references|null: false, foreign_key:true|
-|text|text|null: false|
-|link|text|null: false|
-|image|text||
-|event|string||
-
-### Association
-- has_many :groups, through: :groups_users
-- has_many :groups_users
-- has_many :messages
-
 
 ## Categorysテーブル
 
@@ -223,7 +180,10 @@ entitiy-relation diagram : https://drive.google.com/file/d/191Btzn0iudYOZ4v3OPHS
 - has_many :groups_users
 
 
-## commentsテーブル
+
+# 後に追加したいテーブル
+アソシエーションは未完成
+## Commentsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -237,8 +197,46 @@ entitiy-relation diagram : https://drive.google.com/file/d/191Btzn0iudYOZ4v3OPHS
 - belongs_to :user
 
 
+## User_reviewsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|buyer_id|references|null: false, foreign_key:true|
+|seller_id|references|null: false, foreign_key:true|
+|review_status|integer|null: false|
+
+### Association
+- has_many :groups, through: :groups_users
+- has_many :groups_users
 
 
+## User_todo_listsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key:true|
+|text|text|null: false|
+|link|text|null: false|
+|image|text||
+
+### Association
+- has_many :groups, through: :groups_users
+- has_many :groups_users
+- has_many :messages
 
 
+## Notificationsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key:true|
+|text|text|null: false|
+|link|text|null: false|
+|image|text||
+|event|string||
+
+### Association
+- has_many :groups, through: :groups_users
+- has_many :groups_users
+- has_many :messages
 
