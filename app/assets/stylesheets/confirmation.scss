@@ -1,17 +1,147 @@
-// .header{
-//   // &__img{
+.header-contents{
+  // padding-left: 25%;
+  text-align: center;
 
-//   // }
-//   // &__bar{
+  .head-logo{
+    margin: 0;
+    display: inline-block;
+  }
+}
 
-//   // }
-// }
 
-// main{
-//   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-//   // padding: 24px 16px 40px;
-// }
-  .regi__title{
+.nakamura-timeline{
+  // width: 100%;
+  // height: auto;
+  display: inline-block;
+  ol{
+    display: flex;
+    padding: 40px 0 0 44px;
+    vertical-align: top;
+    margin-bottom: 30px;
+  }
+
+  li{
+    list-style: none;
+    font-size: 12px;
+    color: #888888;
+    margin: 0 40px 0 0;
+
+    // padding: 20px 30px;
+
+    }
+
+}
+.circle{
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 8px auto 0;
+  background-color: #CCCCCC;
+
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  // box-sizing: border-box;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+/* TIMELINE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.timeline {
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.timeline ol {
+}
+
+.timeline ol li {
+  position: relative;
+  display: inline-block;
+  list-style-type: none;
+  width: 50px;
+  height: 3px;
+  background: #fff;
+}
+
+
+.timeline ol li:not(:first-child) {
+  margin-left: 14px;
+}
+
+.timeline ol li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 1px);
+  bottom: 0;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #F45B69;
+  width: 12px;
+  height: 12px;
+}
+
+.timeline ol li div::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.timeline ol li:nth-child(odd) div {
+  top: -16px;
+  transform: translateY(-100%);
+}
+
+.timeline ol li:nth-child(odd) div::before {
+  top: 100%;
+  border-width: 8px 8px 0 0;
+  border-color: white transparent transparent transparent;
+}
+
+.timeline ol li:nth-child(even) div {
+  top: calc(100% + 16px);
+}
+
+.timeline ol li:nth-child(even) div::before {
+  top: -8px;
+  border-width: 8px 0 0 8px;
+  border-color: transparent transparent transparent white;
+}
+
+.timeline time {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.regi__title{
     padding: 20px 30px;
     text-align: center;
     font-weight: bold;
@@ -25,7 +155,7 @@
   
     .form__box{
       border-top: 1px solid #f5f5f5;
-      padding: 24px 16px 40px;
+      padding: 0 20px;
       // background-color: #f5f5f5;
       max-width: 343px;
       margin: 0 auto;
