@@ -27,6 +27,16 @@ entitiy-relation diagram : https://drive.google.com/file/d/191Btzn0iudYOZ4v3OPHS
 - has_one : card
 - has_many : deals
 - has_many : items
+- has_many : likes
+- has_many : comments
+- has_many : user_todo_lists
+- has_many : notification
+- has_many : likes
+- has_many : sellers, through: :likes, source: :sell
+- has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'seller_id'
+- has_many :followers, through: :reverse_of_relationships, source: :user
+
+
 
 
 ## User_detailsテーブル
@@ -55,49 +65,6 @@ entitiy-relation diagram : https://drive.google.com/file/d/191Btzn0iudYOZ4v3OPHS
 ### Association
 - belongs_to :user
 
-
-## User_reviewsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|buyer_id|references|null: false, foreign_key:true|
-|seller_id|references|null: false, foreign_key:true|
-|review_status|integer|null: false|
-
-### Association
-- has_many :groups, through: :groups_users
-- has_many :groups_users
-
-
-## User_todo_listsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|references|null: false, foreign_key:true|
-|text|text|null: false|
-|link|text|null: false|
-|image|text||
-
-### Association
-- has_many :groups, through: :groups_users
-- has_many :groups_users
-- has_many :messages
-
-
-## Notificationsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|references|null: false, foreign_key:true|
-|text|text|null: false|
-|link|text|null: false|
-|image|text||
-|event|string||
-
-### Association
-- has_many :groups, through: :groups_users
-- has_many :groups_users
-- has_many :messages
 
 
 ## Categorysテーブル
@@ -174,6 +141,8 @@ entitiy-relation diagram : https://drive.google.com/file/d/191Btzn0iudYOZ4v3OPHS
 - belongs_to: category
 - belongs_to: brand
 - belongs_to: region
+- has_many : likes
+- has_many : comments
 
 
 ## Item_imagesテーブル
@@ -210,6 +179,8 @@ entitiy-relation diagram : https://drive.google.com/file/d/191Btzn0iudYOZ4v3OPHS
 - belongs_to : item
 
 
+# 後に追加したいテーブル
+
 ## Likesテーブル
 
 |Column|Type|Options|
@@ -218,12 +189,11 @@ entitiy-relation diagram : https://drive.google.com/file/d/191Btzn0iudYOZ4v3OPHS
 |item_id|references|null: false, foreign_key:true|
 
 ### Association
-- has_many :users, through: :groups_users
-- has_many :messages
-- has_many :groups_users
+- belongs_to : user
+- belongs_to : item
 
 
-## commentsテーブル
+## Commentsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -231,14 +201,46 @@ entitiy-relation diagram : https://drive.google.com/file/d/191Btzn0iudYOZ4v3OPHS
 |user_id|references|null: false, foreign_key: true|
 |comment|string|null: false|
 
+### Association
+- belongs_to : item
+- belongs_to : user
+
+
+## User_reviewsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key:true|
+|seller_id|references|null: false, foreign_key:{to_table: :users]|
+|review_status|integer|null: false|
 
 ### Association
-- belongs_to :group
-- belongs_to :user
+- belongs_to : user
+- belongs_to : seller, class_name: 'User'
 
 
+## User_todo_listsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key:true|
+|text|text|null: false|
+|link|text|null: false|
+|image|text||
+
+### Association
+- belongs_to : user
 
 
+## Notificationsテーブル
 
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key:true|
+|text|text|null: false|
+|link|text|null: false|
+|image|text||
+|event|string||
 
-
+### Association
+- belongs_to : user
