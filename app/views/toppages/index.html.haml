@@ -11,29 +11,129 @@
       %input{:type=>"serch",:name=>"keyword",:class =>'form__serch', :placeholder =>'  何かお探しですか？'} 
         %a.button
           = icon"fas" ,"search"
-          -# <i class="fas fa-search"></i>
-          
+      
 .top-header__box__bottom
   %ul
     %li.lia 
       = icon"fas" ,"list-ul"
       カテゴリーから探す
-      .lia-li レディース
-      -# %ul
-      -#   %li
-      -#     kk
-      .lia-li  メンズ
+      .lia-wrap
+        .lia-li  
+          レディース
+          %ul.second-layer
+            %li.second-menu  
+              トップス
+              %ul.third-layer
+                %li.third-menu  Tシャツカットソー(半袖なし)
+                %li.third-menu  Tシャツカットソー(七分/長袖)
+                %li.third-menu  シャツ/ブラウス(半袖/袖なし)
+                %li.third-menu  シャツ/ブラウス(七分/長袖)
+                %li.third-menu  ポロシャツ
+                %li.third-menu  キャミソール
+                %li.third-menu  タンクトップ
+                %li.third-menu  ホルターネック
+                %li.third-menu  ニット/セーター
+                %li.third-menu  チュニック
+                %li.third-menu  カーディガン/ボレロ
+                %li.third-menu  アンサンブル
+                %li.third-menu  ベスト/ジレ  
+            %li.second-menu 
+              ジャケット/アウター
+              %ul.third-layer
+                .third-layer__a
+                  %li.third-menu  テーラードジャケット
+                  %li.third-menu  ノーカラージャケット
+                  %li.third-menu  Gジャン/デニムジャケット
+                  %li.third-menu  レザージャケット
+                  %li.third-menu  ダウンジャケット
+                  %li.third-menu  ライダースジャケット
+                  %li.third-menu  ミリタリージャケット
+                  %li.third-menu  ナイロンジャケット
+                  %li.third-menu  フライトジャケット
+                  %li.third-menu  ダッフルコート
+                  %li.third-menu  ピーコート
+                  %li.third-menu  ステンカラーコート
+                  %li.third-menu  トレンチコート
+            %li.second-menu  パンツ
+            %li.second-menu  スカート
+            %li.second-menu  ワンピース
+            %li.second-menu  靴
+            %li.second-menu  ルームウェア/パジャマ
+            %li.second-menu  レッグウェア
+            %li.second-menu  帽子
+            %li.second-menu  バッグ
+            %li.second-menu  アクセサリー
+            %li.second-menu  ヘアアクセサリー
+            %li.second-menu  小物
+            %li.second-menu 時計
+              
+      .lia-li  
+        メンズ
+        %ul.second-layer
+          %li.second-menu  
+            トップス
+            %ul.third-layer
+              %li.third-menu  Tシャツカットソー(半袖なし)
+              %li.third-menu  Tシャツカットソー(七分/長袖)
+              %li.third-menu  シャツ/ブラウス(半袖/袖なし)
+              %li.third-menu  シャツ/ブラウス(七分/長袖)
+              %li.third-menu  ポロシャツ
+              %li.third-menu  キャミソール
+              %li.third-menu  タンクトップ
+              %li.third-menu  ホルターネック
+              %li.third-menu  ニット/セーター
+              %li.third-menu  チュニック
+              %li.third-menu  カーディガン/ボレロ
+              %li.third-menu  アンサンブル
+              %li.third-menu  ベスト/ジレ  
+       
+          %li.second-menu  
+            ジャケット/アウター
+            %ul.third-layer
+              .third-layer__a
+                %li.third-menu  テーラードジャケット
+                %li.third-menu  ノーカラージャケット
+                %li.third-menu  Gジャン/デニムジャケット
+                %li.third-menu  レザージャケット
+                %li.third-menu  ダウンジャケット
+                %li.third-menu  ライダースジャケット
+                %li.third-menu  ミリタリージャケット
+                %li.third-menu  ナイロンジャケット
+                %li.third-menu  フライトジャケット
+                %li.third-menu  ダッフルコート
+                %li.third-menu  ピーコート
+                %li.third-menu  ステンカラーコート
+                %li.third-menu  トレンチコート
+          %li.second-menu  パンツ
+          %li.second-menu  靴
+          %li.second-menu  バッグ
+          %li.second-menu  スーツ
+          %li.second-menu  帽子
+          %li.second-menu  アクセサリー
+          %li.second-menu  小物
+          %li.second-menu  時計
+          %li.second-menu  水着
+          %li.second-menu  レッグウェア
+          %li.second-menu  アンダーウェア
+          %li.second-menu  その他
+            
       .lia-li  ベビー・キッズ
-      -# .lia-li  インテリア・住まい・小物
-      -# .lia-li  本・音楽・ゲーム
-      -# .lia-li  ハンドメイド
-      -# .lia-li  チケット
-      -# .lia-li  自動車・オートバイ
-      -# .lia-li  その他
+      .lia-li  インテリア・住まい・小物
+      .lia-li  本・音楽・ゲーム
+      .lia-li  ハンドメイド
+      .lia-li  チケット
+      .lia-li  自動車・オートバイ
+      .lia-li  その他
     %li.lic 
       %a.lic1{ href:""}
         = icon"fas" ,"tag"
         ブランドから探す
+        .lic1-li  シャネル
+        .lic1-li  ナイキ
+        .lic1-li  ルイヴィトン
+        .lic1-li  シュプリーム
+        .lic1-li  アディダス
+        .lic1-li  ブランド一覧
     %li.lib 
       %a.lic1{ href:""}
         = icon"far" ,"heart"
@@ -107,16 +207,7 @@
     .top-category-item__item
       .top-category-item__item__box
         .top-category-item__item__box__bottom
-      .top-category-item__item__box
-        .top-category-item__item__box__bottom
-      .top-category-item__item__box
-        .top-category-item__item__box__bottom
-      .top-category-item__item__box
-        .top-category-item__item__box__bottom
-      .top-category-item__item__box
-        .top-category-item__item__box__bottom
-      .top-category-item__item__box
-        .top-category-item__item__box__bottom
+
   #top-category-item__box3.top-category-item__box3
     .kaden-name-box
       .kaden-name
@@ -127,16 +218,7 @@
     .top-category-item__item
       .top-category-item__item__box
         .top-category-item__item__box__bottom
-      .top-category-item__item__box
-        .top-category-item__item__box__bottom
-      .top-category-item__item__box
-        .top-category-item__item__box__bottom
-      .top-category-item__item__box
-        .top-category-item__item__box__bottom
-      .top-category-item__item__box
-        .top-category-item__item__box__bottom
-      .top-category-item__item__box
-        .top-category-item__item__box__bottom
+
   #top-category-item__box4.top-category-item__box4
     .goods-name-box
       .goods-name
@@ -147,16 +229,7 @@
     .top-category-item__item
       .top-category-item__item__box
         .top-category-item__item__box__bottom
-      .top-category-item__item__box
-        .top-category-item__item__box__bottom
-      .top-category-item__item__box
-        .top-category-item__item__box__bottom
-      .top-category-item__item__box
-        .top-category-item__item__box__bottom
-      .top-category-item__item__box
-        .top-category-item__item__box__bottom
-      .top-category-item__item__box
-        .top-category-item__item__box__bottom
+//////////////////////////////////
 //ここはブランドメニュー
 .top-bland
   .top-bland__a  人気のブランド
@@ -188,16 +261,7 @@
     .top-bland-item__item
       .top-bland-item__item__box
         .top-bland-item__item__box__bottom
-      .top-bland-item__item__box
-        .top-bland-item__item__box__bottom
-      .top-bland-item__item__box
-        .top-bland-item__item__box__bottom
-      .top-bland-item__item__box
-        .top-bland-item__item__box__bottom
-      .top-bland-item__item__box
-        .top-bland-item__item__box__bottom
-      .top-bland-item__item__box
-        .top-bland-item__item__box__bottom
+
   #top-bland-item__box2.top-bland-item__box2
     .ruiviton-name-box
       .ruiviton-name
@@ -208,16 +272,7 @@
     .top-bland-item__item
       .top-bland-item__item__box
         .top-bland-item__item__box__bottom
-      .top-bland-item__item__box
-        .top-bland-item__item__box__bottom
-      .top-bland-item__item__box
-        .top-bland-item__item__box__bottom
-      .top-bland-item__item__box
-        .top-bland-item__item__box__bottom
-      .top-bland-item__item__box
-        .top-bland-item__item__box__bottom
-      .top-bland-item__item__box
-        .top-bland-item__item__box__bottom
+  
   #top-bland-item__box3.top-bland-item__box3
     .syupurimu-name-box
       .syupurimu-name
@@ -228,16 +283,7 @@
     .top-bland-item__item
       .top-bland-item__item__box
         .top-bland-item__item__box__bottom
-      .top-bland-item__item__box
-        .top-bland-item__item__box__bottom
-      .top-bland-item__item__box
-        .top-bland-item__item__box__bottom
-      .top-bland-item__item__box
-        .top-bland-item__item__box__bottom
-      .top-bland-item__item__box
-        .top-bland-item__item__box__bottom
-      .top-bland-item__item__box
-        .top-bland-item__item__box__bottom
+
   #top-bland-item__box4.top-bland-item__box4
     .nike-name-box
       .nike-name
@@ -246,16 +292,6 @@
         %a.lic{ href:""}
           もっと見る ＞ 
     .top-bland-item__item
-      .top-bland-item__item__box
-        .top-bland-item__item__box__bottom
-      .top-bland-item__item__box
-        .top-bland-item__item__box__bottom
-      .top-bland-item__item__box
-        .top-bland-item__item__box__bottom
-      .top-bland-item__item__box
-        .top-bland-item__item__box__bottom
-      .top-bland-item__item__box
-        .top-bland-item__item__box__bottom
       .top-bland-item__item__box
         .top-bland-item__item__box__bottom
 /////////////////////
