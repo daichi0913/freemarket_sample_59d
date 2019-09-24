@@ -1,20 +1,35 @@
+.header-contents{
+  // padding-left: 25%;
+  text-align: center;
+
+  .head-logo{
+    margin: 0;
+    display: inline-block;
+  }
+}
 
 
 .nakamura-timeline{
-  width: 100%;
-  margin: 20px 0 0 180px;
+  // width: 100%;
+  // height: auto;
+  display: inline-block;
+  ol{
+    display: flex;
+    padding: 40px 0 0 44px;
+    vertical-align: top;
+    margin-bottom: 30px;
+  }
 
   li{
     list-style: none;
-    margin: 0 40px 0 0;
     font-size: 12px;
     color: #888888;
+    margin: 0 40px 0 0;
+
+    // padding: 20px 30px;
 
     }
 
-  ol{
-    display: flex;
-  }
 }
 .circle{
   width: 12px;
