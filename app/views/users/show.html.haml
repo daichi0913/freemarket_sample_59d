@@ -1,27 +1,55 @@
+/ここはヘッダー
 .top-header
   .top-header__icon
-    %a
+    %a{ href:"https://www.mercari.com/jp/"}
       %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg",:alt=>"Mercari",:class=>"top-header-logo"}
   .top-header__box
     .top-header__box__top
-      .form
-        = form_with url: toppages_path do |f|
-          = f.text_field :content, class: 'form__serch', placeholder: '何かお探しですか？？'
-          = f.submit :submit, class: 'btn'
+    %form{:action=>"",:class=>"form"}
+      -# = form_with url: toppages_path do |f|
+      -#   = f.text_field :content, class: 'form__serch', placeholder: '  何かお探しですか？'
+      %input{:type=>"serch",:name=>"keyword",:class =>'form__serch', :placeholder =>'  何かお探しですか？'} 
+        %a.button
+          = icon"fas" ,"search"
+          -# <i class="fas fa-search"></i>
+          
 .top-header__box__bottom
   %ul
     %li.lia 
+      = icon"fas" ,"list-ul"
       カテゴリーから探す
-      .lia-li  レディース
+      .lia-li レディース
+      -# %ul
+      -#   %li
+      -#     kk
       .lia-li  メンズ
       .lia-li  ベビー・キッズ
-      .lia-li  インテリア・住まい・小物
-      .lia-li  本・音楽・ゲーム
-    %li.lic ブランドから探す
-    %li.lib いいね！一覧
-    %li.lib お知らせ
-    %li.lib やることリスト
-    %li.lib マイページ
+      -# .lia-li  インテリア・住まい・小物
+      -# .lia-li  本・音楽・ゲーム
+      -# .lia-li  ハンドメイド
+      -# .lia-li  チケット
+      -# .lia-li  自動車・オートバイ
+      -# .lia-li  その他
+    %li.lic 
+      %a.lic1{ href:""}
+        = icon"fas" ,"tag"
+        ブランドから探す
+    %li.lib 
+      %a.lic1{ href:""}
+        = icon"far" ,"heart"
+        いいね！一覧
+    %li.lib 
+      %a.lic1{ href:""}
+        = icon"far" ,"bell"
+        お知らせ
+    %li.lib 
+      %a.lic2{ href:""}
+        = icon"fas" ,"check"
+        やることリスト
+    %li.lib 
+      %a.lic1{ href:""}
+        = icon"far" ,"circle"
+        マイページ
 .second-header
   .s-header
     .s-header-box
@@ -43,7 +71,11 @@
       .r-content-main
         .main-top
           .main-top-left
+            .main-top-left1
+            お知らせ
           .main-top-right
+            .main-top-right
+            やることリスト
         .main-tab
           .tab1
           .tab2

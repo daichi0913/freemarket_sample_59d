@@ -5,6 +5,7 @@
 .top-header{
   height: 50px;
   width: 100vw;
+  background-color:#ffffff;
   .top-header-logo{
     height: 52px;
     width:133px;
@@ -30,6 +31,7 @@
     &__bottom{
       height:50px;
       width: 100vw;
+      background-color:#ffffff;
       ul{
         width: 100%;
         flex-direction: row;
@@ -51,7 +53,7 @@
           color: rgb(0, 195, 255);
         }
         .lib{
-          width: 8%;
+          width: 10%;
           text-align: center;
         }
         .lic{
@@ -124,9 +126,21 @@
             background: url(logo.png);
               .top-image{
                 background: url(logo.png)
-            }
-        }}
-}
-}
-}
+      }
+     }
+    }
+   }
+.r-content-main{
+    
+  .main-top{
+    .main-top-left{
+      
+        .main-top-left1{
+         
+          }
+        }
+      }
+   }
+  }
+ } 
 }
