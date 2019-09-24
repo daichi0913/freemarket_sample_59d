@@ -1,4 +1,14 @@
 !!!
+%section.timeline
+  %ol
+    %li
+    %li
+    %li
+    %li
+    %li
+    %li
+
+
 %main.main
   %section.contents
     .regi__title 会員情報入力
@@ -47,7 +57,7 @@
           %br/
 
         .birthday-select-wrap
-          = fork.date_select :birthday, start_year: 1940, end_year: Time.current.year, use_month_numbers: true
+          -# = fork.date_select :birthday, start_year: 1940, end_year: Time.current.year, use_month_numbers: true
 
           -# != sprintf(date_select(:birthday, use_month_numbers: true, start_year: 1930, end_year: Time.now.year, prompt: '--', date_separator: '年'))
           -#   %i.icon-arrow-bottom
