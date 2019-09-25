@@ -37,14 +37,15 @@
         flex-direction: row;
         display: flex;
         li{
-          width: 10%;
+          width: 9%;
           line-height: 30px;
           font-size: 14px;
           }
         .lia{
-          margin-left: 12%;
+          margin-left: 10%;
           font-weight: bold;
           transition: all;
+          width: 150px;
         }
         .lia:hover .lia-li{
           display: block;
@@ -57,10 +58,11 @@
           text-align: center;
         }
         .lic-bland-b{
-          margin-left: 2%;
+          margin-left: 1%;
           margin-right: 180px;
           font-weight: bold;
           line-height: 45px;
+          width: 130px;
         }
         .lic1{
           text-decoration: none;

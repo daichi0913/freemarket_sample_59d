@@ -10,12 +10,12 @@
       -#   = f.text_field :content, class: 'form__serch', placeholder: '  何かお探しですか？'
       %input{:type=>"serch",:name=>"keyword",:class =>'form__serch', :placeholder =>'  何かお探しですか？'} 
         %a.button
-          -# = icon"fas" ,"search"
+          = fa_icon "search"
       
 .top-header__box__bottom
   %ul
     %li.lia
-      -# = icon"fas" ,"list-ul"
+      = fa_icon"list-ul"
       カテゴリーから探す
       .lia-li  
         レディース
@@ -125,6 +125,7 @@
       .lia-li  その他
     %li.lic-bland-b
       %a.lic-bland{ href:""}
+        = fa_icon "tag"
         ブランドから探す
         .lic1-li  シャネル
         .lic1-li  ナイキ
@@ -134,19 +135,19 @@
         .lic1-li  ブランド一覧
     %li.lic-right
       %a.lic-right{ href:""}
-        -# = icon"far" ,"heart"
+        = fa_icon"heart"
         いいね！一覧
     %li.lic-right
       %a.lic-right{ href:""}
-        -# = icon"far" ,"bell"
+        = fa_icon "bell"
         お知らせ
     %li.lic-right
       %a.lic-right{ href:""}
-        -# = icon"fas" ,"check"
+        = fa_icon"check"
         やることリスト
     %li.lic-right
       %a.lic-right{ href:""}
-        -# = icon"far" ,"circle"
+        = fa_icon"circle"
         マイページ
 ///////////////////////
 //ここはスライドショー
@@ -323,9 +324,9 @@
       %p 公式ブログ
       %p メルカリロゴ利用ガイドライン
       %a.logo{:href=>"https://twitter.com/mercari_jp"}
-        -# = icon"fab" ,"twitter"
+        = fa_icon"twitter"
       %a.logo{:href=>"https://www.facebook.com/mercari_jp"}
-        -# = icon"fab" ,"facebook-square"
+        = fa_icon"facebook-square"
       -# %img.facebook{:src=>"https://msp.c.yimg.jp/yjimage?q=LzZRaocXyLG.GoDbUraI2fojmTdeHD8Pc.0EgRN5V_3yz0eETRKHJb5Bh0FRzX3spGWQGPFytFV5UHA5.4Hdv_yrVKmzmRqWHzE_59JmFzIzUn7SSAEZn9rJa5IpvZRBFSmeVoImxLp7_Wd_1w--&sig=138i2f161&x=227&y=222"}
     %li.content__b
       ヘルプ＆ガイド
@@ -365,6 +366,5 @@
 
 ///////////////////出品ボタン
 .button-box
-  %li 出品
-  %li
-  -# = icon"fas" ,"camera"
+  %li.text 出品
+  %li.camera
