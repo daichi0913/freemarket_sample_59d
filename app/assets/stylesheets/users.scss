@@ -37,8 +37,8 @@
         flex-direction: row;
         display: flex;
         li{
-          width:12%;
-          line-height: 50px;
+          width: 10%;
+          line-height: 30px;
           font-size: 14px;
           }
         .lia{
@@ -56,10 +56,11 @@
           width: 10%;
           text-align: center;
         }
-        .lic{
+        .lic-bland-b{
           margin-left: 2%;
           margin-right: 180px;
           font-weight: bold;
+          line-height: 45px;
         }
         .lic1{
           text-decoration: none;
