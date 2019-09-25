@@ -1,4 +1,4 @@
-/ここはヘッダー
+//ここはヘッダー
 .top-header
   .top-header__icon
     %a{ href:"https://www.mercari.com/jp/"}
@@ -10,52 +10,152 @@
       -#   = f.text_field :content, class: 'form__serch', placeholder: '  何かお探しですか？'
       %input{:type=>"serch",:name=>"keyword",:class =>'form__serch', :placeholder =>'  何かお探しですか？'} 
         %a.button
-          = icon"fas" ,"search"
-          -# <i class="fas fa-search"></i>
-          
+          -# = icon"fas" ,"search"
+      
 .top-header__box__bottom
   %ul
     %li.lia 
-      = icon"fas" ,"list-ul"
+      -# = icon"fas" ,"list-ul"
       カテゴリーから探す
-      .lia-li レディース
-      -# %ul
-      -#   %li
-      -#     kk
-      .lia-li  メンズ
+      .lia-wrap
+        .lia-li  
+          レディース
+          %ul.second-layer
+            %li.second-menu  
+              トップス
+              %ul.third-layer
+                %li.third-menu  Tシャツカットソー(半袖なし)
+                %li.third-menu  Tシャツカットソー(七分/長袖)
+                %li.third-menu  シャツ/ブラウス(半袖/袖なし)
+                %li.third-menu  シャツ/ブラウス(七分/長袖)
+                %li.third-menu  ポロシャツ
+                %li.third-menu  キャミソール
+                %li.third-menu  タンクトップ
+                %li.third-menu  ホルターネック
+                %li.third-menu  ニット/セーター
+                %li.third-menu  チュニック
+                %li.third-menu  カーディガン/ボレロ
+                %li.third-menu  アンサンブル
+                %li.third-menu  ベスト/ジレ  
+            %li.second-menu 
+              ジャケット/アウター
+              %ul.third-layer
+                .third-layer__a
+                  %li.third-menu  テーラードジャケット
+                  %li.third-menu  ノーカラージャケット
+                  %li.third-menu  Gジャン/デニムジャケット
+                  %li.third-menu  レザージャケット
+                  %li.third-menu  ダウンジャケット
+                  %li.third-menu  ライダースジャケット
+                  %li.third-menu  ミリタリージャケット
+                  %li.third-menu  ナイロンジャケット
+                  %li.third-menu  フライトジャケット
+                  %li.third-menu  ダッフルコート
+                  %li.third-menu  ピーコート
+                  %li.third-menu  ステンカラーコート
+                  %li.third-menu  トレンチコート
+            %li.second-menu  パンツ
+            %li.second-menu  スカート
+            %li.second-menu  ワンピース
+            %li.second-menu  靴
+            %li.second-menu  ルームウェア/パジャマ
+            %li.second-menu  レッグウェア
+            %li.second-menu  帽子
+            %li.second-menu  バッグ
+            %li.second-menu  アクセサリー
+            %li.second-menu  ヘアアクセサリー
+            %li.second-menu  小物
+            %li.second-menu 時計
+              
+      .lia-li  
+        メンズ
+        %ul.second-layer
+          %li.second-menu  
+            トップス
+            %ul.third-layer
+              %li.third-menu  Tシャツカットソー(半袖なし)
+              %li.third-menu  Tシャツカットソー(七分/長袖)
+              %li.third-menu  シャツ/ブラウス(半袖/袖なし)
+              %li.third-menu  シャツ/ブラウス(七分/長袖)
+              %li.third-menu  ポロシャツ
+              %li.third-menu  キャミソール
+              %li.third-menu  タンクトップ
+              %li.third-menu  ホルターネック
+              %li.third-menu  ニット/セーター
+              %li.third-menu  チュニック
+              %li.third-menu  カーディガン/ボレロ
+              %li.third-menu  アンサンブル
+              %li.third-menu  ベスト/ジレ  
+       
+          %li.second-menu  
+            ジャケット/アウター
+            %ul.third-layer
+              .third-layer__a
+                %li.third-menu  テーラードジャケット
+                %li.third-menu  ノーカラージャケット
+                %li.third-menu  Gジャン/デニムジャケット
+                %li.third-menu  レザージャケット
+                %li.third-menu  ダウンジャケット
+                %li.third-menu  ライダースジャケット
+                %li.third-menu  ミリタリージャケット
+                %li.third-menu  ナイロンジャケット
+                %li.third-menu  フライトジャケット
+                %li.third-menu  ダッフルコート
+                %li.third-menu  ピーコート
+                %li.third-menu  ステンカラーコート
+                %li.third-menu  トレンチコート
+          %li.second-menu  パンツ
+          %li.second-menu  靴
+          %li.second-menu  バッグ
+          %li.second-menu  スーツ
+          %li.second-menu  帽子
+          %li.second-menu  アクセサリー
+          %li.second-menu  小物
+          %li.second-menu  時計
+          %li.second-menu  水着
+          %li.second-menu  レッグウェア
+          %li.second-menu  アンダーウェア
+          %li.second-menu  その他
+            
       .lia-li  ベビー・キッズ
-      -# .lia-li  インテリア・住まい・小物
-      -# .lia-li  本・音楽・ゲーム
-      -# .lia-li  ハンドメイド
-      -# .lia-li  チケット
-      -# .lia-li  自動車・オートバイ
-      -# .lia-li  その他
+      .lia-li  インテリア・住まい・小物
+      .lia-li  本・音楽・ゲーム
+      .lia-li  ハンドメイド
+      .lia-li  チケット
+      .lia-li  自動車・オートバイ
+      .lia-li  その他
     %li.lic 
       %a.lic1{ href:""}
-        = icon"fas" ,"tag"
+        -# = icon"fas" ,"tag"
         ブランドから探す
+        .lic1-li  シャネル
+        .lic1-li  ナイキ
+        .lic1-li  ルイヴィトン
+        .lic1-li  シュプリーム
+        .lic1-li  アディダス
+        .lic1-li  ブランド一覧
     %li.lib 
       %a.lic1{ href:""}
-        = icon"far" ,"heart"
+        -# = icon"far" ,"heart"
         いいね！一覧
     %li.lib 
       %a.lic1{ href:""}
-        = icon"far" ,"bell"
+        -# = icon"far" ,"bell"
         お知らせ
     %li.lib 
       %a.lic2{ href:""}
-        = icon"fas" ,"check"
+        -# = icon"fas" ,"check"
         やることリスト
     %li.lib 
       %a.lic1{ href:""}
-        = icon"far" ,"circle"
+        -# = icon"far" ,"circle"
         マイページ
 .second-header
   .s-header
     .s-header-box
     メルカリ
     .s-header-box1
-      =icon "fas","angle-right"
+      =fa_icon "angle-right"
     .s-header-box2
     マイページ
 .main-page
@@ -74,19 +174,80 @@
             .main-top-left1
             お知らせ
           .main-top-right
-            .main-top-right
+            .main-top-right1
             やることリスト
         .main-tab
-          .tab1
-          .tab2
-          .tab3
-          .tab4
-          .tab5
-          .tab6
-        .main-senter-tab
-          .senter-header-tab
-          .senter-main-tab
-          .senter-footer-tab
+          .main-tab1
+            .tab1
+              .tab1a
+                .tab1ax
+                %img.tab1a{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+              .tab1b
+                .tab1bx
+                  WEWORKのCEOが退任疑惑。ソフトバンクなどの上からの圧力によって解任される見込み
+                .tab1d
+                  .tab1dtime
+                    =fa_icon "angellist"
+                  .tabspan
+                    8時間前
+              .top-icon
+                =fa_icon "angle-right"
+        .main-tab-1
+          .main-tab1-1
+            .tab1-1
+              .tab1a-1
+                .tab1ax-1
+                %img.tab1a-1{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+              .tab1b-1
+                .tab1bx-1
+                  任天堂マリオカートスマホで本日配信
+                .tab1d-1
+                  .tab1dtime-1
+                    =fa_icon "angellist"
+                  .tabspan-1
+                    22時間前
+              .top-icon1
+                =fa_icon "angle-right"
+        .main-tab-2
+          .main-tab1-2
+            .tab1-2
+              .tab1a-2
+                .tab1ax-2
+                %img.tab1a-2{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+              .tab1b-2
+                .tab1bx-2
+                  楽天携帯事業に参入したが、参入が遅れる見込み
+                .tab1d-2
+                  .tab1dtime-2
+                    =fa_icon "angellist"
+                  .tabspan-2
+                    1日前
+              .top-icon2
+                =fa_icon "angle-right"
+        .main-tab-3
+          .main-tab1-3
+            .tab1-3
+              .tab1a-3
+                .tab1ax-3
+                %img.tab1a-3{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+              .tab1b-3
+                .tab1bx-3
+                  株式会社div 10.8億円の資金調達した
+                .tab1d-3
+                  .tab1dtime-3
+                    =fa_icon "angellist"
+                  .tabspan-3
+                    2日前
+              .top-icon3
+                =fa_icon "angle-right"
+        .main-tab-4
+          .main-tab1-4
+            .tab1-4
+              .tab1a-4　一覧を見る
+      .main-senter-tab
+        .senter-header-tab
+        .senter-main-tab
+        .senter-footer-tab
     .l-content
       .l-content-box
         .l-box1
@@ -166,7 +327,7 @@
       .font-bottom-icon
         
       %p ©2019 Mercari
-//////////////////////////
+
 
 
 

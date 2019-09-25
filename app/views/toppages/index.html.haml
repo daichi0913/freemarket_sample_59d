@@ -17,113 +17,22 @@
     %li.lia
       = fa_icon"list-ul"
       カテゴリーから探す
-      .lia-li  
-        レディース
-        %ul.second-layer
-          %li.second-menu  
-            トップス
-            %ul.third-layer
-              %li.third-menu  Tシャツカットソー(半袖なし)
-              %li.third-menu  Tシャツカットソー(七分/長袖)
-              %li.third-menu  シャツ/ブラウス(半袖/袖なし)
-              %li.third-menu  シャツ/ブラウス(七分/長袖)
-              %li.third-menu  ポロシャツ
-              %li.third-menu  キャミソール
-              %li.third-menu  タンクトップ
-              %li.third-menu  ホルターネック
-              %li.third-menu  ニット/セーター
-              %li.third-menu  チュニック
-              %li.third-menu  カーディガン/ボレロ
-              %li.third-menu  アンサンブル
-              %li.third-menu  ベスト/ジレ  
-          %li.second-menu 
-            ジャケット/アウター
-            %ul.third-layer
-              .third-layer__a
-                %li.third-menu  テーラードジャケット
-                %li.third-menu  ノーカラージャケット
-                %li.third-menu  Gジャン/デニムジャケット
-                %li.third-menu  レザージャケット
-                %li.third-menu  ダウンジャケット
-                %li.third-menu  ライダースジャケット
-                %li.third-menu  ミリタリージャケット
-                %li.third-menu  ナイロンジャケット
-                %li.third-menu  フライトジャケット
-                %li.third-menu  ダッフルコート
-                %li.third-menu  ピーコート
-                %li.third-menu  ステンカラーコート
-                %li.third-menu  トレンチコート
-            %li.second-menu  パンツ
-            %li.second-menu  スカート
-            %li.second-menu  ワンピース
-            %li.second-menu  靴
-            %li.second-menu  ルームウェア/パジャマ
-            %li.second-menu  レッグウェア
-            %li.second-menu  帽子
-            %li.second-menu  バッグ
-            %li.second-menu  アクセサリー
-            %li.second-menu  ヘアアクセサリー
-            %li.second-menu  小物
-            %li.second-menu 時計
-              
-      .lia-li  
-        メンズ
-        %ul.second-layer
-          %li.second-menu  
-            トップス
-            %ul.third-layer
-              %li.third-menu  Tシャツカットソー(半袖なし)
-              %li.third-menu  Tシャツカットソー(七分/長袖)
-              %li.third-menu  シャツ/ブラウス(半袖/袖なし)
-              %li.third-menu  シャツ/ブラウス(七分/長袖)
-              %li.third-menu  ポロシャツ
-              %li.third-menu  キャミソール
-              %li.third-menu  タンクトップ
-              %li.third-menu  ホルターネック
-              %li.third-menu  ニット/セーター
-              %li.third-menu  チュニック
-              %li.third-menu  カーディガン/ボレロ
-              %li.third-menu  アンサンブル
-              %li.third-menu  ベスト/ジレ  
-       
-          %li.second-menu  
-            ジャケット/アウター
-            %ul.third-layer
-              .third-layer__a
-                %li.third-menu  テーラードジャケット
-                %li.third-menu  ノーカラージャケット
-                %li.third-menu  Gジャン/デニムジャケット
-                %li.third-menu  レザージャケット
-                %li.third-menu  ダウンジャケット
-                %li.third-menu  ライダースジャケット
-                %li.third-menu  ミリタリージャケット
-                %li.third-menu  ナイロンジャケット
-                %li.third-menu  フライトジャケット
-                %li.third-menu  ダッフルコート
-                %li.third-menu  ピーコート
-                %li.third-menu  ステンカラーコート
-                %li.third-menu  トレンチコート
-          %li.second-menu  パンツ
-          %li.second-menu  靴
-          %li.second-menu  バッグ
-          %li.second-menu  スーツ
-          %li.second-menu  帽子
-          %li.second-menu  アクセサリー
-          %li.second-menu  小物
-          %li.second-menu  時計
-          %li.second-menu  水着
-          %li.second-menu  レッグウェア
-          %li.second-menu  アンダーウェア
-          %li.second-menu  その他
-            
-      .lia-li  ベビー・キッズ
-      .lia-li  インテリア・住まい・小物
-      .lia-li  本・音楽・ゲーム
-      .lia-li  ハンドメイド
-      .lia-li  チケット
-      .lia-li  自動車・オートバイ
-      .lia-li  その他
-    %li.lic-bland-b
+      - @categories.each do |category|
+        - if category.parent_id == nil
+          .lia-li        
+            = category.name     
+            %ul.second-layer
+              - @categories.each do |child|
+                - if child.parent_id == category.id
+                  %li.second-menu  
+                    = child.name
+                    %ul.third-layer
+                      - @categories.each do |baby|
+                        - if baby.parent_id == child.id
+                          %li.third-menu 
+                            = baby.name
+    
+    %li.lic-bland-b   
       %a.lic-bland{ href:""}
         = fa_icon "tag"
         ブランドから探す
