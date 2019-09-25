@@ -1,85 +1,116 @@
 !!!
 = render partial: 'layouts/user_registration_status_bar'
 
-%main.main
-  %section.contents
-    .post-item-title 商品の情報の入力
-    = @categories
-    %form{:action => "https://www.mercari.com/jp/signup/sms_confirmation/", :method => "POST", :novalidate => "novalidate"}
-      %input{:name => "__csrf_value", :type => "hidden", :value => "f9c02a2dc7ff947faf4a7ec455d3f085db62de845785cd085ed0079d1e5d7b2954f8757e47c9feafc687cbf1b4b8f046935165397fcb27c368494b4a61ad14ea0"}/
-      .form__box
-        .form-group
-          %label{:for => "nickname"} ニックネーム
-          %span.form-require 必須
-          %input.input-default{:name => "nickname", :placeholder => "例) メルカリ太郎", :type => "text", :value => ""}/
-        .form-group
-          %label{:for => "email"} メールアドレス
-          %span.form-require 必須
-          %input.input-default{:name => "email", :placeholder => "PC・携帯どちらでも可", :type => "email", :value => ""}/
-        %input{:name => "login_type", :type => "hidden", :value => ""}/
-        .form-group
-          %label{:for => "password"} パスワード
-          %span.form-require 必須
-          %input.input-default{:name => "password", :placeholder => "7文字以上", :type => "password"}/
-        .form-group
-          %label{:for => "password"} パスワード (確認)
-          %span.form-require 必須
-          %input.input-default{:name => "password2", :placeholder => "7文字以上", :type => "password"}/
-        .form-group
-          %h3.text-left.l-chapter-sub-head 本人確認
-          %p.l-single-text
-            安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+%div.sell-content
+  %label{:for => "category"} カテゴリー
+  %span.form-require 必須
+  %select{name: "category"}
+    %option{value: "ladies"} レディース
+    %option{value: "mens"} メンズ
+    %option{value: "baby"} ベビー・キッズ
+    %option{value: "furniture"} インテリア・住まい・小物
+    %option{value: "book"} 本・音楽・ゲーム
+    %option{value: "toy"} おもちゃ・ホビー・グッズ
+    %option{value: "cosmetic"} コスメ・香水・美容
+    %option{value: "appliance"} 家電・スマホ・カメラ
+    %option{value: "sport"} スポーツ・レジャー
+    %option{value: "handmade"} ハンドメイド
+    %option{value: "ticket"} チケット
+    %option{value: "vehicle"} 自動車・オートバイ
+    %option{value: "other"} その他
 
-        .form-group
-          %div
-            %label お名前(全角)
-            %span.form-require 必須
-          %input.input-default.half{:name => "family_name_kanji", :placeholder => "例) 山田", :type => "text", :value => ""}/
-          %input.input-default.half{:name => "first_name_kanji", :placeholder => "例) 彩", :type => "text", :value => ""}/
 
-        .form-group
-          %div
-            %label{:for => "family_name_kanji"} お名前カナ(全角)
-            %span.form-require 必須
-          %input.input-default.half{:name => "family_name_kana", :placeholder => "例) ヤマダ", :type => "text", :value => ""}/
-          %input.input-default.half{:name => "first_name_kana", :placeholder => "例) アヤ", :type => "text", :value => ""}/
 
-        .form-group
-          %label{:for => "birthday"} 生年月日
-          %span.form-require 必須
-          %br/
 
-        .birthday-select-wrap
-          -# = fork.date_select :birthday, start_year: 1940, end_year: Time.current.year, use_month_numbers: true
 
-          -# != sprintf(date_select(:birthday, use_month_numbers: true, start_year: 1930, end_year: Time.now.year, prompt: '--', date_separator: '年'))
-          -#   %i.icon-arrow-bottom
-          -#   %select.select-default{:name => "year"}
-          -# %span 年
 
-          -# .birthday-select-wrap__month
-          -#   %i.icon-arrow-bottom
-          -#   %select.select-default{:name => "month"}
-          -# %span 月
+  .form-group
+    %label{:for => "email"} メールアドレス
+    %span.form-require 必須
+    %input.input-default{:name => "email", :placeholder => "PC・携帯どちらでも可", :type => "email", :value => ""}/
+  %input{:name => "login_type", :type => "hidden", :value => ""}/
 
-          -# .birthday-select-wrap__day
-          -#   %i.icon-arrow-bottom
-          -#   %select.select-default{:name => "day"}
-          -# %span 日
 
-          -# %input{:name => "birthday", :type => "hidden", :value => ""}/
-        %p.text
-          ※ 本人情報は正しく入力してください。会員登録後、<br>
-          修正するにはお時間を頂く場合があります。
-      .l-single-content
-        %input{:name => "after_save_callback", :type => "hidden", :value => ""}/
-        .form-group
-          .g-recaptcha.signup-recaptcha{"data-sitekey" => "6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc"}
-        .form-group
-          -# 「次へ進む」のボタンを押すことにより、
-          -#   %a{:href => "/jp/tos_list/", :target => "_blank"}
-          -#   > 利用規約に同意したものとみなします
 
-          %button.btn-default.btn-red 次へ進む
-          .form-group.text-right  本人情報の登録について
-          %i.icon-arrow-right
+-# %main.main
+-#   %section.contents
+-#     .post-item-title 商品の情報の入力
+-#     = @categories
+-#     %form{:action => "https://www.mercari.com/jp/signup/sms_confirmation/", :method => "POST", :novalidate => "novalidate"}
+-#       %input{:name => "__csrf_value", :type => "hidden", :value => "f9c02a2dc7ff947faf4a7ec455d3f085db62de845785cd085ed0079d1e5d7b2954f8757e47c9feafc687cbf1b4b8f046935165397fcb27c368494b4a61ad14ea0"}/
+-#       .form__box
+-#         .form-group
+-#           %label{:for => "nickname"} ニックネーム
+-#           %span.form-require 必須
+-#           %input.input-default{:name => "nickname", :placeholder => "例) メルカリ太郎", :type => "text", :value => ""}/
+-#         .form-group
+-#           %label{:for => "email"} メールアドレス
+-#           %span.form-require 必須
+-#           %input.input-default{:name => "email", :placeholder => "PC・携帯どちらでも可", :type => "email", :value => ""}/
+-#         %input{:name => "login_type", :type => "hidden", :value => ""}/
+-#         .form-group
+-#           %label{:for => "password"} パスワード
+-#           %span.form-require 必須
+-#           %input.input-default{:name => "password", :placeholder => "7文字以上", :type => "password"}/
+-#         .form-group
+-#           %label{:for => "password"} パスワード (確認)
+-#           %span.form-require 必須
+-#           %input.input-default{:name => "password2", :placeholder => "7文字以上", :type => "password"}/
+-#         .form-group
+-#           %h3.text-left.l-chapter-sub-head 本人確認
+-#           %p.l-single-text
+-#             安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+
+-#         .form-group
+-#           %div
+-#             %label お名前(全角)
+-#             %span.form-require 必須
+-#           %input.input-default.half{:name => "family_name_kanji", :placeholder => "例) 山田", :type => "text", :value => ""}/
+-#           %input.input-default.half{:name => "first_name_kanji", :placeholder => "例) 彩", :type => "text", :value => ""}/
+
+-#         .form-group
+-#           %div
+-#             %label{:for => "family_name_kanji"} お名前カナ(全角)
+-#             %span.form-require 必須
+-#           %input.input-default.half{:name => "family_name_kana", :placeholder => "例) ヤマダ", :type => "text", :value => ""}/
+-#           %input.input-default.half{:name => "first_name_kana", :placeholder => "例) アヤ", :type => "text", :value => ""}/
+
+-#         .form-group
+-#           %label{:for => "birthday"} 生年月日
+-#           %span.form-require 必須
+-#           %br/
+
+-#         .birthday-select-wrap
+-#           -# = fork.date_select :birthday, start_year: 1940, end_year: Time.current.year, use_month_numbers: true
+
+-#           -# != sprintf(date_select(:birthday, use_month_numbers: true, start_year: 1930, end_year: Time.now.year, prompt: '--', date_separator: '年'))
+-#           -#   %i.icon-arrow-bottom
+-#           -#   %select.select-default{:name => "year"}
+-#           -# %span 年
+
+-#           -# .birthday-select-wrap__month
+-#           -#   %i.icon-arrow-bottom
+-#           -#   %select.select-default{:name => "month"}
+-#           -# %span 月
+
+-#           -# .birthday-select-wrap__day
+-#           -#   %i.icon-arrow-bottom
+-#           -#   %select.select-default{:name => "day"}
+-#           -# %span 日
+
+-#           -# %input{:name => "birthday", :type => "hidden", :value => ""}/
+-#         %p.text
+-#           ※ 本人情報は正しく入力してください。会員登録後、<br>
+-#           修正するにはお時間を頂く場合があります。
+-#       .l-single-content
+-#         %input{:name => "after_save_callback", :type => "hidden", :value => ""}/
+-#         .form-group
+-#           .g-recaptcha.signup-recaptcha{"data-sitekey" => "6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc"}
+-#         .form-group
+-#           -# 「次へ進む」のボタンを押すことにより、
+-#           -#   %a{:href => "/jp/tos_list/", :target => "_blank"}
+-#           -#   > 利用規約に同意したものとみなします
+
+-#           %button.btn-default.btn-red 次へ進む
+-#           .form-group.text-right  本人情報の登録について
+-#           %i.icon-arrow-right
