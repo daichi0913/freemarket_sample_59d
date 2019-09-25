@@ -84,3 +84,6 @@ gem 'fog-aws'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'dotenv-rails'
 # gem "omniauth-rails_csrf_protection"
+
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
