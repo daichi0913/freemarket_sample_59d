@@ -9,11 +9,10 @@
 }
 
 .nakamura-timeline{
-  // width: 100%;
-  // height: auto;
   display: inline-block;
   position: relative;
   bottom: 35px;
+}
   .circle {
     color: #444;
     font-size: 24px;
@@ -27,13 +26,61 @@
   
   }
 
+  .circle__first {
+    color: #444;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 8px auto 0;
+    background-color: #CCCCCC;
+  }
+  
+
+  .circle__first::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: 50px;
+    background: #CCCCCC;
+  }
+
+
+
+  .circle__last {
+    color: #444;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 8px auto 0;
+    background-color: #CCCCCC;
+  
+  }
+
+  .circle__last::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: 50px;
+    right: 6px;
+    background: #CCCCCC;
+  }
+
 
   .circle::before {
     content: "";
     position: absolute;
     display: block;
     height: 2px;
-    width: 130px;
+    width: 50px;
+    right: 6px;
     background: #CCCCCC;
   }
   .circle::after {
@@ -41,24 +88,9 @@
     position: absolute;
     display: block;
     height: 2px;
-    width: 130px;
+    width: 50px;
     background: #CCCCCC;
   }
-
-  .circle_5::after{
-    content: none;
-    // background: transparent;
-    // width: 4px;
-}
-  
-
-  // .circle:last-child:before{
-  //   content:none;
-  // }
-
-//   li:last-child{
-//     border-right:none;
-// }
 
   ol{
     display: flex;
@@ -74,11 +106,12 @@
     font-size: 12px;
     color: #888888;
     margin: 0 40px 0 0;
+    position: relative;
 
 
     }
 
-}
+
 
 
 
