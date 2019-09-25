@@ -2,22 +2,26 @@
 = render partial: 'layouts/user_registration_status_bar'
 
 %div.sell-content
-  %label{:for => "category"} カテゴリー
+  %label{for: "category"} カテゴリー
   %span.form-require 必須
   %select{name: "category"}
-    %option{value: "ladies"} レディース
-    %option{value: "mens"} メンズ
-    %option{value: "baby"} ベビー・キッズ
-    %option{value: "furniture"} インテリア・住まい・小物
-    %option{value: "book"} 本・音楽・ゲーム
-    %option{value: "toy"} おもちゃ・ホビー・グッズ
-    %option{value: "cosmetic"} コスメ・香水・美容
-    %option{value: "appliance"} 家電・スマホ・カメラ
-    %option{value: "sport"} スポーツ・レジャー
-    %option{value: "handmade"} ハンドメイド
-    %option{value: "ticket"} チケット
-    %option{value: "vehicle"} 自動車・オートバイ
-    %option{value: "other"} その他
+  %option
+    -@categories. each do |category|
+      %option{value: category.id} #{category.name}
+
+  
+    -# %option{value: "mens"} メンズ
+    -# %option{value: "baby"} ベビー・キッズ
+    -# %option{value: "furniture"} インテリア・住まい・小物
+    -# %option{value: "book"} 本・音楽・ゲーム
+    -# %option{value: "toy"} おもちゃ・ホビー・グッズ
+    -# %option{value: "cosmetic"} コスメ・香水・美容
+    -# %option{value: "appliance"} 家電・スマホ・カメラ
+    -# %option{value: "sport"} スポーツ・レジャー
+    -# %option{value: "handmade"} ハンドメイド
+    -# %option{value: "ticket"} チケット
+    -# %option{value: "vehicle"} 自動車・オートバイ
+    -# %option{value: "other"} その他
 
 
 

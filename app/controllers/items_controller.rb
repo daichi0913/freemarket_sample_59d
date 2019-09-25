@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
   def new
-    @categories = Category.all
+    @categories = Category.where(parent_id = nil)
   end
 end
