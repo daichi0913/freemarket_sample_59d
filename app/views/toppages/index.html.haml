@@ -10,50 +10,49 @@
       -#   = f.text_field :content, class: 'form__serch', placeholder: '  何かお探しですか？'
       %input{:type=>"serch",:name=>"keyword",:class =>'form__serch', :placeholder =>'  何かお探しですか？'} 
         %a.button
-          = icon"fas" ,"search"
+          -# = icon"fas" ,"search"
       
 .top-header__box__bottom
   %ul
-    %li.lia 
-      = icon"fas" ,"list-ul"
+    %li.lia
+      -# = icon"fas" ,"list-ul"
       カテゴリーから探す
-      .lia-wrap
-        .lia-li  
-          レディース
-          %ul.second-layer
-            %li.second-menu  
-              トップス
-              %ul.third-layer
-                %li.third-menu  Tシャツカットソー(半袖なし)
-                %li.third-menu  Tシャツカットソー(七分/長袖)
-                %li.third-menu  シャツ/ブラウス(半袖/袖なし)
-                %li.third-menu  シャツ/ブラウス(七分/長袖)
-                %li.third-menu  ポロシャツ
-                %li.third-menu  キャミソール
-                %li.third-menu  タンクトップ
-                %li.third-menu  ホルターネック
-                %li.third-menu  ニット/セーター
-                %li.third-menu  チュニック
-                %li.third-menu  カーディガン/ボレロ
-                %li.third-menu  アンサンブル
-                %li.third-menu  ベスト/ジレ  
-            %li.second-menu 
-              ジャケット/アウター
-              %ul.third-layer
-                .third-layer__a
-                  %li.third-menu  テーラードジャケット
-                  %li.third-menu  ノーカラージャケット
-                  %li.third-menu  Gジャン/デニムジャケット
-                  %li.third-menu  レザージャケット
-                  %li.third-menu  ダウンジャケット
-                  %li.third-menu  ライダースジャケット
-                  %li.third-menu  ミリタリージャケット
-                  %li.third-menu  ナイロンジャケット
-                  %li.third-menu  フライトジャケット
-                  %li.third-menu  ダッフルコート
-                  %li.third-menu  ピーコート
-                  %li.third-menu  ステンカラーコート
-                  %li.third-menu  トレンチコート
+      .lia-li  
+        レディース
+        %ul.second-layer
+          %li.second-menu  
+            トップス
+            %ul.third-layer
+              %li.third-menu  Tシャツカットソー(半袖なし)
+              %li.third-menu  Tシャツカットソー(七分/長袖)
+              %li.third-menu  シャツ/ブラウス(半袖/袖なし)
+              %li.third-menu  シャツ/ブラウス(七分/長袖)
+              %li.third-menu  ポロシャツ
+              %li.third-menu  キャミソール
+              %li.third-menu  タンクトップ
+              %li.third-menu  ホルターネック
+              %li.third-menu  ニット/セーター
+              %li.third-menu  チュニック
+              %li.third-menu  カーディガン/ボレロ
+              %li.third-menu  アンサンブル
+              %li.third-menu  ベスト/ジレ  
+          %li.second-menu 
+            ジャケット/アウター
+            %ul.third-layer
+              .third-layer__a
+                %li.third-menu  テーラードジャケット
+                %li.third-menu  ノーカラージャケット
+                %li.third-menu  Gジャン/デニムジャケット
+                %li.third-menu  レザージャケット
+                %li.third-menu  ダウンジャケット
+                %li.third-menu  ライダースジャケット
+                %li.third-menu  ミリタリージャケット
+                %li.third-menu  ナイロンジャケット
+                %li.third-menu  フライトジャケット
+                %li.third-menu  ダッフルコート
+                %li.third-menu  ピーコート
+                %li.third-menu  ステンカラーコート
+                %li.third-menu  トレンチコート
             %li.second-menu  パンツ
             %li.second-menu  スカート
             %li.second-menu  ワンピース
@@ -124,9 +123,8 @@
       .lia-li  チケット
       .lia-li  自動車・オートバイ
       .lia-li  その他
-    %li.lic 
-      %a.lic1{ href:""}
-        = icon"fas" ,"tag"
+    %li.lic-bland-b
+      %a.lic-bland{ href:""}
         ブランドから探す
         .lic1-li  シャネル
         .lic1-li  ナイキ
@@ -134,21 +132,21 @@
         .lic1-li  シュプリーム
         .lic1-li  アディダス
         .lic1-li  ブランド一覧
-    %li.lib 
-      %a.lic1{ href:""}
-        = icon"far" ,"heart"
+    %li.lic-right
+      %a.lic-right{ href:""}
+        -# = icon"far" ,"heart"
         いいね！一覧
-    %li.lib 
-      %a.lic1{ href:""}
-        = icon"far" ,"bell"
+    %li.lic-right
+      %a.lic-right{ href:""}
+        -# = icon"far" ,"bell"
         お知らせ
-    %li.lib 
-      %a.lic2{ href:""}
-        = icon"fas" ,"check"
+    %li.lic-right
+      %a.lic-right{ href:""}
+        -# = icon"fas" ,"check"
         やることリスト
-    %li.lib 
-      %a.lic1{ href:""}
-        = icon"far" ,"circle"
+    %li.lic-right
+      %a.lic-right{ href:""}
+        -# = icon"far" ,"circle"
         マイページ
 ///////////////////////
 //ここはスライドショー
@@ -325,9 +323,9 @@
       %p 公式ブログ
       %p メルカリロゴ利用ガイドライン
       %a.logo{:href=>"https://twitter.com/mercari_jp"}
-        = icon"fab" ,"twitter"
+        -# = icon"fab" ,"twitter"
       %a.logo{:href=>"https://www.facebook.com/mercari_jp"}
-        = icon"fab" ,"facebook-square"
+        -# = icon"fab" ,"facebook-square"
       -# %img.facebook{:src=>"https://msp.c.yimg.jp/yjimage?q=LzZRaocXyLG.GoDbUraI2fojmTdeHD8Pc.0EgRN5V_3yz0eETRKHJb5Bh0FRzX3spGWQGPFytFV5UHA5.4Hdv_yrVKmzmRqWHzE_59JmFzIzUn7SSAEZn9rJa5IpvZRBFSmeVoImxLp7_Wd_1w--&sig=138i2f161&x=227&y=222"}
     %li.content__b
       ヘルプ＆ガイド
@@ -369,4 +367,4 @@
 .button-box
   %li 出品
   %li
-  = icon"fas" ,"camera"
+  -# = icon"fas" ,"camera"
