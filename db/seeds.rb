@@ -20,3 +20,20 @@
     {parent_id: parent_id, name: name}
   )
 end
+
+User.create!(nickname: 'YUKI', email: 'a@gmail', encryped_password: '***', reset_password_token: '***', reset_password_sent_at: 'aaa', remember_create_at: 'bbb', created_at: 2019-09-20, updated_at: 2019-09-25, image: none)
+
+
+[ '東京都','大阪府','京都府','兵庫県','奈良県','北海道','山梨県', '新潟県','秋田県','香川県','金沢県','神奈川県','群馬県'
+].each do |name|
+  Region.create!(
+    {name: name}
+  )
+
+
+
+
+
+
+
+
