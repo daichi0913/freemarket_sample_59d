@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   root 'toppages#index'
   resources :toppages, only: [:index]
   resources :users
-  resources :items 
+  resources :items
+  namespace :api do
+    resources :categories, only: :index, defaults: { format: 'json' }
+  end 
 
 end
