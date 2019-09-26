@@ -24,6 +24,7 @@ entitiy-relation diagram : https://drive.google.com/file/d/191Btzn0iudYOZ4v3OPHS
 
 ### Association
 - has_one : user_detail
+- has_one : address
 - has_one : card
 - has_many : deals
 - has_many : items
@@ -48,6 +49,17 @@ entitiy-relation diagram : https://drive.google.com/file/d/191Btzn0iudYOZ4v3OPHS
 |name_kana|string|null: false|
 |birthdate|datetime|null: false|
 |phone_number|integer|null: false|
+|address|text|null: false|
+
+### Association
+- belongs_to : user
+
+
+## Addressesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key:true|
 |address|text|null: false|
 
 ### Association
