@@ -4,6 +4,7 @@
 %div.sell-content
   %label{for: "category"} カテゴリー
   %span.form-require 必須
+  
   %select.category_select{name: "category"}
     %option{selected:"selected"} ---
     -@categories. each do |category|

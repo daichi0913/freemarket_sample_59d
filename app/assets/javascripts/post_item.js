@@ -1,25 +1,45 @@
 $(document).on('turbolinks:load', function(){
+
+
+  function buildHTML(category) {
+    var html = `<input class= "category_select"></input>`
+    return html;
+  
+  }
+
   $('select').change(function() {
-    console.log( $(this).val() );
+    // console.log( $(this).val() );
     var category_id = $(this).val();
     $.ajax({
         type: 'get',                // HTTPメソッドはGETで
         url:  '/api/categories',             // /usersのURLに (これによりusersコントローラのindexアクションが起動)
         data: { id: category_id},    // keyword（キー）: input（バリュー）を送信する  ※パラムス
         dataType: 'json'            // サーバから値を返す際はjsonである
-    }).done(function(children){
+    })
+    
+    .done(function(children){
+
+      var html = buildHTML(category);
+      $('.category_select').append(html);
 
 
-      
+      // console.log(children)
+    })
+    console.log(html)
 
+    
+    // console.log(html)
 
-
-      console.log(children)
-    }).fail(function(){
-      console.log("ajax error")
-    });
+    
+    
+    // .fail(function(){
+    //   console.log("ajax error")
+    // });
   })
 });
+
+
+
 
 
 
