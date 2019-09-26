@@ -1,38 +1,42 @@
 !!!
 = render partial: 'layouts/user_registration_status_bar'
 
+%main.main
+  %section.contents
+    .input-info 商品の情報を入力
 
-%form.sell-form
-  %div.sell-content
 
-    %div.category-box
+  %form.sell-form
+    %div.sell-content
 
-      %label{for: "category"} カテゴリー
-      %span.form-require 必須
+      %div.category-box
 
-      %select.category_select{name: "category"}
-        %option{selected:"selected"} ---
-        -@categories. each do |category|
-          %option{value: category.id} #{category.name}
+        %label{for: "category"} カテゴリー
+        %span.form-require 必須
 
-      %select.category_select.hidden{name: "category"}
-        %option{selected:"selected"} ---
-        -@categories. each do |category|
-          %option{value: category.id} #{category.name}
+        %select.category_select{name: "category"}
+          %option{selected:"selected"} ---
+          -@categories. each do |category|
+            %option{value: category.id} #{category.name}
 
-      %select.category_select.hidden{name: "add_category"}
-        %option{selected:"selected"} ---
-        -@categories. each do |category|
-          %option{value: category.id} #{category.name}
+        %select.category_select.hidden{name: "category"}
+          %option{selected:"selected"} ---
+          -@categories. each do |category|
+            %option{value: category.id} #{category.name}
+
+        %select.category_select.hidden{name: "add_category"}
+          %option{selected:"selected"} ---
+          -@categories. each do |category|
+            %option{value: category.id} #{category.name}
+          
         
-      
-      %label{for: "size"} サイズ
-      %span.form-require 必須
+        %label{for: "size"} サイズ
+        %span.form-require 必須
 
-      %select.category_select{name: "category"}
-        %option{selected:"selected"} ---
-        -@categories. each do |category|
-          %option{value: category.id} #{category.name}
+        %select.category_select{name: "category"}
+          %option{selected:"selected"} ---
+          -@categories. each do |category|
+            %option{value: category.id} #{category.name}
 
 
 
