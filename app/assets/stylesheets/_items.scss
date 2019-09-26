@@ -10,3 +10,13 @@
   padding: 32px;
   // background-color: #fff;
 }
+
+
+.hidden{
+  display: none;
+  // visibility: visible;  /* 表示する */
+// visibility: hidden;   /* 表示しない */
+}
+
+// if~else文は @if <条件> {<設定内容a>} @else {<設定内容b>}と書いて、
+// 条件文を満たす場合と満たさない場合それぞれのプロパティが設定されます。
