@@ -75,34 +75,7 @@
         .form-group
           .g-recaptcha.signup-recaptcha{"data-sitekey" => "6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc"}
         .form-group
-          -# 「次へ進む」のボタンを押すことにより、
-          -#   %a{:href => "/jp/tos_list/", :target => "_blank"}
-          -#   > 利用規約に同意したものとみなします
-
+          = recaptcha_tags
           %button.btn-default.btn-red 次へ進む
           .form-group.text-right  本人情報の登録について
           %i.icon-arrow-right
-
-
-
-
-
-
-
-
-  
--# .header
--#   .header__img
--#   .header__bar
-
--# .main
--#   .rigi__title  会員情報入力
--#   .form__box
--#   .human
--#   .text
--#   .btn
--#   次へ進む
--#   .about
--#   本人情報の登録について
-
-
