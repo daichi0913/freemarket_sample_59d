@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+
+}
+
+
 .header-contents{
   // padding-left: 25%;
   text-align: center;
@@ -79,7 +85,7 @@
     position: absolute;
     display: block;
     height: 2px;
-    width: 50px;
+    width: 115px;
     right: 6px;
     background: #CCCCCC;
   }
@@ -105,112 +111,11 @@
     list-style: none;
     font-size: 12px;
     color: #888888;
-    margin: 0 25px 0 0;
+    margin: 0 25px 0 8px;
     position: relative;
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
-// *,
-// *::before,
-// *::after {
-//   margin: 0;
-//   padding: 0;
-//   // box-sizing: border-box;
-// }
-
-// button {
-//   background: transparent;
-//   border: none;
-//   cursor: pointer;
-//   outline: none;
-// }
-
-// /* TIMELINE
-// –––––––––––––––––––––––––––––––––––––––––––––––––– */
-// .timeline {
-//   white-space: nowrap;
-//   overflow-x: hidden;
-// }
-
-// .timeline ol {
-// }
-
-// .timeline ol li {
-//   position: relative;
-//   display: inline-block;
-//   list-style-type: none;
-//   width: 50px;
-//   height: 3px;
-//   background: #fff;
-// }
-
-
-// .timeline ol li:not(:first-child) {
-//   margin-left: 14px;
-// }
-
-// .timeline ol li:not(:last-child)::after {
-//   content: '';
-//   position: absolute;
-//   top: 50%;
-//   left: calc(100% + 1px);
-//   bottom: 0;
-//   transform: translateY(-50%);
-//   border-radius: 50%;
-//   background: #F45B69;
-//   width: 12px;
-//   height: 12px;
-// }
-
-// .timeline ol li div::before {
-//   content: '';
-//   position: absolute;
-//   top: 100%;
-//   left: 0;
-//   width: 0;
-//   height: 0;
-//   border-style: solid;
-// }
-
-// .timeline ol li:nth-child(odd) div {
-//   top: -16px;
-//   transform: translateY(-100%);
-// }
-
-// .timeline ol li:nth-child(odd) div::before {
-//   top: 100%;
-//   border-width: 8px 8px 0 0;
-//   border-color: white transparent transparent transparent;
-// }
-
-// .timeline ol li:nth-child(even) div {
-//   top: calc(100% + 16px);
-// }
-
-// .timeline ol li:nth-child(even) div::before {
-//   top: -8px;
-//   border-width: 8px 0 0 8px;
-//   border-color: transparent transparent transparent white;
-// }
-
-// .timeline time {
-//   display: block;
-//   font-size: 1.2rem;
-//   font-weight: bold;
-//   margin-bottom: 8px;
-// }
-
 
 
 
@@ -271,6 +176,11 @@
   }
 
 
+  .l-chapter-sub-head{
+    font-size: 16px;
+    font-weight: 600;
+  }
+
   .form-group{
     padding-bottom: 24px;
     width: 100%;
@@ -297,21 +207,6 @@
       width: 100%;
       background-color: #FFF;
       display: flex;
-
-      // padding: 2px 4px;
-      // border-radius: 2px;
-      // color: #fff;
-      // font-size: 12px;
-      // vertical-align: top;
-      // margin: 8px 0 0;
-      // padding: 10px 16px 8px ;
-      // border-radius: 4px;
-      // border: 1px solid #ccc;
-      // background: #fff;
-      // line-height: 1.5;
-      // font-size: 16px;
-      // height: 28px;
-      
     }
 
   
