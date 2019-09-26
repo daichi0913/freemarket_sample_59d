@@ -142,9 +142,22 @@
 .fa-list-ul,.fa-tag{
   color: #ea352d;
 }
-.fa-heart,.fa-bell,.fa-check,.fa-circle{
+.fa-heart,.fa-bell,.fa-check{
   color: rgba(197, 197, 197, 0.911);
   font-size: 15px;
+  width: 102px;
+  padding: 0 80px 30px 0;
+  position: absolute;
+  left: -50px;
+  top: 13px;
+  transition: all 0.3s ease-out 0s;
+}
+.fa-bell{
+  position: absolute;
+  right:10px;
+}
+.fa-heart:hover,.fa-bell:hover,.fa-check:hover{
+  color: rgb(0, 195, 255);
 }
 .fa-twitter,.fa-facebook-square{
   color: white;
@@ -193,6 +206,9 @@
 .lic-bland{
   text-align: left;
 }
+.lic-bland:hover{
+  color:  rgb(0, 195, 255);
+}
 .lic-right{
   padding-bottom: 21px;
   ul.news-lists{
@@ -211,11 +227,7 @@
       left:22px;
       overflow: hidden;
     }
-    // .icon-right{
-    //   height: 10px;
-    //   width: 10px;
-    //   background-image: url(ｈ.png)
-    // }
+    
     li.news{
       width: 230px;
       height: 100%;
@@ -240,12 +252,34 @@
     }
   }
 }
+
 .lic-right:hover > ul.news-lists{
   display: block;
 }
 .lic-right:hover > .mypage-mini{
   display: block;
 }
+.lic-right:hover{
+  color:  rgb(0, 195, 255);
+}
+/////////////やることリスト
+.my-todo-box{
+  height: 235px;
+  width: 320px;
+  background-color: white;
+  position: relative;
+  right: 95px;
+  display: none;
+  &__nothing{
+    line-height: 340px;
+    font-size: 17px;
+    color:  #B3B3B3;
+  }
+}
+.lic-right:hover >  .my-todo-box{
+  display: block;
+}
+
 /////////////マイページ
 .myfont-box{
   display: flex;
@@ -268,6 +302,7 @@
   height: 550px;
   background-color: #ffffff;
   position: relative;
+  bottom: 50px;
   right: 187px;
   top: 8px;
   box-shadow:0 3px 0 0 gainsboro;
