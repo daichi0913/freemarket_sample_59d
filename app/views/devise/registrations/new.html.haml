@@ -4,7 +4,7 @@
 %main.main
   %section.contents
     .regi__title 会員情報入力
-    %form{:action => "https://www.mercari.com/jp/signup/sms_confirmation/", :method => "POST", :novalidate => "novalidate"}
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|  
       %input{:name => "__csrf_value", :type => "hidden", :value => "f9c02a2dc7ff947faf4a7ec455d3f085db62de845785cd085ed0079d1e5d7b2954f8757e47c9feafc687cbf1b4b8f046935165397fcb27c368494b4a61ad14ea0"}/
       .form__box
         .form-group
@@ -48,13 +48,20 @@
           %span.form-require 必須
           %br/
 
+
+
         .birthday-select-wrap
+          = sprintf(f.date_select(:birthday, :use_month_numbers=>true, :date_separator => '%s', :start_year=>1930, :end_year => Time.now.year, :default =>'1990-1-1'.to_date), '年','月') + '日生まれ' 
+
+
           -# = fork.date_select :birthday, start_year: 1940, end_year: Time.current.year, use_month_numbers: true
 
-          -# != sprintf(date_select(:birthday, use_month_numbers: true, start_year: 1930, end_year: Time.now.year, prompt: '--', date_separator: '年'))
+
+
+          -# != sprintf(date_select(:birthday, use_month_numbers: true, start_year: 1930, end_year: Time.now.year, prompt: '--', date_separator: '年')
           -#   %i.icon-arrow-bottom
-          -#   %select.select-default{:name => "year"}
-          -# %span 年
+          -#     %select.select-default{:name => "year"}
+          -#     %span 年
 
           -# .birthday-select-wrap__month
           -#   %i.icon-arrow-bottom
@@ -67,6 +74,8 @@
           -# %span 日
 
           -# %input{:name => "birthday", :type => "hidden", :value => ""}/
+        
+        
         %p.text
           ※ 本人情報は正しく入力してください。会員登録後、<br>
           修正するにはお時間を頂く場合があります。
