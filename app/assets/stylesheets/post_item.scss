@@ -1,4 +1,18 @@
+.input-info{
+  
+  text-align: center;
+  font-weight: bold;
+  color: #333333;
+  font-size: 22px;
+  line-height: 1.5;
+  padding: 32px 16px;
 
+}
+
+form.sell-form{
+  height: 100%;
+  width: 100%;
+}
 
 .contents{
 .post-item-title{
@@ -11,6 +25,10 @@
   // background-color: #fff;
 
   }
+}
+
+div.category-box{
+display: block;
 }
 
 //   .form__box{

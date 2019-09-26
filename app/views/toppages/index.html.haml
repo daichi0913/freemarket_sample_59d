@@ -11,7 +11,7 @@
       %input{:type=>"serch",:name=>"keyword",:class =>'form__serch', :placeholder =>'  何かお探しですか？'} 
         %a.button
           = fa_icon "search"
-      
+           
 .top-header__box__bottom
   %ul
     %li.lia
@@ -31,7 +31,7 @@
                         - if baby.parent_id == child.id
                           %li.third-menu 
                             = baby.name
-    
+        ///////////////////ブランドから探す
     %li.lic-bland-b   
       %a.lic-bland{ href:""}
         = fa_icon "tag"
@@ -42,22 +42,84 @@
         .lic1-li  シュプリーム
         .lic1-li  アディダス
         .lic1-li  ブランド一覧
+      /////////////////////いいね一覧
     %li.lic-right
       %a.lic-right{ href:""}
         = fa_icon"heart"
         いいね！一覧
+        ///////////////お知らせ
     %li.lic-right
       %a.lic-right{ href:""}
         = fa_icon "bell"
         お知らせ
+        %ul.news-lists
+          .product-image
+            %img{:src=>"https://msp.c.yimg.jp/yjimage?q=PZ3rBY8XyLEurr2184eyrovNECQFZ3AHT_P3jZrHX4r.nylKB5stb0lkZ3kCgxO1NiQUbJjvLiRcS6UI8P3erMCH0qn05t5k9.aourOd7m8Bhb9Q_re88gLm1h_fAAqi.NmVGxJtKgY2OR.K8Q--&sig=138b1m8e1&x=275&y=183"}
+          .icon-right
+          %li.news
+            %p.news__text
+              mikawaさんがあなたを評価しました。これで取引完了です。
+              %p.news__time
+                = fa_icon"clock-o"
+                30分前
+        ///////////////やることリスト
     %li.lic-right
       %a.lic-right{ href:""}
         = fa_icon"check"
         やることリスト
+
+        ////////////////マイページ
     %li.lic-right
-      %a.lic-right{ href:""}
-        = fa_icon"circle"
-        マイページ
+      .myfont-box
+        .myfont-view
+          %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg"}
+        %a.lic-right{ href:""}
+          マイページ
+          .mypage-mini
+            .mypage-mini__header
+              %img{:src=>"https://ord.yahoo.co.jp/o/image/RV=1/RE=1569510938/RH=b3JkLnlhaG9vLmNvLmpw/RB=/RU=aHR0cHM6Ly9waG90by1zdHVkaW85LmNvbS93cC1jb250ZW50L3VwbG9hZHMvMjAxMy8wMi8xMzAyMjVfSU1HXzk3ODItc3R1ZGlvOS5qcGc-/RS=%5EADBzEN3fH.3gTSgXFSQKhaYTP7aitM-;_ylt=A2RioheZhItdu3QA9BKU3uV7;_ylu=X3oDMTBrcG5kMTVvBDADanBjMDAzBHZ0aWQDanBjMDAz;_ylc=X3IDMgRmc3QDMARpZHgDMARvaWQDQU5kOUdjVGgzNHdjcVJzM0xoNmctbVRxZFpjNHhrRFRWRXhyaVk5N1BaTXVYTzlUbHp3bWJBallUU2F6QlNzBHADNDRHeTQ0R0w0NEtLSU9PQnZPT0NoT09Ca2VPQWdPT0JqZU9Dak9PQmhBLS0EcG9zAzM4BHNlYwNzaHcEc2xrA3Nmc3QEdHVybAM-"}
+              .mypage-mini__image
+            .mypage-mini__name
+              %p.mypage__mini__name__top
+                mikat
+              .hyouka
+                %p.hyouka1  評価：9
+                %p.hyouka2  出品数：9
+            .money-box
+              %p.money-box-1
+                売上金
+              %p.money-box-2
+                ¥0
+            .point-box
+              %p.point-box-1
+                ポイント
+              %p.point-box-2
+                P200
+            .mini-mypage-bottom-top
+              いいね！一覧
+              .mini-mypage-bottom-top__b
+                = fa_icon "angle-right"
+            .mini-mypage-bottom-bottom
+              出品した商品 - 出品中
+              = fa_icon "angle-right"
+            .mini-mypage-bottom-bottom
+              出品した商品 - 取引中
+              = fa_icon "angle-right"
+            .mini-mypage-bottom-bottom
+              出品した商品 - 売却済み
+              .mini-mypage-bottom-bottom__a
+                = fa_icon "angle-right"
+            .mini-mypage-bottom-bottom
+              購入した商品 - 取引中
+              = fa_icon "angle-right" 
+            .mini-mypage-bottom-bottom
+              購入した商品 - 過去の取引
+              .mini-mypage-bottom-bottom
+                = fa_icon "angle-right"
+
+
+
+                
 ///////////////////////
 //ここはスライドショー
 .top-view
