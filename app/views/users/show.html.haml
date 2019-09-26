@@ -1,155 +1,4 @@
-//ここはヘッダー
-.top-header
-  .top-header__icon
-    %a{ href:"https://www.mercari.com/jp/"}
-      %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg",:alt=>"Mercari",:class=>"top-header-logo"}
-  .top-header__box
-    .top-header__box__top
-    %form{:action=>"",:class=>"form"}
-      -# = form_with url: toppages_path do |f|
-      -#   = f.text_field :content, class: 'form__serch', placeholder: '  何かお探しですか？'
-      %input{:type=>"serch",:name=>"keyword",:class =>'form__serch', :placeholder =>'  何かお探しですか？'} 
-        %a.button
-          -# = icon"fas" ,"search"
-      
-.top-header__box__bottom
-  %ul
-    %li.lia 
-      -# = icon"fas" ,"list-ul"
-      カテゴリーから探す
-      .lia-wrap
-        .lia-li  
-          レディース
-          %ul.second-layer
-            %li.second-menu  
-              トップス
-              %ul.third-layer
-                %li.third-menu  Tシャツカットソー(半袖なし)
-                %li.third-menu  Tシャツカットソー(七分/長袖)
-                %li.third-menu  シャツ/ブラウス(半袖/袖なし)
-                %li.third-menu  シャツ/ブラウス(七分/長袖)
-                %li.third-menu  ポロシャツ
-                %li.third-menu  キャミソール
-                %li.third-menu  タンクトップ
-                %li.third-menu  ホルターネック
-                %li.third-menu  ニット/セーター
-                %li.third-menu  チュニック
-                %li.third-menu  カーディガン/ボレロ
-                %li.third-menu  アンサンブル
-                %li.third-menu  ベスト/ジレ  
-            %li.second-menu 
-              ジャケット/アウター
-              %ul.third-layer
-                .third-layer__a
-                  %li.third-menu  テーラードジャケット
-                  %li.third-menu  ノーカラージャケット
-                  %li.third-menu  Gジャン/デニムジャケット
-                  %li.third-menu  レザージャケット
-                  %li.third-menu  ダウンジャケット
-                  %li.third-menu  ライダースジャケット
-                  %li.third-menu  ミリタリージャケット
-                  %li.third-menu  ナイロンジャケット
-                  %li.third-menu  フライトジャケット
-                  %li.third-menu  ダッフルコート
-                  %li.third-menu  ピーコート
-                  %li.third-menu  ステンカラーコート
-                  %li.third-menu  トレンチコート
-            %li.second-menu  パンツ
-            %li.second-menu  スカート
-            %li.second-menu  ワンピース
-            %li.second-menu  靴
-            %li.second-menu  ルームウェア/パジャマ
-            %li.second-menu  レッグウェア
-            %li.second-menu  帽子
-            %li.second-menu  バッグ
-            %li.second-menu  アクセサリー
-            %li.second-menu  ヘアアクセサリー
-            %li.second-menu  小物
-            %li.second-menu 時計
-              
-      .lia-li  
-        メンズ
-        %ul.second-layer
-          %li.second-menu  
-            トップス
-            %ul.third-layer
-              %li.third-menu  Tシャツカットソー(半袖なし)
-              %li.third-menu  Tシャツカットソー(七分/長袖)
-              %li.third-menu  シャツ/ブラウス(半袖/袖なし)
-              %li.third-menu  シャツ/ブラウス(七分/長袖)
-              %li.third-menu  ポロシャツ
-              %li.third-menu  キャミソール
-              %li.third-menu  タンクトップ
-              %li.third-menu  ホルターネック
-              %li.third-menu  ニット/セーター
-              %li.third-menu  チュニック
-              %li.third-menu  カーディガン/ボレロ
-              %li.third-menu  アンサンブル
-              %li.third-menu  ベスト/ジレ  
-       
-          %li.second-menu  
-            ジャケット/アウター
-            %ul.third-layer
-              .third-layer__a
-                %li.third-menu  テーラードジャケット
-                %li.third-menu  ノーカラージャケット
-                %li.third-menu  Gジャン/デニムジャケット
-                %li.third-menu  レザージャケット
-                %li.third-menu  ダウンジャケット
-                %li.third-menu  ライダースジャケット
-                %li.third-menu  ミリタリージャケット
-                %li.third-menu  ナイロンジャケット
-                %li.third-menu  フライトジャケット
-                %li.third-menu  ダッフルコート
-                %li.third-menu  ピーコート
-                %li.third-menu  ステンカラーコート
-                %li.third-menu  トレンチコート
-          %li.second-menu  パンツ
-          %li.second-menu  靴
-          %li.second-menu  バッグ
-          %li.second-menu  スーツ
-          %li.second-menu  帽子
-          %li.second-menu  アクセサリー
-          %li.second-menu  小物
-          %li.second-menu  時計
-          %li.second-menu  水着
-          %li.second-menu  レッグウェア
-          %li.second-menu  アンダーウェア
-          %li.second-menu  その他
-            
-      .lia-li  ベビー・キッズ
-      .lia-li  インテリア・住まい・小物
-      .lia-li  本・音楽・ゲーム
-      .lia-li  ハンドメイド
-      .lia-li  チケット
-      .lia-li  自動車・オートバイ
-      .lia-li  その他
-    %li.lic 
-      %a.lic1{ href:""}
-        -# = icon"fas" ,"tag"
-        ブランドから探す
-        .lic1-li  シャネル
-        .lic1-li  ナイキ
-        .lic1-li  ルイヴィトン
-        .lic1-li  シュプリーム
-        .lic1-li  アディダス
-        .lic1-li  ブランド一覧
-    %li.lib 
-      %a.lic1{ href:""}
-        -# = icon"far" ,"heart"
-        いいね！一覧
-    %li.lib 
-      %a.lic1{ href:""}
-        -# = icon"far" ,"bell"
-        お知らせ
-    %li.lib 
-      %a.lic2{ href:""}
-        -# = icon"fas" ,"check"
-        やることリスト
-    %li.lib 
-      %a.lic1{ href:""}
-        -# = icon"far" ,"circle"
-        マイページ
+= render partial: '/shared/headers', locals: { categories: @categories }
 .second-header
   .s-header
     .s-header-box
@@ -187,7 +36,7 @@
                   WEWORKのCEOが退任疑惑。ソフトバンクなどの上からの圧力によって解任される見込み
                 .tab1d
                   .tab1dtime
-                    =fa_icon "angellist"
+                    =fa_icon "clock-o"
                   .tabspan
                     8時間前
               .top-icon
@@ -203,7 +52,7 @@
                   任天堂マリオカートスマホで本日配信
                 .tab1d-1
                   .tab1dtime-1
-                    =fa_icon "angellist"
+                    =fa_icon "clock-o"
                   .tabspan-1
                     22時間前
               .top-icon1
@@ -219,7 +68,7 @@
                   楽天携帯事業に参入したが、参入が遅れる見込み
                 .tab1d-2
                   .tab1dtime-2
-                    =fa_icon "angellist"
+                    =fa_icon "clock-o"
                   .tabspan-2
                     1日前
               .top-icon2
@@ -235,7 +84,7 @@
                   株式会社div 10.8億円の資金調達した
                 .tab1d-3
                   .tab1dtime-3
-                    =fa_icon "angellist"
+                    =fa_icon "clock-o"
                   .tabspan-3
                     2日前
               .top-icon3
@@ -246,39 +95,109 @@
               .tab1a-4　一覧を見る
       .main-senter-tab
         .senter-header-tab
+          購入した商品
+      .senter-content-main
+        .senter-main-top
+          .senter-main-top-left
+            .senter-main-top-left1
+              取引中
+          .senter-main-top-right
+            .senter-main-top-right1
+              過去の取引
         .senter-main-tab
-        .senter-footer-tab
+          .senter-main-tab1
+            .senter-tab1
+              .senter-tab1a
+                .senter-tab1ax
+                %img.senter-tab1a{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+              .senter-tab1b
+                .senter-tab1bx
+                  中村さんはマスターでいじりがち
+                .senter-tab1d
+                  .senter-tab1dtime
+                    =fa_icon "clock-o"
+                .senter-tabspan
+                  8時間前
+              .senter-top-icon
+                =fa_icon "angle-right"
     .l-content
       .l-content-box
-        .l-box1
-        .l-box2
-        .l-box3
-        .l-box4
-        .l-box5
-        .l-box6
-        .l-box7
-        .l-box8
-        .l-box9
-        .l-box10
-        .l-box11
-        .l-box12
-        .l-box13
-        .l-box14
+        .l-content-list
+          .l-box1
+            .list1
+            マイページ
+          .l-box2
+            .list2
+            お知らせ
+          .l-box3
+            .list3
+            やることリスト
+          .l-box4
+            .list4
+            いいね！一覧
+          .l-box5
+            .list5
+            出品する
+          .l-box6
+            .list6
+            出品した商品-出品中
+          .l-box7
+            .list7
+            出品した商品-取引中
+          .l-box8
+            .list8
+            出品した商品-売却済み
+          .l-box9
+            .list9
+            購入した商品-取引中
+          .l-box10
+            .list10
+            購入した商品-過去の取引
+          .l-box11
+            .list11
+            ニュース一覧
+          .l-box12
+            .list12
+            評価一覧
+          .l-box13
+            .list13
+            ガイド
+          .l-box14
+            .list14
+            お問い合わせ
       .l-merupei-box
         メルペイ
       .l-content-box2
         .l-box15
+          .list15
+          売上・振込申請
         .l-box16
+          .list16
+          ポイント
       .l-settei-box
         設定
       .l-content-box3
         .l-box17
+          .list17
+          プロフィール
         .l-box18
+          .list18
+          発送元・お届け先住所変更
         .l-box19
+          .list19
+          支払い方法
         .l-box20
+          .list20
+          メール/パスワード
         .l-box21
+          .list21
+          本人情報
         .l-box22
+          .list22
+          電話番号
         .l-box23
+          .list23
+          ログアウト
 /////////////////////
 //ここはボトムのビュー
 .top-bottom-view
