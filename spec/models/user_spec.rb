@@ -73,12 +73,7 @@ RSpec.describe User, type: :model do
         user.valid?
         expect(user.errors[:password][0]).to include("is invalid")
       end
-
-      it "is invalid with an image without .png/.jpeg extension" do
-        user = build(:user, image: File.open("#{Rails.root}/public/images/test.txt"))
-        user.valid?
-        expect(user.errors[:image][0]).to include("is invalid")
-      end
+      
     end
   end
 end

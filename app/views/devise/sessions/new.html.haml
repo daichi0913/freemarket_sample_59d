@@ -1,3 +1,4 @@
+= render "layouts/single_header"
 .main
   .login-panel
     .login-panel__no-account
@@ -5,21 +6,21 @@
       =link_to "新規会員登録", "#"
     .login-panel__other-account
       %button.login-panel__other-account__btn.btn__fb
-        = icon 'fab', 'facebook-square'
+        = fa_icon 'facebook-square'
         Facebookでログイン
       %button.login-panel__other-account__btn.btn__gm
         %img{:alt => "btn__gm", :src => "/assets/google-logo.png"}/
         Googleでログイン
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .login-form
-      .login-form__field
-        %input{placeholder: "メールアドレス"}
-      .login-form__field
-        %input{placeholder: "パスワード"}
-      .login-form__field
-        -# =recaptcha_tags
-      %button.login-form__btn{type: 'submit'} ログイン
-      =link_to "パスワードをお忘れの方", "#"
+      .login-form
+        .login-form__field
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス"
+        .login-form__field
+          = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード"
+        .login-form__field
+          =recaptcha_tags
+        = f.submit "ログイン", class: "login-form__btn" 
+        =link_to "パスワードをお忘れの方", "#"
 
 
 
