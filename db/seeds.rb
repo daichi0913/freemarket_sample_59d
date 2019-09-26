@@ -21,7 +21,7 @@
   )
 end
 
-User.create!(nickname: 'YUKI', email: 'a@gmail', password: '1123456778')
+User.create!(nickname: 'YUKI', email: 'a@gmail', password: '1a1a1a1')
 
 
 [ '東京都','大阪府','京都府','兵庫県','奈良県','北海道','山梨県', '新潟県','秋田県','香川県','金沢県','神奈川県','群馬県'
