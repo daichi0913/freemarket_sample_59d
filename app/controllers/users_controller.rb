@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
+  before_action :show
   def index
-    
+
   end
 
   def new
@@ -12,6 +13,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    
+    @categories = Category.all
   end
 end
