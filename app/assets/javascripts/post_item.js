@@ -1,11 +1,13 @@
-$(document).on('turbolinks:load', function(){
-
+$(function(){
 
   function buildHTML(category) {
-    var html = `<input class= "category_select"></input>`
+    var html = `<select class= "category_select"></select>`
     return html;
-  
   }
+
+
+$(document).on('turbolinks:load', function(){
+
 
   $('select').change(function() {
     // console.log( $(this).val() );
@@ -16,16 +18,27 @@ $(document).on('turbolinks:load', function(){
         data: { id: category_id},    // keyword（キー）: input（バリュー）を送信する  ※パラムス
         dataType: 'json'            // サーバから値を返す際はjsonである
     })
+
+  
     
     .done(function(children){
 
-      var html = buildHTML(category);
-      $('.category_select').append(html);
-
+      // var html = buildHTML(children);
+      // console.log(html)
+      
+      // if (parent_id != parent_id){
+      //   $('.category_select_add').append(html);
+      // }
 
       // console.log(children)
-    })
-    console.log(html)
+    });
+
+    // $(category).on('click', '.category_select_add', function(){
+    //   removeCategory($(this).data('user-id'),$(this).data('user-name'))
+    //   $(this).parent().remove();
+    //   })
+    
+
 
     
     // console.log(html)
@@ -35,6 +48,7 @@ $(document).on('turbolinks:load', function(){
     // .fail(function(){
     //   console.log("ajax error")
     // });
+    })
   })
 });
 
@@ -158,4 +172,4 @@ $(document).on('turbolinks:load', function(){
 //     };
 //       setInterval(reloadMessages, 5000);
 //    })
-// })
+
