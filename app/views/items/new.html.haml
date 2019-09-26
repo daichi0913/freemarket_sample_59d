@@ -3,7 +3,7 @@
 
 %main.main
   %section.contents
-    .input-info 商品の情報を入力
+    .post-item-title 商品の情報を入力
 
 
   %form.sell-form
@@ -21,13 +21,13 @@
 
         %select.category_select.hidden{name: "category"}
           %option{selected:"selected"} ---
-          -@categories. each do |category|
-            %option{value: category.id} #{category.name}
+          -# -@categories. each do |category|
+          -#   %option{value: category.id} #{category.name}
 
         %select.category_select.hidden{name: "add_category"}
           %option{selected:"selected"} ---
-          -@categories. each do |category|
-            %option{value: category.id} #{category.name}
+          -# -@categories. each do |category|
+          -#   %option{value: category.id} #{category.name}
           
         
         %label{for: "size"} サイズ
