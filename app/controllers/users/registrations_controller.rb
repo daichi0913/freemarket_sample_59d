@@ -3,12 +3,12 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
+  prepend_before_action :check_captcha, only: [:create]
 
   # GET /resource/sign_up
   def new
     super
     @user = User.new
-    @detail = @user.build_user_detail
   end
 
   # POST /resource
@@ -53,12 +53,22 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def after_sign_up_path_for(resource)
+    root_path
+  end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  private
+    def check_captcha
+      unless verify_recaptcha
+        self.resource = resource_class.new sign_in_params
+        resource.validate # Look for any other validation errors besides Recaptcha
+        set_minimum_password_length
+        respond_with resource
+      end 
+    end
 end
