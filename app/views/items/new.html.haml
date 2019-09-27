@@ -7,7 +7,24 @@
 
 
   %form.sell-form
-    %div.sell-content
+
+    .form-group
+      %label{:for => "item_img"} 出品画像
+      %p 最大10枚までアップロードできます
+      %span.form-require 必須
+      %div.sell-upload-drop-box
+      %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
+
+
+
+      %div.sell-content
+        %label{:for => "item_title"} 商品名
+        %span.form-require 必須
+        %input.input-default{name: "item_title", placeholder: "商品名  (必須 40文字まで)", :type => "text", :value => ""}/
+
+        %label{:for => "item_detail"} 商品の説明
+        %span.form-require 必須
+        %input.input-default{name: "item_detail", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", :type => "text", :value => ""}/
 
       %div.category-box
 
@@ -32,9 +49,46 @@
           -# -@categories. each do |category|
           -#   %option{value: category.id} #{category.name}
           
-        
+      %div.sell-content
         %label{for: "size"} サイズ
         %span.form-require 必須
+
+        %label{for: "brand"} ブランド
+        %span.brand 任意
+        %input.input-default{name: "brand", placeholder: "例）シャネル", type: "text", value: ""}/
+
+        %label{for: "item_status"} 商品の状態
+        %span.form-require 必須
+        %input.input-default{name: "brand", placeholder: "例）シャネル", :type => "text", :value => ""}/
+
+        %label{for: "shippin_fee"} 配送料の負担
+        %span.form-require 必須
+        %input.input-default
+
+        %label{for: "from_where"} 発送元の地域
+        %span.form-require 必須
+        %input.input-default
+
+
+        %label{for: "how_many_days"} 発送までの日数
+        %span.form-require 必須
+        %input.input-default
+
+      %div.sell-content
+        %a{:href => "/jp/help_center/getting_started/prohibited_items/", :target => "_blank"} 禁止されている出品、
+        %a{:href => "/jp/help_center/getting_started/prohibited_conduct/", :target => "_blank"} 行為
+        %p を必ずご確認ください。
+        %p またブランド品でシリアルナンバー等がある場合はご記載ください。
+        %a{:href => "/jp/help_center/getting_started/counterfeit_goods/", :target => "_blank"} 偽ブランドの販売
+        %p は犯罪であり処罰される可能性があります。
+        %p また、出品をもちまして
+        %a{:href => "/jp/seller_terms/"} 加盟店規約
+        %p に同意したことになります。
+
+
+
+
+
 
         %select.category_select{name: "category"}
           %option{selected:"selected"} ---
@@ -73,3 +127,4 @@
 
 
 
+= render partial: '/shared/footers', locals: { categories: @categories }

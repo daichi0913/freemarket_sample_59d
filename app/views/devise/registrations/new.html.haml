@@ -51,7 +51,7 @@
 
 
         .birthday-select-wrap
-          = sprintf(f.date_select(:birthday, :use_month_numbers=>true, :date_separator => '%s', :start_year=>1930, :end_year => Time.now.year, :default =>'1990-1-1'.to_date), '年','月') + '日生まれ' 
+          -# = sprintf(f.date_select(:birthday, :use_month_numbers=>true, :date_separator => '%s', :start_year=>1930, :end_year => Time.now.year, :default =>'1990-1-1'.to_date), '年','月') + '日生まれ' 
 
 
           -# = fork.date_select :birthday, start_year: 1940, end_year: Time.current.year, use_month_numbers: true
