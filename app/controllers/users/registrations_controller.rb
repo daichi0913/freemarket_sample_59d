@@ -14,6 +14,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   # def create
   #   super
+  #   binding.pry
   # end
 
   # GET /resource/edit
@@ -40,7 +41,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
@@ -65,7 +66,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
     def check_captcha
       unless verify_recaptcha
-        self.resource = resource_class.new sign_in_params
+        self.resource = resource_class.new sign_up_params
         resource.validate # Look for any other validation errors besides Recaptcha
         set_minimum_password_length
         respond_with resource
