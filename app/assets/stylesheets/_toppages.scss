@@ -73,7 +73,7 @@
       width: 50%;
       .bland-box{
         height: 100%;
-        line-height: 44px;
+        line-height: 49px;
         margin-left: 23%;
         .bland-text{
           text-decoration: none;
@@ -109,7 +109,7 @@
     }
     &__news{
       height: 100%;
-      background-color: #FFFCF6;
+      background-color: white;
       .news-box{
         height: 100%;
         width: 84px;
@@ -127,7 +127,7 @@
     }
     &__todo{
       height: 100%;
-      background-color: #FFFCF6;
+      background-color:white;
       .todo-box{
         height: 100%;
         width: 99px;
@@ -147,7 +147,7 @@
     &__mypage{
       height: 100%;
       width: 100px;
-      background-color: #FFFCF6;
+      background-color: white;
       .mypage-box{
         height: 100%;
         width: 99px;
@@ -181,6 +181,42 @@
     }
   }
 }
+.top-header__box__bottom2__right__right{
+  height: 100%;
+  width: 200px;
+  position: absolute;
+  right: 132px;
+  .new-user-btn{
+    height: 30px;
+    width: 100px;
+    float: left;
+    background-color: #ea352d;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-top: 8px;
+  }
+  .user-login-ntn{
+    height: 29px;
+    width: 80px;
+    float: right;
+    line-height: 30px;
+    border-radius: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-align: center;
+    color: rgb(0, 140, 255);
+    margin-top: 8px;
+    border: 1px solid rgb(0, 140, 255);
+    transition: all 0.3s ease-out 0s;
+  }
+  .user-login-ntn:hover{
+    background-color: rgb(0, 140, 255);
+    color: white;
+  }
+}
 ///////////カテゴリから探す
 
 ///////////お知らせ
@@ -193,6 +229,7 @@
     right: 139px;
     display:  none;
     top: -3px;
+    z-index: 8;
     background-color: white;
     .product-image{
       height: 50px;
@@ -232,6 +269,7 @@ ul.top-header__box__bottom2__ul{
   height: 50px;
   width:100%;
   top: -37px;
+  z-index: 9;
   position: relative;
   li.lia{
     height: 100%;
@@ -263,7 +301,7 @@ ul.top-header__box__bottom2__ul{
     }
     ul.second-layer{
       position: absolute;
-      margin-left: 224px;
+      margin-left: 216px;
       top: -2px;
       z-index:6px;
       width:224px;
@@ -363,7 +401,7 @@ ul.top-header__box__bottom2__ul{
   height: 50px;
   padding: 16px 0 16px ;
   .lic1-li{
-    top: 3px;
+    top:-2px;
     position: relative;
     background-color: white;
     z-index: 4;
@@ -416,6 +454,7 @@ ul.top-header__box__bottom2__ul{
   bottom: 5px;
   text-align: center;
   display: none;
+  z-index: 8;
   &__nothing{
     line-height: 340px;
     font-size: 17px;
@@ -575,17 +614,97 @@ ul.top-header__box__bottom2__ul{
 //ここはスライドショー
 .top-view{
   height: 390px;
+  position: relative;
   background-color: #EEEEEE;
-  &__box{
-    width:755px;
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.slider-image{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  img{
+    width: 100%;
     height: 100%;
-    margin: 0 auto;
-    .top-view1{
-      max-width: 755px;
-      width: auto;
   }
 }
+#i1,#i2,#i3{
+  display: none;
 }
+label.pre,label.next{
+  width: 20px;
+  height: 50px;
+  position: absolute;
+  top: 150px;
+  opacity: 0.5;
+  background: #333333;
+  z-index: 99;
+  cursor: pointer;
+}
+label.pre{
+  left:50px;
+  .fa-angle-left{
+    font-size: 50px;
+    color: white;
+  }
+}
+label.next{
+  right:50px;
+  .fa-angle-right{
+    font-size: 50px;
+    text-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4);
+    color: white;
+  }
+}
+.nav-slideshow{
+  width:100%;
+  height:20px;
+  bottom: 5%;
+  position: absolute;
+  text-align: center;
+  z-index: 99;
+}
+.dots{
+  top: -5px;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  position: relative;
+  border-radius: 50%;
+  display: inline-block;
+  background: rgba(0, 0, 0, .4)
+}
+.slider-image{
+  z-index: -1;
+}
+#i1:checked ~ #one,
+#i2:checked ~ #two,
+#i3:checked ~ #three{
+  z-index: 9;
+}
+// .pre,.next{
+//   width: 12%;
+//   height: 100%;
+//   position: absolute;
+//   top: 0;
+//   background: #333333;
+//   z-index: 99;
+//   cursor: pointer;
+// }
+
+
+//   &__box{
+//     width:755px;
+//     height: 100%;
+//     margin: 0 auto;
+//     .top-view1{
+//       max-width: 755px;
+//       width: auto;
+//   }
+// }
+
+
 //ここはカテゴリメニュー
 .top-category{
   height: 171px;
@@ -1098,7 +1217,7 @@ i.fab{
     color: white;
     text-align: center;
     position: relative;
-    left: 20px;
+    left: 4px;
   }
   .camera{
     background-image: url(camera.png);
@@ -1106,8 +1225,8 @@ i.fab{
     height: 120px;
     background-repeat: no-repeat;
     position: relative;
-    bottom: 38px;
-    left: 47px;
+    bottom: 32px;
+    left: 41px;
   }
 }
 
@@ -1127,95 +1246,3 @@ i.fab{
     }
   }
 }
-    
-// }
-// .top-header__box__bottom2{
-//   height:50px;
-//   width:100vw;
-//   background-color: white;
-//   ul.top-header__box__bottom2{
-//     height: 50px;
-//     width:100%;
-//     // display: none;
-//     bottom: -3px;
-//     li.lia{
-//       // width: 12%;
-//       line-height: 48px;
-//       font-size: 14px;
-//       font-weight: bold;
-//       position: absolute;
-//       color: #333333;
-//       .lia-li{
-//         background-color: white;
-//         font-weight: normal;
-//         padding-left: 15px;
-//         color: #333333;
-//         display: none;
-//         width:163px;
-//         z-index: 10;
-//         margin-left: 9%;
-//         height: 43px;
-//         line-height:  43px;
-//       }
-//       .lia-li:hover{
-//         background-color: #ea352d;
-//         color: white;
-//       }
-//       .lia-li:hover > .second-layer{
-//         display: block;
-//       }
-//       ul.second-layer{
-//         position: absolute;
-//         margin-left: 224px;
-//         top: 47px;
-//         z-index:6px;
-//         width:224px;
-//         display: none;
-//         li.second-menu{
-//           color: #333333;
-//           position: initial;
-//           background-color: white;
-//           z-index: 20;
-//           width: 224px;
-//           bottom: 5px;
-//           padding-left: 15px;
-//           line-height: 30px;
-//           height: 30px;
-//         }
-//         li.second-menu:hover{
-//           background-color: #eeeeee;
-//         }
-//         li.second-menu:hover > .third-layer{
-//           display: block;
-//         }
-//         .third-layer{
-//           position: absolute;
-//           left:224px;
-//           width:300px;
-//           top: 0;
-//           z-index:1;
-//           display: none;
-//           background-color: white;
-//           height: 100%;
-//           &__a{
-//             position: relative;
-//             bottom: 30px;
-//           }
-//           li.third-menu{
-//             position:relative;
-//             z-index: 9;
-//             padding-left:15px;
-//             width:300px;
-//             background-color:#ffffff;
-//             height: 30px;
-//             line-height: 30px;
-//             color: #333333;
-//           }
-//           .third-menu:hover{
-//             background-color: #eeeeee;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
