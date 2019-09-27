@@ -1,0 +1,123 @@
+.shyouhin-main{
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+.shyouhin-box{
+  background: #fff;
+  margin: 40px auto 0;
+  padding: 24px 40px 40px;
+  width: 620px;
+  height: 1555px;
+}
+.item-name{
+  font-size: 24px;
+  text-align: center;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+.item-main-content{
+  margin: 16px 0 0;
+}
+.item-photo{
+  float: left;
+  min-width: 300px;
+  max-width: 300px;
+  min-height: 420px;
+}
+.item-photo-main{
+  background-image: url(f_logo_RGB-Blue_58.png);
+  background-size: 300px 300px;
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+}
+.item-table{
+  line-height: 0;
+}
+.table-body1{
+  width: 60px;
+  height: 60px;
+  max-height: none;
+  background-image: url(f_logo_RGB-Blue_58.png);
+  background-size: 60px 60px;
+  display: inline-block;
+  float: left;
+}
+.table-body2{
+  width: 60px;
+  height: 60px;
+  max-height: none;
+  background-image: url(f_logo_RGB-Blue_58.png);
+  background-size: 60px 60px;
+  display: inline-block;
+  float: left;
+}
+.table-body3{
+  width: 60px;
+  height: 60px;
+  max-height: none;
+  background-image: url(f_logo_RGB-Blue_58.png);
+  background-size: 60px 60px;
+  display: inline-block;
+  float: left;
+}
+.table-body4{
+  width: 60px;
+  height: 60px;
+  max-height: none;
+  background-image: url(f_logo_RGB-Blue_58.png);
+  background-size: 60px 60px;
+  display: inline-block;
+  float: left;
+}
+.table-body5{
+  width: 60px;
+  height: 60px;
+  max-height: none;
+  background-image: url(f_logo_RGB-Blue_58.png);
+  background-size: 60px 60px;
+  display: inline-block;
+  float: left;
+}
+.table-body6{
+  width: 60px;
+  height: 60px;
+  max-height: none;
+  background-image: url(f_logo_RGB-Blue_58.png);
+  background-size: 60px 60px;
+  display: inline-block;
+  float: left;
+}
+.item-category{
+  float: right;
+  width: 300px;
+  height: 420px;
+  margin: 0 auto;
+}
+.category-box{
+  width: 100%;
+  max-width: 300px;
+  margin: 8px auto 0;
+  border-collapse: collapse;
+  border: 1px solid #f5f5f5;
+}
+.category1{
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+.category1-box{
+  width: 28%;
+  text-align: left;
+  font-weight: 400;
+  background: #fafafa;
+  padding: 23px;
+  display: inline-block;
+}
+.category1-box1{
+  width: 51%;
+  background: #fff;
+  display: inline-block;
+  font-size:13px;
+}
