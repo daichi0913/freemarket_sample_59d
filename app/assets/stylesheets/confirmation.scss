@@ -26,10 +26,7 @@
     font-size: 12px;
   }
 
-  label{
-    font-weight: 600;
-  }
-
+  
   .birthday-select-wrap{
     height: 48px;
     width: 100%;
@@ -37,22 +34,28 @@
     display: flex;
     margin: 8px 0 0;
     padding: 10px 16px 8px;
-      select{
-        padding: 10px 16px 8px;
-      }
+    select{
+      padding: 10px 16px 8px;
+    }
   }
-
+  
   .l-chapter-sub-head{
     font-size: 16px;
     font-weight: 600;
   }
-
+  
   .form-group{
     width: 100%;
     .birthday-select-wrap{
       width: 100%;
       background-color: #FFF;
       display: flex;
+    }
+    label{
+      font-weight: 600;
+    }
+    input{
+      display: block;
     }
     &__line{
       display: flex;
@@ -107,10 +110,4 @@ p.l-single-text.text-center{
   line-height: 1.5;
   margin: 0 20px 0 100px;  
 }
-
-
-
-
-
-
 

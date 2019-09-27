@@ -18,6 +18,9 @@ body{
   width: 700PX;
   margin: 0 auto;
   text-align: center;
+  h2{
+    line-height: 1.4;
+  }
 
   &__title{
     height: 100%;
