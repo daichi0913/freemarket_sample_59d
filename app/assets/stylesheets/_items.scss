@@ -1,6 +1,50 @@
-// Place all the styles related to the Items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+section.contents{
+
+}
+  
+
+
+form.sell-form{
+  height: 100%;
+  width: 100%;
+}
+
+.contents{
+}
+
+
+
+div.category-box{
+display: block;
+}
+
+
+select.category_select.hidden{
+
+}
+
+
+span.form-require {
+  background: #ea352d;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+}
+label{
+  font-weight: 600;
+}
+
+.sell-upload-drop-box{
+  width: 100%;
+  margin-left: 0;
+}
+
+
+
+
+
 .post-item-title{
   text-align: center;
   font-weight: bold;
