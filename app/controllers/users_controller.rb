@@ -19,4 +19,8 @@ class UsersController < ApplicationController
   def logout
     
   end
+
+  def sms_confirmation
+    
+  end
 end

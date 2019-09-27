@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get :logout
+      get :sms_confirmation
+      get :address
+      get :credit_card
+      post :address
+      post :credit_card
     end
   end
   resources :items

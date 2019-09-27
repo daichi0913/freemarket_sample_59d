@@ -38,7 +38,6 @@
     margin: 8px 0 0;
     padding: 10px 16px 8px;
       select{
-        margin: 0 auto;
         padding: 10px 16px 8px;
       }
   }
@@ -49,14 +48,22 @@
   }
 
   .form-group{
-    padding-bottom: 24px;
     width: 100%;
+    .birthday-select-wrap{
+      width: 100%;
+      background-color: #FFF;
+      display: flex;
+    }
     &__line{
       display: flex;
+      justify-content: space-between;
+      .input-default{
+        width: calc(50% - 6px);
+      }
     }
   }
   
-  .form-group .input-default {
+  .input-default {
     width: 100%;
     box-sizing: border-box;
     // padding: 2px 4px;
@@ -71,11 +78,6 @@
     line-height: 1.5;
     font-size: 16px;
     height: 48px;
-    }
-    .birthday-select-wrap{
-      width: 100%;
-      background-color: #FFF;
-      display: flex;
     }
 }
 
