@@ -1,19 +1,19 @@
-function buildHTML(category) {
+// function buildHTML(category) {
 
 
-  var html = `<select class= "category_select"></select>`
-  return html;
-}
+//   var html = `<select class= "category_select"></select>`
+//   return html;
+// }
 
-function appendHTML(category) {
-  if (index != 2){
-    // appendHTML
-    $('.category-box').append(html);
+// function appendHTML(category) {
+//   if (index != 2){
+//     // appendHTML
+//     $('.category-box').append(html);
 
-  }else{
-    ;// end
-  }
-}
+//   }else{
+//     ;// end
+//   }
+// }
 
 
 
