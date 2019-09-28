@@ -36,11 +36,11 @@
           -@categories. each do |category|
             %option{value: category.id} #{category.name}
 
-            %div.category_select
-            %select.category_select{name: "category"}
-            %option{selected:"selected"} ---
-            -@categories. each do |category|
-              %option{value: category.id} #{category.name}
+            -# %div.category_select
+            -# %select.category_select{name: "category"}
+            -# %option{selected:"selected"} ---
+            -# -@categories. each do |category|
+            -#   %option{value: category.id} #{category.name}
 
 
         -# %select.category_select.hidden{name: "category"}

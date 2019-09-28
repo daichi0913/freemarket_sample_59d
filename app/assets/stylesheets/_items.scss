@@ -95,31 +95,19 @@ label{
     position: relative;
     display: inline-block;
 }
-.category_select:before {
-    content: "click me!";
-}
-.category_select:focus .category_select {
-    /* content is visible if menu is 'opened' */ visibility: visible;
+.category_select:focus .category_select.hidden {
+  // :focus擬似クラスは、ユーザーの操作で要素がフォーカスされた際のスタイルを指定します
+    /* content is visible if menu is 'opened' */
+    display: visible;
 }
 .category_select.hidden {
-    position: absolute;
-    z-index: 1;
-    /* disable visibility by default, delay to enable clicks */ visibility: hidden;
-    transition: visibility 0.5s;
-}
-.category_select {
-    position: relative;
-    display: inline-block;
+  // display: none;
+  position: absolute;
+  z-index: 1;
+  /* disable visibility by default, delay to enable clicks */ visibility: hidden;
+  transition: visibility 0.5s;
 }
 .category_select:focus .category_select.hidden {
   display: visible;
     /* content is visible if menu is 'opened' */ 
 }
-.category_select.hidden {
-    position: absolute;
-    z-index: 1;
-    display: none;
-    /* disable visibility by default, delay to enable clicks */ 
-    transition: visibility 0.5s;
-}
-
