@@ -31,16 +31,14 @@
     margin: 40px auto 0;
     width: 1020px;
     height: 190vh;
-    
     .r-content{
       width: 700px;
       float: right;
-
       .r-content-top{
         position: relative;
         height: 200px;
         padding: 20px;
-        background: url(futta2034-1440x900.jpg);
+        background-image: url(futta2034-1440x900.jpg);
         .r-content-top-main{
           display: block;
           position: absolute;
@@ -56,9 +54,9 @@
             height: 60px;
             margin: 0 auto;
             border-radius: 50%;
-            background: url(logo.png);
-              .top-image{
-                background: url(logo.png)
+            background-image: url(logo.png);
+            .top-image{
+              background-image: url(logo.png)
       }
      }
     }

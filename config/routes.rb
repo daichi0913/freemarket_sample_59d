@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   get 'items/new'
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'toppages#index'
@@ -9,6 +10,11 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get :logout
+      get :sms_confirmation
+      get :address
+      get :credit_card
+      post :address
+      post :credit_card
     end
   end
   resources :items

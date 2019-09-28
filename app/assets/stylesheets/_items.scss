@@ -91,11 +91,6 @@ label{
 // if~else文は @if <条件> {<設定内容a>} @else {<設定内容b>}と書いて、
 // 条件文を満たす場合と満たさない場合それぞれのプロパティが設定されます。
 
-
-
-
-
-
 .category_select {
     position: relative;
     display: inline-block;
@@ -127,3 +122,4 @@ label{
     /* disable visibility by default, delay to enable clicks */ 
     transition: visibility 0.5s;
 }
+
