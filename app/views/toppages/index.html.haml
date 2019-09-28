@@ -141,44 +141,43 @@
                 
 ///////////////////////
 //ここはスライドショー
--# .top-view
--#   .top-view__box
+
 .top-view
   %input{:type => "radio",:name => "images", :id => "i1" ,:checked => ""}
   %input{:type => "radio",:name => "images", :id => "i2"}
-  %input{:type => "radio",:name => "images", :id => "i3"}
-  #one.slider-image
-    %label{:for => "i3", :class =>"pre"}
-      = fa_icon "angle-left"
-      .back-icon
-        = fa_icon "angle-left"
-    %label{:for => "i2", :class =>"next"}
-      = fa_icon "angle-right"
-    %img{:src=>"https://ord.yahoo.co.jp/o/image/RV=1/RE=1569662855/RH=b3JkLnlhaG9vLmNvLmpw/RB=/RU=aHR0cHM6Ly93d3cuc2Fua2VpLmNvbS9waG90by9pbWFnZXMvbmV3cy8xOTAxMTgvc3R5MTkwMTE4MDAwOS1mNC5qcGc-/RS=%5EADBLQB2OBlbFGO18I169TJNVAAD8_0-;_ylt=A2RCKwcH1o1dLBUA9EaU3uV7;_ylu=X3oDMTBrcG5kMTVvBDADanBjMDAzBHZ0aWQDanBjMDAz;_ylc=X3IDMgRmc3QDMQRpZHgDMARvaWQDQU5kOUdjU3pkaHJZWGJWcFRuU1MxTmdLS1pkckVSWmtYYmlpNDR5QUZ5dGhWUVY5X0ZPcEtyaWgxaTY3aVk4BHADNDRPdjQ0T3o0NE9VNDRPODQ0SzUEcG9zAzU3BHNlYwNzaHcEc2xrA3Nmc3QEdHVybAM-" }
-  #two.slider-image
-    %label{:for => "i1", :class =>"pre"}
-      = fa_icon "angle-left"
-      = fa_icon "angle-left"
-    %label{:for => "i3", :class =>"next"}
-      = fa_icon "angle-right"
-    %img{:src=>"https://msp.c.yimg.jp/yjimage?q=CskLG.MXyLHp.J3qSBVGuYchGJye31ohRg8ZKgdotuVjuGdpTvjQk2pudcUedthSR6rpSiUFd8GsbVhBOWMDtdgr7N5aW_FKF_wfF6g61Tdyftoh0wLBvRg1SBbTR2YfZjbPZQnEFigi_QlqgA--&sig=138ho1ugn&x=274&y=184" }
-  #three.slider-image
+  %a#one.slider-image1{:href=>"https://www.mercari.com/jp/featured/camp/"}
     %label{:for => "i2", :class =>"pre"}
       = fa_icon "angle-left"
-      .back-icon
-        = fa_icon "angle-left"
+    %label{:for => "i2", :class =>"next"}
+      = fa_icon "angle-right"
+    %img{:src=>"//www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?2687693852", :alt=>"メルカリなら新品も中古もお得！キャンプ用品 大特集！"}
+  #two.slider-image2
+    %label{:for => "i1", :class =>"pre"}
+      = fa_icon "angle-left"
     %label{:for => "i1", :class =>"next"}
       = fa_icon "angle-right"
-      .back-icon
-        = fa_icon "angle-right"
-    %img{:src=>"https://ord.yahoo.co.jp/o/image/RV=1/RE=1569666398/RH=b3JkLnlhaG9vLmNvLmpw/RB=/RU=aHR0cHM6Ly94bi0tNWNrMWFrNmk3ODlzaDIyYW80aXZoOGMuc2l0ZS93cC1jb250ZW50L3VwbG9hZHMvMjAxOC8wNy85NmQyZWYzYTFlYjFiY2Y1Yjc3ZTM5NTFmNWVlYWZhNS1lMTUzMTMxMjczNjI3Ny5qcGc-/RS=%5EADBr9zB_p3yNAPJ7UUooTsG0uXB304-;_ylt=A2RCA9ve441dk3gA8w2U3uV7;_ylu=X3oDMTBrcG5kMTVvBDADanBjMDAzBHZ0aWQDanBjMDAz" }
-     
+    .center
+      %li.text1
+        スマホでかんたん
+      %li.text2
+        フリマアプリ
+      %li.text3
+        テキストはスマホカメラからすぐに出品できる
+      %li.text4
+        購入時も安心な独自システムのアプリです
+      %ul.img-box
+        %li.img-btn1
+          %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg"}
+        %li.img-btn2
+          %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg"}
+      .img-btn3
+        %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/top-banner-main-device-1f627e51e488f6ca35feaa6a08b79736.png"}
   .nav-slideshow
     %label{:for => "i1", :id => "dot1",:class =>"dots"}
     %label{:for => "i2", :id => "dot2",:class =>"dots"}
-    %label{:for => "i3", :id => "dot3",:class =>"dots"}
 
 
+      
 ////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////
 //ここはカテゴリメニュー
