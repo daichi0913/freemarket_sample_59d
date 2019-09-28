@@ -2,133 +2,95 @@
 = render partial: 'layouts/user_registration_status_bar'
 
 %main.main
+  .post-item-title 商品の情報を入力
   %section.contents
-    .post-item-title 商品の情報を入力
 
 
   %form.sell-form
 
-    .form-group
-      %label{:for => "item_img"} 出品画像
+  .form-group
+    %label{:for => "item_img"} 出品画像
+    %span.form-require 必須
+    %p 最大10枚までアップロードできます
+    %div.sell-upload-drop-box
+    %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
+
+
+
+    %div.sell-contents
+      %label{:for => "item_title"} 商品名
       %span.form-require 必須
-      %p 最大10枚までアップロードできます
-      %div.sell-upload-drop-box ドラッグアンドドロップまたはクリックしてファイルをアップロード
-      %pre.visible-pc 
+      %input.input-default{name: "item_title", placeholder: "商品名  (必須 40文字まで)", :type => "text", :value => ""}
+      %br
+      %label{:for => "item_detail"} 商品の説明
+      %span.form-require 必須
+      %input.input-default-datail{name: "item_detail", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", :type => "text", :value => ""}/
+
+    %br
+    %div.category-box
+    %label{for: "category"} カテゴリー
+    %span.form-require 必須
+    %br
+    -# %select.category_select{name: "category_select"}
+    -# %option{selected:"selected"} ---
+    -# -@categories. each do |category|
+    -#   %option{value: category.id} #{category.name}
+            
+    %div.sell-contents
+    %label{for: "size"} サイズ
+    %span.form-require 必須
+
+    %select.size_select{name: "size"}
+    %option{selected:"selected"}
+
+
+    %br
+    %label{for: "brand"} ブランド
+    %span.form-yourself 任意
+    %input.input-default{name: "brand", placeholder: "例）シャネル", type: "text", value: ""}/
+
+    %br
+    %label{for: "item_status"} 商品の状態
+    %span.form-require 必須
+    %input.input-default-status{name: "item_status", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", :type => "text", :value => ""}/
+
+
+    %div.sell-contents
+      %label{for: "shippin_fee"} 配送料の負担
+      %span.form-require 必須
+      %input.input-default
+    %br
+    %label{for: "from_where"} 発送元の地域
+    %span.form-require 必須
+    %input.input-default
+
+    %br
+    %label{for: "how_many_days"} 発送までの日数
+    %span.form-require 必須
+    %input.input-default
+
+    %div.sell-contents
+      %label{for: "price"} 価格
+      %span.form-require 必須
+      %li.clearfix 販売手数料(10%)
+      %input.input-default
 
 
 
-      %div.sell-content
-        %label{:for => "item_title"} 商品名
-        %span.form-require 必須
-        %input.input-default{name: "item_title", placeholder: "商品名  (必須 40文字まで)", :type => "text", :value => ""}/
+    %div.sell-content
+    %a{:href => "/jp/help_center/getting_started/prohibited_items/", :target => "_blank"} 禁止されている出品、
+    %a{:href => "/jp/help_center/getting_started/prohibited_conduct/", :target => "_blank"} 行為
+    %p を必ずご確認ください。
+    %p またブランド品でシリアルナンバー等がある場合はご記載ください。
+    %a{:href => "/jp/help_center/getting_started/counterfeit_goods/", :target => "_blank"} 偽ブランドの販売
+    %p は犯罪であり処罰される可能性があります。
+    %p また、出品をもちまして
+    %a{:href => "/jp/seller_terms/"} 加盟店規約
+    %p に同意したことになります。
 
-        %label{:for => "item_detail"} 商品の説明
-        %span.form-require 必須
-        %input.input-default{name: "item_detail", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", :type => "text", :value => ""}/
-
-      %div.sell-content.category-box
-
-        %label{for: "category"} カテゴリー
-        %span.form-require 必須
-
-        %select.category_select{name: "category"}
-          %option{selected:"selected"} ---
-          -@categories. each do |category|
-            %option{value: category.id} #{category.name}
-
-            -# %div.category_select
-            -# %select.category_select{name: "category"}
-            -# %option{selected:"selected"} ---
-            -# -@categories. each do |category|
-            -#   %option{value: category.id} #{category.name}
-
-
-        -# %select.category_select.hidden{name: "category"}
-        -#   %option{selected:"selected"} ---
-        -#   -# -@categories. each do |category|
-        -#   -#   %option{value: category.id} #{category.name}
-        -#   %option{selected:"selected"} ---
-
-
-        -# %select.category_select.hidden{name: "add_category"}
-        -#   %option{selected:"selected"} ---
-        -#   %option{selected:"selected"} ---
-        -#   -# -@categories. each do |category|
-        -#   -#   %option{value: category.id} #{category.name}
-          
-      %div.sell-content
-        %label{for: "size"} サイズ
-        %span.form-require 必須
-
-        %label{for: "brand"} ブランド
-        %span.brand 任意
-        %input.input-default{name: "brand", placeholder: "例）シャネル", type: "text", value: ""}/
-
-        %label{for: "item_status"} 商品の状態
-        %span.form-require 必須
-        %input.input-default{name: "brand", placeholder: "例）シャネル", :type => "text", :value => ""}/
-
-
-      %div.sell-content
-        %label{for: "shippin_fee"} 配送料の負担
-        %span.form-require 必須
-        %input.input-default
-
-        %label{for: "from_where"} 発送元の地域
-        %span.form-require 必須
-        %input.input-default
-
-
-        %label{for: "how_many_days"} 発送までの日数
-        %span.form-require 必須
-        %input.input-default
-
-      %div.sell-content
-        %label{for: "price"} 価格
-        %span.form-require 必須
-        %li.clearfix 販売手数料(10%)
-        %input.input-default
-
-
-
-
-
-      %div.sell-content
-        %a{:href => "/jp/help_center/getting_started/prohibited_items/", :target => "_blank"} 禁止されている出品、
-        %a{:href => "/jp/help_center/getting_started/prohibited_conduct/", :target => "_blank"} 行為
-        %p を必ずご確認ください。
-        %p またブランド品でシリアルナンバー等がある場合はご記載ください。
-        %a{:href => "/jp/help_center/getting_started/counterfeit_goods/", :target => "_blank"} 偽ブランドの販売
-        %p は犯罪であり処罰される可能性があります。
-        %p また、出品をもちまして
-        %a{:href => "/jp/seller_terms/"} 加盟店規約
-        %p に同意したことになります。
-
-  
-    -# %option{value: "mens"} メンズ
-    -# %option{value: "baby"} ベビー・キッズ
-    -# %option{value: "furniture"} インテリア・住まい・小物
-    -# %option{value: "book"} 本・音楽・ゲーム
-    -# %option{value: "toy"} おもちゃ・ホビー・グッズ
-    -# %option{value: "cosmetic"} コスメ・香水・美容
-    -# %option{value: "appliance"} 家電・スマホ・カメラ
-    -# %option{value: "sport"} スポーツ・レジャー
-    -# %option{value: "handmade"} ハンドメイド
-    -# %option{value: "ticket"} チケット
-    -# %option{value: "vehicle"} 自動車・オートバイ
-    -# %option{value: "other"} その他
-
-
-
-
-
-
-  -# .form-group
-  -#   %label{:for => "email"} メールアドレス
-  -#   %span.form-require 必須
-  -#   %input.input-default{:name => "email", :placeholder => "PC・携帯どちらでも可", :type => "email", :value => ""}/
-  -# %input{:name => "login_type", :type => "hidden", :value => ""}/
-
-
-
-= render partial: '/shared/footers', locals: { categories: @categories }
+    .form-post
+      %button.form-post 出品する
+    .form-back
+      %button.form-back もどる
+    
+    = render partial: '/shared/footers', locals: { categories: @categories }
