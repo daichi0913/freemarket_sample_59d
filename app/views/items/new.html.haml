@@ -10,10 +10,10 @@
 
     .form-group
       %label{:for => "item_img"} 出品画像
-      %p 最大10枚までアップロードできます
       %span.form-require 必須
-      %div.sell-upload-drop-box
-      %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
+      %p 最大10枚までアップロードできます
+      %div.sell-upload-drop-box ドラッグアンドドロップまたはクリックしてファイルをアップロード
+      %pre.visible-pc 
 
 
 
@@ -26,7 +26,7 @@
         %span.form-require 必須
         %input.input-default{name: "item_detail", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", :type => "text", :value => ""}/
 
-      %div.category-box
+      %div.sell-content.category-box
 
         %label{for: "category"} カテゴリー
         %span.form-require 必須
@@ -36,18 +36,25 @@
           -@categories. each do |category|
             %option{value: category.id} #{category.name}
 
-        %select.category_select.hidden{name: "category"}
-          %option{selected:"selected"} ---
-          -# -@categories. each do |category|
-          -#   %option{value: category.id} #{category.name}
-          %option{selected:"selected"} ---
+            %div.category_select
+            %select.category_select{name: "category"}
+            %option{selected:"selected"} ---
+            -@categories. each do |category|
+              %option{value: category.id} #{category.name}
 
 
-        %select.category_select.hidden{name: "add_category"}
-          %option{selected:"selected"} ---
-          %option{selected:"selected"} ---
-          -# -@categories. each do |category|
-          -#   %option{value: category.id} #{category.name}
+        -# %select.category_select.hidden{name: "category"}
+        -#   %option{selected:"selected"} ---
+        -#   -# -@categories. each do |category|
+        -#   -#   %option{value: category.id} #{category.name}
+        -#   %option{selected:"selected"} ---
+
+
+        -# %select.category_select.hidden{name: "add_category"}
+        -#   %option{selected:"selected"} ---
+        -#   %option{selected:"selected"} ---
+        -#   -# -@categories. each do |category|
+        -#   -#   %option{value: category.id} #{category.name}
           
       %div.sell-content
         %label{for: "size"} サイズ
@@ -61,6 +68,8 @@
         %span.form-require 必須
         %input.input-default{name: "brand", placeholder: "例）シャネル", :type => "text", :value => ""}/
 
+
+      %div.sell-content
         %label{for: "shippin_fee"} 配送料の負担
         %span.form-require 必須
         %input.input-default
@@ -75,6 +84,16 @@
         %input.input-default
 
       %div.sell-content
+        %label{for: "price"} 価格
+        %span.form-require 必須
+        %li.clearfix 販売手数料(10%)
+        %input.input-default
+
+
+
+
+
+      %div.sell-content
         %a{:href => "/jp/help_center/getting_started/prohibited_items/", :target => "_blank"} 禁止されている出品、
         %a{:href => "/jp/help_center/getting_started/prohibited_conduct/", :target => "_blank"} 行為
         %p を必ずご確認ください。
@@ -84,21 +103,6 @@
         %p また、出品をもちまして
         %a{:href => "/jp/seller_terms/"} 加盟店規約
         %p に同意したことになります。
-
-
-
-
-
-
-        %select.category_select{name: "category"}
-          %option{selected:"selected"} ---
-          -@categories. each do |category|
-            %option{value: category.id} #{category.name}
-
-
-
-
-
 
   
     -# %option{value: "mens"} メンズ
@@ -119,11 +123,11 @@
 
 
 
-  .form-group
-    %label{:for => "email"} メールアドレス
-    %span.form-require 必須
-    %input.input-default{:name => "email", :placeholder => "PC・携帯どちらでも可", :type => "email", :value => ""}/
-  %input{:name => "login_type", :type => "hidden", :value => ""}/
+  -# .form-group
+  -#   %label{:for => "email"} メールアドレス
+  -#   %span.form-require 必須
+  -#   %input.input-default{:name => "email", :placeholder => "PC・携帯どちらでも可", :type => "email", :value => ""}/
+  -# %input{:name => "login_type", :type => "hidden", :value => ""}/
 
 
 
