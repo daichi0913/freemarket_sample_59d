@@ -1,0 +1,20 @@
+%main.main
+  %section.contents
+    .cellphone__title 電話番号の確認
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      -# = devise_error_messages!
+      .form__box
+        .form-group
+          %label{:for => "nickname"} ニックネーム
+          %span.form-require 必須
+          = f.text_field :nickname, placeholder: "例) メルカリ太郎", class: "input-default"
+          -# %input.input-default{:name => "nickname", :placeholder => "例) メルカリ太郎", :type => "text", :value => ""}/
+        .form-group
+          %label{:for => "email"} メールアドレス
+          %span.form-require 必須
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可", class: "input-default"
+        %input{:name => "login_type", :type => "hidden", :value => ""}/
+        .form-group
+          %label{:for => "password"} パスワード
+          %span.form-require 必須
+          = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上", class: "input-default"
