@@ -269,11 +269,12 @@ ul.top-header__box__bottom2__ul{
   height: 50px;
   width:100%;
   top: -37px;
-  z-index: 9;
+  z-index:89;
   position: relative;
   li.lia{
     height: 100%;
     width: 224px;
+    left: -16px;
     line-height: 48px;
     font-size: 14px;
     font-weight: bold;
@@ -404,7 +405,7 @@ ul.top-header__box__bottom2__ul{
     top:-2px;
     position: relative;
     background-color: white;
-    z-index: 4;
+    z-index: 80;
     padding-left: 15px;
     width: 224px;
     font-weight: normal;
@@ -619,16 +620,106 @@ ul.top-header__box__bottom2__ul{
   width: 100%;
   overflow: hidden;
   cursor: pointer;
-}
-.slider-image{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  img{
-    width: 100%;
+  .slider-image1{
+    position: absolute;
     height: 100%;
+    width: 100%;
+    z-index: -1;
+    img{
+      width: 61%;
+      height: 100%;
+      margin-left: 20%;
+    }
+  }
+  .slider-image2{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index:-1;
+    img{
+      width: 22%;
+      height: 100%;
+      margin-left: 20%;
+    }
   }
 }
+
+
+#two{
+  background-image: url(mericri.jpg);
+  background-repeat: none;
+  background-size: cover;
+  position: relative;
+  z-index: -1;
+  .center{
+    height: 100%;
+    width: 62%;
+    margin: 0 auto;
+    .text1{
+      font-size: 60px;
+      width: 100%;
+      height: 20%;
+      color: white;
+      z-index: 9;
+      padding-top: 4%;
+    }
+    .text2{
+      color: white;
+      font-size: 60px;
+    }
+    .text3{
+      font-size: 18px;
+      color: #eeeeee;
+    }
+    .text4{
+      font-size: 18px;
+      color: #EEEEEE;
+    }
+    ul.img-box{
+      display: flex;
+      height: 50px;
+      margin-top: 20px;
+      li.img-btn1{
+        width: 170px;
+        height: 50px;
+        img{
+          width: 100%;
+          position: relative;
+          right: 33px;
+        }
+      }
+      li.img-btn2{
+        width: 170px;
+        height: 50px;
+        img{
+          width: 100%;
+          position: relative;
+          right: 33px;
+        }
+      }
+    }
+    .img-btn3{
+      height: 100%;
+      width: 390px;
+      position: absolute;
+      top: 0;
+      right: 330px;
+      img{
+        width: 110%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+#two:before{
+  filter: blur(5px);
+  position: absolute;
+  z-index: -1;
+  background: inherit;
+}
+
+
 #i1,#i2,#i3{
   display: none;
 }
@@ -636,9 +727,7 @@ label.pre,label.next{
   width: 20px;
   height: 50px;
   position: absolute;
-  top: 150px;
-  opacity: 0.5;
-  background: #333333;
+  top: 170px;
   z-index: 99;
   cursor: pointer;
 }
@@ -646,15 +735,15 @@ label.pre{
   left:50px;
   .fa-angle-left{
     font-size: 50px;
-    color: white;
+    color: #ffffff;
   }
 }
 label.next{
   right:50px;
   .fa-angle-right{
     font-size: 50px;
-    text-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4);
-    color: white;
+    color:#ffffff;
+    z-index: 30;
   }
 }
 .nav-slideshow{
@@ -681,28 +770,8 @@ label.next{
 #i1:checked ~ #one,
 #i2:checked ~ #two,
 #i3:checked ~ #three{
-  z-index: 9;
+  z-index: 0;
 }
-// .pre,.next{
-//   width: 12%;
-//   height: 100%;
-//   position: absolute;
-//   top: 0;
-//   background: #333333;
-//   z-index: 99;
-//   cursor: pointer;
-// }
-
-
-//   &__box{
-//     width:755px;
-//     height: 100%;
-//     margin: 0 auto;
-//     .top-view1{
-//       max-width: 755px;
-//       width: auto;
-//   }
-// }
 
 
 //ここはカテゴリメニュー
@@ -1081,10 +1150,6 @@ label.next{
           width: 260px;
         }
       }
-      // img{
-      //   height:68px;
-      //   width: 68px;
-      // }
     }
     &__image{
       width:40%;
