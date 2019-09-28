@@ -15,6 +15,7 @@
 }
 
 
+
 .sell-contents{
   margin: 8px 0 0;
   height: 48px;
@@ -62,11 +63,24 @@ form.sell-form{
   color: #333;
 }
 
+.visible-pc{
+position: absolute;
+top: 50%;
+left: 16px;
+right: 16px;
+text-align: center;
+font-size: 14px;
+line-height: 1.5;
+-webkit-transform: translate(0, -50%);
+transform: translate(0, -50%);
+pointer-events: none;
+white-space: pre-wrap;
+word-wrap: break-word;
+}
 
 
 
 .category-box{
-display: block;
 border: 1px #ccc;
 }
 
@@ -116,6 +130,18 @@ label{
 }
 
 .input-default-status {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-height: 104px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.input-default-datail{
   display: block;
   width: 100%;
   max-width: 100%;
