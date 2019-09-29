@@ -1,0 +1,235 @@
+.item-buypage-header{
+  height: 128px;
+  width: 100%;
+  background-color: #f5f5f5;
+  &__box{
+    height:100%;
+    width: 200px;
+    margin: 0 auto;
+    a.merukari{
+      height: 49px;
+      width: 189px;
+      img.merukari{
+        height: 49px;
+        width: 185px;
+        margin-top: 40px;
+      }
+    }
+  }
+}
+.item-buypage-main{
+  height: 100%;
+  width: 100%;
+  background-color: #f5f5f5;
+  &__center{
+    width: 700px;
+    margin: 0 auto;
+    height: 100%;
+    background-color: white;
+    &__header{
+      height: 65px;
+      width: 100%;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 65px;
+    }
+    &__main{
+      width: 320px;
+      height:100%;
+      margin: 0 auto;
+      &__goods{
+        margin-top: 20px;
+        height: 64px;
+        width: 100%;
+        margin-bottom: 5px;
+        li.e{
+          float: left;
+          height: 64px;
+          width: 64px;
+          img{
+            height: 64px;
+            width: 64px;
+          }
+        }
+        li.d{
+          float: right;
+          width: 74%;
+        }
+      }
+      &__price{
+        width: 140px;
+        display: flex;
+        padding-top: 5px;
+        height: 33px;
+        margin: 0 auto;
+        margin-bottom: 23px;
+        li.c{
+          font-weight: bold;
+          font-size: 22px;
+          line-height: 33px;
+          margin-top: 5px;
+        }
+        li.d{
+          font-size: 14px;
+          line-height: 33px;
+          margin-left: 15px;
+          margin-top: 5px;
+        };
+      }
+      &__point{
+        margin-top: 20px;
+        height: 48px;
+        border: .3px solid #88888888;
+        text-align: center;
+        line-height: 48px;
+        font-size: 14px;
+        margin-top: 10px;
+        .fa-angle-down{
+          font-size: 25px;
+          font-weight: bold;
+          position: relative;
+          top: 5px;
+        }
+        ul{
+          position: relative;
+          height: 207px;
+          width: 320px;
+          display: none;
+          background-color: #f5f5f5f5;
+          li{
+            text-align: left;
+            margin-left: 50px;
+          }
+          li.text1{
+            padding-top: 15px;
+            font-weight: bold;
+            line-height: 30px;
+          }
+          li.text2,li.text3,li.text4{
+            line-height: 30px;
+          }
+          li.text5{
+            height: 48px;
+            width: 240px;
+            margin: 0 auto;
+            text-align: center;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid gray;
+          }
+        }
+      } 
+      &__point:hover > ul{
+        display: block;
+      }
+      &__point:hover {
+        display: block;
+      }
+      &__buy-price{
+        height: 60px;
+        width: 100%;
+        line-height: 60px;
+        font-size: 18px;
+        li.a{
+          text-align: left;
+          float: left;
+          width: 50%;
+          font-weight: bold;
+        }
+        li.b{
+          text-align: right;
+          float: right;
+          width: 50%;
+          font-size: 28px;
+          font-weight: bold;
+        }
+      }
+      &__buy-info{
+        color: red;
+        font-size: 14px;
+        text-align: center;
+      }
+      &__buy-btn{
+        height: 50px;
+        width: 100%;
+        margin-top: 5px;
+        background-color: #888888;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        line-height: 50px;
+      }
+      &__haisou{
+        margin-top: 55px;
+        p.a{
+          margin-bottom: 5px;
+          font-weight: bold;
+          font-size: 14px;
+        }
+        p.b{
+          font-size: 14px;
+        }
+      }
+      &__change1{
+        font-size: 14px;
+        color: rgb(0, 140, 255);
+        text-align: right;
+      }
+      &__change1:hover{
+        opacity: 0.7;
+        text-decoration: underline;
+      }
+      &__method{
+        margin-top: 65px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      &__change2{
+        font-size: 14px;
+        color: rgb(0, 140, 255);
+        text-align: right;
+        margin-top: 50px;
+        padding-bottom: 50px;
+      }
+      &__change2:hover{
+        opacity: 0.7;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.item-buypage-footer{
+  height: 180px;
+  width: 100%;
+  background-color: #f5f5f5;
+  &__center{
+    height: 100%;
+    width: 456px;
+    margin: 0 auto;
+    ul{
+      margin-top: 45px;
+      display: flex;
+      height: 20px;
+      width: 100%;
+      font-size: 12px;
+      p{
+        margin-right: 3%;
+      }
+      p.text-a{
+        margin-left: 35px;
+      }
+    }
+    .image-box{
+      img{
+        position: relative;
+        left: 40%;
+        margin-top: 41px;
+      }
+    }
+    .bottom-text{
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+}
