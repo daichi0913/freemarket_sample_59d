@@ -82,6 +82,12 @@ dropZone.addEventListener('drop', handleFileSelect, false);
 
 function file_upload()
 {
+  
+  
+  // build/appendHTML的な記述をする
+
+
+
     // フォームデータを取得
     let formdata = () => new FormData($('#my_form').get(0));
     // ファイルが未登録なら一番最初のファイルを追加
@@ -111,6 +117,8 @@ function file_upload()
         console.log("complete")
     });
 }
+
+
 
 
 

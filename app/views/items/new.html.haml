@@ -37,18 +37,26 @@
     %label{for: "category"} カテゴリー
     %span.form-require 必須
     %br
-    -# %select.category_select{name: "category_select"}
-    -# %option{selected:"selected"} ---
-    -# -@categories. each do |category|
-    -#   %option{value: category.id} #{category.name}
+    %select.category_select{name: "category_select"}
+    %option{selected:"selected"} ---
+    -@categories. each do |category|
+      %option{value: category.id} #{category.name}
             
     %div.sell-contents
     %label{for: "size"} サイズ
     %span.form-require 必須
-
-    %select.size_select{name: "size"}
-    %option{selected:"selected"}
-
+    %select.select-default{name: "size"}
+      %option{selected:"selected"} ---
+      %option{value: "under_xxs"} XXS以下
+      %option{value: "xs_ss"} XS(SS)
+      %option{value: "s"} S
+      %option{value: "m"} M
+      %option{value: "l"} L
+      %option{value: "xl_ll"} XL(LL)
+      %option{value: "2xl_3l"} 2XL(3L)
+      %option{value: "3xl_4l"} 3XL(4L)
+      %option{value: "over_4xl_5l"} 4XL(5L)以上
+      %option{value: "free_size"} FREE SIZE
 
     %br
     %label{for: "brand"} ブランド
@@ -58,22 +66,43 @@
     %br
     %label{for: "item_status"} 商品の状態
     %span.form-require 必須
-    %input.input-default-status{name: "item_status", :type => "text", :value => ""}/
+    %select.select-default{name: "item_status"}
+      %option{selected:"selected"} ---
+      %option{value: "unused"} 新品、未使用
+      %option{value: "almost_unused"} 未使用に近い
+      %option{value: "looks_ok"} 目立った傷や汚れなし
+      %option{value: "bit_damaged"} やや傷や汚れあり
+      %option{value: "damaged"} 傷や汚れあり
+      %option{value: "bad"} 全体的に状態が悪い
 
 
-    %div.sell-contents
-      %select{:name => ".input-default", :size => "3"}
-      %option{:value => ""} ---
-      %option{:value => "選択肢1"} 送料込み(出品者負担)
-      %option{:value => "選択肢2"} 着払い(購入者負担)
 
-    %label{for: "shippin_fee", option: "送料込み(出品者負担)" "着払い(購入者負担)"} 配送料の負担
+    -# %div.sell-contents
+    -#   %select{:name => ".input-default", :size => "2"}
+    -#   %option{:value => "---"}
+    -#   %option{:value => "選択肢1"}
+    -#   %p 送料込み(出品者負担)
+    -#   %option{:value => "選択肢2"}
+    -#   %p 着払い(購入者負担)
+
+    %label{for: "shippin_fee"} 配送料の負担
     %span.form-require 必須
-    %input.input-default
+    %select.select-default{name: "shippin_fee"}
+      %option{selected:"selected"} ---
+      %option{value: "include"} 送料込み(出品者負担)
+      %option{value: "exclude"} 着払い(購入者負担)
+
+
     %br
     %label{for: "from_where"} 発送元の地域
     %span.form-require 必須
-    %input.input-default
+
+    %select.from_where{name: "from_where"}
+    %option{selected:"selected"} ---
+    -@regions. each do |region|
+      %option{value: region.id} #{region.name}
+
+
 
     %br
     %label{for: "how_many_days"} 発送までの日数
