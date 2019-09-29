@@ -1,7 +1,7 @@
 .shyouhin-main
   = render partial: '/shared/headers', locals: { categories: @categories }
   .shyouhin-box
-    .item-name Apple Watch Series 5
+    .item-name フェイスブック
     .item-main-content
       .item-photo
         .item-photo-main
@@ -19,46 +19,179 @@
         .category-box
           .category1
             .category1-box
-              出品者
+              .category-box-name
+                出品者
             .category1-box1
-              マークザッカーバーグ
-        .item-price
-          .price-name
-          .price-tax
-          .price-free
-        .item-buy
-        .item-setumei
-        .item-hyouka
-          .item-hyouka-left
-            .item-iine
-            .item-houkoku
-          .item-hyouka-right
-            .item-icon
-            .item-span
+              .category1-box1-name
+                マークザッカーバーグ
+              .category2-box2
+                = fa_icon "thumbs-o-up"
+                413
+              .category3-box3
+                = fa_icon "thumbs-o-up"
+                40
+              .category3-box3
+                = fa_icon "thumbs-o-up"
+                1
+          .category1-1
+            .category1-box-1
+              .category-box-name-1
+                カテゴリー
+            .category1-box1-1
+              .category1-box1-name-1
+                メンズ
+              .category2-box2-1
+                = fa_icon "angle-right"
+                会社
+              .category3-box3-1
+                = fa_icon "angle-right"
+                IT企業
+          .category1-2
+            .category1-box-2
+              .category-box-name-2
+                ブランド
+            .category1-box1-2
+              .category1-box1-name-2
+                フェイスブック
+          .category1-2
+            .category1-box-2
+              .category-box-name-2
+                商品状態
+            .category1-box1-2
+              .category1-box1-name-2
+                成長企業
+          .category1-2
+            .category1-box-2
+              .category-box-name-2
+                配送料の負担
+            .category1-box1-2
+              .category1-box1-name-2
+                送料込み（出品者負担）
+          .category1-2
+            .category1-box-2
+              .category-box-name-2
+                配送方法
+            .category1-box1-2
+              .category1-box1-name-2
+                らくらくメルカリ便
+          .category1-2
+            .category1-box-2
+              .category-box-name-2
+                発送元地域
+            .category1-box1-2
+              .category1-box1-name-2
+                シリコンバレー
+          .category1-2
+            .category1-box-2
+              .category-box-name-2
+                発送日の目安
+            .category1-box1-2
+              .category1-box1-name-2
+                ３ヶ月
+    .item-price
+      .price-name
+        ￥10,000,000,000
+      .price-tax
+        (税込)
+      .price-free
+        送料込み
+    .item-buy
+      購入画面に進む
+    .item-setumei
+      Facebookは、2004年2月、設立しました。
+      FacebookやInstagramなどがあります。
+      現在ではLibraという仮想通貨を運用する予定で準備を進めている。
+      社員は優秀な人も多くいます。
+      質問はお手軽にどうぞ
+    .item-hyouka
+      .item-hyouka-left
+        .item-iine
+          .hyouka-hato
+            = fa_icon "heart-o"
+          .hyouka-iine
+            いいね
+          .hyouka-kazu
+            10
+        .item-iine-1
+          .hyouka-hata
+            = fa_icon "flag-o" 
+          .item-houkoku
+            不適切な商品の報告
+      .item-hyouka-right
+        .item-icon
+          =fa_icon "lock"
+        .item-span
+          あんしん・あんぜんへの取り組み
   .item-message
     .message-box
       .message-box-content
         .message-form
           .message-setumei
+            相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
           .message-text
           .message-coment
+            .message-coment-text
+              コメントする
   .item-link
     .link-left
-      .link-box
       .link-icon
+        = fa_icon "angle-left"
+      .link-box
+        Amazon
     .link-right
-      .link-box
-      .link-icon
+      .link-icon-1
+        = fa_icon "angle-right"
+      .link-box-1
+        Google
   .item-media
     .media-top
-    .media-box
       .social-left
+        = fa_icon "facebook-official"
       .social-main
-      .socal-right
+        = fa_icon "twitter-square"
+      .social-right
+        = fa_icon "pinterest-square"
   .item-user-profile
     .user-item-top
+      マークザッカーバーグのその他の出品
     .user-item-content
       .user-item-box
+        .items-box
+          .items-imag
+          .items-text
+            .items-text-name
+              マークが書いた絵
+            .items-text-name1
+              .items-text-price
+                ¥2,000,000
+              .items-math
+                1
+              .items-heart
+                = fa_icon "heart-o"
+        .items-box-1
+          .items-imag-1
+          .items-text-1
+            .items-text-name-1
+              マークが書いた絵
+            .items-text-name1-1
+              .items-text-price-1
+                ¥2,000,000
+              .items-math-1
+                1
+              .items-heart-1
+                = fa_icon "heart-o"
+        .items-box-2
+          .items-imag-2
+          .items-text-2
+            .items-text-name-2
+              マークが書いた絵
+            .items-text-name1-2
+              .items-text-price-2
+                ¥2,000,000
+              .items-math-2
+                1
+              .items-heart-2
+                = fa_icon "heart-o"
   .item-second-footer
     .item-footer-main
       .item-footer-name
