@@ -1,0 +1,40 @@
+.profile-box{
+  width: 64%;
+  height: 900px;
+  float: right;
+  position: relative;
+  &__left{
+    width: 85%;
+    height: 57%;
+    background-color: aliceblue;
+    margin-top: 40px;
+    &__header{
+      height: 50px;
+      width: 100%;
+      background-color: white;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 50px;
+    }
+    &__image{
+      height: 156px;
+      width: 100%;
+      background-image: url(mericri.jpg)
+    }
+    &__text{
+      width: 668px;
+      position: relative;
+      top: 45px;
+      margin: 0 auto;
+      height: 216px;
+      border: 1px solid #88888888;
+    }
+    &__bottom{
+      width: 668px;
+      height: 50px;
+      background-color: #ea352d;
+      margin: 0 auto;
+    }
+  }
+}
