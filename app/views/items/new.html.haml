@@ -58,13 +58,18 @@
     %br
     %label{for: "item_status"} 商品の状態
     %span.form-require 必須
-    %input.input-default-status{name: "item_status", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", :type => "text", :value => ""}/
+    %input.input-default-status{name: "item_status", :type => "text", :value => ""}/
 
 
     %div.sell-contents
-      %label{for: "shippin_fee", value: "送料込み(出品者負担)", option2: "着払い(購入者負担)"} 配送料の負担
-      %span.form-require 必須
-      %input.input-default
+      %select{:name => ".input-default", :size => "3"}
+      %option{:value => ""} ---
+      %option{:value => "選択肢1"} 送料込み(出品者負担)
+      %option{:value => "選択肢2"} 着払い(購入者負担)
+
+    %label{for: "shippin_fee", option: "送料込み(出品者負担)" "着払い(購入者負担)"} 配送料の負担
+    %span.form-require 必須
+    %input.input-default
     %br
     %label{for: "from_where"} 発送元の地域
     %span.form-require 必須
