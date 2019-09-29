@@ -143,38 +143,82 @@
 //ここはスライドショー
 
 .top-view
-  %input{:type => "radio",:name => "images", :id => "i1" ,:checked => ""}
-  %input{:type => "radio",:name => "images", :id => "i2"}
-  %a#one.slider-image1{:href=>"https://www.mercari.com/jp/featured/camp/"}
-    %label{:for => "i2", :class =>"pre"}
-      = fa_icon "angle-left"
-    %label{:for => "i2", :class =>"next"}
-      = fa_icon "angle-right"
-    %img{:src=>"//www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?2687693852", :alt=>"メルカリなら新品も中古もお得！キャンプ用品 大特集！"}
-  #two.slider-image2
-    %label{:for => "i1", :class =>"pre"}
-      = fa_icon "angle-left"
-    %label{:for => "i1", :class =>"next"}
-      = fa_icon "angle-right"
-    .center
-      %li.text1
-        スマホでかんたん
-      %li.text2
-        フリマアプリ
-      %li.text3
-        テキストはスマホカメラからすぐに出品できる
-      %li.text4
-        購入時も安心な独自システムのアプリです
-      %ul.img-box
-        %li.img-btn1
-          %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg"}
-        %li.img-btn2
-          %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg"}
-      .img-btn3
-        %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/top-banner-main-device-1f627e51e488f6ca35feaa6a08b79736.png"}
-  .nav-slideshow
-    %label{:for => "i1", :id => "dot1",:class =>"dots"}
-    %label{:for => "i2", :id => "dot2",:class =>"dots"}
+  .slides
+    %input{:type => "radio",:name => "images", :id => "i1" ,:checked => ""}
+    %input{:type => "radio",:name => "images", :id => "i2"}
+    %a#one.slider-image1{:href=>"https://www.mercari.com/jp/featured/camp/"}
+      %label{:for => "i2", :class =>"pre"}
+        = fa_icon "angle-left"
+      %label{:for => "i2", :class =>"next"}
+        = fa_icon "angle-right"
+      %img{:src=>"//www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?2687693852", :alt=>"メルカリなら新品も中古もお得！キャンプ用品 大特集！"}
+    #two.slider-image2
+      %label{:for => "i1", :class =>"pre"}
+        = fa_icon "angle-left"
+      %label{:for => "i1", :class =>"next"}
+        = fa_icon "angle-right"
+      .center
+        %li.text1
+          スマホでかんたん
+        %li.text2
+          フリマアプリ
+        %li.text3
+          テキストはスマホカメラからすぐに出品できる
+        %li.text4
+          購入時も安心な独自システムのアプリです
+        %ul.img-box
+          %li.img-btn1
+            %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg"}
+          %li.img-btn2
+            %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg"}
+        .img-btn3
+          %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/top-banner-main-device-1f627e51e488f6ca35feaa6a08b79736.png"}
+    .nav-slideshow
+      %label{:for => "i1", :id => "dot1",:class =>"dots"}
+      %label{:for => "i2", :id => "dot2",:class =>"dots"}
+-# .carusell
+-#   %ul.carucell-list
+-#     %li.item
+-#       %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/top-banner-main-device-1f627e51e488f6ca35feaa6a08b79736.png"}
+-#     %li.item
+-#       %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/top-banner-main-device-1f627e51e488f6ca35feaa6a08b79736.png"}
+-#     %li.item
+-#       %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/top-banner-main-device-1f627e51e488f6ca35feaa6a08b79736.png"}
+
+
+
+  -# %input{:type => "radio",:name => "images", :id => "i1" ,:checked => ""}
+  -# %input{:type => "radio",:name => "images", :id => "i2"}
+  -# %a#one.slider-image1{:href=>"https://www.mercari.com/jp/featured/camp/"}
+  -#   %label{:for => "i2", :class =>"pre"}
+  -#     = fa_icon "angle-left"
+  -#   %label{:for => "i2", :class =>"next"}
+  -#     = fa_icon "angle-right"
+  -#   %img{:src=>"//www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?2687693852", :alt=>"メルカリなら新品も中古もお得！キャンプ用品 大特集！"}
+  -# #two.slider-image2
+  -#   %label{:for => "i1", :class =>"pre"}
+  -#     = fa_icon "angle-left"
+  -#   %label{:for => "i1", :class =>"next"}
+  -#     = fa_icon "angle-right"
+  -#   .center
+  -#     %li.text1
+  -#       スマホでかんたん
+  -#     %li.text2
+  -#       フリマアプリ
+  -#     %li.text3
+  -#       テキストはスマホカメラからすぐに出品できる
+  -#     %li.text4
+  -#       購入時も安心な独自システムのアプリです
+  -#     %ul.img-box
+  -#       %li.img-btn1
+  -#         %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg"}
+  -#       %li.img-btn2
+  -#         %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg"}
+  -#     .img-btn3
+  -#       %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/top-banner-main-device-1f627e51e488f6ca35feaa6a08b79736.png"}
+  -# .nav-slideshow
+  -#   %label{:for => "i1", :id => "dot1",:class =>"dots"}
+  -#   %label{:for => "i2", :id => "dot2",:class =>"dots"}
 
 
       
