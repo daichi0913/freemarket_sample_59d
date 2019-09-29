@@ -119,7 +119,22 @@ function file_upload()
 }
 
 
+function isNumeric(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
 
+
+$('#btnCalculate').on('click', function() {
+  var a = $('#pointspossible').val().replace(/ +/g, "");
+  var b = $('#pointsgiven').val().replace(/ +/g, "");
+  var perc = "0";
+  if (a.length > 0 && b.length > 0) {
+      if (isNumeric(a) && isNumeric(b)) {
+          perc = a / b * 100;
+      }
+  }    
+  $('#pointsperc').val(perc).toFixed(3);
+});
 
 
 // // ドロップされる側のオブジェクトのidを'drop'とする

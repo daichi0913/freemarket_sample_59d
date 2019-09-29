@@ -74,16 +74,6 @@
       %option{value: "damaged"} 傷や汚れあり
       %option{value: "bad"} 全体的に状態が悪い
 
-
-
-    -# %div.sell-contents
-    -#   %select{:name => ".input-default", :size => "2"}
-    -#   %option{:value => "---"}
-    -#   %option{:value => "選択肢1"}
-    -#   %p 送料込み(出品者負担)
-    -#   %option{:value => "選択肢2"}
-    -#   %p 着払い(購入者負担)
-
     %h3.each-head 配送について
     %label{for: "shippin_fee"} 配送料の負担
     %span.form-require 必須
@@ -119,11 +109,17 @@
     %label{for: "price", placeholder: "例)300"} 価格
     %span.form-require 必須
 
+    %input#pointspossible.clsInput{:type => "text"}/
+    %input#pointsgiven.clsInput{:type => "text"}/
+    %button#btnCalculate Calculate
+    %input#pointsperc{:disabled => "disabled", :type => "text"}/
 
 
 
     %input.input-default
       %li.clearfix 販売手数料(10%)
+
+      
 
 
 
