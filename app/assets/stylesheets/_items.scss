@@ -52,30 +52,40 @@ form.sell-form{
 
 }
 
-.sell-upload-drop-box{
-  position: relative;
-  min-height: 162px;
-  background: #f5f5f5;
-  border: 1px dashed #ccc;
-  font-size: 0;
-  text-align: center;
-  cursor: pointer;
-  color: #333;
-}
+// .sell-upload-drop-box{
+//   position: relative;
+//   min-height: 162px;
+//   background: #f5f5f5;
+//   border: 1px dashed #ccc;
+//   font-size: 0;
+//   text-align: center;
+//   cursor: pointer;
+//   color: #333;
+// }
 
-.visible-pc{
-position: absolute;
-top: 50%;
-left: 16px;
-right: 16px;
-text-align: center;
-font-size: 14px;
-line-height: 1.5;
--webkit-transform: translate(0, -50%);
-transform: translate(0, -50%);
-pointer-events: none;
-white-space: pre-wrap;
-word-wrap: break-word;
+// .visible-pc{
+// position: absolute;
+// top: 50%;
+// left: 16px;
+// right: 16px;
+// text-align: center;
+// font-size: 14px;
+// line-height: 1.5;
+// -webkit-transform: translate(0, -50%);
+// transform: translate(0, -50%);
+// pointer-events: none;
+// white-space: pre-wrap;
+// word-wrap: break-word;
+// }
+
+#drop_zone{
+  width: 80%;
+  height: 200px;
+  border: 1px dotted black;
+  border-radius: 1rem;
+  margin: auto;
+  margin-top: 2rem;
+  font-size: 3rem;
 }
 
 

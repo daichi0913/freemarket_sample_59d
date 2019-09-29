@@ -12,8 +12,14 @@
     %label{:for => "item_img"} 出品画像
     %span.form-require 必須
     %p 最大10枚までアップロードできます
-    %div.sell-upload-drop-box
-    %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
+    -# %div.sell-upload-drop-box
+    -# %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
+    #drop_zone Drop a file here
+    %output#list
+    %form#my_form{:enctype => "multipart/form-data"}
+      %input{:name => "upload_file", :style => "display:inline", :type => "file"}/
+      %br/
+      %button{:onclick => "file_upload()", :type => "button"} アップロード
 
 
 
