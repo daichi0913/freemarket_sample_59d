@@ -23,4 +23,8 @@ class UsersController < ApplicationController
   def sms_confirmation
     
   end
+
+  def credit_card
+    
+  end
 end
