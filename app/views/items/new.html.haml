@@ -32,15 +32,16 @@
       %span.form-require 必須
       %input.input-default-datail{name: "item_detail", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", :type => "text", :value => ""}/
 
-    %br
-    %div.category-box
-    %label{for: "category"} カテゴリー
-    %span.form-require 必須
-    %br
-    %select.category_select{name: "category_select"}
-    %option{selected:"selected"} ---
-    -@categories. each do |category|
-      %option{value: category.id} #{category.name}
+
+      %h3.each-head 商品の詳細
+      %label{for: "category"} カテゴリー
+      %span.form-require 必須
+      %br
+      
+      %select.category_select{name: "category_select"}
+        %option{selected:"selected"} ---
+        -@categories. each do |category|
+          %option{value: category.id} #{category.name}
             
     %div.sell-contents
     %label{for: "size"} サイズ
@@ -58,12 +59,10 @@
       %option{value: "over_4xl_5l"} 4XL(5L)以上
       %option{value: "free_size"} FREE SIZE
 
-    %br
     %label{for: "brand"} ブランド
     %span.form-yourself 任意
     %input.input-default{name: "brand", placeholder: "例）シャネル", type: "text", value: ""}/
 
-    %br
     %label{for: "item_status"} 商品の状態
     %span.form-require 必須
     %select.select-default{name: "item_status"}
@@ -85,6 +84,7 @@
     -#   %option{:value => "選択肢2"}
     -#   %p 着払い(購入者負担)
 
+    %h3.each-head 配送について
     %label{for: "shippin_fee"} 配送料の負担
     %span.form-require 必須
     %select.select-default{name: "shippin_fee"}
@@ -97,23 +97,34 @@
     %label{for: "from_where"} 発送元の地域
     %span.form-require 必須
 
-    %select.from_where{name: "from_where"}
-    %option{selected:"selected"} ---
-    -@regions. each do |region|
-      %option{value: region.id} #{region.name}
+    %select.from_where.select-default{name: "from_where"}
+      %option{selected:"selected"} ---
+      -@regions. each do |region|
+        %option{value: region.id} #{region.name}
 
 
 
     %br
     %label{for: "how_many_days"} 発送までの日数
     %span.form-require 必須
-    %input.input-default
+    %select.select-default{name: "shippin_fee"}
+      %option{selected:"selected"} ---
+      %option{value: "in_1day"} 1〜2日で発送
+      %option{value: "in_2days"} 2〜3日で発送
+      %option{value: "in_4days"} 4〜7日で発送
 
-    %div.sell-contents
-      %label{for: "price"} 価格
-      %span.form-require 必須
+
+    -# %div.sell-contents
+    %h3.each-head販売価格(300〜9,999,999)
+    %label{for: "price", placeholder: "例)300"} 価格
+    %span.form-require 必須
+
+
+
+
+    %input.input-default
       %li.clearfix 販売手数料(10%)
-      %input.input-default
+
 
 
 
