@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'user_detail/edit'
   get 'items/new'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
