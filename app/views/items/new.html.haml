@@ -2,10 +2,10 @@
 = render partial: 'layouts/user_registration_status_bar'
 
 %script{:language => "JavaScript"}
-  :cdata
-    function Add(){
-    document.fm.C.value = document.fm.A.value + document.fm.B.value;
-    }
+  -# :cdata
+  -#   function Add(){
+  -#   document.fm.C.value = document.fm.A.value + document.fm.B.value;
+  -#   }
 
 
 %main.main
@@ -15,7 +15,7 @@
 
   %form.sell-form
 
-  .form-group
+  .form-group-box
     %label{:for => "item_img"} 出品画像
     %span.form-require 必須
     %p 最大10枚までアップロードできます
@@ -45,10 +45,12 @@
       %span.form-require 必須
       %br
       
+    .category_select_box
       %select.category_select{name: "category_select"}
         %option{selected:"selected"} ---
         -@categories. each do |category|
           %option{value: category.id} #{category.name}
+
             
     %div.sell-contents
     %label{for: "size"} サイズ

@@ -38,7 +38,7 @@
         position: relative;
         height: 200px;
         padding: 20px;
-        background-image: url(futta2034-1440x900.jpg);
+        background-image: url(publicdomainq-0018054pwq.jpg);
         .r-content-top-main{
           display: block;
           position: absolute;
@@ -62,6 +62,39 @@
     }
    }}
   }
+}
+
+.top-name{
+  margin: 8px 0 0;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 600;
+}
+.top-kazu{
+  margin: 8px 0 0;
+  text-align: center;
+}
+.kazu1{
+  display: inline-block;
+  text-align: center;
+}
+.kazu2{
+  display: inline-block;
+  text-align: center;
+  margin: 0 0 0 8px;
+  font-size: 16px;
+}
+.kazu3{
+  display: inline-block;
+  text-align: center;
+  margin: 0 0 0 16px;
+}
+.kazu4{
+  display: inline-block;
+  text-align: center;
+  margin: 0 0 0 8px;
+  font-size: 16px;
+
 }
 .r-content-main{
     
@@ -1013,12 +1046,18 @@ font-weight: 600;
                 transform: translate(0, -50%);
                 -webkit-transition: all ease-out .2s;
                 transition: all ease-out .2s;
+              }
+                .hover1{
+                background-color: #b1eeff;
+                padding: 10px;
+                font-size: 18px;
+                -webkit-transition: all 0.3s ease;
+                -moz-transition: all 0.3s ease;
+                -o-transition: all 0.3s ease;
+                transition: all  0.3s ease;
                 }
-                        
-//////////////////////header-css
-// .top-header__box__bottom2{
-//   background-color: #ea352d;
-//   ul.top-header__box__bottom2{
-//     display: flex;
-//     flex-direction: row;
-//     }
+               .hover1:hover{
+                background-color: #ffc9d7;
+                padding: 25px;
+                font-size: 24px;
+                }

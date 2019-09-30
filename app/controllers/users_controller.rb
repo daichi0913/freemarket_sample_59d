@@ -32,7 +32,8 @@ class UsersController < ApplicationController
     
   end
 
+
   def finish
 
   end
-end
+
