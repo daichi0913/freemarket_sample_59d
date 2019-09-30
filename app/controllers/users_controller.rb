@@ -40,4 +40,4 @@ class UsersController < ApplicationController
   def finish
 
   end
-
+end
