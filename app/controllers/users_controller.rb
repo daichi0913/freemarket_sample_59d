@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :show
+  before_action :call_categories
   def index
 
   end
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @categories = Category.all
+    
   end
 
   def logout
@@ -39,5 +39,10 @@ class UsersController < ApplicationController
 
   def finish
 
+  end
+
+  private
+  def call_categories
+    @categories = Category.all
   end
 end
