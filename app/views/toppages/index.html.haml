@@ -1,8 +1,8 @@
 //ここはヘッダー
 .top-header
   .top-header__icon
-    %a{ href:"/"}
-      %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg",:alt=>"Mercari",:class=>"top-header-logo"}
+    = link_to root_path, class: "btn btn-dark btn-sm" do
+      = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg",alt:"Mercari",class:"top-header-logo"
   .top-header__box
     .top-header__box__top
     %form{:action=>"",:class=>"form"}
@@ -42,7 +42,7 @@
     .top-header__box__bottom2__left__bland
                       
       %li.bland-box  
-        %a.bland-text{ href:""}
+        = link_to "#", class: "bland-text" do
           = fa_icon "tag"
           ブランドから探す
           .lic1-li  シャネル
@@ -55,7 +55,7 @@
     .top-header__box__bottom2__right
       .top-header__box__bottom2__right__like
         %li.like-box
-          %a.like-text{ href:""}
+          = link_to "#", class: "like-text" do
             = fa_icon"heart"
             いいね！一覧
       
@@ -63,7 +63,7 @@
         %li.news-box
           .new-color-box
             お知らせ
-            %a.news-text{ href:""}
+            = link_to "#", class: "news-text" do
               = fa_icon "bell"
               %ul.news-lists
                 .product-image
@@ -77,7 +77,7 @@
                       30分前
       .top-header__box__bottom2__right__todo
         %li.todo-box
-          %a.todo-text{ href:""}
+          = link_to "#", class: "todo-text" do
             = fa_icon"check"
             やることリスト
             .my-todo-box
@@ -87,12 +87,12 @@
         %li.mypage-box
           .myfont-box
             .myfont-view
-              %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg"}
-            %a.mypage-text{ href:""}
+              = image_tag "",class:"logo"
+            = link_to "#", class: "mypage-text" do
               マイページ
             %li.mypage-mini
               .mypage-mini__header
-                %img{:src=>"https://ord.yahoo.co.jp/o/image/RV=1/RE=1569641224/RH=b3JkLnlhaG9vLmNvLmpw/RB=/RU=aHR0cHM6Ly9jZG4ucGl4YWJheS5jb20vcGhvdG8vMjAxOS8wOS8xOC8wNy8wOS9tZWFkb3ctNDQ4NTYwOV9fMzQwLmpwZw--/RS=%5EADBaFMWFw3aTcI.CEibqgiOvWyzL3g-;_ylt=A2RCKwmIgY1dPAgA5weU3uV7;_ylu=X3oDMTBrcG5kMTVvBDADanBjMDAzBHZ0aWQDanBjMDAz;_ylc=X3IDMgRmc3QDMQRpZHgDMARvaWQDQU5kOUdjUWlwdGJzNVdlLWpZaFpiZ3VHWnVXRy1XOVY4dVJoYVZIYWxpMTBaRFlISFV6S1U2bkhWQjhtTVdiOQRwAzU1Uzc1WU9QBHBvcwMzMwRzZWMDc2h3BHNsawNzZnN0BHR1cmwD"}
+                = image_tag "",class:"logo2"
                 .mypage-mini__image
               .mypage-mini__name
                 %p.mypage__mini__name__top
