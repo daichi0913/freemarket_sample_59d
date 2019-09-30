@@ -1,31 +1,31 @@
 $(function(){
 
   function buildHTML() {
-    var html = `<select class= "category_select"></select>`
+    var html = `<select class= "category_select"><option selected ="selected">---</option></select>`
     return html;
   }
 
-  function appendHTML(category) {
-    // if (index != 2){
-      // appendHTML
-      $('.category-box').append(html);
-    // else{
-    //   ;
-    // }
+  function deleteHTML(index, length){
+    let del = length - (index+1);
+    if (del == 1){
+      $($('.category_select')[index+1]).remove();
+    
+    } else if (del == 2){
+      $($('.category_select')[index+1]).remove();
+      $($('.category_select')[index+1]).remove();
+    }
   }
-
-
 
   $(document).on('turbolinks:load', function(){
 
-
-    $('.category_select').change(function(){
+    $(document).on("change", ".category_select", function(){
 
       // $("select").removeClass(".hidden");    // console.log( $(this).val() );
       var category_id = $(this).val();
       // 引数にthisを指定し、クリックした順番を変数に格納
       var index = $('.category_select').index(this);
-    
+      var length = $('.category_select').length;
+
       // 順番を表示
       console.log(index);
       $.ajax({
@@ -33,58 +33,45 @@ $(function(){
           url:  '/api/categories',             // /usersのURLに (これによりusersコントローラのindexアクションが起動)
           data: { id: category_id},    // keyword（キー）: input（バリュー）を送信する  ※パラムス
           dataType: 'json'            // サーバから値を返す際はjsonである
-      })
-      
-      .done(function(children){
-        // <li>要素の順番を変数に格納
-        var index = $('option').index(this)+1;  
+      }
+      ).done(function(children){
+        deleteHTML(index, length);
         var html = buildHTML;
-        $('.category_select_box').append(html);
-         
-      children.forEach(function(child) {
-        var html = `<option value="${child.id}">${child.name}</option>`;
-        $($('.category_select')[index+1]).append(html);
-        $('<option>'+child.name+'</option>').val('');
-        $('')
 
+        if ($('.category_select').length < 3){
+          $('.category_select_box').append(html);
+        }
+
+        children.forEach(function(child) {
+          var html = `<option value="${child.id}">${child.name}</option>`;
+          $($('.category_select')[index+1]).append(html);
+          $('<option>'+child.name+'</option>').val('');
+        });
       });
-      });
-    })
+    });
   })
 
+function handleFileSelect(evt) {
+  evt.stopPropagation();
+  evt.preventDefault();
 
+  files = evt.dataTransfer.files; // FileList object.
 
+  // 以下に必要なFile Objectのプロパティを記述
+  var output = [];
+  for (var i = 0, f; f = files[i]; i++) {
+    output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+                f.size, ' bytes, last modified: ',
+                f.lastModifiedDate.toLocaleDateString(), '</li>');
+  }
+  document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+}
 
-
-
-
-
-
-
-
-
-
-  // function handleFileSelect(evt) {
-  //   evt.stopPropagation();
-  //   evt.preventDefault();
-
-  //   files = evt.dataTransfer.files; // FileList object.
-
-  //   // 以下に必要なFile Objectのプロパティを記述
-  //   var output = [];
-  //   for (var i = 0, f; f = files[i]; i++) {
-  //     output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
-  //                 f.size, ' bytes, last modified: ',
-  //                 f.lastModifiedDate.toLocaleDateString(), '</li>');
-  //   }
-  //   document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
-  // }
-
-  // function handleDragOver(evt) {
-  //   evt.stopPropagation();
-  //   evt.preventDefault();
-  //   evt.dataTransfer.dropEffect = 'copy'; 
-  // }
+function handleDragOver(evt) {
+  evt.stopPropagation();
+  evt.preventDefault();
+  evt.dataTransfer.dropEffect = 'copy'; 
+}
 
   // // イベントリスナーを設定
   // var dropZone = document.getElementById('drop_zone');
@@ -92,43 +79,43 @@ $(function(){
   // dropZone.addEventListener('drop', handleFileSelect, false);
 
 
-  function file_upload()
-  {
-    
-    
-    // build/appendHTML的な記述をする
+function file_upload()
+{
+  
+  
+  // build/appendHTML的な記述をする
 
 
 
-      // フォームデータを取得
-      let formdata = () => new FormData($('#my_form').get(0));
-      // ファイルが未登録なら一番最初のファイルを追加
-      // 複数ファイルアップロードの場合ここを修正
-      if($('input[name="upload_file"]').val() == ""){
-        formdata.append('upload_file',files[0])
-      }
+    // フォームデータを取得
+    let formdata = () => new FormData($('#my_form').get(0));
+    // ファイルが未登録なら一番最初のファイルを追加
+    // 複数ファイルアップロードの場合ここを修正
+    if($('input[name="upload_file"]').val() == ""){
+      formdata.append('upload_file',files[0])
+    }
 
-      //非同期通信
-      $.ajax({
-          url  : "/upload2",
-          type : "POST",
-          data : formdata,
-          cache       : false,
-          contentType : false,
-          processData : false,
-          dataType: 'html',
+    //非同期通信
+    $.ajax({
+        url  : "/upload2",
+        type : "POST",
+        data : formdata,
+        cache       : false,
+        contentType : false,
+        processData : false,
+        dataType: 'html',
 
-      })
-      .done(function(data, textStatus, jqXHR){
-          console.log(data);
-      })
-      .fail(function(jqXHR, textStatus, errorThrown){
-          console.log("fail");
-      })
-      .always(function(data){
-          console.log("complete")
-      });
-  }
+    })
+    .done(function(data, textStatus, jqXHR){
+        console.log(data);
+    })
+    .fail(function(jqXHR, textStatus, errorThrown){
+        console.log("fail");
+    })
+    .always(function(data){
+        console.log("complete")
+    });
+}
 
 
   // function isNumeric(n) {
