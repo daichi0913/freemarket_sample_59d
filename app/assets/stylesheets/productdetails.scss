@@ -8,7 +8,6 @@
   margin: 40px auto 0;
   padding: 24px 40px 40px;
   width: 620px;
-  height: 1555px;
 }
 .item-name{
   font-size: 24px;
@@ -17,7 +16,9 @@
   line-height: 1.4;
 }
 .item-main-content{
-  margin: 16px 0 0;
+  padding-top: 16px;
+  height:447px;
+  width:620px;
 }
 .item-photo{
   float: left;
@@ -98,26 +99,453 @@
 .category-box{
   width: 100%;
   max-width: 300px;
-  margin: 8px auto 0;
   border-collapse: collapse;
-  border: 1px solid #f5f5f5;
 }
 .category1{
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
+  border: 1px solid #f5f5f5;
 }
 .category1-box{
-  width: 28%;
+  width: 31%;
   text-align: left;
   font-weight: 400;
   background: #fafafa;
-  padding: 23px;
+  padding: 20px 8px;
   display: inline-block;
+  float: left;
+}
+.category-box-name{
+  font-size:14px
 }
 .category1-box1{
-  width: 51%;
+  width: 54%;
   background: #fff;
   display: inline-block;
-  font-size:13px;
+  font-size:14px;
+  padding: 8px;
+}
+.category2-box2{
+  padding-top:8px;
+  font-size: 14px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.category3-box3{
+  font-size: 14px;
+  vertical-align: middle;
+  display: inline-block;
+  margin: 8px 0 0 16px;
+}
+.category4-box4{
+  padding-top:3px;
+  font-size: 14px;
+  vertical-align: middle;
+  display: inline-block;
+  margin: 8px 0 0 16px;
+}
+.category1-1{
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #f5f5f5;
+}
+.category1-box-1{
+  width: 31%;
+  text-align: left;
+  font-weight: 400;
+  background: #fafafa;
+  padding: 29px 8px;
+  display: inline-block;
+  float: left;
+}
+.category-box-name-1{
+  font-size:14px
+}
+.category1-box1-1{
+  width: 54%;
+  background: #fff;
+  display: inline-block;
+  font-size:11px;
+  padding: 7px;}
+.category1-box1-name-1{
+  font-size: 14px;
+}
+.category2-box2-1{
+  font-size: 14px;
+}
+.category3-box3-1{
+  font-size: 14px;
+}
+.category1-2{
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #f5f5f5;
+}
+.category1-box-2{
+  width: 31%;
+  text-align: left;
+  font-weight: 400;
+  background: #fafafa;
+  padding: 15px 8px;
+  display: inline-block;
+  float: left;}
+
+.category1-box1-2{
+  width: 54%;
+  background: #fff;
+  display: inline-block;
+  font-size:14px;
+  padding: 14px;
+}
+.category-box-name-2{
+  font-size:14px
+}
+.item-price{
+  margin: 24px 0 0;
+  text-align: center;
+}
+.price-name{
+  margin: 0 16px 0 0;
+  font-size: 50px;
+  display: inline-block;
+}
+.price-tax{
+  display: inline-block;
+  font-size: 10px;
+}
+.price-free{
+  display: inline-block;
+  font-size: 16px;
+}
+.item-buy{
+  display: block;
+  margin-top: 16px;
+  background: #ea352d;
+  font-size: 14px;
+  color: #fff;
+  line-height: 56px;
+  text-align: center;
+  font-weight: 600;
+  -webkit-transition: all ease-out .3s;
+  transition: all ease-out .3s;
+  font-size: 24px;
+  line-height: 60px;
+}
+.item-setumei{
+  padding: 32px 0 0;
+  white-space: pre-wrap;
+}
+.item-hyouka{
+  margin: 16px 0 0;
+  font-size: 0;
+  height: 40px;
+}
+.item-hyouka-left{
+  float: left;
+}
+.item-iine{
+  color: #333;
+  border: 1px solid #f5f5f5;
+  background: #f5f5f5;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 40px;
+  -webkit-transition: all ease-out .3s;
+  transition: all ease-out .3s;
+  display: inline-block;
+}
+.hyouka-hato{
+  font-size: 14px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.hyouka-iine{
+  display: inline-block;
+  margin: 1px 0 0 8px;
+  font-size: 14px;
+  vertical-align: middle;
+}
+.hyouka-kazu{
+  display: inline-block;
+  margin: 1px 0 0 8px;
+  font-size: 14px;
+  vertical-align: middle;
+}
+.item-iine-1{
+  margin: 0 0 0 16px;
+  color: #333;
+  border: 1px solid #f5f5f5;
+  background: #f5f5f5;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 40px;
+  -webkit-transition: all ease-out .3s;
+  transition: all ease-out .3s;
+  display: inline-block;
+}
+.hyouka-hata{
+  font-size: 14px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.item-houkoku{
+  display: inline-block;
+  margin: 1px 0 0 8px;
+  font-size: 14px;
+  vertical-align: middle;
+}
+.item-hyouka-right{
+  margin: 8px 0 0;
+  float: right;
+}
+.item-icon{
+  font-size: 14px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.item-span{
+  display: inline-block;
+  margin: 1px 0 0 8px;
+  font-size: 12px;
+  vertical-align: middle;
+  font-size: 14px;
+}
+.item-message{
+  background: #fff;
+  margin: 8px auto 0;
+  padding: 24px;
+  width: 652px;
+}
+.message-box{
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+.message-form{
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+.message-setumei{
+  padding: 8px;
+  font-size: 14px;
+  background: #fff6de;
+}
+.message-text{
+  margin: 8px 0 0;
+  display: block;
+  max-width: 100%;
+  min-height: 104px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.message-coment{
+  margin: 8px 0 0;
+  font-size: 0;
+  text-align: center;
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+  line-height: 48px;
+  display: block;
+}
+.message-coment-text{
+  font-size: 14px;
+  vertical-align: middle;
+}
+.item-link{
+  margin: 24px auto 0;
+  width: 700px;
+}
+.link-left{
+  width: 45%;
+  display: inline-block;
+}
+.link-icon{
+  display: inline-block;
+  font-size: 18px;
+  float: left;
+}
+.link-box{
+  display: inline-block;
+  float: left;
+  padding: 3px 0 0 6px;
+}
+.link-right{
+  width: 54%;
+  display: inline-block;
+}
+.link-icon-1{
+  display: inline-block;
+  float: right;
+  font-size: 18px;
+}
+.link-box-1{
+  display: inline-block;
+  float: right;
+  padding: 2px 6px 0 0;
+}
+.item-media{
+  margin: 24px auto;
+  padding: 32px 0 24px;
+  width: 700px;
+  background: #fff;
+}
+.media-top{
+  margin: 16px 0 0;
+  text-align: center;
+  font-size: 0;
+}
+.social-left{
+  font-size:44px;
+  display: inline-block;
+  margin: 0 8px 8px 0;
+  vertical-align: middle;
+  text-align: center;
+}
+.social-main{
+  font-size:44px;
+  display: inline-block;
+  margin: 0 8px 8px 0;
+  vertical-align: middle;
+  text-align: center;
+}
+.social-right{
+  font-size:44px;
+  display: inline-block;
+  margin: 0 8px 8px 0;
+  vertical-align: middle;
+  text-align: center;
+}
+.item-user-profile{
+  width: 700px;
+  margin: 0 auto;
+  height: 1500px;
+}
+.user-item-top{
+  font-size: 22px;
+  margin: 24px 0 8px;
+}
+.user-item-content{
+  width: auto;
+}
+.user-item-box{
+  width: 240px;
+  margin: 0 20px 20px 0;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.items-box{
+  display: block;
+  color: #333;
+  margin: 0px 20px 20px 0;
+}
+.items-imag{
+  width: 220px;
+  height: 220px;
+  background-image: url(logo.png);
+  background-size: 220px 220px;
+}
+.items-text{
+  height: 78px;
+  padding: 16px;
+  background: #fff;
+}
+.items-text-name{
+  height: 3em;
+}
+.items-text-name1{
+  margin: 8px 0 0;
+}
+.items-text-price{
+  display: inline-block;
+}
+.items-heart{
+  display: inline-block;
+  float: right;
+}
+.items-math{
+  display: inline-block;
+  float: right;
+  padding: 0 0 0 10px;
+}
+
+
+.items-box-1{
+  display: block;
+  color: #333;
+  margin: 0px 20px 20px 0;
+}
+.items-imag-1{
+  width: 220px;
+  height: 220px;
+  background-image: url(logo.png);
+  background-size: 220px 220px;
+}
+.items-text-1{
+  height: 78px;
+  padding: 16px;
+  background: #fff;
+
+}
+.items-text-name-1{
+  height: 3em;
+}
+.items-text-name1-1{
+  margin: 8px 0 0;
+}
+.items-text-price-1{
+  display: inline-block;
+}
+.items-heart-1{
+  display: inline-block;
+  float: right;
+}
+.items-math-1{
+  display: inline-block;
+  float: right;
+  padding: 0 0 0 10px;
+}
+
+.items-box-2{
+  display: block;
+  color: #333;
+  margin: 0px 20px 20px 0;
+}
+.items-imag-2{
+  width: 220px;
+  height: 220px;
+  background-image: url(logo.png);
+  background-size: 220px 220px;
+}
+.items-text-2{
+  height: 78px;
+  padding: 16px;
+  background: #fff;
+}
+.items-text-name-2{
+  height: 3em;
+}
+.items-text-name1-2{
+  margin: 8px 0 0;
+}
+.items-text-price-2{
+  display: inline-block;
+}
+.items-heart-2{
+  display: inline-block;
+  float: right;
+}
+.items-math-2{
+  display: inline-block;
+  float: right;
+  padding: 0 0 0 10px;
 }

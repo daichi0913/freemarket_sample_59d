@@ -1,6 +1,13 @@
 !!!
 = render partial: 'layouts/user_registration_status_bar'
 
+%script{:language => "JavaScript"}
+  :cdata
+    function Add(){
+    document.fm.C.value = document.fm.A.value + document.fm.B.value;
+    }
+
+
 %main.main
   .post-item-title 商品の情報を入力
   %section.contents
@@ -105,14 +112,17 @@
 
 
     -# %div.sell-contents
-    %h3.each-head販売価格(300〜9,999,999)
+    %h3.each-head 販売価格(300〜9,999,999)
     %label{for: "price", placeholder: "例)300"} 価格
     %span.form-require 必須
 
-    %input#pointspossible.clsInput{:type => "text"}/
-    %input#pointsgiven.clsInput{:type => "text"}/
-    %button#btnCalculate Calculate
-    %input#pointsperc{:disabled => "disabled", :type => "text"}/
+
+    
+
+    -# %input#pointspossible.clsInput{:type => "text"}/
+    -# %input#pointsgiven.clsInput{:type => "text"}/
+    -# %button#btnCalculate Calculate
+    -# %input#pointsperc{:disabled => "disabled", :type => "text"}/
 
 
 
@@ -140,4 +150,4 @@
     .form-back
       %button.form-back もどる
     
-    = render partial: '/shared/footers', locals: { categories: @categories }
+  = render partial: '/shared/footers', locals: { categories: @categories }
