@@ -6,11 +6,11 @@
       %p.text-b
         今すぐ無料ダウンロード!
       .text-c
-        %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/mercari_icon-f75780e32e41e052c8aaa8b446331cd8.png"}
-        %a{:href=>"https://itunes.apple.com/jp/app/id667861049?l=ja&amp;mt=8"}
-          %img.b{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg"}
-        %a{:href=>"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&amp;hl=ja"}
-          %img.c{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg"}
+        = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/mercari_icon-f75780e32e41e052c8aaa8b446331cd8.png" 
+        = link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&amp;mt=8" do
+          = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg",class:"b"
+        = link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&amp;hl=ja" do
+          = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg",class:"c"
       .text-d
     .top-bottom-view__left__image
-      %img.bottom-image{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png"}
+      = image_tag"https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png",class:"bottom-image"
