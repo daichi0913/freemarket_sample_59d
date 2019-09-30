@@ -15,7 +15,7 @@
 
   %form.sell-form
 
-  .form-group
+  .form-group-box
     %label{:for => "item_img"} 出品画像
     %span.form-require 必須
     %p 最大10枚までアップロードできます
@@ -45,16 +45,11 @@
       %span.form-require 必須
       %br
       
+    .category_select_box
       %select.category_select{name: "category_select"}
         %option{selected:"selected"} ---
         -@categories. each do |category|
           %option{value: category.id} #{category.name}
-
-      %select.category_select2{name: "category_select"}
-        %option{selected:"selected"} ---
-
-      %select.category_select3{name: "category_select"}
-        %option{selected:"selected"} ---
 
             
     %div.sell-contents

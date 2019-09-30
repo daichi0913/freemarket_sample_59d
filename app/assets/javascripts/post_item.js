@@ -1,18 +1,17 @@
 $(function(){
 
-  function buildHTML(category) {
+  function buildHTML() {
     var html = `<select class= "category_select"></select>`
     return html;
   }
 
   function appendHTML(category) {
-    if (index != 2){
+    // if (index != 2){
       // appendHTML
       $('.category-box').append(html);
-
-    }else{
-      ;// end
-    }
+    // else{
+    //   ;
+    // }
   }
 
 
@@ -20,39 +19,39 @@ $(function(){
   $(document).on('turbolinks:load', function(){
 
 
-    // $('.category_select').change(function(){
+    $('.category_select').change(function(){
 
-    //   $("select").removeClass(".hidden");    // console.log( $(this).val() );
-    //   var category_id = $(this).val();
-    //   // 引数にthisを指定し、クリックした順番を変数に格納
-    //   var index = $('.category_select').index(this);
+      // $("select").removeClass(".hidden");    // console.log( $(this).val() );
+      var category_id = $(this).val();
+      // 引数にthisを指定し、クリックした順番を変数に格納
+      var index = $('.category_select').index(this);
     
       // 順番を表示
-      // console.log(index);
+      console.log(index);
       $.ajax({
           type: 'get',                // HTTPメソッドはGETで
           url:  '/api/categories',             // /usersのURLに (これによりusersコントローラのindexアクションが起動)
           data: { id: category_id},    // keyword（キー）: input（バリュー）を送信する  ※パラムス
           dataType: 'json'            // サーバから値を返す際はjsonである
-      }).done(function(children){
-        // <li>要素の順番を変数に格納
-        // var index = $('option').index(this)+1;  
+      })
       
+      .done(function(children){
+        // <li>要素の順番を変数に格納
+        var index = $('option').index(this)+1;  
         var html = buildHTML;
-        $('.category_select2').append(html);
-        $('#children.name').val('')
-
-        
-        
-        
-        
-        // ('<option>'+children.name+'</option>');
+        $('.category_select_box').append(html);
+         
+      children.forEach(function(child) {
+        var html = `<option value="${child.id}">${child.name}</option>`;
+        $($('.category_select')[index+1]).append(html);
+        $('<option>'+child.name+'</option>').val('');
+        $('')
 
       });
+      });
+    })
+  })
 
-        // console.log(children)
-    });
-  });
 
 
 
@@ -195,4 +194,5 @@ $(function(){
   // 他のページでエラーがでる。
   // e.preventDefault();とe.stopPropagation();は
   // 画像がやってきたときのブラウザの動作を止めてるので、
-  // 消すと画像ファイルをブラウザが表示する。  
+  // 消すと画像ファイルをブラウザが表示する。
+})
