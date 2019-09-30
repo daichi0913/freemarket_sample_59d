@@ -24,7 +24,8 @@
                 出品者
             .category1-box1
               .category1-box1-name
-                %a.hover9{:href => "#"} マークザッカーバーグ
+                = link_to "#", class:"hover9" do
+                  マークザッカーバーグ
               .category2-box2
                 = fa_icon "smile-o"
                 413
@@ -40,20 +41,24 @@
                 カテゴリー
             .category1-box1-1
               .category1-box1-name-1
-                %a.hover9{:href => "#"} メンズ
+                = link_to "#", class:"hover9" do
+                  メンズ
               .category2-box2-1
                 = fa_icon "angle-right"
-                %a.hover9{:href => "#"} 会社
+                = link_to "#", class:"hover9" do
+                  会社
               .category3-box3-1
                 = fa_icon "angle-right"
-                %a.hover9{:href => "#"} IT企業
+                = link_to "#", class:"hover9" do 
+                  IT企業
           .category1-2
             .category1-box-2
               .category-box-name-2
                 ブランド
             .category1-box1-2
               .category1-box1-name-2
-                %a.hover9{:href => "#"}フェイスブック
+                = link_to "#", class:"hover9" do
+                  フェイスブック
           .category1-2
             .category1-box-2
               .category-box-name-2
@@ -81,7 +86,8 @@
                 発送元地域
             .category1-box1-2
               .category1-box1-name-2
-                %a.hover9{:href => "#"}シリコンバレー
+                = link_to "#", class:"hover9" do
+                  シリコンバレー
           .category1-2
             .category1-box-2
               .category-box-name-2
@@ -122,7 +128,8 @@
         .item-icon
           =fa_icon "lock"
         .item-span
-          %a.hover8{:href => "#"}あんしん・あんぜんへの取り組み
+          = link_to "#", class:"hover8" do
+            あんしん・あんぜんへの取り組み
         /////////////コメント欄//////////////////////////
   .item-message
     .message-box
@@ -140,12 +147,14 @@
       .link-icon
         = fa_icon "angle-left"
       .link-box
-        %a.hover9{:href => "#"} Amazon
+        = link_to "#", class:"hover9" do
+          Amazon
     .link-right
       .link-icon-1
         = fa_icon "angle-right"
       .link-box-1
-        %a.hover9{:href => "#"} Google
+        = link_to "#", class:"hover9" do
+          Google
   .item-media
     .media-top
       .social-left
@@ -157,7 +166,8 @@
         /////////////その他の出品////////////////////////
   .item-user-profile
     .user-item-top
-      %a.hover9{:href => "#"}  マークザッカーバーグのその他の出品
+      = link_to "#", class:"hover9" do
+        マークザッカーバーグのその他の出品
     .user-item-content
       .user-item-box
         .items-box
