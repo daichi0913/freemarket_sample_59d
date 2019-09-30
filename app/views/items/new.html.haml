@@ -2,10 +2,10 @@
 = render partial: 'layouts/user_registration_status_bar'
 
 %script{:language => "JavaScript"}
-  :cdata
-    function Add(){
-    document.fm.C.value = document.fm.A.value + document.fm.B.value;
-    }
+  -# :cdata
+  -#   function Add(){
+  -#   document.fm.C.value = document.fm.A.value + document.fm.B.value;
+  -#   }
 
 
 %main.main
@@ -49,6 +49,13 @@
         %option{selected:"selected"} ---
         -@categories. each do |category|
           %option{value: category.id} #{category.name}
+
+      %select.category_select2{name: "category_select"}
+        %option{selected:"selected"} ---
+
+      %select.category_select3{name: "category_select"}
+        %option{selected:"selected"} ---
+
             
     %div.sell-contents
     %label{for: "size"} サイズ
