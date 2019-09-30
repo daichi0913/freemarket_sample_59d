@@ -31,4 +31,9 @@ class UsersController < ApplicationController
   def credit_card
     
   end
+
+  def credit_card_registration
+    
+  end
+
 end
