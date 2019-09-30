@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       post :address
       post :credit_card
       get :finish
+      get :credit_card_registration
 
     end
   end
