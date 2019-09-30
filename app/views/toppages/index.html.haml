@@ -1,7 +1,7 @@
 //ここはヘッダー
 .top-header
   .top-header__icon
-    %a{ href:"https://www.mercari.com/jp/"}
+    %a{ href:"/"}
       %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg",:alt=>"Mercari",:class=>"top-header-logo"}
   .top-header__box
     .top-header__box__top
@@ -180,19 +180,20 @@
     
     .top-header__box__bottom2__right__news
       %li.news-box
-        %a.news-text{ href:""}
-          = fa_icon "bell"
+        .new-color-box
           お知らせ
-          %ul.news-lists
-            .product-image
-              %img{:src=>"https://msp.c.yimg.jp/yjimage?q=PZ3rBY8XyLEurr2184eyrovNECQFZ3AHT_P3jZrHX4r.nylKB5stb0lkZ3kCgxO1NiQUbJjvLiRcS6UI8P3erMCH0qn05t5k9.aourOd7m8Bhb9Q_re88gLm1h_fAAqi.NmVGxJtKgY2OR.K8Q--&sig=138b1m8e1&x=275&y=183"}
-            .icon-right
-            %li.news
-              %p.news__text
-                mikawaさんがあなたを評価しました。これで取引完了です。
-                %p.news__time
-                  = fa_icon"clock-o"
-                  30分前
+          %a.news-text{ href:""}
+            = fa_icon "bell"
+            %ul.news-lists
+              .product-image
+                %img{:src=>"https://msp.c.yimg.jp/yjimage?q=PZ3rBY8XyLEurr2184eyrovNECQFZ3AHT_P3jZrHX4r.nylKB5stb0lkZ3kCgxO1NiQUbJjvLiRcS6UI8P3erMCH0qn05t5k9.aourOd7m8Bhb9Q_re88gLm1h_fAAqi.NmVGxJtKgY2OR.K8Q--&sig=138b1m8e1&x=275&y=183"}
+              .icon-right
+              %li.news
+                %p.news__text
+                  mikawaさんがあなたを評価しました。これで取引完了です。
+                  %p.news__time
+                    = fa_icon"clock-o"
+                    30分前
     .top-header__box__bottom2__right__todo
       %li.todo-box
         %a.todo-text{ href:""}

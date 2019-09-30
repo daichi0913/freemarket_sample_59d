@@ -1,64 +1,7 @@
--# //ここはヘッダー
--# .top-header
--#   .top-header__icon
--#     %a{ href:"https://www.mercari.com/jp/"}
--#       %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg",:alt=>"Mercari",:class=>"top-header-logo"}
--#   .top-header__box
--#     .top-header__box__top
--#     %form{:action=>"",:class=>"form"}
--#       -# = form_with url: toppages_path do |f|
--#       -#   = f.text_field :content, class: 'form__serch', placeholder: '  何かお探しですか？'
--#       %input{:type=>"serch",:name=>"keyword",:class =>'form__serch', :placeholder =>'  何かお探しですか？'} 
--#         %a.button
--#           = fa_icon "search"   
--# .top-header__box__bottom2
--#   %ul.top-header__box__bottom2
--#     %li.lia
--#       = fa_icon"list-ul"
--#       カテゴリーから探す
--#       -# - categories.each do |category|
--#       -#   - if category.parent_id == nil
--#       -#     .lia-li        
--#       -#       = category.name     
--#       -#       %ul.second-layer
--#       -#         - categories.each do |child|
--#       -#           - if child.parent_id == category.id
--#       -#             %li.second-menu  
--#       -#               = child.name
--#       -#               %ul.third-layer
--#       -#                 - @categories.each do |baby|
--#       -#                   - if baby.parent_id == child.id
--#       -#                     %li.third-menu 
--#       -#                       = baby.name
--#     %li.lic-bland-b   
--#       %a.lic-bland{ href:""}
--#         = fa_icon "tag"
--#         ブランドから探す
--#         -# .lic1-li  シャネル
--#         -# .lic1-li  ナイキ
--#         -# .lic1-li  ルイヴィトン
--#         -# .lic1-li  シュプリーム
--#         -# .lic1-li  アディダス
--#         -# .lic1-li  ブランド一覧
--#     %li.lic-right
--#       %a.lic-right{ href:""}
--#         = fa_icon"heart"
--#         いいね！一覧
--#     %li.lic-right
--#       %a.lic-right{ href:""}
--#         = fa_icon "bell"
--#         お知らせ
--#     %li.lic-right
--#       %a.lic-right{ href:""}
--#         = fa_icon"check"
--#         やることリスト
--#     %li.lic-right
--#       %a.lic-right{ href:""}
--#         = fa_icon"circle"
--#         マイページ
+
 .top-header
   .top-header__icon
-    %a{ href:"https://www.mercari.com/jp/"}
+    %a{ href:"/"}
       %img{:src=>"https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg",:alt=>"Mercari",:class=>"top-header-logo"}
   .top-header__box
     .top-header__box__top
