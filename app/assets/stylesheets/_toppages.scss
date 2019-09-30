@@ -92,15 +92,36 @@
     width: 63%;
     &__like{
       height: 100%;
-      margin-left: 20%;
+      margin-left: 17%;
       .like-box{
         height: 100%;
-        width: 84px;
+        width:142px;
         line-height: 44px;
+        position: relative;
         .like-text{
           text-decoration: none;
           font-size: 14px;
+          padding: 20px 0;
+          right: 6px;
+          top: -18px;
+          position: absolute;
           color: #333333;
+          .fa-heart{
+            color: rgba(197, 197, 197, 0.911);
+            font-size: 15px;
+            width: 80px;
+            position: absolute;
+            left: -25px;
+            top: 34px;
+            padding: 0 51px 30px 0;
+            // position: absolute;
+            // left: -20px;
+            // top: 14px;
+            transition: all 0.3s ease-out 0s;
+          }
+          .fa-heart:hover{
+            color: rgb(0, 195, 255);
+          }
         }
         .like-text:hover{
           color: rgb(0, 195, 255);;
@@ -110,15 +131,32 @@
     &__news{
       height: 100%;
       background-color: white;
+      margin-left: 20px;
       .news-box{
         height: 100%;
         width: 84px;
-        margin-left: 20px;
+        margin-left: 34px;
         line-height: 44px;
+        position: relative;
         .news-text{
           text-decoration: none;
           font-size: 14px;
           color: #333333;
+          right: 3px;
+          position: relative;
+          .fa-bell{
+            position: absolute;
+            height: 30px;
+            width: 100px;
+            left: -24px;
+            top: 2px;
+            font-size: 15px;
+            color: rgba(197, 197, 197, 0.911);
+            transition: all 0.3s ease-out 0s;
+          }
+          .fa-bell:hover{
+            color: rgb(0, 195, 255);
+          }
         }
         .news-text:hover{
           color: rgb(0, 195, 255);;
@@ -128,9 +166,10 @@
     &__todo{
       height: 100%;
       background-color:white;
+      margin-left: 29px;
       .todo-box{
         height: 100%;
-        width: 99px;
+        width: 119px;
         line-height: 44px;
         position: relative;
         right: 9px;
@@ -138,9 +177,23 @@
           text-decoration: none;
           font-size: 14px;
           color: #333333;
+          position: absolute;
+          .fa-check{
+            position: absolute;
+            height: 30px;
+            width: 100px;
+            left: -24px;
+            top: 15px;
+            font-size: 15px;
+            color: rgba(197, 197, 197, 0.911);
+            transition: all 0.3s ease-out 0s;
+          }
+          .fa-check:hover{
+            color: rgb(0, 195, 255);
+          }
         }
         .todo-text:hover{
-          color: rgb(0, 195, 255);;
+          color: rgb(0, 195, 255);
         }
       }
     }
@@ -148,6 +201,7 @@
       height: 100%;
       width: 100px;
       background-color: white;
+      margin-left: 15px;
       .mypage-box{
         height: 100%;
         width: 99px;
@@ -158,9 +212,10 @@
           color: #333333;
           position: relative;
           left: 30px;
+          bottom: 30px;
         }
         .mypage-text:hover{
-          color: rgb(0, 195, 255);;
+          color: rgb(0, 195, 255);
         }
       }
     }
@@ -360,41 +415,41 @@ ul.top-header__box__bottom2__ul{
 .top-header__box__bottom2__ul:hover > .lia{
   display: block;
 }
-//////////アイコン
-.fa-search{
-  position: relative;
-  right: 30px;
-}
+// //////////アイコン
+// .fa-search{
+//   position: relative;
+//   right: 30px;
+// }
 .fa-list-ul,.fa-tag{
   color: #ea352d;
 }
-.fa-heart,.fa-bell,.fa-check{
-  color: rgba(197, 197, 197, 0.911);
-  font-size: 15px;
-  width: 80px;
-  padding: 0 51px 30px 0;
-  position: absolute;
-  left: -20px;
-  top: 14px;
-  transition: all 0.3s ease-out 0s;
-}
-.fa-bell{
-  position: absolute;
-  right:10px;
-}
-.fa-heart:hover,.fa-bell:hover,.fa-check:hover{
-  color: rgb(0, 195, 255);
-}
-.fa-twitter,.fa-facebook-square{
-  color: white;
-  font-size: 34px;
-  position: relative;
-  top: 30px;
-}
-.fa-facebook-square{
-  position: relative;
-  left: 10px;
-}
+// .fa-heart,.fa-bell,.fa-check{
+//   color: rgba(197, 197, 197, 0.911);
+//   font-size: 15px;
+//   width: 80px;
+//   padding: 0 51px 30px 0;
+//   position: absolute;
+//   left: -20px;
+//   top: 14px;
+//   transition: all 0.3s ease-out 0s;
+// }
+// .fa-bell{
+//   position: absolute;
+//   right:10px;
+// }
+// .fa-heart:hover,.fa-bell:hover,.fa-check:hover{
+//   color: rgb(0, 195, 255);
+// }
+// .fa-twitter,.fa-facebook-square{
+//   color: white;
+//   font-size: 34px;
+//   position: relative;
+//   top: 30px;
+// }
+// .fa-facebook-square{
+//   position: relative;
+//   left: 10px;
+// }
 
 /////////ブランドから探す
 .bland-text{
@@ -473,11 +528,10 @@ ul.top-header__box__bottom2__ul{
   // display: flex;
   // position: absolute;
   .myfont-view{
-    position: absolute;
-    top: 5px;
-    left: -8px;
+    position: relative;
     height: 30px;
     width: 30px;
+    top: 5px;
     background-color: #333333;
     border-radius: 15px;
   }
@@ -755,7 +809,7 @@ label.next{
   bottom: 5%;
   position: absolute;
   text-align: center;
-  z-index: 99;
+  z-index: 0;
 }
 .dots{
   top: -5px;
