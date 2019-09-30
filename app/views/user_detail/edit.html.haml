@@ -1,38 +1,41 @@
 .main
   %section.contents
-    %h2.regi__title 本人情報の登録
-    %form
-      .user-detail-edit-form
-        %p お客さまの本人情報をご登録ください。
-        %p 登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
-        .right
-          = link_to "#" do
-            本人確認書類のアップロードについて
-            = fa_icon "chevron-right"
-        .form-group
-          %label{for: "brand"} お名前
-        .form-group
-          %label{for: "brand"} お名前カナ
-        .form-group
-          %label{for: "brand"} 生年月日
-        .form-group
-          %label{for: "brand"} 郵便番号
-          %span.form-yourself 任意
-          %input.input-default{name: "brand", placeholder: "例）シャネル", type: "text", value: ""}/
-        .form-group
-          %label{for: "brand"} 都道府県
-          %span.form-yourself 任意
-          %input.input-default{name: "brand", placeholder: "例）シャネル", type: "text", value: ""}/
-        .form-group
-          %label{for: "brand"} 市区町村
-          %span.form-yourself 任意
-          %input.input-default{name: "brand", placeholder: "例）シャネル", type: "text", value: ""}/
-        .form-group
-          %label{for: "brand"} 番地
-          %span.form-yourself 任意
-          %input.input-default{name: "brand", placeholder: "例）シャネル", type: "text", value: ""}/
-        .form-group
-          %label{for: "brand"} 建物名
-          %span.form-yourself 任意
-          %input.input-default{name: "brand", placeholder: "例）シャネル", type: "text", value: ""}/
-
+    %h2.thin-title 本人情報の登録
+    %form.user-detail-edit-form
+      %p お客さまの本人情報をご登録ください。
+      %p 登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+      .right
+        = link_to "#" do
+          本人確認書類のアップロードについて
+          = fa_icon "chevron-right"
+      .form-group
+        %label{for: "brand"} お名前
+      .form-group
+        %label{for: "brand"} お名前カナ
+      .form-group
+        %label{for: "brand"} 生年月日
+      .form-group
+        %label{for: "brand"} 郵便番号
+        %span.form-yourself 任意
+        %input.input-default{name: "brand", placeholder: "例）シャネル", type: "text", value: ""}/
+      .form-group
+        %label{for: "brand"} 都道府県
+        %span.form-yourself 任意
+        %input.input-default{name: "brand", placeholder: "例）シャネル", type: "text", value: ""}/
+      .form-group
+        %label{for: "brand"} 市区町村
+        %span.form-yourself 任意
+        %input.input-default{name: "brand", placeholder: "例）シャネル", type: "text", value: ""}/
+      .form-group
+        %label{for: "brand"} 番地
+        %span.form-yourself 任意
+        %input.input-default{name: "brand", placeholder: "例）シャネル", type: "text", value: ""}/
+      .form-group
+        %label{for: "brand"} 建物名
+        %span.form-yourself 任意
+        %input.input-default{name: "brand", placeholder: "例）シャネル", type: "text", value: ""}/
+      %button.input-default.red-btn 登録する
+      .right
+        = link_to "#" do
+          本人情報の登録について
+          = fa_icon "chevron-right"
