@@ -31,4 +31,8 @@ class UsersController < ApplicationController
   def credit_card
     
   end
+
+  def finish
+
+  end
 end

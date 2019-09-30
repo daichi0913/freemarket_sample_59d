@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       get :credit_card
       post :address
       post :credit_card
+      get :finish
     end
   end
   resources :items
