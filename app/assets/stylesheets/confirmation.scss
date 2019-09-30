@@ -187,15 +187,6 @@ p.l-single-text.text-center{
   p{
     margin-top: 8px;
   }
-  .right{
-    margin: 24px 0 0;
-    text-align: right;
-    a{
-      width: 100%;
-      text-decoration: none;
-      color: #0099e8;
-    }
-  }
   .form-group{
     width: 100%;
     padding: 0;
@@ -206,5 +197,14 @@ p.l-single-text.text-center{
     color: white;
     background-color: #ea352d;
     border-radius: 0;
+  }
+}
+.right{
+  margin: 24px 0 0;
+  text-align: right;
+  a{
+    width: 100%;
+    text-decoration: none;
+    color: #0099e8;
   }
 }
