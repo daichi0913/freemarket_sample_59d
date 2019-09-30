@@ -426,7 +426,7 @@
 .item-user-profile{
   width: 700px;
   margin: 0 auto;
-  height: 1500px;
+  height: 1550px;
 }
 .user-item-top{
   font-size: 22px;
@@ -435,16 +435,16 @@
 .user-item-content{
   width: auto;
 }
+
 .user-item-box{
-  width: 240px;
-  margin: 0 20px 20px 0;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  height: 90%;
+  width: 100%;
 }
 
 
 .items-box{
-  display: block;
   color: #333;
   margin: 0px 20px 20px 0;
 }
@@ -480,7 +480,7 @@
 
 
 .items-box-1{
-  display: block;
+  display: inline-block;
   color: #333;
   margin: 0px 20px 20px 0;
 }
@@ -515,10 +515,11 @@
   padding: 0 0 0 10px;
 }
 
+
+
 .items-box-2{
   display: block;
   color: #333;
-  margin: 0px 20px 20px 0;
 }
 .items-imag-2{
   width: 220px;
@@ -545,6 +546,354 @@
   float: right;
 }
 .items-math-2{
+  display: inline-block;
+  float: right;
+  padding: 0 0 0 10px;
+}
+
+
+
+.items-box-3{
+  display: block;
+  color: #333;
+  margin: 0px 20px 20px 0;
+}
+.items-imag-3{
+  width: 220px;
+  height: 220px;
+  background-image: url(logo.png);
+  background-size: 220px 220px;
+}
+.items-text-3{
+  height: 78px;
+  padding: 16px;
+  background: #fff;
+}
+.items-text-name-3{
+  height: 3em;
+}
+.items-text-name1-3{
+  margin: 8px 0 0;
+}
+.items-text-price-3{
+  display: inline-block;
+}
+.items-heart-3{
+  display: inline-block;
+  float: right;
+}
+.items-math-3{
+  display: inline-block;
+  float: right;
+  padding: 0 0 0 10px;
+}
+
+
+
+.items-box-4{
+  display: block;
+  color: #333;
+  margin: 0px 20px 20px 0;
+}
+.items-imag-4{
+  width: 220px;
+  height: 220px;
+  background-image: url(logo.png);
+  background-size: 220px 220px;
+}
+.items-text-4{
+  height: 78px;
+  padding: 16px;
+  background: #fff;
+}
+.items-text-name-4{
+  height: 3em;
+}
+.items-text-name1-4{
+  margin: 8px 0 0;
+}
+.items-text-price-4{
+  display: inline-block;
+}
+.items-heart-4{
+  display: inline-block;
+  float: right;
+}
+.items-math-4{
+  display: inline-block;
+  float: right;
+  padding: 0 0 0 10px;
+}
+
+
+
+.items-box-5{
+  display: block;
+  color: #333;
+}
+.items-imag-5{
+  width: 220px;
+  height: 220px;
+  background-image: url(logo.png);
+  background-size: 220px 220px;
+}
+.items-text-5{
+  height: 78px;
+  padding: 16px;
+  background: #fff;
+}
+.items-text-name-5{
+  height: 3em;
+}
+.items-text-name1-5{
+  margin: 8px 0 0;
+}
+.items-text-price-5{
+  display: inline-block;
+}
+.items-heart-5{
+  display: inline-block;
+  float: right;
+}
+.items-math-5{
+  display: inline-block;
+  float: right;
+  padding: 0 0 0 10px;
+}
+
+
+.item-user-profile-2{
+  width: 700px;
+  margin: 0 auto;
+}
+.user-item-top-2{
+  font-size: 22px;
+  margin: 24px 0 8px;
+}
+.user-item-content-2{
+  width: auto;
+}
+
+.user-item-box-2{
+  display: flex;
+  flex-wrap: wrap;
+  height: 90%;
+  width: 100%;
+}
+
+
+.items-box-2x{
+  color: #333;
+  margin: 0px 20px 20px 0;
+}
+.items-imag-2x{
+  width: 220px;
+  height: 220px;
+  background-image: url(logo.png);
+  background-size: 220px 220px;
+}
+.items-text-2x{
+  height: 78px;
+  padding: 16px;
+  background: #fff;
+}
+.items-text-name-2x{
+  height: 3em;
+}
+.items-text-name1-2x{
+  margin: 8px 0 0;
+}
+.items-text-price-2x{
+  display: inline-block;
+}
+.items-heart-2x{
+  display: inline-block;
+  float: right;
+}
+.items-math-2x{
+  display: inline-block;
+  float: right;
+  padding: 0 0 0 10px;
+}
+
+
+.items-box-1-2{
+  display: inline-block;
+  color: #333;
+  margin: 0px 20px 20px 0;
+}
+.items-imag-1-2{
+  width: 220px;
+  height: 220px;
+  background-image: url(logo.png);
+  background-size: 220px 220px;
+}
+.items-text-1-2{
+  height: 78px;
+  padding: 16px;
+  background: #fff;
+
+}
+.items-text-name-1-2{
+  height: 3em;
+}
+.items-text-name1-1-2{
+  margin: 8px 0 0;
+}
+.items-text-price-1-2{
+  display: inline-block;
+}
+.items-heart-1-2{
+  display: inline-block;
+  float: right;
+}
+.items-math-1-2{
+  display: inline-block;
+  float: right;
+  padding: 0 0 0 10px;
+}
+
+
+
+.items-box-2-2{
+  display: block;
+  color: #333;
+}
+.items-imag-2-2{
+  width: 220px;
+  height: 220px;
+  background-image: url(logo.png);
+  background-size: 220px 220px;
+}
+.items-text-2-2{
+  height: 78px;
+  padding: 16px;
+  background: #fff;
+}
+.items-text-name-2-2{
+  height: 3em;
+}
+.items-text-name1-2-2{
+  margin: 8px 0 0;
+}
+.items-text-price-2-2{
+  display: inline-block;
+}
+.items-heart-2-2{
+  display: inline-block;
+  float: right;
+}
+.items-math-2-2{
+  display: inline-block;
+  float: right;
+  padding: 0 0 0 10px;
+}
+
+
+
+.items-box-3-2{
+  display: block;
+  color: #333;
+  margin: 0px 20px 20px 0;
+}
+.items-imag-3-2{
+  width: 220px;
+  height: 220px;
+  background-image: url(logo.png);
+  background-size: 220px 220px;
+}
+.items-text-3-2{
+  height: 78px;
+  padding: 16px;
+  background: #fff;
+}
+.items-text-name-3-2{
+  height: 3em;
+}
+.items-text-name1-3-2{
+  margin: 8px 0 0;
+}
+.items-text-price-3-2{
+  display: inline-block;
+}
+.items-heart-3-2{
+  display: inline-block;
+  float: right;
+}
+.items-math-3-2{
+  display: inline-block;
+  float: right;
+  padding: 0 0 0 10px;
+}
+
+
+
+.items-box-4-2{
+  display: block;
+  color: #333;
+  margin: 0px 20px 20px 0;
+}
+.items-imag-4-2{
+  width: 220px;
+  height: 220px;
+  background-image: url(logo.png);
+  background-size: 220px 220px;
+}
+.items-text-4-2{
+  height: 78px;
+  padding: 16px;
+  background: #fff;
+}
+.items-text-name-4-2{
+  height: 3em;
+}
+.items-text-name1-4-2{
+  margin: 8px 0 0;
+}
+.items-text-price-4-2{
+  display: inline-block;
+}
+.items-heart-4-2{
+  display: inline-block;
+  float: right;
+}
+.items-math-4-2{
+  display: inline-block;
+  float: right;
+  padding: 0 0 0 10px;
+}
+
+
+
+.items-box-5-2{
+  display: block;
+  color: #333;
+}
+.items-imag-5-2{
+  width: 220px;
+  height: 220px;
+  background-image: url(logo.png);
+  background-size: 220px 220px;
+}
+.items-text-5-2{
+  height: 78px;
+  padding: 16px;
+  background: #fff;
+}
+.items-text-name-5-2{
+  height: 3em;
+}
+.items-text-name1-5-2{
+  margin: 8px 0 0;
+}
+.items-text-price-5-2{
+  display: inline-block;
+}
+.items-heart-5-2{
+  display: inline-block;
+  float: right;
+}
+.items-math-5-2{
   display: inline-block;
   float: right;
   padding: 0 0 0 10px;
