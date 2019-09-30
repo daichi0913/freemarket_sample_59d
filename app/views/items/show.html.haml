@@ -1,5 +1,6 @@
 .shyouhin-main
   = render partial: '/shared/headers', locals: { categories: @categories }
+  //////////商品の説明/////////////
   .shyouhin-box
     .item-name フェイスブック
     .item-main-content
@@ -23,15 +24,16 @@
                 出品者
             .category1-box1
               .category1-box1-name
-                マークザッカーバーグ
+                = link_to "#", class:"hover9" do
+                  マークザッカーバーグ
               .category2-box2
-                = fa_icon "thumbs-o-up"
+                = fa_icon "smile-o"
                 413
               .category3-box3
-                = fa_icon "thumbs-o-up"
+                = fa_icon "meh-o"
                 40
               .category3-box3
-                = fa_icon "thumbs-o-up"
+                = fa_icon "frown-o"
                 1
           .category1-1
             .category1-box-1
@@ -39,20 +41,24 @@
                 カテゴリー
             .category1-box1-1
               .category1-box1-name-1
-                メンズ
+                = link_to "#", class:"hover9" do
+                  メンズ
               .category2-box2-1
                 = fa_icon "angle-right"
-                会社
+                = link_to "#", class:"hover9" do
+                  会社
               .category3-box3-1
                 = fa_icon "angle-right"
-                IT企業
+                = link_to "#", class:"hover9" do 
+                  IT企業
           .category1-2
             .category1-box-2
               .category-box-name-2
                 ブランド
             .category1-box1-2
               .category1-box1-name-2
-                フェイスブック
+                = link_to "#", class:"hover9" do
+                  フェイスブック
           .category1-2
             .category1-box-2
               .category-box-name-2
@@ -80,7 +86,8 @@
                 発送元地域
             .category1-box1-2
               .category1-box1-name-2
-                シリコンバレー
+                = link_to "#", class:"hover9" do
+                  シリコンバレー
           .category1-2
             .category1-box-2
               .category-box-name-2
@@ -121,7 +128,9 @@
         .item-icon
           =fa_icon "lock"
         .item-span
-          あんしん・あんぜんへの取り組み
+          = link_to "#", class:"hover8" do
+            あんしん・あんぜんへの取り組み
+        /////////////コメント欄//////////////////////////
   .item-message
     .message-box
       .message-box-content
@@ -132,17 +141,20 @@
           .message-coment
             .message-coment-text
               コメントする
+              /////////////ソーシャルメデイアログイン///////////////////
   .item-link
     .link-left
       .link-icon
         = fa_icon "angle-left"
       .link-box
-        Amazon
+        = link_to "#", class:"hover9" do
+          Amazon
     .link-right
       .link-icon-1
         = fa_icon "angle-right"
       .link-box-1
-        Google
+        = link_to "#", class:"hover9" do
+          Google
   .item-media
     .media-top
       .social-left
@@ -151,9 +163,11 @@
         = fa_icon "twitter-square"
       .social-right
         = fa_icon "pinterest-square"
+        /////////////その他の出品////////////////////////
   .item-user-profile
     .user-item-top
-      マークザッカーバーグのその他の出品
+      = link_to "#", class:"hover9" do
+        マークザッカーバーグのその他の出品
     .user-item-content
       .user-item-box
         .items-box
@@ -228,9 +242,11 @@
                 1
               .items-heart-5
                 = fa_icon "heart-o"
+                //////////////そのほかの出品パート２////////////////////////
     .item-user-profile-2
       .user-item-top-2
-        マークザッカーバーグのその他の出品
+        = link_to "#", class:"hover9" do
+          マークザッカーバーグのその他の出品
       .user-item-content-2
         .user-item-box-2
           .items-box-2x
@@ -305,12 +321,16 @@
                   1
                 .items-heart-5-2
                   = fa_icon "heart-o"
+                  ///////////詳細のフッター////////////////////////
   .item-second-footer
     .item-footer-main
       .item-footer-name
-      .item-footer-icon
+        メルカリ
+        .item-footer-icon
+          = fa_icon "angle-right"
       .item-footer-syousai
-
+        facebook
+  = render partial: '/shared/footer2'
 
 
 
