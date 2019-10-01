@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
     @categories = Category.where(parent_id: nil)
     region_id = params[:id].to_i
     @regions = Region.all
-
+    # @item_images = Item_image.create
   end
   
   def show
