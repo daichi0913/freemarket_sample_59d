@@ -1,11 +1,17 @@
 .shyouhin-main
-  = render partial: '/shared/headers', locals: { categories: @categories }
+  = render partial: '/shared/headers'
   //////////商品の説明/////////////
   .shyouhin-box
-    .item-name フェイスブック
+    .item-name
+      %option{value: @item.id} #{@item.name}
+
     .item-main-content
+
       .item-photo
         .item-photo-main
+          -# -@item.id
+          -# %option{value: @item.id} #{@item.image}
+
           .item-suraido
           .item-suraido1
           .item-suraido2
@@ -24,8 +30,7 @@
                 出品者
             .category1-box1
               .category1-box1-name
-                = link_to "#", class:"hover9" do
-                  マークザッカーバーグ
+                -# %option{value: @item.id}{@item.出品者の名前}
               .category2-box2
                 = fa_icon "smile-o"
                 413
@@ -57,29 +62,28 @@
                 ブランド
             .category1-box1-2
               .category1-box1-name-2
-                = link_to "#", class:"hover9" do
-                  フェイスブック
+                %option{value: @item.id} #{@item.brand.name}
           .category1-2
             .category1-box-2
               .category-box-name-2
                 商品状態
             .category1-box1-2
               .category1-box1-name-2
-                成長企業
+                %option{value: @item.id} #{@item.item_status}
           .category1-2
             .category1-box-2
               .category-box-name-2
                 配送料の負担
             .category1-box1-2
+              %option{value: @item.id} #{@item.shipping_fee}
               .category1-box1-name-2
-                送料込み（出品者負担）
           .category1-2
             .category1-box-2
               .category-box-name-2
                 配送方法
             .category1-box1-2
               .category1-box1-name-2
-                らくらくメルカリ便
+                %option{value: @item.id} #{@item.shipping_way}
           .category1-2
             .category1-box-2
               .category-box-name-2
@@ -94,10 +98,10 @@
                 発送日の目安
             .category1-box1-2
               .category1-box1-name-2
-                ３ヶ月
+                %option{value: @item.id} #{@item.days}
     .item-price
       .price-name
-        ￥10,000,000,000
+        %option{value: @item.id} ¥ #{@item.price}
       .price-tax
         (税込)
       .price-free
@@ -321,7 +325,7 @@
                   1
                 .items-heart-5-2
                   = fa_icon "heart-o"
-                  ///////////詳細のフッター////////////////////////
+  -#                 ///////////詳細のフッター////////////////////////
   .item-second-footer
     .item-footer-main
       .item-footer-name
@@ -331,6 +335,3 @@
       .item-footer-syousai
         facebook
   = render partial: '/shared/footer2'
-
-
-
