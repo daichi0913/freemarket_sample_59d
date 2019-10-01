@@ -1,9 +1,0 @@
-= render partial: "shared/headers"
-.main-page
-  .main-page_box
-    .r-content
-      .contents
-        .logout-form
-          =link_to "ログアウト", destroy_user_session_path, method: :delete
-    = render partial: '/shared/side_bar'
-= render "shared/footer2"
