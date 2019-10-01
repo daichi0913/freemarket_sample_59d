@@ -30,6 +30,7 @@
                 出品者
             .category1-box1
               .category1-box1-name
+                へへへふふふ
                 -# %option{value: @item.id}{@item.出品者の名前}
               .category2-box2
                 = fa_icon "smile-o"
@@ -90,8 +91,8 @@
                 発送元地域
             .category1-box1-2
               .category1-box1-name-2
-                = link_to "#", class:"hover9" do
-                  シリコンバレー
+                %option{value: @item.id} #{@item.region.name}
+
           .category1-2
             .category1-box-2
               .category-box-name-2
@@ -109,11 +110,7 @@
     .item-buy
       購入画面に進む
     .item-setumei
-      Facebookは、2004年2月、設立しました。
-      FacebookやInstagramなどがあります。
-      現在ではLibraという仮想通貨を運用する予定で準備を進めている。
-      社員は優秀な人も多くいます。
-      質問はお手軽にどうぞ
+      %option{value: @item.id} #{@item.explain}
     .item-hyouka
       .item-hyouka-left
         .item-iine
