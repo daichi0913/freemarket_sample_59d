@@ -87,3 +87,4 @@ gem 'dotenv-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'kaminari'

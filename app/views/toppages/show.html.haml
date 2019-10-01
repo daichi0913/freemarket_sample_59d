@@ -1,0 +1,6 @@
+- @posts.each do |post|
+  .panel.panel-success
+    .panel-body
+      = link_to(post.content,"/posts/#{post.id}")
+    .panel-footer content_description
+= paginate @posts
