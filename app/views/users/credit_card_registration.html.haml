@@ -5,18 +5,72 @@
     .payment__title 
       支払い方法
     .form__box
-      .form-group
+      .form-group.card-number
         %label{for:"card_number"} カード番号
         %span.form-require 必須
-        %input.input-default
-        %img{:alt => "代替テキスト", :height => "画像の高さ", :src => "visa.png", :width => "画像の幅"}/
-      .card__1
-      .card__2
-      .card__3
-      .card__4
-      .card__5
-      .card__6
-      .card__7
+        %input.input-default.for-card{placeholder: "半角数字のみ"}
+
+
+    .form-group
+      = image_tag 'visa.png', size: '40x30', class: 'card1'
+      = image_tag 'mastercard.png', size: '40x30', class: 'card2'
+      = image_tag 'saisoncard.png', size: '40x30', class: 'card3'
+      = image_tag 'jcb.png', size: '40x30', class: 'card4'
+      = image_tag 'americanexpress.png', size: '40x30', class: 'card5'
+      = image_tag 'dinersclub.jpeg', size: '40x30', class: 'card6'
+      = image_tag 'discover.jpeg', size: '40x30', class: 'card7'
+
+    .form__box.card-details
+      .form-group
+        %label{for:"expires"} 有効期限
+        %span.form-require 必須
+        %select{:name => "month"}
+          %p 日
+          %option{:value => ""} -
+          %option{:value => "1"} 1
+          %option{:value => "2"} 2
+          %option{:value => "3"} 3
+          %option{:value => "4"} 4
+          %option{:value => "5"} 5
+          %option{:value => "6"} 6
+          %option{:value => "7"} 7
+          %option{:value => "8"} 8
+          %option{:value => "9"} 9
+          %option{:value => "10"} 10
+          %option{:value => "11"} 11
+          %option{:value => "12"} 12
+
+        %select{:name => "year"}
+          %p 年
+          %option{:value => ""} -
+          %option{:value => "2019"} 2019
+          %option{:value => "2020"} 2020
+          %option{:value => "2021"} 2021
+          %option{:value => "2022"} 2022
+          %option{:value => "2023"} 2023
+          %option{:value => "2024"} 2024
+          %option{:value => "2025"} 2025
+          %option{:value => "2026"} 2026
+          %option{:value => "2027"} 2027
+          %option{:value => "2028"} 2028
+
+      .form__box
+        .form-group.security-code
+          %label{for:"security_code"} セキュリティコード
+          %span.form-require 必須
+          %input.input-default{placeholder: "カード背面4桁もしくは3桁の番号"}
+
+      .question
+        = link_to "#" do
+          = fa_icon "question-circle"
+          カード裏面の番号とは？
+          
+    .form-group
+      .btn-default.btn-red.btn-payment
+        次へ進む
+
+
+  = render partial: '/shared/footers', locals: { categories: @categories }
 
 
 
