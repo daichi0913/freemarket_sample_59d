@@ -22,11 +22,14 @@
     -# %div.sell-upload-drop-box
     -# %pre.visible-pc 
     #drop_zone 
-    %output#list
-    %form#my_form{:enctype => "multipart/form-data"}
-      %input{:name => "upload_file", :style => "display:inline", :type => "file", placeholder: "ドラッグアンドドロップまたはクリックしてファイルをアップロード"}/
-      %br/
-      %button.for-upload{:onclick => "file_upload()", :type => "button"} Upload
+      %output#list
+        %form#my_form{:enctype => "multipart/form-data"}
+          .form-images
+            .form-image
+          %label.input
+            %input{:name => "upload_file", :style => "display:inline", :type => "file", placeholder: "ドラッグアンドドロップまたはクリックしてファイルをアップロード"}/
+          -# %br/
+          -# %button.for-upload{:onclick => "file_upload()", :type => "button"} Upload
 
 
 

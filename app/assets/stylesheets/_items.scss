@@ -55,14 +55,27 @@ form.sell-form{
 #drop_zone{
 
   position: relative;
-    min-height: 162px;
+    min-height: 115px;
+    width: 116%;
     background: #f5f5f5;
     border: 1px dashed #ccc;
     font-size: 0;
     text-align: center;
 
 }
-
+#my_form{
+  label.input{
+    background-color: red;
+    width: 101%;
+    height: 117px;
+    input{
+      display: none;
+      // background-color: aquamarine;
+      width: 101%;
+      height: 117px;
+    }
+  }
+}
 .each-head{
   color: #888;
   font-size: 14px;
