@@ -5,9 +5,11 @@ class ItemsController < ApplicationController
     region_id = params[:id].to_i
     @regions = Region.all
     # @item_images = Item_image.create
+
   end
   
   def show
+    @item = Item.find(params[:id])
 
   end
 
