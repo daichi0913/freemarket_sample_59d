@@ -3,8 +3,8 @@ class UserDetail < ApplicationRecord
 
   belongs_to :user
 
-  # validates :name_kanji, format: {with: /[^\x01-\x7E]+\s[^\x01-\x7E]+/}
-  # validates :name_kana, format: {with: /[ァ-ヴ][ァ-ヴー・]+\s[ァ-ヴ][ァ-ヴー・]+/}
+  validates :name_kanji, format: {with: /[^\x01-\x7E]+\s[^\x01-\x7E]+/}
+  validates :name_kana, format: {with: /[ァ-ヴ][ァ-ヴー・]+\s[ァ-ヴ][ァ-ヴー・]+/}
   validates :family_name_kana, :first_name_kana, :family_name_kanji, :first_name_kanji, presence: true
 
   before_validation :set_name_kana, :set_name_kanji
