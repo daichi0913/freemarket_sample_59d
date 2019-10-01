@@ -2,9 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .user-detail-edit-form{
-  max-width: 343px;
   margin: 0 auto;
   text-align: left;
+  padding: 64px;
   font-size: 14px;
   .red-btn{
     font-size: 14px;
@@ -12,5 +12,8 @@
     color: white;
     background-color: #ea352d;
     border-radius: 0;
+  }
+  .form-group{
+    margin: 40px 0 0;
   }
 }
