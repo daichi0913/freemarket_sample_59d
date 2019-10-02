@@ -3,7 +3,7 @@
   //////////商品の説明/////////////
   .shyouhin-box
     .item-name
-      %option{value: @item.id} #{@item.name}
+      #{@item.name}
 
     .item-main-content
 
@@ -30,8 +30,7 @@
                 出品者
             .category1-box1
               .category1-box1-name
-                へへへふふふ
-                -# %option{value: @item.id}{@item.出品者の名前}
+                =@item.user.nickname
               .category2-box2
                 = fa_icon "smile-o"
                 413
@@ -63,20 +62,20 @@
                 ブランド
             .category1-box1-2
               .category1-box1-name-2
-                %option{value: @item.id} #{@item.brand.name}
+                = @item.brand.name
           .category1-2
             .category1-box-2
               .category-box-name-2
                 商品状態
             .category1-box1-2
               .category1-box1-name-2
-                %option{value: @item.id} #{@item.item_status}
+                =@item.item_status
           .category1-2
             .category1-box-2
               .category-box-name-2
                 配送料の負担
             .category1-box1-2
-              %option{value: @item.id} #{@item.shipping_fee}
+              = @item.shipping_fee
               .category1-box1-name-2
           .category1-2
             .category1-box-2
@@ -84,7 +83,7 @@
                 配送方法
             .category1-box1-2
               .category1-box1-name-2
-                %option{value: @item.id} #{@item.shipping_way}
+                = @item.shipping_way
           .category1-2
             .category1-box-2
               .category-box-name-2
@@ -102,7 +101,7 @@
                 %option{value: @item.id} #{@item.days}
     .item-price
       .price-name
-        %option{value: @item.id} ¥ #{@item.price}
+        ¥ #{@item.price.to_s(:delimited)}
       .price-tax
         (税込)
       .price-free
