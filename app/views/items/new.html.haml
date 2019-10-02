@@ -2,157 +2,129 @@
 = render partial: 'layouts/user_registration_status_bar'
 
 %script{:language => "JavaScript"}
-  -# :cdata
-  -#   function Add(){
-  -#   document.fm.C.value = document.fm.A.value + document.fm.B.value;
-  -#   }
-
 
 %main.main
   .post-item-title 商品の情報を入力
   %section.contents
 
-
-  %form.sell-form
-
-  .form-group-box
-    %label{:for => "item_img"} 出品画像
-    %span.form-require 必須
-    %p 最大10枚までアップロードできます
-    -# %div.sell-upload-drop-box
-    -# %pre.visible-pc 
-    #drop_zone 
+  = form_for @item do |f|
+    .form-group-box
+      %label{:for => "item_img"} 出品画像
+      %span.form-require 必須
+      %p 最大10枚までアップロードできます
+      #drop_zone 
+        #text
+          ドラッグ・アンドロップ
+          <br>
+          またはクリックしてファイルをアップロード
       %output#list
-        %form#my_form{:enctype => "multipart/form-data"}
-          .form-images
-            .form-image
-          %label.input
-            %input{:name => "upload_file", :style => "display:inline", :type => "file", placeholder: "ドラッグアンドドロップまたはクリックしてファイルをアップロード"}/
-          -# %br/
-          -# %button.for-upload{:onclick => "file_upload()", :type => "button"} Upload
+        = f.fields_for :item_images do |item_image|
+          = item_image.file_field :image
+        -# = f.file_field :image, :multiple => true
+
+      %div.sell-contents
+        %label{:for => "item_title"} 商品名
+        %span.form-require 必須
+        = f.text_field :item_title, placeholder: "商品名  (必須 40文字まで)", type: "text", value: "",class:"input-default"
+        %br
+        %label{:for => "item_detail"} 商品の説明
+        %span.form-require 必須
+        = f.text_field :item_detail, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", type: "text", value: "",class:"input-default-datail"
 
 
+        %h3.each-head 商品の詳細
+        %label{for: "category"} カテゴリー
+        %span.form-require 必須
+        %br
+        
+      .category_select_box
+        %select.category_select{name: "category_select"}
+          %option{selected:"selected"} ---
+          -@categories. each do |category|
+            %option{value: category.id} #{category.name}
 
-    %div.sell-contents
-      %label{:for => "item_title"} 商品名
+              
+      %div.sell-contents
+      %label{for: "size"} サイズ
       %span.form-require 必須
-      %input.input-default{name: "item_title", placeholder: "商品名  (必須 40文字まで)", :type => "text", :value => ""}
-      %br
-      %label{:for => "item_detail"} 商品の説明
-      %span.form-require 必須
-      %input.input-default-datail{name: "item_detail", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", :type => "text", :value => ""}/
-
-
-      %h3.each-head 商品の詳細
-      %label{for: "category"} カテゴリー
-      %span.form-require 必須
-      %br
-      
-    .category_select_box
-      %select.category_select{name: "category_select"}
+      %select.select-default{name: "size"}
         %option{selected:"selected"} ---
-        -@categories. each do |category|
-          %option{value: category.id} #{category.name}
+        %option{value: "under_xxs"} XXS以下
+        %option{value: "xs_ss"} XS(SS)
+        %option{value: "s"} S
+        %option{value: "m"} M
+        %option{value: "l"} L
+        %option{value: "xl_ll"} XL(LL)
+        %option{value: "2xl_3l"} 2XL(3L)
+        %option{value: "3xl_4l"} 3XL(4L)
+        %option{value: "over_4xl_5l"} 4XL(5L)以上
+        %option{value: "free_size"} FREE SIZE
 
-            
-    %div.sell-contents
-    %label{for: "size"} サイズ
-    %span.form-require 必須
-    %select.select-default{name: "size"}
-      %option{selected:"selected"} ---
-      %option{value: "under_xxs"} XXS以下
-      %option{value: "xs_ss"} XS(SS)
-      %option{value: "s"} S
-      %option{value: "m"} M
-      %option{value: "l"} L
-      %option{value: "xl_ll"} XL(LL)
-      %option{value: "2xl_3l"} 2XL(3L)
-      %option{value: "3xl_4l"} 3XL(4L)
-      %option{value: "over_4xl_5l"} 4XL(5L)以上
-      %option{value: "free_size"} FREE SIZE
+      %label{for: "brand"} ブランド
+      %span.form-yourself 任意
+      %input.input-default{name: "brand", placeholder: "例）シャネル", type: "text", value: ""}/
 
-    %label{for: "brand"} ブランド
-    %span.form-yourself 任意
-    %input.input-default{name: "brand", placeholder: "例）シャネル", type: "text", value: ""}/
+      %label{for: "item_status"} 商品の状態
+      %span.form-require 必須
+      %select.select-default{name: "item_status"}
+        %option{selected:"selected"} ---
+        %option{value: "unused"} 新品、未使用
+        %option{value: "almost_unused"} 未使用に近い
+        %option{value: "looks_ok"} 目立った傷や汚れなし
+        %option{value: "bit_damaged"} やや傷や汚れあり
+        %option{value: "damaged"} 傷や汚れあり
+        %option{value: "bad"} 全体的に状態が悪い
 
-    %label{for: "item_status"} 商品の状態
-    %span.form-require 必須
-    %select.select-default{name: "item_status"}
-      %option{selected:"selected"} ---
-      %option{value: "unused"} 新品、未使用
-      %option{value: "almost_unused"} 未使用に近い
-      %option{value: "looks_ok"} 目立った傷や汚れなし
-      %option{value: "bit_damaged"} やや傷や汚れあり
-      %option{value: "damaged"} 傷や汚れあり
-      %option{value: "bad"} 全体的に状態が悪い
-
-    %h3.each-head 配送について
-    %label{for: "shippin_fee"} 配送料の負担
-    %span.form-require 必須
-    %select.select-default{name: "shippin_fee"}
-      %option{selected:"selected"} ---
-      %option{value: "include"} 送料込み(出品者負担)
-      %option{value: "exclude"} 着払い(購入者負担)
+      %h3.each-head 配送について
+      %label{for: "shippin_fee"} 配送料の負担
+      %span.form-require 必須
+      %select.select-default{name: "shippin_fee"}
+        %option{selected:"selected"} ---
+        %option{value: "include"} 送料込み(出品者負担)
+        %option{value: "exclude"} 着払い(購入者負担)
 
 
-    %br
-    %label{for: "from_where"} 発送元の地域
-    %span.form-require 必須
+      %br
+      %label{for: "from_where"} 発送元の地域
+      %span.form-require 必須
 
-    %select.from_where.select-default{name: "from_where"}
-      %option{selected:"selected"} ---
-      -@regions. each do |region|
-        %option{value: region.id} #{region.name}
+      %select.from_where.select-default{name: "from_where"}
+        %option{selected:"selected"} ---
+        -@regions. each do |region|
+          %option{value: region.id} #{region.name}
 
 
 
-    %br
-    %label{for: "how_many_days"} 発送までの日数
-    %span.form-require 必須
-    %select.select-default{name: "shippin_fee"}
-      %option{selected:"selected"} ---
-      %option{value: "in_1day"} 1〜2日で発送
-      %option{value: "in_2days"} 2〜3日で発送
-      %option{value: "in_4days"} 4〜7日で発送
+      %br
+      %label{for: "how_many_days"} 発送までの日数
+      %span.form-require 必須
+      %select.select-default{name: "shippin_fee"}
+        %option{selected:"selected"} ---
+        %option{value: "in_1day"} 1〜2日で発送
+        %option{value: "in_2days"} 2〜3日で発送
+        %option{value: "in_4days"} 4〜7日で発送
 
 
-    -# %div.sell-contents
-    %h3.each-head 販売価格(300〜9,999,999)
-    %label{for: "price", placeholder: "例)300"} 価格
-    %span.form-require 必須
+      -# %div.sell-contents
+      %h3.each-head 販売価格(300〜9,999,999)
+      %label{for: "price", placeholder: "例)300"} 価格
+      %span.form-require 必須
 
+      %div.sell-content
+      %a{:href => "/jp/help_center/getting_started/prohibited_items/", :target => "_blank"} 禁止されている出品、
+      %a{:href => "/jp/help_center/getting_started/prohibited_conduct/", :target => "_blank"} 行為
+      %p を必ずご確認ください。
+      %p またブランド品でシリアルナンバー等がある場合はご記載ください。
+      %a{:href => "/jp/help_center/getting_started/counterfeit_goods/", :target => "_blank"} 偽ブランドの販売
+      %p は犯罪であり処罰される可能性があります。
+      %p また、出品をもちまして
+      %a{:href => "/jp/seller_terms/"} 加盟店規約
+      %p に同意したことになります。
 
+      .form-post
+      = f.submit class:"form-post"
     
-
-    -# %input#pointspossible.clsInput{:type => "text"}/
-    -# %input#pointsgiven.clsInput{:type => "text"}/
-    -# %button#btnCalculate Calculate
-    -# %input#pointsperc{:disabled => "disabled", :type => "text"}/
-
-
-
-    %input.input-default
-      %li.clearfix 販売手数料(10%)
-
-      
-
-
-
-
-    %div.sell-content
-    %a{:href => "/jp/help_center/getting_started/prohibited_items/", :target => "_blank"} 禁止されている出品、
-    %a{:href => "/jp/help_center/getting_started/prohibited_conduct/", :target => "_blank"} 行為
-    %p を必ずご確認ください。
-    %p またブランド品でシリアルナンバー等がある場合はご記載ください。
-    %a{:href => "/jp/help_center/getting_started/counterfeit_goods/", :target => "_blank"} 偽ブランドの販売
-    %p は犯罪であり処罰される可能性があります。
-    %p また、出品をもちまして
-    %a{:href => "/jp/seller_terms/"} 加盟店規約
-    %p に同意したことになります。
-
-    .form-post
-      %button.form-post 出品する
-    .form-back
-      %button.form-back もどる
-    
-  = render partial: '/shared/footers', locals: { categories: @categories }
+      .form-back
+        = link_to 'もどる', :back ,class:"form-back"
+        -# %button.form-back もどる
+= render partial: '/shared/footers', locals: { categories: @categories }
