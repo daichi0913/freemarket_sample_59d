@@ -9,24 +9,24 @@
       = form_for (users_url) do |f|
         .form__box-address
           .form-group
-            %label{:for => "nickname"} お名前
+            %label{for:  "nickname"} お名前
             %span.form-require 必須
             = f.text_field :nickname, placeholder: "例) メルカリ", class: "input-address-name"
             = f.text_field :nickname, placeholder: "例) 太郎", class: "input-address-name-under"
         .form__box-address
           .form-group
-            %label{:for => "nickname"} お名前カナ
+            %label{for: "nickname"} お名前カナ
             %span.form-require 必須
             = f.text_field :nickname, placeholder: "例) メルカリ", class: "input-address-name"
             = f.text_field :nickname, placeholder: "例) タロウ", class: "input-address-name-under"
         .form__box-address
           .form-group
-            %label{:for => "nickname"} 郵便番号
+            %label{for: "nickname"} 郵便番号
             %span.form-require 必須
             = f.text_field :nickname, placeholder: "例) 123-4567", class: "input-default"
         .form__box-address
           .form-group
-            %label{:for => "nickname"} 都道府県
+            %label{for: "nickname"} 都道府県
             %span.form-require 必須
             %select.input-default
               %option{selected:"selected"} ---
@@ -34,22 +34,22 @@
                 %option{value: region.id} #{region.name}
         .form__box-address
           .form-group
-            %label{:for => "nickname"} 市区町村
+            %label{for: "nickname"} 市区町村
             %span.form-require 必須
             = f.text_field :nickname, placeholder: "例) メルカリ町メルカリ区", class: "input-default"
         .form__box-address
           .form-group
-            %label{:for => "nickname"} 番地
+            %label{for: "nickname"} 番地
             %span.form-require 必須
             = f.text_field :nickname, placeholder: "例) メルカリ5-1-1", class: "input-default"
         .form__box-address
           .form-group
-            %label{:for => "nickname"} 建物名
+            %label{for: "nickname"} 建物名
             %span.form-require-ninni 任意
             = f.text_field :nickname, placeholder: "例) メルカリ太郎", class: "input-default"
         .form__box-address
           .form-group
-            %label{:for => "nickname"} 電話番号
+            %label{for: "nickname"} 電話番号
             %span.form-require-ninni 任意
             = f.text_field :nickname, placeholder: "例) メルカリ太郎", class: "input-default"
         .form-group
