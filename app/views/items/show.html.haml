@@ -48,18 +48,18 @@
             .category1-box1-1
               .category1-box1-name-1
                 = link_to "#", class:"hover9" do
-                  メンズ
+                  = @item.category.parent.parent.name
               .category2-box2-1
                 = fa_icon "angle-right"
                 = link_to "#", class:"hover9" do
-                  会社
+                  = @item.category.parent.name
               .category3-box3-1
                 = fa_icon "angle-right"
                 = link_to "#", class:"hover9" do 
-                  IT企業
+                  = @item.category.name
           .category1-2
             .category1-box-2
-              .category-box-name-2
+              .category-box-name
                 ブランド
             .category1-box1-2
               .category1-box1-name-2
