@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     end
   end
   resources :items
+  resources :item_images, only: [:new,:create]
   namespace :api do
     resources :categories, only: :index, defaults: { format: 'json' }
   end 

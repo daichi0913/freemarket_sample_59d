@@ -18,7 +18,7 @@
         .login-form__field
           = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード"
         .login-form__field
-          =recaptcha_tags
+          -# =recaptcha_tags
         = f.submit "ログイン", class: "login-form__btn" 
         =link_to "パスワードをお忘れの方", "#"
 

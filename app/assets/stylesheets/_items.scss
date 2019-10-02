@@ -54,25 +54,67 @@ form.sell-form{
 
 #drop_zone{
 
-  position: relative;
-    min-height: 115px;
-    width: 116%;
-    background: #f5f5f5;
-    border: 1px dashed #ccc;
-    font-size: 0;
-    text-align: center;
-
+  min-height: 115px;
+  width: 116%;
+  overflow:hidden;
+  background: #f5f5f5;
+  border: 1px dashed #ccc;
+  font-size: 0;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  .drop-item{
+    height: 117px;
+    width:18%;
+    background-color:blue;
+  }
 }
 #my_form{
-  label.input{
-    background-color: red;
-    width: 101%;
+  position: absolute;
+  top: 306px;
+  input{
     height: 117px;
-    input{
-      display: none;
-      // background-color: aquamarine;
-      width: 101%;
-      height: 117px;
+    position: absolute;
+    opacity: 0;
+    width: 400px;
+  }
+}
+.image-box{
+  height:117px;
+  width:79px;
+  z-index: 3;
+  border-right: 5px solid white;
+  background-color:  #FCFCFC;
+  .image{
+    width:100%;
+    height:70px;
+    margin-top: 5px;
+    overflow:hidden;
+  }
+  .bottom{
+    width:100%;
+    height:38px;
+    position:relative;
+    display:flex;
+    .edit{
+      height:22px;
+      top: 8px;
+      border-radius: 5px;
+      left:5px;
+      position: relative;
+      width: 27px;
+      color: rgb(0, 195, 255);
+      font-size: 13px;
+    }
+    .delete{
+      height:22px;
+      top: 8px;
+      border-radius: 5px;
+      left:18px;
+      color: rgb(0, 195, 255);
+      position: relative;
+      width: 27px;
+      font-size: 13px;
     }
   }
 }
@@ -239,6 +281,7 @@ select.select-default{
   color: #fff;
   display: block;
   width: 100%;
+  margin-bottom:5px;
 }
 
 .form-back{
@@ -247,6 +290,7 @@ select.select-default{
   text-align: center;
   line-height: 53px;
   color: #fff;
+  margin:0 auto;
   background: #aaa;
   border: 1px solid #aaa;
 }
