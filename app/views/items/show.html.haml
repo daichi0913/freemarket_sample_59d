@@ -3,7 +3,7 @@
   //////////商品の説明/////////////
   .shyouhin-box
     .item-name
-      %option{value: @item.id} #{@item.name}
+      #{@item.name}
 
     .item-main-content
 
@@ -30,7 +30,7 @@
                 出品者
             .category1-box1
               .category1-box1-name
-                -# %option{value: @item.id}{@item.出品者の名前}
+                =@item.user.nickname
               .category2-box2
                 = fa_icon "smile-o"
                 413
@@ -47,35 +47,35 @@
             .category1-box1-1
               .category1-box1-name-1
                 = link_to "#", class:"hover9" do
-                  メンズ
+                  = @item.category.parent.parent.name
               .category2-box2-1
                 = fa_icon "angle-right"
                 = link_to "#", class:"hover9" do
-                  会社
+                  = @item.category.parent.name
               .category3-box3-1
                 = fa_icon "angle-right"
                 = link_to "#", class:"hover9" do 
-                  IT企業
+                  = @item.category.name
           .category1-2
             .category1-box-2
-              .category-box-name-2
+              .category-box-name
                 ブランド
             .category1-box1-2
               .category1-box1-name-2
-                %option{value: @item.id} #{@item.brand.name}
+                = @item.brand.name
           .category1-2
             .category1-box-2
               .category-box-name-2
                 商品状態
             .category1-box1-2
               .category1-box1-name-2
-                %option{value: @item.id} #{@item.item_status}
+                =@item.item_status
           .category1-2
             .category1-box-2
               .category-box-name-2
                 配送料の負担
             .category1-box1-2
-              %option{value: @item.id} #{@item.shipping_fee}
+              = @item.shipping_fee
               .category1-box1-name-2
           .category1-2
             .category1-box-2
@@ -83,15 +83,15 @@
                 配送方法
             .category1-box1-2
               .category1-box1-name-2
-                %option{value: @item.id} #{@item.shipping_way}
+                = @item.shipping_way
           .category1-2
             .category1-box-2
               .category-box-name-2
                 発送元地域
             .category1-box1-2
               .category1-box1-name-2
-                = link_to "#", class:"hover9" do
-                  シリコンバレー
+                %option{value: @item.id} #{@item.region.name}
+
           .category1-2
             .category1-box-2
               .category-box-name-2
@@ -101,7 +101,7 @@
                 %option{value: @item.id} #{@item.days}
     .item-price
       .price-name
-        %option{value: @item.id} ¥ #{@item.price}
+        ¥ #{@item.price.to_s(:delimited)}
       .price-tax
         (税込)
       .price-free
@@ -109,11 +109,7 @@
     .item-buy
       購入画面に進む
     .item-setumei
-      Facebookは、2004年2月、設立しました。
-      FacebookやInstagramなどがあります。
-      現在ではLibraという仮想通貨を運用する予定で準備を進めている。
-      社員は優秀な人も多くいます。
-      質問はお手軽にどうぞ
+      %option{value: @item.id} #{@item.explain}
     .item-hyouka
       .item-hyouka-left
         .item-iine
