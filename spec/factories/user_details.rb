@@ -6,7 +6,7 @@ FactoryBot.define do
     family_name_kanji {Gimei.name.last.kanji}
     first_name_kanji {Gimei.name.first.kanji}
     # name_kanji {family_name_kanji+" "+first_name_kanji}
-    birth_date {Faker::Date.birthday(min_age: 18, max_age: 65).strftime("%Y/%m/%d %H:%M")}
+    birth_date {Faker::Date.birthday(min_age: 18, max_age: 65).to_s}
     user
   end
 end
