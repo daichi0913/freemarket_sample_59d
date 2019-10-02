@@ -10,6 +10,7 @@ class ToppagesController < ApplicationController
     @item_mens = []
     @item_appliances = []
     @item_toys = []
+    @item_brand_nike = []
     # @item_mens = Item.per(10).order("created_at DESC")
     @items.each do |item|
       if item.category.parent.parent.name == "レディース"
@@ -32,9 +33,13 @@ class ToppagesController < ApplicationController
           @item_toys << item
         end
 
-
+      if item.brand.name == "ナイキ"
+        if(@item_brand_nike.length < 10)
+          @item_brand_nike << item
+        end
       end
     end
-    # binding.pry
   end
+  end
+    # binding.pry
 end

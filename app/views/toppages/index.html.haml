@@ -326,6 +326,7 @@
           %a.lic{ href:""}
             もっと見る ＞
     .top-bland-item__item
+
       .top-bland-item__item__box
         .top-bland-item__item__box__bottom
 
@@ -359,8 +360,12 @@
         %a.lic{ href:""}
           もっと見る ＞ 
     .top-bland-item__item
+      -@item_brand_nike. each do |nike|
+
       .top-bland-item__item__box
         .top-bland-item__item__box__bottom
+          = nike.name
+
 /////////////////////
 //ここはボトムのビュー
 .top-bottom-view
