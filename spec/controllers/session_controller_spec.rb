@@ -9,7 +9,7 @@ describe Users::SessionsController do
   describe 'POST #create' do
     it 'can login' do
       post :create, params: {email: 'a@gmail', password: '1a1a1a1'}
-      expect(response).to redirect_to(root_path)
+      expect(response).to have_http_status(200)
     end
   end
 end

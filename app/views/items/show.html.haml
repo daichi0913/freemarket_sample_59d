@@ -1,11 +1,17 @@
 .shyouhin-main
-  = render partial: '/shared/headers', locals: { categories: @categories }
+  = render partial: '/shared/headers'
   //////////商品の説明/////////////
   .shyouhin-box
-    .item-name フェイスブック
+    .item-name
+      #{@item.name}
+
     .item-main-content
+
       .item-photo
         .item-photo-main
+          -# -@item.id
+          -# %option{value: @item.id} #{@item.image}
+
           .item-suraido
           .item-suraido1
           .item-suraido2
@@ -24,8 +30,7 @@
                 出品者
             .category1-box1
               .category1-box1-name
-                = link_to "#", class:"hover9" do
-                  マークザッカーバーグ
+                =@item.user.nickname
               .category2-box2
                 = fa_icon "smile-o"
                 413
@@ -42,62 +47,61 @@
             .category1-box1-1
               .category1-box1-name-1
                 = link_to "#", class:"hover9" do
-                  メンズ
+                  = @item.category.parent.parent.name
               .category2-box2-1
                 = fa_icon "angle-right"
                 = link_to "#", class:"hover9" do
-                  会社
+                  = @item.category.parent.name
               .category3-box3-1
                 = fa_icon "angle-right"
                 = link_to "#", class:"hover9" do 
-                  IT企業
+                  = @item.category.name
           .category1-2
             .category1-box-2
-              .category-box-name-2
+              .category-box-name
                 ブランド
             .category1-box1-2
               .category1-box1-name-2
-                = link_to "#", class:"hover9" do
-                  フェイスブック
+                = @item.brand.name
           .category1-2
             .category1-box-2
               .category-box-name-2
                 商品状態
             .category1-box1-2
               .category1-box1-name-2
-                成長企業
+                =@item.item_status
           .category1-2
             .category1-box-2
               .category-box-name-2
                 配送料の負担
             .category1-box1-2
+              = @item.shipping_fee
               .category1-box1-name-2
-                送料込み（出品者負担）
           .category1-2
             .category1-box-2
               .category-box-name-2
                 配送方法
             .category1-box1-2
               .category1-box1-name-2
-                らくらくメルカリ便
+                = @item.shipping_way
           .category1-2
             .category1-box-2
               .category-box-name-2
                 発送元地域
             .category1-box1-2
               .category1-box1-name-2
-                = link_to "#", class:"hover9" do
-                  シリコンバレー
+                %option{value: @item.id} #{@item.region.name}
+
           .category1-2
             .category1-box-2
               .category-box-name-2
                 発送日の目安
             .category1-box1-2
               .category1-box1-name-2
-                ３ヶ月
+                %option{value: @item.id} #{@item.days}
     .item-price
       .price-name
-        ￥10,000,000,000
+        ¥ #{@item.price.to_s(:delimited)}
       .price-tax
         (税込)
       .price-free
@@ -105,11 +109,7 @@
     .item-buy
       購入画面に進む
     .item-setumei
-      Facebookは、2004年2月、設立しました。
-      FacebookやInstagramなどがあります。
-      現在ではLibraという仮想通貨を運用する予定で準備を進めている。
-      社員は優秀な人も多くいます。
-      質問はお手軽にどうぞ
+      %option{value: @item.id} #{@item.explain}
     .item-hyouka
       .item-hyouka-left
         .item-iine
@@ -321,7 +321,7 @@
                   1
                 .items-heart-5-2
                   = fa_icon "heart-o"
-                  ///////////詳細のフッター////////////////////////
+  -#                 ///////////詳細のフッター////////////////////////
   .item-second-footer
     .item-footer-main
       .item-footer-name
@@ -331,6 +331,3 @@
       .item-footer-syousai
         facebook
   = render partial: '/shared/footer2'
-
-
-

@@ -4,12 +4,15 @@ class ItemsController < ApplicationController
     @categories = Category.where(parent_id: nil)
     region_id = params[:id].to_i
     @regions = Region.all
+
     @item_image = ItemImage.new
     @item = Item.new
     5.times { @item.item_images.build }
+
   end
   
   def show
+    @item = Item.find(params[:id])
 
   end
 
