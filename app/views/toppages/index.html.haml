@@ -254,19 +254,10 @@
           %a.lic{ href:""}
             もっと見る ＞
     .top-category-item__item
-      .top-category-item__item__box
-        .top-category-item__item__box__bottom
-          = @item_ladies.name
-      .top-category-item__item__box
-        .top-category-item__item__box__bottom
-      .top-category-item__item__box
-        .top-category-item__item__box__bottom
-      .top-category-item__item__box
-        .top-category-item__item__box__bottom
-      .top-category-item__item__box
-        .top-category-item__item__box__bottom
-      .top-category-item__item__box
-        .top-category-item__item__box__bottom
+      -@item_ladies. each do |l|
+        .top-category-item__item__box
+          .top-category-item__item__box__bottom
+            = l.name
   #top-category-item__box2.top-category-item__box2
     .mens-name-box
       .mens-name
@@ -275,9 +266,10 @@
         %a.lic{ href:""}
           もっと見る ＞ 
     .top-category-item__item
-      .top-category-item__item__box
-        .top-category-item__item__box__bottom
-
+      -@item_mens. each do |m|
+        .top-category-item__item__box
+          .top-category-item__item__box__bottom
+            = m.name
   #top-category-item__box3.top-category-item__box3
     .kaden-name-box
       .kaden-name
@@ -443,4 +435,3 @@
 .button-box
   %li.text 出品
   %li.camera
-
