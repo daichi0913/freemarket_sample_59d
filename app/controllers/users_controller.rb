@@ -34,7 +34,7 @@ class UsersController < ApplicationController
 
 
   def address
-    
+    @regions = Region.all
   end
   
   def credit_card_registration
