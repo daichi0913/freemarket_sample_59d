@@ -8,18 +8,31 @@ class ToppagesController < ApplicationController
     @items = Item.where(params[:user]).limit(1000).order("created_at DESC")
     @item_ladies = []
     @item_mens = []
-    # @item_appliances = Item.per(10).order("created_at DESC")
-    # @item_toys = Item.per(10).order("created_at DESC")
+    @item_appliances = []
+    @item_toys = []
     # @item_mens = Item.per(10).order("created_at DESC")
     @items.each do |item|
       if item.category.parent.parent.name == "レディース"
         if(@item_ladies.length < 10)
           @item_ladies << item
         end
+
       elsif item.category.parent.parent.name == "メンズ"
         if(@item_mens.length < 10)
           @item_mens << item
         end
+
+      elsif item.category.parent.parent.name == "家電・スマホ・カメラ"
+        if(@item_appliances.length < 10)
+          @item_appliances << item
+        end
+
+      elsif item.category.parent.parent.name == "おもちゃ・ホビー・グッズ"
+        if(@item_toys.length < 10)
+          @item_toys << item
+        end
+
+
       end
     end
     # binding.pry

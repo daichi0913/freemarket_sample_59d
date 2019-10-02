@@ -278,8 +278,11 @@
         %a.lic{ href:""} 
           もっと見る ＞ 
     .top-category-item__item
-      .top-category-item__item__box
-        .top-category-item__item__box__bottom
+      -@item_appliances. each do |a|
+        .top-category-item__item__box
+          .top-category-item__item__box__bottom
+            = a.name
+
 
   #top-category-item__box4.top-category-item__box4
     .goods-name-box
@@ -289,12 +292,10 @@
         %a.lic{ href:""}
           もっと見る ＞ 
     .top-category-item__item
-      .top-category-item__item__box
-
-
-
-
-        .top-category-item__item__box__bottom
+      -@item_toys. each do |t|
+        .top-category-item__item__box
+          .top-category-item__item__box__bottom
+            = t.name
 //////////////////////////////////
 //ここはブランドメニュー
 .top-bland
