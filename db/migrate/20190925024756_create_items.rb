@@ -1,8 +1,8 @@
 class CreateItems < ActiveRecord::Migration[5.2]
   def change
     create_table :items do |t|
-      t.references :user,            null: true, froeign_key: true
-      t.references :category,        null: true, froeign_key: true
+      t.references :user,            null: false, froeign_key: true
+      t.references :category,        null: false, froeign_key: true
       t.references :brand,           null: true, froeign_key: true
       t.references :group,           null: false, froeign_key: true
       t.string     :name,            null: false

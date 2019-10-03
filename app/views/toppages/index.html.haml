@@ -442,5 +442,6 @@
 
 ///////////////////出品ボタン
 .button-box
-  %li.text 出品
-  %li.camera
+  = link_to new_user_item_path(current_user.id) do
+    %li.text 出品
+    %li.camera

@@ -5,6 +5,11 @@ $(function(){
     return html;
   }
 
+  function buildHTMLforDB() {
+    var html = `<select class= "category_select", name="item[category_id]"><option selected ="selected">---</option></select>`
+    return html;
+  }
+
   function deleteHTML(index, length){
     let del = length - (index+1);
     if (del == 1){
@@ -38,7 +43,9 @@ $(function(){
         deleteHTML(index, length);
         var html = buildHTML;
 
-        if ($('.category_select').length < 3){
+        if ($('.category_select').length ==2){
+          $('.category_select_box').append(buildHTMLforDB);
+        }else if($('.category_select').length < 3){
           $('.category_select_box').append(html);
         }
 
