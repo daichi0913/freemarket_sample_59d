@@ -349,6 +349,11 @@
         %a.lic{ href:""}
           もっと見る ＞ 
     .top-bland-item__item
+      -@item_brand_supreme. each do |supreme|
+        .top-bland-item__item__box
+          .top-bland-item__item__box__bottom
+            = suprime.name
+
       .top-bland-item__item__box
         .top-bland-item__item__box__bottom
 
@@ -361,10 +366,9 @@
           もっと見る ＞ 
     .top-bland-item__item
       -@item_brand_nike. each do |nike|
-
-      .top-bland-item__item__box
-        .top-bland-item__item__box__bottom
-          = nike.name
+        .top-bland-item__item__box
+          .top-bland-item__item__box__bottom
+            = nike.name
 
 /////////////////////
 //ここはボトムのビュー
