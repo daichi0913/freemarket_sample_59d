@@ -13,11 +13,10 @@ class ItemsController < ApplicationController
   
   def show
     @item = Item.find(params[:id])
-
+    # binding.pry
   end
 
   def create
-    binding.pry
     Item.create(create_params)
     redirect_to root_path
 
@@ -28,8 +27,4 @@ class ItemsController < ApplicationController
 
     params.require(:item).permit(:name,:size,:item_status,:shipping_fee,:days,:price,:explain,:region_id,:brand_id,category_id: :category_select,item_images_attributes: [:image] )
   end
-
-    params.require(:item).permit(:name,:size,:item_status,:shipping_fee,:days,:price,:explain,:region_id,:brand_id,category_id: :category_select,item_images_attributes: [:image] ).merge(user_id: current_user.id)
-    end
-
 end

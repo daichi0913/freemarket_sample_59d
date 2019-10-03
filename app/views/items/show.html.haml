@@ -9,8 +9,9 @@
 
       .item-photo
         .item-photo-main
-          -# -@item.id
-          -# %option{value: @item.id} #{@item.image}
+          -# -@item.item_images.each do |image|
+          -#   = image_tag image.imageを下の１行で表している
+          = image_tag @item.item_images[0].image.url
 
           .item-suraido
           .item-suraido1
@@ -329,5 +330,4 @@
         .item-footer-icon
           = fa_icon "angle-right"
       .item-footer-syousai
-        facebook
   = render partial: '/shared/footer2'
