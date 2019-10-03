@@ -20,8 +20,9 @@ Rails.application.routes.draw do
       get :credit_card_registration
 
     end
+    resources :items, only: :new
   end
-  resources :items
+  resources :items, except: :new
   resources :item_images, only: [:new,:create]
   namespace :api do
     resources :categories, only: :index, defaults: { format: 'json' }

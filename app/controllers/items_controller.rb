@@ -17,11 +17,13 @@ class ItemsController < ApplicationController
   end
 
   def create
+    Item.create(create_params)
     binding.pry
+    redirect_to root_path
   end
 
-  # private
-  #   def create_params
-  #   params.require(:item).permit(item_image_attributes: [:image])
-  #   end
+  private
+    def create_params
+    params.require(:item).permit(:name,:size,:item_status,:shipping_fee,:days,:price,:explain,:region_id,:brand_id,category_id: :category_select,item_images_attributes: [:image] ).merge(user_id: params[:id])
+    end
 end
