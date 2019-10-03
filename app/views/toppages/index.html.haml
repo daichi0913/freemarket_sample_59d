@@ -326,10 +326,10 @@
           %a.lic{ href:""}
             もっと見る ＞
     .top-bland-item__item
-
-      .top-bland-item__item__box
-        .top-bland-item__item__box__bottom
-
+      -@item_brand_chanel. each do |chanel|
+        .top-bland-item__item__box
+          .top-bland-item__item__box__bottom
+            = chanel.name
   #top-bland-item__box2.top-bland-item__box2
     .ruiviton-name-box
       .ruiviton-name
@@ -338,9 +338,11 @@
         %a.lic{ href:""}
           もっと見る ＞ 
     .top-bland-item__item
-      .top-bland-item__item__box
-        .top-bland-item__item__box__bottom
-  
+      -@item_brand_lv. each do |lv|
+        .top-bland-item__item__box
+          .top-bland-item__item__box__bottom
+            = lv.name
+
   #top-bland-item__box3.top-bland-item__box3
     .syupurimu-name-box
       .syupurimu-name
@@ -352,10 +354,7 @@
       -@item_brand_supreme. each do |supreme|
         .top-bland-item__item__box
           .top-bland-item__item__box__bottom
-            = suprime.name
-
-      .top-bland-item__item__box
-        .top-bland-item__item__box__bottom
+            = supreme.name
 
   #top-bland-item__box4.top-bland-item__box4
     .nike-name-box
