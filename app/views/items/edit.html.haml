@@ -13,6 +13,15 @@
       %span.form-require 必須
       %p 最大10枚までアップロードできます
       #drop_zone 
+        - @item.item_images.each do |image|
+          .image-box
+            .image
+              =image_tag(image.image.url)
+            .bottom
+              .edit
+                編集
+              .delete
+                削除
         #text
           ドラッグ・アンドロップ
           <br>
@@ -31,7 +40,6 @@
         %label{:for => "explain"} 商品の説明
         %span.form-require 必須
         = f.text_field :explain, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", type: "text", value: @item.explain,class:"input-default-datail"
-
 
         %h3.each-head 商品の詳細
         %label{for: "category"} カテゴリー
@@ -57,7 +65,6 @@
               %option{selected: "selected",value: category.id} #{category.name}
             -else
               %option{value: category.id} #{category.name}
-
               
       %div.sell-contents
       %label{for: "size"} サイズ
@@ -77,7 +84,7 @@
 
       %label{for: "brand"} ブランド
       %span.form-yourself 任意
-      = f.text_field :brand_id , class:"input-default",placeholder:"例）シャネル",type: "text", value: @item.brand_id
+      = f.text_field :brand_id , class:"input-default",placeholder:"例）シャネル",type: "text"
       %label{for: "item_status"} 商品の状態
       %span.form-require 必須
       = f.select :item_status do
@@ -107,7 +114,6 @@
           %option{value: region.id} #{region.name}
 
 
-
       %br
       %label{for: "how_many_days"} 発送までの日数
       %span.form-require 必須
@@ -116,7 +122,6 @@
         %option{value: "1〜2日で発送"} 1〜2日で発送
         %option{value: "2〜3日で発送"} 2〜3日で発送
         %option{value: "4〜7日で発送"} 4〜7日で発送
-
 
       -# %div.sell-contents
       %h3.each-head 販売価格(300〜9,999,999)
