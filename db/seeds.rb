@@ -29,35 +29,29 @@ BrandGroup.create!(
 
 Brand.create!(
   {id: '1', brand_group_id: '1', name: 'ナイキ', created_at: '20190930', updated_at: '20191001'}
-  )
+  ) 
+Brand.create!(
+  {id: '2', brand_group_id: '1', name: 'シャネル', created_at: '20190930', updated_at: '20191001'}
+)
+Brand.create!(
+  {id: '3', brand_group_id: '1', name: 'ルイヴィトン', created_at: '20190930', updated_at: '20191001'}
+)
+Brand.create!(
+  {id: '4', brand_group_id: '1', name: 'シュプリーム', created_at: '20190930', updated_at: '20191001'}
+)
 
+# ユーザー100人
+100.times do
+  User.create!(
+    {nickname: Faker::Games::Pokemon.name, email: Faker::Internet.email, password: 'abc1234567', created_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all), updated_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all)}
+  )
+end
 Item.create!(
   {user_id: '1', category_id: '18', brand_id: '1', region_id: '1', name: 'セーター', size: 'Mサイズ', item_status: '新品', shipping_fee: '購入者負担', shipping_way: '普通郵便', days: '3日以内に発送', price: '1000', explain: 'とっても可愛いです。', created_at: '20190930', updated_at: '20191001'}
   )
 
-
-  Brand.create!(
-    {id: '2', brand_group_id: '1', name: 'シャネル', created_at: '20190930', updated_at: '20191001'}
-    )
-  
-    Brand.create!(
-      {id: '3', brand_group_id: '1', name: 'ルイヴィトン', created_at: '20190930', updated_at: '20191001'}
-      )
-  
-      Brand.create!(
-    {id: '4', brand_group_id: '1', name: 'シュプリーム', created_at: '20190930', updated_at: '20191001'}
-    )
-
-
-
-
-
-
-
-    
-
 # ↓レディース新着表示用
-  30.times do
+30.times do
      Item.create!(
       {user_id: '1', category_id: rand(18..31), brand_id: rand(1..4), region_id: rand(1..47), name: Faker::Dessert.variety, size: Faker::Games::Pokemon.name, item_status: Faker::Creature::Animal.name, shipping_fee: Faker::Superhero.name, shipping_way: Faker::Movies::HarryPotter.location, days: Faker::TvShows::BojackHorseman.character, price: Faker::Number.between(from: 1, to: 10000000), explain: Faker::TvShows::BojackHorseman.tongue_twister, created_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all), updated_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all)}
       )
@@ -71,11 +65,6 @@ Item.create!(
  end
 
 
-  100.times do
-    User.create!(
-    {nickname: Faker::Games::Pokemon.name, email: Faker::Internet.email, password: 'abc1234567', created_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all), updated_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all)}
-    )
-  end
 
   # ↓家電新着表示用
   30.times do
@@ -90,7 +79,4 @@ Item.create!(
     {user_id: rand(1..100), category_id: rand(578..587), brand_id: rand(1..4), region_id: rand(1..47), name: Faker::TvShows::BojackHorseman.character, size: Faker::Games::Pokemon.name, item_status: Faker::Creature::Animal.name, deal_status: Faker::TvShows::StrangerThings.character, shipping_fee: Faker::Superhero.name, shipping_way: Faker::Movies::HarryPotter.location, days: Faker::Dessert.variety, price: Faker::Number.between(from: 1000, to: 9000), explain: Faker::TvShows::BojackHorseman.tongue_twister, created_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all), updated_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all)}
     )
   end
-
-  
-
 

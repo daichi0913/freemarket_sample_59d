@@ -442,6 +442,6 @@
 
 ///////////////////出品ボタン
 .button-box
-  = link_to new_user_item_path(current_user.id) do
+  = link_to user_signed_in? ? new_user_item_path(current_user.id) : new_user_session_path do
     %li.text 出品
     %li.camera

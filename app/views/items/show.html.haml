@@ -9,19 +9,25 @@
 
       .item-photo
         .item-photo-main
-          -# -@item.id
-          -# %option{value: @item.id} #{@item.image}
+          -@item.item_images.each do |image|
+            = image_tag image.image.url
+            
 
           .item-suraido
           .item-suraido1
           .item-suraido2
         .item-table
           .table-body1
-          .table-body2
-          .table-body3
-          .table-body4
-          .table-body5
-          .table-body6
+            -@item.item_images.each do |image|
+              = image_tag image.image.url
+
+            -# = image_tag @item.item_images[0].image.url
+            -# = image_tag @item.item_images[1].image.url
+            -# = image_tag @item.item_images[2].image.url
+            -# = image_tag @item.item_images[3].image.url
+            -# = image_tag @item.item_images[4].image.url
+
+          
       .item-category
         .category-box
           .category1
@@ -329,5 +335,4 @@
         .item-footer-icon
           = fa_icon "angle-right"
       .item-footer-syousai
-        facebook
   = render partial: '/shared/footer2'

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'user_detail/edit'
-  get 'items/new'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
@@ -22,7 +21,7 @@ Rails.application.routes.draw do
     end
     resources :items, only: [:new,:edit,:update]
   end
-  resources :items, except: :new
+  resources :items, except: [:new, :edit]
   resources :item_images, only: [:new,:create]
   namespace :api do
     resources :categories, only: :index, defaults: { format: 'json' }
