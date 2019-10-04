@@ -46,24 +46,15 @@ $(function(){
   })
 
 
+
 // ターボリンクスの記述をかく
   $(document).on('turbolinks:load', function(){
-
+    //商品詳細ページ画像の初期インデックス
     var imageHover;
-    $('.photo-slide').hover(function(){
-        // console.log("へへへ")
-
-    //   imageHover = setTimeout(function() {
-    //     $('#bakudan').css
-    //     $('#bakuhatsu').css('opacity', '0')
-    //   }, 1000)
-    // }, function() {
-    //   $('#bakudan').css('opacity', '1')
-    //   $('#bakuhatsu').css('opacity', '0')
-    //   clearTimeout(timeBomb)
-    // clearTimeout がないとイベントがキャンセルできず、
-    // 一瞬でもカーソルが乗ると３秒後にイベントが発火してしまうので
-    // 注意です。
+    $('.photo-slide img').on("mouseenter", function(){
+      var index = $('.photo-slide img').index(this);
+      // $(".item-photo-main")[0].scrollLeft = index * 300;
+      $(".item-photo-main").animate({scrollLeft: index * 300}, 300);
     });
   })
 });
