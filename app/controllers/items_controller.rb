@@ -13,10 +13,22 @@ class ItemsController < ApplicationController
   
   def show
     @item = Item.find(params[:id])
+  end
 
+ def edit
+    @item = Item.find(params[:id])
+    
+  end
+
+  def update
+    item = Item.find(params[:id])
+    if item.user_id == current_user.id
+      item.update(create_params)
+    end
   end
 
   def create
+    @item = Item.new(create_params)
     Item.create(create_params)
     redirect_to root_path
   end

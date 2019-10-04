@@ -59,6 +59,7 @@
   flex-direction: row;
   &__left{
     width: 37%;
+    list-style: none;
     &__category{
       float: left;
       width:200px;
@@ -95,6 +96,7 @@
     display: flex;
     flex-direction: row;
     width: 63%;
+    list-style: none;
     &__like{
       height: 100%;
       margin-left: 17%;
@@ -295,7 +297,7 @@
     position: relative;
     right: 139px;
     display:  none;
-    top: -3px;
+    top: 46px;
     z-index: 8;
     background-color: white;
     .product-image{
