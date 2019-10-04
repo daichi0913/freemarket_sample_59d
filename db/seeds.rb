@@ -79,4 +79,3 @@ ItemImage.create!({})
     {user_id: rand(1..100), category_id: rand(578..587), brand_id: rand(1..4), region_id: rand(1..47), name: Faker::TvShows::BojackHorseman.character, size: Faker::Games::Pokemon.name, item_status: Faker::Creature::Animal.name, deal_status: Faker::TvShows::StrangerThings.character, shipping_fee: Faker::Superhero.name, shipping_way: Faker::Movies::HarryPotter.location, days: Faker::Dessert.variety, price: Faker::Number.between(from: 1000, to: 9000), explain: Faker::TvShows::BojackHorseman.tongue_twister, created_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all), updated_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all)}
     )
   end
-
