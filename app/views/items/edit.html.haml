@@ -20,16 +20,17 @@
       %output#list
         = f.fields_for :item_images do |item_image|
           = item_image.file_field :image
+         
         -# = f.file_field :image, :multiple => true
 
       %div.sell-contents
         %label{:for => "name"} 商品名
         %span.form-require 必須
-        = f.text_field :name, placeholder: "商品名  (必須 40文字まで)", type: "text", value: "",class:"input-default"
+        = f.text_field :name, placeholder: "商品名  (必須 40文字まで)", type: "text", value: @item.name ,class:"input-default"
         %br
         %label{:for => "explain"} 商品の説明
         %span.form-require 必須
-        = f.text_field :explain, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", type: "text", value: "",class:"input-default-datail"
+        = f.text_field :explain, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", type: "text", value: @item.explain,class:"input-default-datail"
 
 
         %h3.each-head 商品の詳細
@@ -39,18 +40,32 @@
         
       .category_select_box
         %select.category_select{name: "category_select"}
-          %option{selected:"selected"} ---
           -@categories. each do |category|
-            %option{value: category.id} #{category.name}
+            -if  @item.category.parent.parent.name == category.name
+              %option{selected: "selected", value: category.id} #{category.name}
+            -else
+              %option{value: category.id} #{category.name}
+        %select.category_select{name: "category_select"} 
+          -@item.category.parent.parent.categories. each do |category|
+            -if  @item.category.parent.name == category.name
+              %option{selected: "selected",value: category.id} #{category.name}
+            -else
+              %option{value: category.id} #{category.name}
+        %select.category_select{name: "item[category_id]"}
+          -@item.category.parent.categories. each do |category|
+            -if  @item.category.name == category.name
+              %option{selected: "selected",value: category.id} #{category.name}
+            -else
+              %option{value: category.id} #{category.name}
 
               
       %div.sell-contents
       %label{for: "size"} サイズ
       %span.form-require 必須
-      = f.select :size, class:"select-default" do
-        %option{selected:"selected"} ---
-        %option{value: "XXS以下"} XXS以下
-        %option{value: "XS(SS)"} XS(SS)
+      = f.select :size, class:"select-default", class:"jj" do
+        %option{selected:"selected",value:@item.size} #{@item.size}
+        %option{value: "under_xxs"} XXS以下
+        %option{value: "xs_ss"} XS(SS)
         %option{value: "S"} S
         %option{value: "M"} M
         %option{value: "L"} L
@@ -62,11 +77,11 @@
 
       %label{for: "brand"} ブランド
       %span.form-yourself 任意
-      = f.text_field :brand_id , class:"input-default",placeholder:"例）シャネル",type: "text", value: ""
+      = f.text_field :brand_id , class:"input-default",placeholder:"例）シャネル",type: "text", value: @item.brand_id
       %label{for: "item_status"} 商品の状態
       %span.form-require 必須
       = f.select :item_status do
-        %option{selected:"selected"} ---
+        %option{selected:"selected"} #{@item.item_status}
         %option{value: "新品、未使用"} 新品、未使用
         %option{value: "未使用に近い"} 未使用に近い
         %option{value: "目立った傷や汚れなし"} 目立った傷や汚れなし
@@ -78,7 +93,7 @@
       %label{for: "shippin_fee"} 配送料の負担
       %span.form-require 必須
       = f.select :shipping_fee do
-        %option{selected:"selected"} ---
+        %option{selected:"selected"} #{@item.shipping_fee}
         %option{value: "送料込み(出品者負担)"} 送料込み(出品者負担)
         %option{value: "着払い(購入者負担)"} 着払い(購入者負担)
 
@@ -87,7 +102,7 @@
       %label{for: "from_where"} 発送元の地域
       %span.form-require 必須
       = f.select :region_id, class:"from_where"do
-        %option{selected:"selected"} ---
+        %option{selected:"selected"} #{@item.region.name}
         -@regions. each do |region|
           %option{value: region.id} #{region.name}
 
@@ -97,7 +112,7 @@
       %label{for: "how_many_days"} 発送までの日数
       %span.form-require 必須
       = f.select :days do
-        %option{selected:"selected"} ---
+        %option{selected:"selected"} #{@item.days}
         %option{value: "1〜2日で発送"} 1〜2日で発送
         %option{value: "2〜3日で発送"} 2〜3日で発送
         %option{value: "4〜7日で発送"} 4〜7日で発送
@@ -107,7 +122,7 @@
       %h3.each-head 販売価格(300〜9,999,999)
       %label{for: "price", placeholder: "例)300"} 価格
       %span.form-require 必須
-      = f.text_field :price ,class:"price-field",value:""
+      = f.text_field :price ,value: @item.price,class:"price-field"
       
       %a{:href => "/jp/help_center/getting_started/prohibited_items/", :target => "_blank"} 禁止されている出品、
       %a{:href => "/jp/help_center/getting_started/prohibited_conduct/", :target => "_blank"} 行為

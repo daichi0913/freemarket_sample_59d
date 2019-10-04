@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       get :credit_card_registration
 
     end
-    resources :items, only: :new
+    resources :items, only: [:new,:edit,:update]
   end
   resources :items, except: :new
   resources :item_images, only: [:new,:create]
