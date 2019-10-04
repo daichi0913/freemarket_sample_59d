@@ -17,13 +17,6 @@
           -@item.item_images.each do |image|
             = image_tag image.image.url
 
-            -# = image_tag @item.item_images[0].image.url
-            -# = image_tag @item.item_images[1].image.url
-            -# = image_tag @item.item_images[2].image.url
-            -# = image_tag @item.item_images[3].image.url
-            -# = image_tag @item.item_images[4].image.url
-
-          
       .item-category
         .category-box
           .category1
@@ -165,6 +158,7 @@
         = fa_icon "twitter-square"
       .social-right
         = fa_icon "pinterest-square"
+
         /////////////その他の出品////////////////////////
   .item-user-profile
     .user-item-top
@@ -173,35 +167,35 @@
     .user-item-content
 
       .user-item-box
-        .items-box
-          .items-imag
-            -# -@item.item_images.each do |image|
-            -#   = image_tag image.image.url
-
-          .items-text
-            .items-text-name
-              マークが書いた絵
-            .items-text-name1
-              .items-text-price
-                ¥2,000,000
-              .items-math
-                1
-              .items-heart
-                = fa_icon "heart-o"
-
-        .items-box-3
-          .items-imag-3
-          .items-text-3
-            .items-text-name-3
-              マークが書いた絵
-            .items-text-name1-3
-              .items-text-price-3
-                ¥2,000,000
-              .items-math-3
-                1
-              .items-heart-3
-                = fa_icon "heart-o"
-
+        -@item.user.items.each_with_index do |item, index|
+          -if (index+1)%3 == 0
+            .items-box-3
+              .items-img-3
+                = image_tag item.item_images[0].image.url
+              .items-text-3
+                .items-text-name-3
+                  = item.name
+                .items-text-name1-3
+                  .items-text-price-3
+                    ¥2,000,000
+                  .items-math-3
+                    1
+                  .items-heart-3
+                    = fa_icon "heart-o"
+          -else
+            .items-box
+              .items-img
+                = image_tag item.item_images[0].image.url
+              .items-text
+                .items-text-name
+                  = item.name
+                .items-text-name1
+                  .items-text-price
+                    ¥2,000,000
+                  .items-math
+                    1
+                  .items-heart
+                    = fa_icon "heart-o"
                 //////////////そのほかの出品パート２////////////////////////
 
     .item-user-profile-2
@@ -212,7 +206,7 @@
 
       .user-item-box
         .items-box
-          .items-imag
+          .items-img
             -@item.user.items.each_with_index do |item, index|
               = image_tag item.item_images[0].image.url
 
