@@ -1,3 +1,43 @@
+// ここから画像関連の記述
+.item-photo{
+  float: left;
+  min-width: 300px;
+  max-width: 300px;
+  min-height: 420px;
+}
+.item-photo-main{
+  overflow: hidden;
+  display: flex;
+
+
+  img{
+    width: 300px;
+    height: 300px;
+    margin-left: 0 20px;
+  }
+}
+
+.photo-slide{
+
+    width: 300px;
+    height: 60px;
+
+
+    img{
+    width: 60px;
+    height: 60px;
+  }
+
+}
+
+
+
+
+
+// ここまで画像関連の記述
+
+
+
 .shyouhin-main{
   background-repeat: no-repeat;
   margin: 0;
@@ -19,19 +59,6 @@
   padding-top: 16px;
   height:447px;
   width:620px;
-}
-.item-photo{
-  float: left;
-  min-width: 300px;
-  max-width: 300px;
-  min-height: 420px;
-}
-.item-photo-main{
-  background-image: url(f_logo_RGB-Blue_58.png);
-  background-size: 300px 300px;
-  position: relative;
-  overflow: hidden;
-  height: 300px;
 }
 .item-table{
   line-height: 0;

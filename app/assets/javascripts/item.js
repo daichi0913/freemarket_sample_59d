@@ -44,4 +44,28 @@ $(function(){
   $(document).on('click','.delete',function(){
     $(this).parents(".image-box").remove();
   })
+
+
+// ターボリンクスの記述をかく
+  $(document).on('turbolinks:load', function(){
+
+    var imageHover;
+    $('.photo-slide').hover(function(){
+        // console.log("へへへ")
+
+    //   imageHover = setTimeout(function() {
+    //     $('#bakudan').css
+    //     $('#bakuhatsu').css('opacity', '0')
+    //   }, 1000)
+    // }, function() {
+    //   $('#bakudan').css('opacity', '1')
+    //   $('#bakuhatsu').css('opacity', '0')
+    //   clearTimeout(timeBomb)
+    // clearTimeout がないとイベントがキャンセルできず、
+    // 一瞬でもカーソルが乗ると３秒後にイベントが発火してしまうので
+    // 注意です。
+    });
+  })
 });
+
+
