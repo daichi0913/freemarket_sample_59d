@@ -42,7 +42,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
-  gem 'faker'
   gem 'pry-rails'
   gem 'capistrano'
   gem 'capistrano-rbenv'
@@ -83,6 +82,7 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'dotenv-rails'
+gem 'faker'
 # gem "omniauth-rails_csrf_protection"
 
 # Use jquery as the JavaScript library
