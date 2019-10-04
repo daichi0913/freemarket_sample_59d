@@ -10,16 +10,12 @@
       .item-photo
         .item-photo-main
           -@item.item_images.each do |image|
-            = image_tag image.image.url
-            
-
-          .item-suraido
-          .item-suraido1
-          .item-suraido2
-        .item-table
-          .table-body1
-            -@item.item_images.each do |image|
+            .item-photo-main__image
               = image_tag image.image.url
+
+        .photo-slide
+          -@item.item_images.each do |image|
+            = image_tag image.image.url
 
             -# = image_tag @item.item_images[0].image.url
             -# = image_tag @item.item_images[1].image.url
