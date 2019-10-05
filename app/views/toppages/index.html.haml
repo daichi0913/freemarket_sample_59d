@@ -231,71 +231,60 @@
   .top-category__b
     %ul.category0
       %li.category1
-        %a.category2{ href: "#top-category-item__box"}
+        %a.category2{ href: "#category-item__box"}
           レディース
       %li.category1
-        %a.category2{ href: "#top-category-item__box2"}
+        %a.category2{ href: "#category-item__box2"}
           メンズ
       %li.category1
-        %a.category2{ href: "#top-category-item__box3"}
+        %a.category2{ href: "#category-item__box3"}
           家電・スマホ・カメラ
       %li.category1
-        %a.category2{ href: "#top-category-item__box4"}
+        %a.category2{ href: "#category-item__box4"}
           おもちゃ・ホビー・グッズ
 ///////////////////////
 //ここはカテゴリーアイテム
-.top-category-item
-  #top-category-item__box.top-category-item__box
-    .top-category-item__box__lady
-      .lady-name-box
-        .lady-name
-          レディース新着アイテム
-        .lady-details
-          %a.lic{ href:""}
-            もっと見る ＞
-    .top-category-item__item
+.show-item
+  #category-item__box.show-item__box
+    .name-box
+      .name
+        レディース新着アイテム
+      .details
+        %a.lic{ href:""}
+          もっと見る ＞
+    .show-item__item
       -@item_ladies. each do |l|
-        .top-category-item__item__box
-          .top-category-item__item__box__bottom
-            = l.name
-  #top-category-item__box2.top-category-item__box2
-    .mens-name-box
-      .mens-name
+        =render partial: "shared/show_item", locals: {item: l}
+  #category-item__box2.show-item__box
+    .name-box
+      .name
         メンズ新着アイテム
-      .mens-details
+      .details
         %a.lic{ href:""}
           もっと見る ＞ 
-    .top-category-item__item
+    .show-item__item
       -@item_mens. each do |m|
-        .top-category-item__item__box
-          .top-category-item__item__box__bottom
-            = m.name
-  #top-category-item__box3.top-category-item__box3
-    .kaden-name-box
-      .kaden-name
+        =render partial: "shared/show_item", locals: {item: m}
+  #category-item__box3.show-item__box
+    .name-box
+      .name
         家電・スマホ・カメラ新着アイテム
-      .kaden-details
+      .details
         %a.lic{ href:""} 
           もっと見る ＞ 
-    .top-category-item__item
+    .show-item__item
       -@item_appliances. each do |a|
-        .top-category-item__item__box
-          .top-category-item__item__box__bottom
-            = a.name
-
-
-  #top-category-item__box4.top-category-item__box4
-    .goods-name-box
-      .goods-name
+        =render partial: "shared/show_item", locals: {item: a}
+  #category-item__box4.show-item__box
+    .name-box
+      .name
         おもちゃ・ホビー・グッズ新着アイテム
-      .goods-details
+      .details
         %a.lic{ href:""}
           もっと見る ＞ 
-    .top-category-item__item
+    .show-item__item
       -@item_toys. each do |t|
-        .top-category-item__item__box
-          .top-category-item__item__box__bottom
-            = t.name
+        =render partial: "shared/show_item", locals: {item: t}
 //////////////////////////////////
 //ここはブランドメニュー
 .top-bland
@@ -303,71 +292,61 @@
   .top-bland__b
     %ul.bland0
       %li.bland1  
-        %a.bland2{ href: "#top-bland-item__box"}
+        %a.bland2{ href: "#bland-item__box"}
           シャネル
       %li.bland1  
-        %a.bland2{ href: "#top-bland-item__box2"}
+        %a.bland2{ href: "#bland-item__box2"}
           ルイヴィトン
       %li.bland1
-        %a.bland2{ href: "#top-bland-item__box3"}
+        %a.bland2{ href: "#bland-item__box3"}
           シュプリーム
       %li.bland1
-        %a.bland2{ href: "#top-bland-item__box4"}
+        %a.bland2{ href: "#bland-item__box4"}
           ナイキ
 /////////////////////
 //ここはブランドのアイテム
-.top-bland-item
-  #top-bland-item__box.top-bland-item__box
-    .top-bland-item__box__syaneru
-      .syaneru-name-box
-        .syaneru-name
+.show-item
+  #bland-item__box.show-item__box
+    .show-item__box__syaneru
+      .name-box
+        .name
           シャネル新着アイテム
-        .syaneru-details
+        .details
           %a.lic{ href:""}
             もっと見る ＞
-    .top-bland-item__item
+    .show-item__item
       -@item_brand_chanel. each do |chanel|
-        .top-bland-item__item__box
-          .top-bland-item__item__box__bottom
-            = chanel.name
-  #top-bland-item__box2.top-bland-item__box2
-    .ruiviton-name-box
-      .ruiviton-name
+        =render partial: "shared/show_item", locals: {item: chanel}
+  #bland-item__box2.show-item__box
+    .name-box
+      .name
         ルイヴィトン新着アイテム
-      .ruiviton-details
+      .details
         %a.lic{ href:""}
           もっと見る ＞ 
-    .top-bland-item__item
+    .show-item__item
       -@item_brand_lv. each do |lv|
-        .top-bland-item__item__box
-          .top-bland-item__item__box__bottom
-            = lv.name
-
-  #top-bland-item__box3.top-bland-item__box3
-    .syupurimu-name-box
-      .syupurimu-name
+        =render partial: "shared/show_item", locals: {item: lv}
+  #bland-item__box3.show-item__box
+    .name-box
+      .name
         シュプリーム新着アイテム
-      .syupurimu-details
+      .details
         %a.lic{ href:""}
           もっと見る ＞ 
-    .top-bland-item__item
+    .show-item__item
       -@item_brand_supreme. each do |supreme|
-        .top-bland-item__item__box
-          .top-bland-item__item__box__bottom
-            = supreme.name
-
-  #top-bland-item__box4.top-bland-item__box4
-    .nike-name-box
-      .nike-name
+        =render partial: "shared/show_item", locals: {item: supreme}
+  #bland-item__box4.show-item__box
+    .name-box
+      .name
         ナイキ新着アイテム
-      .nike-details
+      .details
         %a.lic{ href:""}
           もっと見る ＞ 
-    .top-bland-item__item
+    .show-item__item
       -@item_brand_nike. each do |nike|
-        .top-bland-item__item__box
-          .top-bland-item__item__box__bottom
-            = nike.name
+        =render partial: "shared/show_item", locals: {item: nike}
 
 /////////////////////
 //ここはボトムのビュー

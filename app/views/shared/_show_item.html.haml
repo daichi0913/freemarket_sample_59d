@@ -1,0 +1,9 @@
+.show-item__item__box
+  =link_to item_path(item.id) do
+    .show-item__item__box__img
+      %span
+        ¥#{item.price.to_s(:delimited)}
+      = image_tag item.item_images[0].image.url
+    .show-item__item__box__bottom
+      %span
+        = item.name

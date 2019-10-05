@@ -918,26 +918,26 @@ label.next{
   }
 }}
 // ここはカテゴリのアイテム
-.top-category-item{
+.show-item{
   height: 2614px;
   width: 100vw;
   background-color:#f5f5f5;
-  &__box,&__box2,&__box3,&__box4{
+  &__box{
     height: 593px;
     width: 80%;
     margin: 0 auto;
     padding-top: 42px;
-    .lady-name-box{
+    .name-box{
       height: 33px;
       width:100%;
-      .lady-name{
+      .name{
         height: 33px;
         width: 80%;
         float: left;
         font-weight: bold;
         font-size: 24px;
       }
-      .lady-details{
+      .details{
         float: right;
         width:17%;
         font-size: 14px;
@@ -945,7 +945,7 @@ label.next{
         padding: 5px 16px 5px 5px;
       }
     }
-    .top-category-item__item{
+    .show-item__item{
       height:95%;
       width:100%;
       background-color: #f5f5f5;
@@ -953,86 +953,55 @@ label.next{
       // flex-direction: row;
       flex-wrap: wrap;
 
-      &__box{
-        width:18%;
+    }
+  }
+}
+      .show-item__item__box{
+        width:188px;
         height: 252px;
         background-color: #333333;
         margin-right: 2%;
         margin-top: 2%;
         box-shadow: 1px 2px 1px 0 rgba(0,0,0,0.4);
-        &__bottom{
+        &__img{
+          height: 188px;
+          display: flex;
+          align-items: center;
           position: relative;
-          top: 77%;
-          background-color: #EEEEEE;
-          height: 23%;
+          span{
+            background: rgba(0,0,0,.4);
+            color: #fff;
+            border-radius: 0 14px 14px 0;
+            height: 28px;
+            padding: 0 12px;
+            font-size: 17px;
+            display: inline-flex;
+            align-items: center;
+            position: absolute;
+            bottom: 8px;
+          }
+          img{
+            display: inline-block;
+            width: 100%;
+            height: auto;
+          }
+        }
+        &__bottom{
+          background-color: white;
+          color: #222;
+          padding: 0 12px;
+          height: 64px;
+          line-height: 1.4em;
+          font-size: 14px;
+          display: flex;
+          align-items: center;
+          span{
+            height: 2.8em;
+            position: relative;
+            overflow: hidden;
+          }
         }
       }
-    }
-  }
-  &__box2{
-    padding-top:  42px;
-    .mens-name-box{
-      height: 33px;
-      width:100%;
-      .mens-name{
-        height: 33px;
-        width: 80%;
-        float: left;
-        font-weight: bold;
-        font-size: 24px;
-      }
-      .mens-details{
-        float: right;
-        width:100px;
-        font-size: 14px;
-        color: rgb(0, 195, 255);
-        padding: 5px 16px 5px 5px;
-      }
-    }
-  }
-  &__box3{
-    padding-top:  42px;
-    .kaden-name-box{
-      height: 33px;
-      width:100%;
-      .kaden-name{
-        height: 33px;
-        width: 80%;
-        float: left;
-        font-weight: bold;
-        font-size: 24px;
-      }
-      .kaden-details{
-        float: right;
-        width:100px;
-        font-size: 14px;
-        color: rgb(0, 195, 255);
-        padding: 5px 16px 5px 5px;
-      }
-    }
-  }
-  &__box4{
-    padding-top:  42px;
-    .goods-name-box{
-      height: 33px;
-      width:100%;
-      .goods-name{
-        height: 33px;
-        width: 80%;
-        float: left;
-        font-weight: bold;
-        font-size: 24px;
-      }
-      .goods-details{
-        float: right;
-        width:100px;
-        font-size: 14px;
-        color: rgb(0, 195, 255);
-        padding: 5px 16px 5px 5px;
-      }
-    }
-  }
-}
 //ここはブランドのメニュー
 .top-bland{
   height:161px;
@@ -1071,128 +1040,6 @@ label.next{
         }
       }
   }
-  }
-}
-//ここはブランドのアイテム
-// .top-bland-item{
-//   height: 2230px;
-//   width: 100vw;
-//   background-color: #f5f5f5;
-// }
-.top-bland-item{
-  height: 2614px;
-  width: 100vw;
-  background-color:#f5f5f5;
-  &__box,&__box2,&__box3,&__box4{
-    height: 593px;
-    width: 80%;
-    margin: 0 auto;
-    padding-top: 42px;
-    .syaneru-name-box{
-      height: 33px;
-      width:100%;
-      .syaneru-name{
-        height: 33px;
-        width: 80%;
-        float: left;
-        font-weight: bold;
-        font-size: 24px;
-      }
-      .syaneru-details{
-        float: right;
-        width:100px;
-        font-size: 14px;
-        color: rgb(0, 195, 255);
-        padding: 5px 16px 5px 5px;
-      }
-    }
-    .top-bland-item__item{
-      height:95%;
-      width:100%;
-      background-color: #f5f5f5;
-      display: flex;
-      // flex-direction: row;
-      flex-wrap: wrap;
-
-      &__box{
-        width:18%;
-        height: 252px;
-        background-color: #333333;
-        margin-right: 2%;
-        margin-top: 2%;
-        box-shadow: 1px 2px 1px 0 rgba(0,0,0,0.4);
-        &__bottom{
-          position: relative;
-          top: 75%;
-          background-color: #EEEEEE;
-          height: 25%;
-        
-        }
-      }
-    }
-  }
-  &__box2{
-    padding-top:  42px;
-    .ruiviton-name-box{
-      height: 33px;
-      width:100%;
-      .ruiviton-name{
-        height: 33px;
-        width: 80%;
-        float: left;
-        font-weight: bold;
-        font-size: 24px;
-      }
-      .ruiviton-details{
-        float: right;
-        width:100px;
-        font-size: 14px;
-        color: rgb(0, 195, 255);
-        padding: 5px 16px 5px 5px;
-      }
-    }
-  }
-  &__box3{
-    padding-top:  42px;
-    .syupurimu-name-box{
-      height: 33px;
-      width:100%;
-      .syupurimu-name{
-        height: 33px;
-        width: 80%;
-        float: left;
-        font-weight: bold;
-        font-size: 24px;
-      }
-      .syupurimu-details{
-        float: right;
-        width:100px;
-        font-size: 14px;
-        color: rgb(0, 195, 255);
-        padding: 5px 16px 5px 5px;
-      }
-    }
-  }
-  &__box4{
-    padding-top:  42px;
-    .nike-name-box{
-      height: 33px;
-      width:100%;
-      .nike-name{
-        height: 33px;
-        width: 80%;
-        float: left;
-        font-weight: bold;
-        font-size: 24px;
-      }
-      .nike-details{
-        float: right;
-        width:100px;
-        font-size: 14px;
-        color: rgb(0, 195, 255);
-        padding: 5px 16px 5px 5px;
-      }
-    }
   }
 }
 //ここはボトムにあるビュー
