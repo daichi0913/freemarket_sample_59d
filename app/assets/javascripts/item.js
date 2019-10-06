@@ -53,7 +53,6 @@ $(function(){
     var imageHover;
     $('.photo-slide img').on("mouseenter", function(){
       var index = $('.photo-slide img').index(this);
-      // $(".item-photo-main")[0].scrollLeft = index * 300;
       $(".item-photo-main").animate({scrollLeft: index * 300}, 300);
     });
   })

@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
     @item = Item.new
     5.times { @item.item_images.build }
   end
+
   def create
     @item = Item.new(create_params)
     Item.create(create_params)
@@ -22,6 +23,7 @@ class ItemsController < ApplicationController
  def edit
     @item = Item.find(params[:id])
   end
+
   def update
     item = Item.find(params[:id])
     if item.user_id == current_user.id
@@ -29,6 +31,7 @@ class ItemsController < ApplicationController
     end
       redirect_to root_path
   end
+
   def destroy
     item = Item.find(params[:id])
     if current_user.id == item.user.id
@@ -44,5 +47,4 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name,:size,:item_status,:shipping_fee,:days,:price,:explain,:region_id,:brand_id,:brandname,:category_id,item_images_attributes: [:image] ).merge(user_id: current_user.id)
 
     end
-
 end
