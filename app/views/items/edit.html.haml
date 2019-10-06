@@ -1,5 +1,5 @@
 !!!
-= render partial: 'layouts/user_registration_status_bar'
+= render partial: 'shared/header2'
 
 %script{:language => "JavaScript"}
 
@@ -29,7 +29,8 @@
       %output#list
         = f.fields_for :item_images do |item_image|
           = item_image.file_field :image
-         
+      .delete_btn{height:"30px", width:"50px",color:"red"}
+        sakujo
         -# = f.file_field :image, :multiple => true
 
       %div.sell-contents
@@ -39,7 +40,7 @@
         %br
         %label{:for => "explain"} 商品の説明
         %span.form-require 必須
-        = f.text_field :explain, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", type: "text", value: @item.explain,class:"input-default-datail"
+        = f.text_area :explain, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。",size:"100×10", type: "text", value: @item.explain,class:"input-default-datail"
 
         %h3.each-head 商品の詳細
         %label{for: "category"} カテゴリー
@@ -84,11 +85,11 @@
 
       %label{for: "brand"} ブランド
       %span.form-yourself 任意
-      = f.text_field :brand_id , class:"input-default",placeholder:"例）シャネル",type: "text"
+      = f.text_field :brandname , class:"input-default",placeholder:"例）シャネル",type: "text"
       %label{for: "item_status"} 商品の状態
       %span.form-require 必須
       = f.select :item_status do
-        %option{selected:"selected"} #{@item.item_status}
+        %option{selected:"selected"} #{@item.brandname}
         %option{value: "新品、未使用"} 新品、未使用
         %option{value: "未使用に近い"} 未使用に近い
         %option{value: "目立った傷や汚れなし"} 目立った傷や汚れなし
@@ -109,7 +110,7 @@
       %label{for: "from_where"} 発送元の地域
       %span.form-require 必須
       = f.select :region_id, class:"from_where"do
-        %option{selected:"selected"} #{@item.region.name}
+        %option{selected:"selected",value:@item.region.id} #{@item.region.name}
         -@regions. each do |region|
           %option{value: region.id} #{region.name}
 
@@ -140,7 +141,7 @@
       %p に同意したことになります。
 
       .form-post
-      = f.submit class:"form-post"
+      = f.submit class:"form-post",value:"更新するする"
     
       .form-back
         = link_to 'もどる', :back ,class:"form-back"

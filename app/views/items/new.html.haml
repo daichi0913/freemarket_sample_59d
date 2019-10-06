@@ -1,5 +1,5 @@
 !!!
-= render partial: 'layouts/user_registration_status_bar'
+= render partial: 'shared/header2'
 
 %script{:language => "JavaScript"}
 
@@ -29,7 +29,7 @@
         %br
         %label{:for => "explain"} 商品の説明
         %span.form-require 必須
-        = f.text_field :explain, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", type: "text", value: "",class:"input-default-datail"
+        = f.text_area :explain, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", type: "text",size:"100×10", value: "",class:"input-default-datail"
 
 
         %h3.each-head 商品の詳細
@@ -62,7 +62,7 @@
 
       %label{for: "brand"} ブランド
       %span.form-yourself 任意
-      = f.text_field :brand_id , class:"input-default",placeholder:"例）シャネル",type: "text", value: ""
+      = f.text_field :brandname , class:"input-default",placeholder:"例）シャネル",type: "text", value: ""
       %label{for: "item_status"} 商品の状態
       %span.form-require 必須
       = f.select :item_status do
@@ -120,7 +120,7 @@
       %p に同意したことになります。
 
       .form-post
-      = f.submit class:"form-post"
+      = f.submit class:"form-post",value:"変更"
     
       .form-back
         = link_to 'もどる', :back ,class:"form-back"

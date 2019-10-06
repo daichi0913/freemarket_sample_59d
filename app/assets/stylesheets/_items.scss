@@ -6,6 +6,7 @@
 }
 
 .post-item-title{
+  margin-top: 43px;
   text-align: center;
   font-weight: bold;
   color: #333333;
@@ -204,6 +205,12 @@ label{
   background: #fff;
   line-height: 1.5;
   font-size: 16px;
+  position: relative;
+  right: 16px;
+}
+#item_brand_id{
+  position: relative;
+  left: 0;
 }
 
 .input-default-status {
@@ -223,6 +230,8 @@ label{
   width: 100%;
   max-width: 100%;
   min-height: 104px;
+  position: relative;
+  right:16px;
   padding: 10px;
   border: 1px solid #ccc;
   background: #fff;
@@ -247,6 +256,8 @@ label{
   font-size: 14px;
   text-align: center;
   line-height: 53px;
+  margin: 0 auto;
+  margin-top: 37px;
   color: #fff;
   background: #aaa;
   border: 1px solid #aaa;
