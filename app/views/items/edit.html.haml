@@ -16,12 +16,13 @@
         - @item.item_images.each do |image|
           .image-box
             .image
-              =image_tag(image.image.url)
+              =image_tag(image.image.url,data: image.id)
             .bottom
               .edit
                 編集
               .delete
-                削除
+                =link_to("削除","/users/#{current_user.id}/items/#{@item.id}/destroy2", method: :delete) 
+                  
         #text
           ドラッグ・アンドロップ
           <br>
