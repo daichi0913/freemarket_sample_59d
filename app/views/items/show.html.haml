@@ -146,9 +146,9 @@
   .item-user-profile
     .user-item-top
       = link_to "#", class:"hover9" do
-        マークザッカーバーグのその他の出品
+        =@item.user.nickname
+        %p のその他の出品
     .user-item-content
-
       .user-item-box
         -@item.user.items.each_with_index do |item, index|
           -if (index+1)%3 == 0
