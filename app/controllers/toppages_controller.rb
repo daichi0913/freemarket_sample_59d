@@ -37,22 +37,22 @@ class ToppagesController < ApplicationController
           @item_toys << item
         end
       end
-      if item.brand.name == "シャネル"
+      if item.brandname == "シャネル"
         if(@item_brand_chanel.length < 10)
           @item_brand_chanel << item
         end
 
-      elsif item.brand.name == "ルイヴィトン"
+      elsif item.brandname == "ルイヴィトン"
         if(@item_brand_lv.length < 10)
           @item_brand_lv << item
         end
 
-      elsif item.brand.name == "シュプリーム"
+      elsif item.brandname == "シュプリーム"
         if(@item_brand_supreme.length < 10)
           @item_brand_supreme << item
         end
 
-      elsif item.brand.name == "ナイキ"
+      elsif item.brandname == "ナイキ"
         if(@item_brand_nike.length < 10)
           @item_brand_nike << item
         end
