@@ -105,7 +105,22 @@ border: 1px #ccc;
   height: 48px;
   cursor: pointer;
 }
-
+.form-group-box2{
+  height:300px;
+  width:100%;
+  border-top:1px solid #ccc;
+  border-bottom:1px solid #ccc;
+  display: flex;
+  .left-box{
+    width:30%;
+    height:100%;
+  }
+  .right-box{
+    width:70%;
+    height:100%;
+    background-color:red;
+  }
+ }
 .category_select2{
   width: 100%;
   margin: 10px 0 25px;
@@ -143,8 +158,24 @@ border: 1px #ccc;
 .sell-contents{
   display: block;
   border: 1px #ccc;
+  padding: 40px;
+  border-top: 1px solid #eee;
+
 
 }
+
+div.fee-to-days{
+  padding: 40px;
+  border-top: 1px solid #eee;
+}
+
+div.detail-to-status{
+  padding: 40px;
+  border-top: 1px solid #eee;
+
+}
+
+
 
 
 
