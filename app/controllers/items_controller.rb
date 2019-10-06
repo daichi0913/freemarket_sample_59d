@@ -40,6 +40,13 @@ class ItemsController < ApplicationController
     redirect_to root_path
     
   end
+  def destroy2
+    item = Item.find(params[:id])
+    if current_user.id == item.user.id
+      binding.pry
+      item.item_images.destroy
+    end
+  end
 
   private
     def create_params

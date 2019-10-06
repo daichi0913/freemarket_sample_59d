@@ -19,7 +19,11 @@ Rails.application.routes.draw do
       get :credit_card_registration
 
     end
-    resources :items, only: [:new,:edit,:update]
+    resources :items, only: [:new,:edit,:update] do
+      member do
+        delete 'destroy2'
+      end
+    end
   end
   resources :items, except: [:new, :edit]
   resources :item_images, only: [:new,:create]
