@@ -36,7 +36,7 @@ class ToppagesController < ApplicationController
         if(@item_toys.length < 10)
           @item_toys << item
         end
-
+      end
       if item.brand.name == "シャネル"
         if(@item_brand_chanel.length < 10)
           @item_brand_chanel << item
@@ -59,7 +59,6 @@ class ToppagesController < ApplicationController
 
       end
     end
-  end
   end
     # binding.pry
 end
