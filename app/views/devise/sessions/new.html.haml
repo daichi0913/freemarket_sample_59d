@@ -9,7 +9,7 @@
         = fa_icon 'facebook-square'
         Facebookでログイン
       %button.login-panel__other-account__btn.btn__gm
-        = image_tag("/assets/google-logo.png",alt:"btn__gm")
+        = image_tag(image_url("google-logo.png"),alt:"btn__gm")
         -# %img{:alt => "btn__gm", :src => "/assets/google-logo.png"}/
         Googleでログイン
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
