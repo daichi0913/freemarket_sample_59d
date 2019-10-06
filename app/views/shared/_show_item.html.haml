@@ -3,7 +3,7 @@
     .show-item__item__box__img
       %span
         ¥#{item.price.to_s(:delimited)}
-      = image_tag item.item_images[0].image.url
+      = image_tag image_url(item.item_images[0].image.url)
     .show-item__item__box__bottom
       %span
         = item.name
