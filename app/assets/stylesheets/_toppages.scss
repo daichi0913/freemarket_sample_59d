@@ -1046,7 +1046,7 @@ label.next{
 .top-bottom-view{
   width:100%;
   height: 260px;
-  background-image: url(kkkkk.jpg);
+  background-image: image-url("kkkkk.jpg");
   position: relative;
   z-index: 0;
   &__left{
@@ -1231,7 +1231,7 @@ i.fab{
     // left: 4px;
   }
   .camera{
-    background-image: url(camera.png);
+    background-image: image-url("camera.png");
     width: 120px;
     height: 120px;
     background-repeat: no-repeat;
