@@ -50,7 +50,10 @@ Item.create!(
   {user_id: '1', category_id: '18', brand_id: '1', region_id: '1', name: 'セーター', size: 'Mサイズ', item_status: '新品', shipping_fee: '購入者負担', shipping_way: '普通郵便', days: '3日以内に発送', price: '1000', explain: 'とっても可愛いです。', created_at: '20190930', updated_at: '20191001'}
 )
 
-imagesForItems = ["https://item-shopping.c.yimg.jp/i/l/okinawa-takarajima_060084", "https://images-na.ssl-images-amazon.com/images/I/51rgN7deSiL.jpg", "https://askul.c.yimg.jp/img/product/LL1/5369569_LL1.jpg", "https://tshop.r10s.jp/e-convini/cabinet/syokuhin03/imgrc0065393166.jpg?fitin=275:275", "https://mag.japaaan.com/wp-content/uploads/2018/11/jfl_news_181115_-1-660x350.jpg", "https://rimg.o-uccino.jp/store/article/45524/header_image/large-2a1221e07f72165c79d3972a62560976.jpg", "https://img21.shop-pro.jp/PA01332/954/product/93968557.png?cmsp_timestamp=20180213164754", "https://woman.mynavi.jp/kosodate/uploads/content/image/239842/108536905.jpg", "https://ascii.jp/elem/000/001/659/1659353/11_588x.jpg", "https://sociorocketnews.files.wordpress.com/2018/09/tyokohure-ku.jpg?w=640&h=353"]
+imagesForItems = ["https://item-shopping.c.yimg.jp/i/l/
+okinawa-takarajima_060084", "https://images-na.ssl-images-amazon.com/images/I/51rgN7deSiL.jpg", "https://askul.c.yimg.jp/img/product/LL1/5369569_LL1.jpg", "https://tshop.r10s.jp/e-convini/cabinet/syokuhin03/imgrc0065393166.jpg?fitin=275:275", "https://mag.japaaan.com/wp-content/uploads/2018/11/jfl_news_181115_-1-660x350.jpg", "https://rimg.o-uccino.jp/store/article/45524/header_image/large-2a1221e07f72165c79d3972a62560976.jpg", "https://img21.shop-pro.jp/PA01332/954/product/93968557.png?cmsp_timestamp=20180213164754", "https://woman.mynavi.jp/kosodate/uploads/content/image/239842/108536905.jpg", "https://ascii.jp/elem/000/001/659/1659353/11_588x.jpg", "https://sociorocketnews.files.wordpress.com/2018/09/tyokohure-ku.jpg?w=640&h=353"]
+
+
 
 ItemImage.create!(
   {
@@ -60,7 +63,14 @@ ItemImage.create!(
 # ↓レディース新着表示用
 30.times do
      Item.create!(
-      {user_id: rand(1..20), category_id: rand(18..31), brand_id: rand(1..4), region_id: rand(1..47), name: Faker::Dessert.variety, size: Faker::Games::Pokemon.name, item_status: Faker::Creature::Animal.name, shipping_fee: Faker::Superhero.name, shipping_way: Faker::Movies::HarryPotter.location, days: Faker::TvShows::BojackHorseman.character, price: Faker::Number.between(from: 1, to: 10000000), explain: Faker::TvShows::BojackHorseman.tongue_twister, created_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all), updated_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all)}
+      {user_id: rand(1..20), 
+      category_id: rand(18..31), 
+      brand_id: rand(1..4), 
+      region_id: rand(1..47), 
+      name: Faker::Dessert.variety,
+      size: Faker::Games::Pokemon.name,
+      item_status: Faker::Creature::Animal.name, 
+      shipping_fee: Faker::Superhero.name, shipping_way: Faker::Movies::HarryPotter.location, days: Faker::TvShows::BojackHorseman.character, price: Faker::Number.between(from: 1, to: 10000000), explain: Faker::TvShows::BojackHorseman.tongue_twister, created_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all), updated_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all)}
       )
   end
 
