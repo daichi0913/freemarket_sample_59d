@@ -45,84 +45,94 @@
           .lic1-li  シュプリーム
           .lic1-li  アディダス
           .lic1-li  ブランド一覧
-  .top-header__box__bottom2__right
-    .top-header__box__bottom2__right__like
-      %li.like-box
-        = link_to "#", class: "like-text" do
-          = fa_icon"heart"
-          いいね！一覧
-    
-    .top-header__box__bottom2__right__news
-      %li.news-box
-        %a.news-text{ href:""}
-          = fa_icon "bell"
-          お知らせ
-          %ul.news-lists
-            .product-image
-              =image_tag("https://msp.c.yimg.jp/yjimage?q=PZ3rBY8XyLEurr2184eyrovNECQFZ3AHT_P3jZrHX4r.nylKB5stb0lkZ3kCgxO1NiQUbJjvLiRcS6UI8P3erMCH0qn05t5k9.aourOd7m8Bhb9Q_re88gLm1h_fAAqi.NmVGxJtKgY2OR.K8Q--&sig=138b1m8e1&x=275&y=183")
-            .icon-right
-            %li.news
-              %p.news__text
-                mikawaさんがあなたを評価しました。これで取引完了です。
-                %p.news__time
-                  = fa_icon"clock-o"
-                  30分前
-    .top-header__box__bottom2__right__todo
-      %li.todo-box
-        = link_to "#", class: "todo-text" do
-          = fa_icon"check"
-          やることリスト
-          .my-todo-box
-            .my-todo-box__nothing
-              現在やることリストはありません
-    .top-header__box__bottom2__right__mypage
-      %li.mypage-box
-        .myfont-box
-          .myfont-view
-            = image_tag "",class:"logo"
-          = link_to user_path(current_user), class: "mypage-text" do
-            マイページ
-          %li.mypage-mini
-            .mypage-mini__header
-              = image_tag "",class:"logo2"
-              .mypage-mini__image
-            .mypage-mini__name
-              %p.mypage__mini__name__top
-                mikat
-              .hyouka
-                %p.hyouka1  評価：9
-                %p.hyouka2  出品数：9
-            .money-box
-              %p.money-box-1
-                売上金
-              %p.money-box-2
-                ¥0
-            .point-box
-              %p.point-box-1
-                ポイント
-              %p.point-box-2
-                P200
-            .mini-mypage-bottom-top
-              いいね！一覧
-              .mini-mypage-bottom-top__b
+  - if user_signed_in?
+    .top-header__box__bottom2__right
+      .top-header__box__bottom2__right__like
+        %li.like-box
+          = link_to "#", class: "like-text" do
+            = fa_icon"heart"
+            いいね！一覧
+      
+      .top-header__box__bottom2__right__news
+        %li.news-box
+          .new-color-box
+            お知らせ
+            = link_to "#", class: "news-text" do
+              = fa_icon "bell"
+              %ul.news-lists
+                .product-image
+                  = image_tag ""
+                .icon-right
+                %li.news
+                  %p.news__text
+                    mikawaさんがあなたを評価しました。これで取引完了です。
+                    %p.news__time
+                      = fa_icon"clock-o"
+                      30分前
+      .top-header__box__bottom2__right__todo
+        %li.todo-box
+          = link_to "#", class: "todo-text" do
+            = fa_icon"check"
+            やることリスト
+            .my-todo-box
+              .my-todo-box__nothing
+                現在やることリストはありません
+      .top-header__box__bottom2__right__mypage
+        %li.mypage-box
+          .myfont-box
+            .myfont-view
+              = image_tag "",class:"logo"
+            = link_to user_path(current_user), class: "mypage-text" do
+              マイページ
+            %li.mypage-mini
+              .mypage-mini__header
+                = image_tag "",class:"logo2"
+                .mypage-mini__image
+              .mypage-mini__name
+                %p.mypage__mini__name__top
+                  mikat
+                .hyouka
+                  %p.hyouka1  評価：9
+                  %p.hyouka2  出品数：9
+              .money-box
+                %p.money-box-1
+                  売上金
+                %p.money-box-2
+                  ¥0
+              .point-box
+                %p.point-box-1
+                  ポイント
+                %p.point-box-2
+                  P200
+              .mini-mypage-bottom-top
+                いいね！一覧
+                .mini-mypage-bottom-top__b
+                  = fa_icon "angle-right"
+              .mini-mypage-bottom-bottom
+                出品した商品 - 出品中
                 = fa_icon "angle-right"
-            .mini-mypage-bottom-bottom
-              出品した商品 - 出品中
-              = fa_icon "angle-right"
-            .mini-mypage-bottom-bottom
-              出品した商品 - 取引中
-              = fa_icon "angle-right"
-            .mini-mypage-bottom-bottom
-              出品した商品 - 売却済み
-              .mini-mypage-bottom-bottom__a
+              .mini-mypage-bottom-bottom
+                出品した商品 - 取引中
                 = fa_icon "angle-right"
-            .mini-mypage-bottom-bottom
-              購入した商品 - 取引中
-              = fa_icon "angle-right" 
-            .mini-mypage-bottom-bottom
-              購入した商品 - 過去の取引
-              = fa_icon "angle-right"
-
+              .mini-mypage-bottom-bottom
+                出品した商品 - 売却済み
+                .mini-mypage-bottom-bottom__a
+                  = fa_icon "angle-right"
+              .mini-mypage-bottom-bottom
+                購入した商品 - 取引中
+                = fa_icon "angle-right" 
+              .mini-mypage-bottom-bottom
+                購入した商品 - 過去の取引
+                = fa_icon "angle-right"
+  - else
+    .top-header__box__bottom2__right
+      .top-header__box__bottom2__right__right
+        = link_to new_user_path, class: "btn btn-dark btn-sm" do
+          .new-user-btn
+            新規会員登録
+        = link_to new_user_session_path, class: "btn btn-dark btn-sm" do
+          .user-login-ntn
+            ログイン
 
 .button-box
   = link_to user_signed_in? ? new_user_item_path(current_user.id) : new_user_session_path do
