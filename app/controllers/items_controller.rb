@@ -44,10 +44,10 @@ class ItemsController < ApplicationController
     item = Item.find(params[:id])
     if current_user.id == item.user.id
       binding.pry
-      item.item_images.destroy
+      item.item_images.delete
     end
   end
-
+  
   private
     def create_params
 
