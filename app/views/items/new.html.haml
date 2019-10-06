@@ -107,11 +107,14 @@
       .right-box
         .kakaku
           %label 価格
-          %input.inputdefault.forprice{for: "price", placeholder: "例)300"}
+          =f.text_field :price, placeholder: "例)300",class: "forprice"
         .kakaku2
           販売手数料(10%)
         .kakaku3
-          販売利益
+          .p
+            販売利益
+          .p1
+          
     -#   %span.form-require 必須
    
       
