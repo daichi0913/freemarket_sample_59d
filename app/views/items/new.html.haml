@@ -105,11 +105,15 @@
       .left-box
         販売価格(300〜9,999,999)
       .right-box
-        %label 価格
-    -#   %h3.each-head 販売価格(300〜9,999,999)
-    -#   %label 価格
+        .kakaku
+          %label 価格
+          %input.inputdefault.forprice{for: "price", placeholder: "例)300"}
+        .kakaku2
+          販売手数料(10%)
+        .kakaku3
+          販売利益
     -#   %span.form-require 必須
-    -#   %input.inputdefault.forprice{for: "price", placeholder: "例)300"}
+   
       
     
     -# .selling-fee 販売手数料(10%)
