@@ -102,21 +102,26 @@
         %option{value: "2〜3日で発送"} 2〜3日で発送
         %option{value: "4〜7日で発送"} 4〜7日で発送
 
-      -# %div.sell-contents
+    .form-group-box
       %h3.each-head 販売価格(300〜9,999,999)
-      %label{for: "price", placeholder: "例)300"} 価格
+      %label 価格
       %span.form-require 必須
-      = f.text_field :price ,class:"price-field",value:""
+      %input.inputdefault.forprice{for: "price", placeholder: "例)300"}
       
+    
+    .selling-fee 販売手数料(10%)
+    %label.for-interest 販売利益
+    
+    .excuse
       %a{:href => "/jp/help_center/getting_started/prohibited_items/", :target => "_blank"} 禁止されている出品、
       %a{:href => "/jp/help_center/getting_started/prohibited_conduct/", :target => "_blank"} 行為
-      %p を必ずご確認ください。
-      %p またブランド品でシリアルナンバー等がある場合はご記載ください。
+      %span を必ずご確認ください。
+      %span またブランド品でシリアルナンバー等がある場合はご記載ください。
       %a{:href => "/jp/help_center/getting_started/counterfeit_goods/", :target => "_blank"} 偽ブランドの販売
-      %p は犯罪であり処罰される可能性があります。
-      %p また、出品をもちまして
+      %span は犯罪であり処罰される可能性があります。
+      %span また、出品をもちまして
       %a{:href => "/jp/seller_terms/"} 加盟店規約
-      %p に同意したことになります。
+      %span に同意したことになります。
 
       .form-post
       = f.submit class:"form-post",value:"出品する"

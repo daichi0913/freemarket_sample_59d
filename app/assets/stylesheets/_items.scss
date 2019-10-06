@@ -78,15 +78,12 @@ form.sell-form{
     }
   }
 }
-.each-head{
+h3.each-head{
   color: #888;
   font-size: 14px;
   display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
   font-weight: bold;
+  margin-left: 0;
 }
 
 .category-box{
@@ -225,6 +222,33 @@ label{
 
 }
 
+.forprice{
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1;
+  font-size: 16px;
+  float: right;
+}
+
+.selling-fee{
+    padding: 24px 0;
+    border-top: 1px solid #ccc;
+}
+
+label.for-interest{
+    font-size: 16px;
+
+}
+
+.excuse{
+    padding: 40px;
+    border-top: 1px solid #eee;
+    display: block;
+}
+
 .input-default-datail{
   display: block;
   width: 100%;
@@ -248,10 +272,11 @@ opacity: 0;
   line-height: 48px;
   font-size: 14px;
   background-color: #ea352d;
-  border: 1px solid #ea352d;
   color: #fff;
   display: block;
   width: 100%;
+  margin: 40px 0 0;
+
 }
 
 .form-back{
@@ -270,6 +295,13 @@ opacity: 0;
 a{
   color: #0099e8;
   text-decoration: none;
+  font-size: 14px;
+
+}
+
+span{
+  font-size: 14px;
+  color: black;
 }
 
 #item_days{
@@ -342,32 +374,3 @@ a{
     }
   }
 }
-// .hidden{
-//   display: none;
-// // visibility: visible;  /* 表示する */
-// // visibility: hidden;   /* 表示しない */
-// }
-
-// if~else文は @if <条件> {<設定内容a>} @else {<設定内容b>}と書いて、
-// 条件文を満たす場合と満たさない場合それぞれのプロパティが設定されます。
-
-// .category_select {
-//     position: relative;
-//     display: inline-block;
-// }
-// .category_select:focus .category_select.hidden {
-//   // :focus擬似クラスは、ユーザーの操作で要素がフォーカスされた際のスタイルを指定します
-//     /* content is visible if menu is 'opened' */
-//     display: visible;
-// }
-// .category_select.hidden {
-//   // display: none;
-//   position: absolute;
-//   z-index: 1;
-//   /* disable visibility by default, delay to enable clicks */ visibility: hidden;
-//   transition: visibility 0.5s;
-// }
-// .category_select:focus .category_select.hidden {
-//   display: visible;
-//     /* content is visible if menu is 'opened' */ 
-// }
