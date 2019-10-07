@@ -37,29 +37,6 @@ set :keep_releases, 5
 # end
 
 set :linked_files, fetch(:linked_files, []).push("config/master.key")
-
-set :linked_files, %w{ config/credentials.yml.enc }
-
-# 元々記述されていた after 「'deploy:publishing', 'deploy:restart'」以下を削除して、次のように書き換え
-
-after 'deploy:publishing', 'deploy:restart'
-namespace :deploy do
-  task :restart do
-    invoke 'unicorn:restart'
-  end
-
-  desc 'upload credentials.yml.enc'
-  task :upload do
-    on roles(:app) do |host|
-      if test "[ ! -d #{shared_path}/config ]"
-        execute "mkdir -p #{shared_path}/config"
-      end
-      upload!('config/credentials.yml.enc', "#{shared_path}/config/credentials.yml.enc")
-    end
-  end
-  before :starting, 'deploy:upload'
-  after :finishing, 'deploy:cleanup'
-end
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
