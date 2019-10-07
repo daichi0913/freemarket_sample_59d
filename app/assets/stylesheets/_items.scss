@@ -154,7 +154,8 @@ border: 1px #ccc;
           border-radius:3px;
         }
         li.b{
-          // font-weight
+          font-weight:bold;
+
         }
       }
       p{
@@ -176,7 +177,7 @@ border: 1px #ccc;
         width:30%;
         float:left;
       }
-      .p1{
+      .price1{
         width: 100%;
         text-align:right;
       }
@@ -191,7 +192,7 @@ border: 1px #ccc;
         float: left;
         font-weight:bold;
       }
-      .p1{
+      .pricebox-all{
         width:70%;
         margin-top:10px;
         float: right;
