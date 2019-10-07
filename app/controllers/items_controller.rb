@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
   def update
     item = Item.find(params[:id])
     if item.user_id == current_user.id
-      item.update(create_params)
+      item.update(update_params)
     end
       redirect_to root_path
   end
@@ -43,15 +43,19 @@ class ItemsController < ApplicationController
   def destroy2
     item = Item.find(params[:id])
     if current_user.id == item.user.id
-      binding.pry
-      item.item_images.delete
+      item.item_images.destroy_all
     end
   end
   
   private
     def create_params
-
     params.require(:item).permit(:name,:size,:item_status,:shipping_fee,:days,:price,:explain,:region_id,:brandname,:category_id,item_images_attributes: [:image] ).merge(user_id: current_user.id)
-
+    end
+    def update_params
+      if params[:item_images_attributes].present?
+        return create_params
+      else
+        return params.require(:item).permit(:name,:size,:item_status,:shipping_fee,:days,:price,:explain,:region_id,:brandname,:category_id).merge(user_id: current_user.id)
+      end
     end
 end
