@@ -147,13 +147,13 @@
   .slides
     %input{:type => "radio",:name => "images", :id => "i1" ,:checked => ""}
     %input{:type => "radio",:name => "images", :id => "i2"}
-    %a#one.slider-image1{:href=>"https://www.mercari.com/jp/featured/camp/"}
+    %a#one.slider-image{:href=>"https://www.mercari.com/jp/featured/camp/"}
       %label{:for => "i2", :class =>"pre"}
         = fa_icon "angle-left"
       %label{:for => "i2", :class =>"next"}
         = fa_icon "angle-right"
       %img{:src=>"//www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?2687693852", :alt=>"メルカリなら新品も中古もお得！キャンプ用品 大特集！"}
-    #two.slider-image2
+    #two.slider-image
       %label{:for => "i1", :class =>"pre"}
         = fa_icon "angle-left"
       %label{:for => "i1", :class =>"next"}

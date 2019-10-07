@@ -22,6 +22,7 @@ $(function(){
   }
 
   $(document).on('turbolinks:load', function(){
+    $(document).off("change", ".category_select");
     $(document).on("change", ".category_select", function(){
 
       // $("select").removeClass(".hidden");    // console.log( $(this).val() );

@@ -673,24 +673,13 @@ ul.top-header__box__bottom2__ul{
   cursor: pointer;
   .slides{
     height: 100%;
-    .slider-image1{
+    .slider-image{
       position: absolute;
       height: 100%;
       width: 100%;
       z-index: -1;
       img{
         width: 61%;
-        height: 100%;
-        margin-left: 20%;
-      }
-    }
-    .slider-image2{
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      z-index:-1;
-      img{
-        width: 22%;
         height: 100%;
         margin-left: 20%;
       }
