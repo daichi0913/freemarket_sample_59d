@@ -42,21 +42,21 @@
               %option{value: category.id} #{category.name}
 
 
-        %div.sell-contents
-        %label{for: "size"} サイズ
-        %span.form-require 必須
-        = f.select :size, class:"select-default" do
-          %option{selected:"selected"} ---
-          %option{value: "XXS以下"} XXS以下
-          %option{value: "XS(SS)"} XS(SS)
-          %option{value: "S"} S
-          %option{value: "M"} M
-          %option{value: "L"} L
-          %option{value: "XL(LL)"} XL(LL)
-          %option{value: "2XL(3L)"} 2XL(3L)
-          %option{value: "3XL(4L)"} 3XL(4L)
-          %option{value: "4XL(5L)以上"} 4XL(5L)以上
-          %option{value: "FREE SIZE"} FREE SIZE
+        -# %div.sell-contents
+        -# %label{for: "size"} サイズ
+        -# %span.form-require 必須
+        -# = f.select :size, class:"select-default" do
+        -#   %option{selected:"selected"} ---
+        -#   %option{value: "XXS以下"} XXS以下
+        -#   %option{value: "XS(SS)"} XS(SS)
+        -#   %option{value: "S"} S
+        -#   %option{value: "M"} M
+        -#   %option{value: "L"} L
+        -#   %option{value: "XL(LL)"} XL(LL)
+        -#   %option{value: "2XL(3L)"} 2XL(3L)
+        -#   %option{value: "3XL(4L)"} 3XL(4L)
+        -#   %option{value: "4XL(5L)以上"} 4XL(5L)以上
+        -#   %option{value: "FREE SIZE"} FREE SIZE
 
         %label{for: "brand"} ブランド
         %span.form-yourself 任意
