@@ -123,16 +123,16 @@ function file_upload()
     });
 }
 
-    // ターボリンクスの記述をかく
-  $(document).on('turbolinks:load', function(){
-    var calculatePrice = index$(.forprice)
-     $('.for-price').on("keyup", function(){
-      .for-price * 0.1
-      $(".item-photo-main").animate({scrollLeft: index * 300}, 300);
+    // ターボリンクスの記述をかく+価格計算式
+  // $(document).on('turbolinks:load', function(){
+  //   var calculatePrice = index$(.forprice)
+  //    $('.for-price').on("keyup", function(){
+  //     .for-price * 0.1
+  //     $(".item-photo-main").animate({scrollLeft: index * 300}, 300);
 
-      object.onkeyup = function(){ 処理 };
+  //     object.onkeyup = function(){ 処理 };
 
-    });
+  //   });
 
 
 
