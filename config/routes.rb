@@ -26,7 +26,7 @@ Rails.application.routes.draw do
     end
   end
   resources :items, except: [:new, :edit]
-  resources :item_images, only: [:new,:create]
+  resources :item_images, only: [:new,:create, :destroy]
   namespace :api do
     resources :categories, only: :index, defaults: { format: 'json' }
   end 

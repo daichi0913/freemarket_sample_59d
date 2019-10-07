@@ -21,7 +21,7 @@
               .edit
                 編集
               .delete
-                =link_to("削除","/users/#{current_user.id}/items/#{@item.id}/destroy2", method: :delete) 
+                =link_to("削除", item_image_path(image.id), method: :delete) 
                   
         #text
           ドラッグ・アンドロップ
@@ -31,7 +31,6 @@
         = f.fields_for :item_images do |item_image|
           = item_image.file_field :image
       .delete_btn{height:"30px", width:"50px",color:"red"}
-        sakujo
         -# = f.file_field :image, :multiple => true
 
       %div.sell-contents
