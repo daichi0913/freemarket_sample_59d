@@ -50,11 +50,12 @@ $(function(){
 // ターボリンクスの記述をかく
   $(document).on('turbolinks:load', function(){
     //商品詳細ページ画像の初期インデックス
-    var imageHover;
-    $('.photo-slide img').on("mouseenter", function(){
+    var imageHover　
+    $('.photo-slide img').on("keyup", function(){
       var index = $('.photo-slide img').index(this);
       $(".item-photo-main").animate({scrollLeft: index * 300}, 300);
     });
+
   })
 });
 
