@@ -128,7 +128,7 @@ function file_upload()
 
   $("#item_shipping_fee").on("change", function(){
     var buildHTMLforshippingway = function()  {
-      var html = `<select class= "shipping_way"><option selected ="selected">---</option></select>`
+      var html = `<select class= "shipping_way"><option selected ="selected">---</option><option "未定"></option></select>`
       return html;
     }
     console.log("12121212")
