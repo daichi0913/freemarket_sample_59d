@@ -98,6 +98,8 @@ border: 1px #ccc;
   border: 1px solid #ccc;
   background: #fff;
   line-height: 1.5;
+  position:relative;
+  right:10px;
   font-size: 16px;
   line-height: 1.5;
   position: relative;
@@ -235,7 +237,10 @@ border: 1px #ccc;
   height: 48px;
   cursor: pointer;
 }
-
+#item_size{
+  position:relative;
+  right:15px;
+}
 
 
 .sell-contents{
@@ -428,11 +433,15 @@ span{
   margin: 10px 0;
   width:343px;
   height:48px;
+  position:relative;
+  left:14px;
 }
 #item_item_status{
   margin: 10px 0;
   width:343px;
   height:48px;
+  position:relative;
+  right:15px;
 }
 #item_size{
   margin: 10px 0;
@@ -442,6 +451,8 @@ span{
 #item_region_id{
   margin: 10px 0;
   width:343px;
+  position: relative;
+  left:14px;
   height:48px;
 }
 .price-field{
