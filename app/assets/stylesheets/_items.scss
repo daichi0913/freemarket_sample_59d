@@ -78,15 +78,12 @@ form.sell-form{
     }
   }
 }
-.each-head{
+h3.each-head{
   color: #888;
   font-size: 14px;
   display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
   font-weight: bold;
+  margin-left: 0;
 }
 
 .category-box{
@@ -101,6 +98,8 @@ border: 1px #ccc;
   border: 1px solid #ccc;
   background: #fff;
   line-height: 1.5;
+  position:relative;
+  right:10px;
   font-size: 16px;
   line-height: 1.5;
   position: relative;
@@ -108,7 +107,105 @@ border: 1px #ccc;
   height: 48px;
   cursor: pointer;
 }
+.form-group-box2{
+  height:250px;
+  width:100%;
+  border-top:1px solid #ccc;
+  border-bottom:1px solid #ccc;
+  display: flex;
+  .left-box{
+    width:29%;
+    height:90%;
+    margin-top:20px;
+    margin-left:10px;
+    p{
+      position:relative;
+      left:191px;
+      bottom:19px;
+      width:18px;
+      background-color:rgb(0, 195, 255);
+      color:white;
+      border-radius:50%;
+      text-align:center;
+    }
+  }
+  .right-box{
+    width:60%;
+    height:100%;
+    margin-left:30px;
+    .kakaku{
+      height:70px;
+      line-height: 80px;
+      display:flex;
+      list-style:none;
+      ul{
+        display:flex;
+        height:20px;
+        width:100px;
+        line-height:20px;
+        margin-top:23px;
+        li{
+          margin-right:10px;
+        }
+        li.a{
+          line-height:20px;
+          width:38px;
+          background-color:red;
+          color:white;
+          text-align:center;
+          border-radius:3px;
+        }
+        li.b{
+          font-weight:bold;
 
+        }
+      }
+      p{
+        margin-left:28%;
+        margin-right:7px;
+      }
+      .forprice{
+        height:30px;
+        width:150px;
+        margin-top:15px;
+      }
+    }
+    .kakaku2{
+      border-top:1px solid #ccc;
+      border-bottom:1px solid #ccc;
+      height:60px;
+      line-height:60px;
+      p{
+        width:30%;
+        float:left;
+      }
+      .price1{
+        width: 100%;
+        text-align:right;
+      }
+    }
+    .kakaku3{
+      height:100px;
+      margin-top: 10px;
+      .p{
+        width: 30%;
+        height:90px;
+        margin-top: 10px;
+        float: left;
+        font-weight:bold;
+      }
+      .pricebox-all{
+        width:70%;
+        margin-top:10px;
+        float: right;
+        font-weight:bold;
+        font-size:30px;
+        font-weight:bold;
+        text-align:right;
+      }
+    }
+  }
+ }
 .category_select2{
   width: 100%;
   margin: 10px 0 25px;
@@ -140,14 +237,33 @@ border: 1px #ccc;
   height: 48px;
   cursor: pointer;
 }
-
+#item_size{
+  position:relative;
+  right:15px;
+}
 
 
 .sell-contents{
   display: block;
   border: 1px #ccc;
+  padding: 40px;
+  border-top: 1px solid #eee;
+
 
 }
+
+div.fee-to-days{
+  padding: 40px;
+  border-top: 1px solid #eee;
+}
+
+div.detail-to-status{
+  padding: 40px;
+  border-top: 1px solid #eee;
+
+}
+
+
 
 
 
@@ -225,6 +341,33 @@ label{
 
 }
 
+.forprice{
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1;
+  font-size: 16px;
+  float: right;
+}
+
+.selling-fee{
+    padding: 24px 0;
+    border-top: 1px solid #ccc;
+}
+
+label.for-interest{
+    font-size: 16px;
+
+}
+
+.excuse{
+    padding: 40px;
+    border-top: 1px solid #eee;
+    display: block;
+}
+
 .input-default-datail{
   display: block;
   width: 100%;
@@ -238,17 +381,21 @@ label{
   font-size: 16px;
   line-height: 1.5;
 
+}
 
+#list{
+opacity: 0;
 }
 
 .form-post{
   line-height: 48px;
   font-size: 14px;
   background-color: #ea352d;
-  border: 1px solid #ea352d;
   color: #fff;
   display: block;
   width: 100%;
+  margin: 40px 0 0;
+
 }
 
 .form-back{
@@ -267,6 +414,13 @@ label{
 a{
   color: #0099e8;
   text-decoration: none;
+  font-size: 14px;
+
+}
+
+span{
+  font-size: 14px;
+  color: black;
 }
 
 #item_days{
@@ -279,11 +433,15 @@ a{
   margin: 10px 0;
   width:343px;
   height:48px;
+  position:relative;
+  left:14px;
 }
 #item_item_status{
   margin: 10px 0;
   width:343px;
   height:48px;
+  position:relative;
+  right:15px;
 }
 #item_size{
   margin: 10px 0;
@@ -293,6 +451,8 @@ a{
 #item_region_id{
   margin: 10px 0;
   width:343px;
+  position: relative;
+  left:14px;
   height:48px;
 }
 .price-field{
@@ -339,32 +499,3 @@ a{
     }
   }
 }
-// .hidden{
-//   display: none;
-// // visibility: visible;  /* 表示する */
-// // visibility: hidden;   /* 表示しない */
-// }
-
-// if~else文は @if <条件> {<設定内容a>} @else {<設定内容b>}と書いて、
-// 条件文を満たす場合と満たさない場合それぞれのプロパティが設定されます。
-
-// .category_select {
-//     position: relative;
-//     display: inline-block;
-// }
-// .category_select:focus .category_select.hidden {
-//   // :focus擬似クラスは、ユーザーの操作で要素がフォーカスされた際のスタイルを指定します
-//     /* content is visible if menu is 'opened' */
-//     display: visible;
-// }
-// .category_select.hidden {
-//   // display: none;
-//   position: absolute;
-//   z-index: 1;
-//   /* disable visibility by default, delay to enable clicks */ visibility: hidden;
-//   transition: visibility 0.5s;
-// }
-// .category_select:focus .category_select.hidden {
-//   display: visible;
-//     /* content is visible if menu is 'opened' */ 
-// }

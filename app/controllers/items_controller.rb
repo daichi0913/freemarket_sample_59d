@@ -40,11 +40,18 @@ class ItemsController < ApplicationController
     redirect_to root_path
     
   end
-
+  def destroy2
+    item = Item.find(params[:id])
+    if current_user.id == item.user.id
+      binding.pry
+      item.item_images.delete
+    end
+  end
+  
   private
     def create_params
 
-    params.require(:item).permit(:name,:size,:item_status,:shipping_fee,:days,:price,:explain,:region_id,:brand_id,:brandname,:category_id,item_images_attributes: [:image] ).merge(user_id: current_user.id)
+    params.require(:item).permit(:name,:size,:item_status,:shipping_fee,:days,:price,:explain,:region_id,:brandname,:category_id,item_images_attributes: [:image] ).merge(user_id: current_user.id)
 
     end
 end
