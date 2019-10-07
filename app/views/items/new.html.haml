@@ -74,12 +74,13 @@
 
     %div.fee-to-days
       %h3.each-head 配送について
-      %label{for: "shippin_fee"} 配送料の負担
-      %span.form-require 必須
-      = f.select :shipping_fee do
-        %option{selected:"selected"} ---
-        %option{value: "送料込み(出品者負担)"} 送料込み(出品者負担)
-        %option{value: "着払い(購入者負担)"} 着払い(購入者負担)
+      %div.shipping-box
+        %label{for: "shippin_fee"} 配送料の負担
+        %span.form-require 必須
+        = f.select :shipping_fee do
+          %option{selected:"selected"} ---
+          %option{value: "送料込み(出品者負担)"} 送料込み(出品者負担)
+          %option{value: "着払い(購入者負担)"} 着払い(購入者負担)
 
 
       %br
@@ -111,8 +112,7 @@
           %ul
             %li.b
               価格
-            %li.a
-              必須
+            %span.form-require 必須
           %p 
             ¥
           =f.text_field :price, placeholder: "例)300",class: "forprice",value:""
@@ -126,12 +126,7 @@
           .p
             販売利益
           .pricebox-all
-            
-          
-    -#   %span.form-require 必須
-   
-      
-    
+
     -# .selling-fee 販売手数料(10%)
     -# %label.for-interest 販売利益
     

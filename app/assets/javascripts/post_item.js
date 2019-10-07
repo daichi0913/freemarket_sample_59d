@@ -124,6 +124,36 @@ function file_upload()
     });
 }
 
+
+
+  $("#item_shipping_fee").on("change", function(){
+    var buildHTMLforshippingway = function()  {
+      var html = `<select class= "shipping_way"><option selected ="selected">---</option></select>`
+      return html;
+    }
+    console.log("12121212")
+
+    $('.shipping-box').append(buildHTMLforshippingway);
+
+
+  });
+
+
+  // if($('input[name="upload_file"]').val() == ""){
+  //   formdata.append('upload_file',files[0])
+  // }
+
+
+    // %div.fee-to-days
+    //   %h3.each-head 配送について
+    //   %label{for: "shippin_fee"} 配送料の負担
+    //   %span.form-require 必須
+    //   = f.select :shipping_fee do
+    //     %option{selected:"selected"} ---
+    //     %option{value: "送料込み(出品者負担)"} 送料込み(出品者負担)
+    //     %option{value: "着払い(購入者負担)"} 着払い(購入者負担)
+
+
     // ターボリンクスの記述をかく+価格計算式
   // $(document).on('turbolinks:load', function(){
   //   var calculatePrice = index$(.forprice)
