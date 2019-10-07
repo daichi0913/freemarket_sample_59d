@@ -128,12 +128,32 @@ function file_upload()
 
   $("#item_shipping_fee").on("change", function(){
     var buildHTMLforshippingway = function()  {
-      var html = `<select class= "shipping_way"><option selected ="selected">---</option><option "未定"></option></select>`
+      var html = `<div class="shipping-way"></div><label for="shippin_way">配送の方法</label>
+      <span class="form-require">必須</span><select name="item[shipping_way]" id="item_shipping_way"><option selected="selected">---</option>
+      <option value="未定">未定</option>
+      <option value="らくらくメルカリ便">らくらくメルカリ便</option>
+      <option value="ゆうメール">ゆうメール</option>
+      <option value="レターパック">レターパック</option>
+      <option value="普通郵便(定形、定形外)">普通郵便(定形、定形外)</option>
+      <option value="クロネコヤマト">クロネコヤマト</option>
+      <option value="ゆうパック">ゆうパック</option>
+      <option value="クリックポスト">クリックポスト</option>
+      <option value="ゆうパケット">ゆうパケット</option>
+      </select>`
       return html;
     }
-    console.log("12121212")
+    deleteHTML();
+    $('.shipping-box').after(buildHTMLforshippingway);
 
-    $('.shipping-box').append(buildHTMLforshippingway);
+
+  function deleteHTML(){
+    var length = $('.shipping-way').length;
+    if(length===1){
+       $('.shipping-way').remove();
+    }
+    console.log(length)
+  }
+
 
 
   });
