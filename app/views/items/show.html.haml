@@ -144,10 +144,9 @@
 
         /////////////その他の出品////////////////////////
   .item-user-profile
-    .user-item-top
-      = link_to "#", class:"hover9" do
-        =@item.user.nickname
-        %p のその他の出品
+    = link_to "#", class:"hover9" do
+      =@item.user.nickname
+      %p のその他の出品
     .user-item-content
       .user-item-box
         -@item.user.items.each_with_index do |item, index|
@@ -183,10 +182,9 @@
             -break
           //////////////そのほかの出品パート２////////////////////////
 
-    .item-user-profile-2
-      .user-item-top-2
-        = link_to "#", class:"hover9" do
-          同じカテゴリーのその他の出品
+    .item-user-profile
+      = link_to "#", class:"hover9" do
+        同じカテゴリーのその他の出品
     .user-item-content
       .user-item-box
         -@item.user.items.each_with_index do |item, index|
