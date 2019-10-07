@@ -368,7 +368,20 @@ label.for-interest{
     border-top: 1px solid #eee;
     display: block;
 }
+#item_shipping_way{
+  width: 343px;
+  margin: 10px 34px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border-color: rgb(166, 166, 166);
+  font-size: 16px;
+  line-height: 1.5;
+  position: relative;
+  height: 48px;
+  cursor: pointer;
 
+
+}
 .input-default-datail{
   display: block;
   width: 100%;
