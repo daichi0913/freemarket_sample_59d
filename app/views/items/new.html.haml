@@ -104,16 +104,29 @@
     .form-group-box2
       .left-box
         販売価格(300〜9,999,999)
+        %p
+          ?
       .right-box
         .kakaku
-          %label 価格
-          =f.text_field :price, placeholder: "例)300",class: "forprice"
+          %ul
+            %li.b
+              価格
+            %li.a
+              必須
+          %p 
+            ¥
+          =f.text_field :price, placeholder: "例)300",class: "forprice",value:""
         .kakaku2
-          販売手数料(10%)
+          %p
+            販売手数料(10%)
+          .p1
+            ¥ 222
+            
         .kakaku3
           .p
             販売利益
           .p1
+            ¥120
           
     -#   %span.form-require 必須
    
