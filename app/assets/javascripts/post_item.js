@@ -123,6 +123,19 @@ function file_upload()
     });
 }
 
+    // ターボリンクスの記述をかく
+  $(document).on('turbolinks:load', function(){
+    var calculatePrice = index$(.forprice)
+     $('.for-price').on("keyup", function(){
+      .for-price * 0.1
+      $(".item-photo-main").animate({scrollLeft: index * 300}, 300);
+
+      object.onkeyup = function(){ 処理 };
+
+    });
+
+
+
 
   // function isNumeric(n) {
   //   return !isNaN(parseFloat(n)) && isFinite(n);
