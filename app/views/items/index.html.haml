@@ -39,7 +39,8 @@
       .item-buypage-main__center__main__buy-info
         配送先と支払い方法の入力を完了してください。
       .item-buypage-main__center__main__buy-btn
-        購入する
+      = form_tag(action: :purchase, method: :post) do
+        %script.payjp-button{"data-key" => "#{PAYJP_PUBLIC_KEY}", :src => "https://checkout.pay.jp", :type => "text/javascript"}
       .item-buypage-main__center__main__haisou
         %p.a
           配送先
