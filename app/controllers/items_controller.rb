@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    # アイテムの削除s
+    # アイテムの削除
     item = Item.find(params[:id])
     if current_user.id == item.user.id
       item.destroy
