@@ -1,6 +1,5 @@
 $(function(){
   $('#item-delete-modal-on').on('click', function(){
-    // console.log('modal on')
     $("#item-delete-modal").addClass('show');
   })
 
