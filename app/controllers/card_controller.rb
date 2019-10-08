@@ -50,3 +50,4 @@ class CardController < ApplicationController
     end
   end
 end
+
