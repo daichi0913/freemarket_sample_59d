@@ -355,6 +355,10 @@ th.rightside-brand-to-days{
   transition: all ease-out .3s;
   font-size: 24px;
   line-height: 60px;
+  a{
+    color: white;
+    font-size: 24px;
+  }
 }
 .item-setumei{
   padding: 32px 0 0;
@@ -446,6 +450,26 @@ th.rightside-brand-to-days{
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
+  text-align: center;
+  box-sizing: border-box;
+  p{
+    font-size: 16px;
+  }
+  a{
+    display: block;
+  }
+  .btn{
+    right: 0;
+    color: white;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .red{
+    background-color: #ea352d;
+  }
+  .grey{
+    background-color: #aaa;
+  }
 }
 .message-form{
   background-repeat: no-repeat;

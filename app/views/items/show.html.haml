@@ -84,8 +84,10 @@
         (税込)
       .price-free
         送料込み
-    .item-buy
-      購入画面に進む
+    -unless user_signed_in? && current_user.id == @item.user.id
+      .item-buy
+        = link_to "#" do
+          購入画面に進む
     .item-setumei
       %p{value: @item.id} #{@item.explain}
     .item-hyouka
@@ -109,6 +111,25 @@
           = link_to "#", class:"hover8" do
             あんしん・あんぜんへの取り組み
         /////////////コメント欄//////////////////////////
+  -if user_signed_in? && current_user.id == @item.user.id
+    .item-message
+      .message-box
+        .message-box-content
+          = link_to edit_user_item_path(current_user.id, @item.id), class: "input-default btn red" do
+            商品の編集
+          %p or
+          %button.input-default.btn.grey#item-delete-modal-on この商品を削除する
+        .modal#item-delete-modal
+          .modal-banner
+            .modal-banner__body
+              .modal-title
+                確認
+              削除すると二度と復活できません。<br>削除する代わりに停止することもできます。<br><br>本当に削除しますか？
+            .modal-banner__bottom
+              %a.modal-button
+                キャンセル
+              =link_to item_path(@item.id), method: :delete, class: "modal-button" do
+                削除する
   .item-message
     .message-box
       .message-box-content
@@ -120,104 +141,105 @@
             .message-coment-text
               コメントする
               /////////////ソーシャルメデイアログイン///////////////////
-  .item-link
-    .link-left
-      .link-icon
-        = fa_icon "angle-left"
-      .link-box
-        = link_to "#", class:"hover9" do
-          Amazon
-    .link-right
-      .link-icon-1
-        = fa_icon "angle-right"
-      .link-box-1
-        = link_to "#", class:"hover9" do
-          Google
-  .item-media
-    .media-top
-      .social-left
-        = fa_icon "facebook-official"
-      .social-center
-        = fa_icon "twitter-square"
-      .social-right
-        = fa_icon "pinterest-square"
+  -unless user_signed_in? && current_user.id == @item.user.id
+    .item-link
+      .link-left
+        .link-icon
+          = fa_icon "angle-left"
+        .link-box
+          = link_to "#", class:"hover9" do
+            Amazon
+      .link-right
+        .link-icon-1
+          = fa_icon "angle-right"
+        .link-box-1
+          = link_to "#", class:"hover9" do
+            Google
+    .item-media
+      .media-top
+        .social-left
+          = fa_icon "facebook-official"
+        .social-center
+          = fa_icon "twitter-square"
+        .social-right
+          = fa_icon "pinterest-square"
 
-        /////////////その他の出品////////////////////////
-  .item-user-profile
-    = link_to "#", class:"hover9" do
-      =@item.user.nickname
-      %p のその他の出品
-    .user-item-content
-      .user-item-box
-        -@item.user.items.each_with_index do |item, index|
-          -if (index+1)%3 == 0
-            .items-box-3
-              .items-img-3
-                = image_tag item.item_images[0].image.url
-              .items-text-3
-                .items-text-name-3
-                  = item.name
-                .items-text-name1-3
-                  .items-text-price-3
-                    ¥2,000,000
-                  .items-math-3
-                    1
-                  .items-heart-3
-                    = fa_icon "heart-o"
-          -else
-            .items-box
-              .items-img
-                = image_tag item.item_images[0].image.url
-              .items-text
-                .items-text-name
-                  = item.name
-                .items-text-name1
-                  .items-text-price
-                    ¥2,000,000
-                  .items-math
-                    1
-                  .items-heart
-                    = fa_icon "heart-o"
-          -if index == 5
-            -break
-          //////////////そのほかの出品パート２////////////////////////
-
+          /////////////その他の出品////////////////////////
     .item-user-profile
       = link_to "#", class:"hover9" do
-        同じカテゴリーのその他の出品
-    .user-item-content
-      .user-item-box
-        -@item.user.items.each_with_index do |item, index|
-          -if (index+1)%3 == 0
-            .items-box-3
-              .items-img-3
-                = image_tag item.item_images[0].image.url
-              .items-text-3
-                .items-text-name-3
-                  = item.name
-                .items-text-name1-3
-                  .items-text-price-3
-                    ¥2,000,000
-                  .items-math-3
-                    1
-                  .items-heart-3
-                    = fa_icon "heart-o"
-          -else
-            .items-box
-              .items-img
-                = image_tag item.item_images[0].image.url
-              .items-text
-                .items-text-name
-                  = item.name
-                .items-text-name1
-                  .items-text-price
-                    ¥2,000,000
-                  .items-math
-                    1
-                  .items-heart
-                    = fa_icon "heart-o"
-          -if index == 5
-            -break
+        =@item.user.nickname
+        %p のその他の出品
+      .user-item-content
+        .user-item-box
+          -@item.user.items.each_with_index do |item, index|
+            -if (index+1)%3 == 0
+              .items-box-3
+                .items-img-3
+                  = image_tag item.item_images[0].image.url
+                .items-text-3
+                  .items-text-name-3
+                    = item.name
+                  .items-text-name1-3
+                    .items-text-price-3
+                      ¥2,000,000
+                    .items-math-3
+                      1
+                    .items-heart-3
+                      = fa_icon "heart-o"
+            -else
+              .items-box
+                .items-img
+                  = image_tag item.item_images[0].image.url
+                .items-text
+                  .items-text-name
+                    = item.name
+                  .items-text-name1
+                    .items-text-price
+                      ¥2,000,000
+                    .items-math
+                      1
+                    .items-heart
+                      = fa_icon "heart-o"
+            -if index == 5
+              -break
+            //////////////そのほかの出品パート２////////////////////////
+
+      .item-user-profile
+        = link_to "#", class:"hover9" do
+          同じカテゴリーのその他の出品
+      .user-item-content
+        .user-item-box
+          -@item.user.items.each_with_index do |item, index|
+            -if (index+1)%3 == 0
+              .items-box-3
+                .items-img-3
+                  = image_tag item.item_images[0].image.url
+                .items-text-3
+                  .items-text-name-3
+                    = item.name
+                  .items-text-name1-3
+                    .items-text-price-3
+                      ¥2,000,000
+                    .items-math-3
+                      1
+                    .items-heart-3
+                      = fa_icon "heart-o"
+            -else
+              .items-box
+                .items-img
+                  = image_tag item.item_images[0].image.url
+                .items-text
+                  .items-text-name
+                    = item.name
+                  .items-text-name1
+                    .items-text-price
+                      ¥2,000,000
+                    .items-math
+                      1
+                    .items-heart
+                      = fa_icon "heart-o"
+            -if index == 5
+              -break
 
   ///////////詳細のフッター////////////////////////
 

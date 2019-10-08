@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  # dependent: :destroyによりitem消した時に一緒に消える
   has_many :item_images, dependent: :destroy
   accepts_nested_attributes_for :item_images
   has_one :deal
