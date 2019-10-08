@@ -133,7 +133,7 @@
         = link_to new_user_session_path, class: "btn btn-dark btn-sm" do
           .user-login-ntn
             ログイン
-
+= render partial: '/shared/breadcrumbs'
 .button-box
   = link_to user_signed_in? ? new_user_item_path(current_user.id) : new_user_session_path do
     %li.text 出品

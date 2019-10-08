@@ -1,0 +1,16 @@
+.second-header
+  -case params.values_at :controller, :action
+  -when ['users', 'show']
+    -breadcrumb :user
+  -when ['users', 'edit']
+    -breadcrumb :profile
+  -when ['users', 'credit_card']
+    -breadcrumb :payment
+  -when ['card', 'new']
+    -breadcrumb :card
+  -when ['user_detail', 'edit']
+    -breadcrumb :registration
+  -when ['users', 'logout']
+    -breadcrumb :logout
+
+  = breadcrumbs pretext: "", separator: " &rsaquo;"
