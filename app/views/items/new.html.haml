@@ -41,28 +41,6 @@
           -@categories. each do |category|
             %option{value: category.id} #{category.name}
 
-
-      -# %div.sell-contents
-      -# %label{for: "size"} サイズ
-      -# %span.form-require 必須
-      -# = f.select :size, class:"select-default" do
-      -#   %option{selected:"selected"} ---
-      -#   %option{value: "XXS以下"} XXS以下
-      -#   %option{value: "XS(SS)"} XS(SS)
-      -#   %option{value: "S"} S
-      -#   %option{value: "M"} M
-      -#   %option{value: "L"} L
-      -#   %option{value: "XL(LL)"} XL(LL)
-      -#   %option{value: "2XL(3L)"} 2XL(3L)
-      -#   %option{value: "3XL(4L)"} 3XL(4L)
-      -#   %option{value: "4XL(5L)以上"} 4XL(5L)以上
-      -#   %option{value: "FREE SIZE"} FREE SIZE
-
-      -# %label{for: "brand"} ブランド
-      -# %span.form-yourself 任意
-      -# = f.text_field :brandname , class:"input-default",placeholder:"例）シャネル",type: "text", value: ""
-
-
       %label{for: "item_status"} 商品の状態
       %span.form-require 必須
       -# = f.select :item_status, {}, {class: "select-form"} do
@@ -78,43 +56,28 @@
           %option{value: "送料込み(出品者負担)"} 送料込み(出品者負担)
           %option{value: "着払い(購入者負担)"} 着払い(購入者負担)
 
-      -# %br
-      -# %label{for: "shippin_way"} 配送の方法
-      -# %span.form-require 必須
-      -# = f.select :shipping_fee do
-      -#   %option{selected:"selected"} ---
-      -#   %option{value: "未定"} 未定
-      -#   %option{value: "らくらくメルカリ便"} らくらくメルカリ便
-      -#   %option{value: "ゆうメール"} ゆうメール
-      -#   %option{value: "レターパック"} レターパック
-      -#   %option{value: "普通郵便(定形、定形外)"} 普通郵便(定形、定形外)
-      -#   %option{value: "クロネコヤマト"} クロネコヤマト
-      -#   %option{value: "ゆうパック"} ゆうパック
-      -#   %option{value: "クリックポスト"} クリックポスト
-      -#   %option{value: "ゆうパケット"} ゆうパケット
-    .form__box
-      %div.form-group
-        %label{for: "from_where"} 発送元の地域
-        %span.form-require 必須
-        = f.select :region_id, class:"from_where"do
-          %option{selected:"selected"} ---
-          -@regions. each do |region|
-            %option{value: region.id} #{region.name}
+      .form__box
+        %div.form-group
+          %label{for: "from_where"} 発送元の地域
+          %span.form-require 必須
+          = f.select :region_id, class:"from_where"do
+            %option{selected:"selected"} ---
+            -@regions. each do |region|
+              %option{value: region.id} #{region.name}
 
-    %div.shipping-box
-      %label{for: "how_many_days"} 発送までの日数
-      %span.form-require 必須
-      = f.select :days do
-        %option{selected:"selected"} ---
-        %option{value: "1〜2日で発送"} 1〜2日で発送
-        %option{value: "2〜3日で発送"} 2〜3日で発送
-        %option{value: "4〜7日で発送"} 4〜7日で発送
+      %div.shipping-box
+        %label{for: "how_many_days"} 発送までの日数
+        %span.form-require 必須
+        = f.select :days do
+          %option{selected:"selected"} ---
+          %option{value: "1〜2日で発送"} 1〜2日で発送
+          %option{value: "2〜3日で発送"} 2〜3日で発送
+          %option{value: "4〜7日で発送"} 4〜7日で発送
 
     .form-group-box2
-      .left-box
+      %h3.each-head.left-box
         販売価格(300〜9,999,999)
-        %p
-          ?
+        %p ?
       .right-box
         .kakaku
           %ul
