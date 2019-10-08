@@ -41,8 +41,11 @@ $(function(){
     <option value="3XL(4L)">3XL(4L)</option>
     <option value="4XL(5L)以上">4XL(5L)以上</option>
     <option value="FREE SIZE">FREE SIZE</option>
-    </select></div>`
+    </select><label for="brand">ブランド</label><span class="form-yourself">任意</span><input class="input-default", placeholder="例）シャネル",
+    type="text", value="" name="item[brandname]" id="item_brandname"></input></div>`
+    
     return size;
+
   }
 
 
