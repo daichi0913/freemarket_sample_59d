@@ -12,14 +12,39 @@ $(function(){
 
   function deleteHTML(index, length){
     let del = length - (index+1);
-    if (del == 1){
+    if (del === 1){
       $($('.category_select')[index+1]).remove();
     
-    } else if (del == 2){
+    } else if (del === 2){
       $($('.category_select')[index+1]).remove();
       $($('.category_select')[index+1]).remove();
     }
   }
+
+  function deleteHTMLforsb(){
+    var length = $('.size-form').length;
+    if(length===1){
+      $('.size-form').remove();
+    }
+  }
+
+  function buildHTMLforsb(){
+    var size = `<div class="size-form"><label for="size">サイズ</label>
+    <span class="form-require">必須</span><select name="item[size]" class="select-form"><option selected="selected">---</option>
+    <option value="XXS以下">XXS以下</option>
+    <option value="XS(SS)">XS(SS)</option>
+    <option value="S">S</option>
+    <option value="M">M</option>
+    <option value="L">L</option>
+    <option value="XL(LL)">XL(LL)</option>
+    <option value="2XL(3L)">2XL(3L)</option>
+    <option value="3XL(4L)">3XL(4L)</option>
+    <option value="4XL(5L)以上">4XL(5L)以上</option>
+    <option value="FREE SIZE">FREE SIZE</option>
+    </select></div>`
+    return size;
+  }
+
 
   $(document).on('turbolinks:load', function(){
     $(document).off("change", ".category_select");
@@ -31,8 +56,13 @@ $(function(){
       var index = $('.category_select').index(this);
       var length = $('.category_select').length;
 
+      //
+      deleteHTMLforsb();
+      
+      if(index === 2){
+        $(".category_select_box").after(buildHTMLforsb);
+      }
       // 順番を表示
-      console.log(index);
       $.ajax({
           type: 'get',                // HTTPメソッドはGETで
           url:  '/api/categories',             // /usersのURLに (これによりusersコントローラのindexアクションが起動)
@@ -89,6 +119,7 @@ $(function(){
       }
     }
     deleteHTML();
+
     $('.shipping-box-forappend').after(buildHTMLforshippingway($(this).val()));
 
 
@@ -97,30 +128,6 @@ $(function(){
     if(length===1){
        $('.shipping-way').remove();
     }
-    console.log(length)
-
   }
-  });
-
-  $(document).on("change", ".category_select[name= 'item[category_id]']", function(){
-    function buildHTMLforsb(){
-      var size = `<div class="size-form"><label for="size">サイズ</label>
-      <span class="form-require">必須</span><select name="item[size]" class="select-form"><option selected="selected">---</option>
-      <option value="XXS以下">XXS以下</option>
-      <option value="XS(SS)">XS(SS)</option>
-      <option value="S">S</option>
-      <option value="M">M</option>
-      <option value="L">L</option>
-      <option value="XL(LL)">XL(LL)</option>
-      <option value="2XL(3L)">2XL(3L)</option>
-      <option value="3XL(4L)">3XL(4L)</option>
-      <option value="4XL(5L)以上">4XL(5L)以上</option>
-      <option value="FREE SIZE">FREE SIZE</option>
-      </select></div>`
-      return size;
-    }
-console.log("size")
-    $(".category_select_box").append(buildHTMLforsb);
-
   });
 })
