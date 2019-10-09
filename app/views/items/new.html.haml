@@ -33,46 +33,50 @@
 
     %div.detail-to-status
       %h3.each-head 商品の詳細
-      %label{for: "category"} カテゴリー
-      %span.form-require 必須
-      %div.category_select_box
-        %select.category_select{name: "category_select"}
-          %option{selected:"selected"} ---
-          -@categories. each do |category|
-            %option{value: category.id} #{category.name}
+      .select-form-group
+        %label{for: "category"} カテゴリー
+        %span.form-require 必須
+        %div.category_select_box
+          %select.category_select{name: "category_select"}
+            %option{selected:"selected"} ---
+            -@categories. each do |category|
+              %option{value: category.id} #{category.name}
 
-      %label{for: "item_status"} 商品の状態
-      %span.form-require 必須
-      -# = f.select :item_status, {}, {class: "select-form"} do
-      = f.select :item_status, options_for_select(Item.item_statuses), {include_blank:"---"}, {class: "input-default"}
+        %label{for: "item_status"} 商品の状態
+        %span.form-require 必須
+        -# = f.select :item_status, {}, {class: "select-form"} do
+        = f.select :item_status, options_for_select(Item.item_statuses), {include_blank:"---"}, {class: "input-default"}
 
     %div.fee-to-days
       %h3.each-head 配送について
-      %div.shipping-box-forappend
-        %label{for: "shippin_fee"} 配送料の負担
-        %span.form-require 必須
-        = f.select :shipping_fee do
-          %option{selected:"selected"} ---
-          %option{value: "送料込み(出品者負担)"} 送料込み(出品者負担)
-          %option{value: "着払い(購入者負担)"} 着払い(購入者負担)
-
-      .form__box
-        %div.form-group
-          %label{for: "from_where"} 発送元の地域
+      .select-form-group
+        .shipping-box-forappend
+        .form__box__feedays
+          %label{for: "shippin_fee"} 配送料の負担
           %span.form-require 必須
-          = f.select :region_id, class:"from_where"do
+          = f.select :shipping_fee do
             %option{selected:"selected"} ---
-            -@regions. each do |region|
-              %option{value: region.id} #{region.name}
+            %option{value: "送料込み(出品者負担)"} 送料込み(出品者負担)
+            %option{value: "着払い(購入者負担)"} 着払い(購入者負担)
 
-      %div.shipping-box
-        %label{for: "how_many_days"} 発送までの日数
-        %span.form-require 必須
-        = f.select :days do
-          %option{selected:"selected"} ---
-          %option{value: "1〜2日で発送"} 1〜2日で発送
-          %option{value: "2〜3日で発送"} 2〜3日で発送
-          %option{value: "4〜7日で発送"} 4〜7日で発送
+        .form__box__feedays
+          %div.form-group
+            %label{for: "from_where"} 発送元の地域
+            %span.form-require 必須
+            = f.select :region_id, class:"from_where"do
+              %option{selected:"selected"} ---
+              -@regions. each do |region|
+                %option{value: region.id} #{region.name}
+
+        %div.shipping-box
+        .form__box__feedays
+          %label{for: "how_many_days"} 発送までの日数
+          %span.form-require 必須
+          = f.select :days do
+            %option{selected:"selected"} ---
+            %option{value: "1〜2日で発送"} 1〜2日で発送
+            %option{value: "2〜3日で発送"} 2〜3日で発送
+            %option{value: "4〜7日で発送"} 4〜7日で発送
 
     .form-group-box2
       %h3.each-head.left-box
