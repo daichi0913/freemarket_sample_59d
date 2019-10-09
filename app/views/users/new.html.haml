@@ -10,7 +10,7 @@
       = link_to user_facebook_omniauth_authorize_path, {method: :post, class: "regi-box__btn btn__fb"} do
         = fa_icon 'facebook-square'
         Facebookで登録する
-      %a.regi-box__btn.btn__gm 
+      = link_to user_google_oauth2_omniauth_authorize_path, {method: :post, class: "regi-box__btn btn__gm"} do
         =image_tag(image_url("google-logo.png"))
         %i.icon__gm
         Googleで登録する

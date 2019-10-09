@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :omniauthable
+         :recoverable, :rememberable, :validatable, :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
 
   has_one_attached :image
   has_one :user_detail
@@ -11,7 +11,7 @@ class User < ApplicationRecord
   validates :nickname, presence: true, length: {maximum: 20}
   validates :password, presence: true, length: {minimum: 7, maximum: 128},  format: {with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{7,128}+\z/i}
 
-  def self.from_omniauth(auth)
+  def self.find_auth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
