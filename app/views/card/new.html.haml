@@ -7,10 +7,10 @@
       .contents-card
         .formm-group.card-number
           = form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
-            .form-group.card-number
+            .form-group
               %label カード番号
               = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
-            .form-group
+            .form-group.card-number
               .card-images
                 = image_tag(image_url('visa.png'))
                 = image_tag(image_url('mastercard.png'))
@@ -50,10 +50,10 @@
                 %option{value: "2028"}28
                 %option{value: "2029"}29
               %span 年
-            .form-group
+            .form-group.card-number
               %label セキュリティコード
               = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
               #card_token
-              = submit_tag "追加する", id: "token_submit"
+              = submit_tag "追加する", class: "botan" , id: "token_submit"
     = render partial: '/shared/side_bar'
 = render "shared/footer2"
