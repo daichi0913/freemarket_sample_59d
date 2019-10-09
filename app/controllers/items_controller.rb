@@ -1,7 +1,8 @@
 class ItemsController < ApplicationController
   before_action :call_item, except: [:index, :new, :create]
   def index
-    
+    @categories = Category.all
+    @items = Item.where("user_id = #{current_user.id}")
   end
 
   def new

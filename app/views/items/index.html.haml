@@ -4,7 +4,10 @@
   .main-page_box
     .r-content
       .contents
-        
+        -@items.each do |item|
+          .user-item
+            = link_to item_path(item.id) do
+              = item.name
     -# ユーザーマイページ関連のサイドバー
     = render partial: '/shared/side_bar'
 -# 情報量の多いfooter

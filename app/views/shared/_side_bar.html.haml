@@ -22,9 +22,10 @@
         .list3
           =fa_icon "angle-right"
       .l-box2
-        出品した商品-出品中
-        .list3
-          =fa_icon "angle-right"
+        = link_to user_items_path(current_user.id) do
+          出品した商品-出品中
+          .list3
+            =fa_icon "angle-right"
       .l-box2
         出品した商品-取引中
         .list3
