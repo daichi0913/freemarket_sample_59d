@@ -1,5 +1,5 @@
 class CardController < ApplicationController
-
+  before_action :call_categories
   require "payjp"
 
   def new
@@ -48,6 +48,10 @@ class CardController < ApplicationController
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
+  end
+  private
+  def call_categories
+    @categories = Category.all
   end
 end
 

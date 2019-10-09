@@ -4,10 +4,9 @@ class ItemsController < ApplicationController
     @categories = Category.where(parent_id: nil)
     region_id = params[:id].to_i
     @regions = Region.all
-    # @item_images = Item_image.create
     @item_image = ItemImage.new
     @item = Item.new
-    5.times { @item.item_images.build }
+    10.times { @item.item_images.build }
   end
 
   def create
@@ -56,7 +55,7 @@ class ItemsController < ApplicationController
   
   private
     def create_params
-    params.require(:item).permit(:name,:size,:item_status,:shipping_fee,:days,:price,:explain,:region_id,:brandname,:category_id,item_images_attributes: [:image] ).merge(user_id: current_user.id)
+      params.require(:item).permit(:name,:size,:item_status,:shipping_fee,:days,:price,:explain,:region_id,:brandname,:category_id,item_images_attributes: [:image] ).merge(user_id: current_user.id)
     end
     def update_params
       if params[:item_images_attributes].present?
