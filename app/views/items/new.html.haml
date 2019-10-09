@@ -7,95 +7,95 @@
   .post-item-title 商品の情報を入力
   %section.contents
 
-  -# = form_for @item do |f|
-  -#   .upload-pics
-  -#     %label{:for => "item_img"} 出品画像
-  -#     %span.form-require 必須
-  -#     %p 最大10枚までアップロードできます
-  -#     #drop_zone 
-  -#       %pre.drop_zone_text
-  -#         %preserve
-  -#           ドラッグアンドドロップ
-  -#           またはクリックしてファイルをアップロード
-  -#     %output#list
-  -#       = f.fields_for :item_images do |item_image|
-  -#         = item_image.file_field :image
+  = form_for @item do |f|
+    .upload-pics
+      %label{for: "item_img"} 出品画像
+      %span.form-require 必須
+      %p 最大10枚までアップロードできます
+      #drop_zone 
+        %pre.drop_zone_text
+          %preserve
+            ドラッグアンドドロップ
+            またはクリックしてファイルをアップロード
+      %output#list
+        = f.fields_for :item_images do |item_image|
+          = item_image.file_field :image
 
-  -#   %div.sell-contents
-  -#     %label{:for => "name"} 商品名
-  -#     %span.form-require 必須
-  -#     = f.text_field :name, placeholder: "商品名  (必須 40文字まで)", type: "text", value: "",class:"input-default"
-  -#     %br
-  -#     %label{:for => "explain"} 商品の説明
-  -#     %span.form-require 必須
-  -#     = f.text_area :explain, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", type: "text",size:"100×10", value: "",class:"input-default-datail"
+    .sell-contents
+      %label{for: "name"} 商品名
+      %span.form-require 必須
+      = f.text_field :name, placeholder: "商品名  (必須 40文字まで)", type: "text", value: "",class:"input-default"
+      %br
+      %label{for: "explain"} 商品の説明
+      %span.form-require 必須
+      = f.text_area :explain, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", type: "text",size:"100×10", value: "",class:"input-default-datail"
 
-  -#   %div.detail-to-status
-  -#     %h3.each-head 商品の詳細
-  -#     %label{for: "category"} カテゴリー
-  -#     %span.form-require 必須
-  -#     %div.category_select_box
-  -#       %select.category_select{name: "category_select"}
-  -#         %option{selected:"selected"} ---
-  -#         -@categories. each do |category|
-  -#           %option{value: category.id} #{category.name}
+    .detail-to-status
+      %h3.each-head 商品の詳細
+      %label{for: "category"} カテゴリー
+      %span.form-require 必須
+      .category_select_box
+        %select.category_select{name: "category_select"}
+          %option{selected:"selected"} ---
+          -@categories. each do |category|
+            %option{value: category.id} #{category.name}
 
-  -#     %label{for: "item_status"} 商品の状態
-  -#     %span.form-require 必須
-  -#     -# = f.select :item_status, {}, {class: "select-form"} do
-  -#     = f.select :item_status, options_for_select(Item.item_statuses), {include_blank:"---"}, {class: "input-default"}
+      %label{for: "item_status"} 商品の状態
+      %span.form-require 必須
+      -# = f.select :item_status, {}, {class: "select-form"} do
+      = f.select :item_status, options_for_select(Item.item_statuses), {include_blank:"---"}, {class: "input-default"}
 
-  -#   %div.fee-to-days
-  -#     %h3.each-head 配送について
-  -#     %div.shipping-box-forappend
-  -#       %label{for: "shippin_fee"} 配送料の負担
-  -#       %span.form-require 必須
-  -#       = f.select :shipping_fee do
-  -#         %option{selected:"selected"} ---
-  -#         %option{value: "送料込み(出品者負担)"} 送料込み(出品者負担)
-  -#         %option{value: "着払い(購入者負担)"} 着払い(購入者負担)
+    .fee-to-days
+      %h3.each-head 配送について
+      .shipping-box-forappend
+        %label{for: "shippin_fee"} 配送料の負担
+        %span.form-require 必須
+        = f.select :shipping_fee do
+          %option{selected:"selected"} ---
+          %option{value: "送料込み(出品者負担)"} 送料込み(出品者負担)
+          %option{value: "着払い(購入者負担)"} 着払い(購入者負担)
 
-  -#     .form__box
-  -#       %div.form-group
-  -#         %label{for: "from_where"} 発送元の地域
-  -#         %span.form-require 必須
-  -#         = f.select :region_id, class:"from_where"do
-  -#           %option{selected:"selected"} ---
-  -#           -@regions. each do |region|
-  -#             %option{value: region.id} #{region.name}
+      .form__box
+        .form-group
+          %label{for: "from_where"} 発送元の地域
+          %span.form-require 必須
+          = f.select :region_id, class:"from_where"do
+            %option{selected:"selected"} ---
+            -@regions. each do |region|
+              %option{value: region.id} #{region.name}
 
-  -#     %div.shipping-box
-  -#       %label{for: "how_many_days"} 発送までの日数
-  -#       %span.form-require 必須
-  -#       = f.select :days do
-  -#         %option{selected:"selected"} ---
-  -#         %option{value: "1〜2日で発送"} 1〜2日で発送
-  -#         %option{value: "2〜3日で発送"} 2〜3日で発送
-  -#         %option{value: "4〜7日で発送"} 4〜7日で発送
+      .shipping-box
+        %label{for: "how_many_days"} 発送までの日数
+        %span.form-require 必須
+        = f.select :days do
+          %option{selected:"selected"} ---
+          %option{value: "1〜2日で発送"} 1〜2日で発送
+          %option{value: "2〜3日で発送"} 2〜3日で発送
+          %option{value: "4〜7日で発送"} 4〜7日で発送
 
-  -#   .form-group-box2
-  -#     %h3.each-head.left-box
-  -#       販売価格(300〜9,999,999)
-  -#       %p ?
-  -#     .right-box
-  -#       .kakaku
-  -#         %ul
-  -#           %li.b
-  -#             価格
-  -#           %span.form-require 必須
-  -#         %p 
-  -#           ¥
-  -#         =f.text_field :price, placeholder: "例)300",class: "forprice",value:""
-  -#       .kakaku2
-  -#         %p
-  -#           販売手数料(10%)
-  -#         .price1
+    .form-group-box2
+      %h3.each-head.left-box
+        販売価格(300〜9,999,999)
+        %p ?
+      .right-box
+        .kakaku
+          %ul
+            %li.b
+              価格
+            %span.form-require 必須
+          %p 
+            ¥
+          =f.text_field :price, placeholder: "例)300",class: "forprice",value:""
+        .kakaku2
+          %p
+            販売手数料(10%)
+          .price1
             
             
-  -#       .kakaku3
-  -#         .p
-  -#           販売利益
-  -#         .pricebox-all
+        .kakaku3
+          .p
+            販売利益
+          .pricebox-all
 
     .excuse
       %a{:href => "/jp/help_center/getting_started/prohibited_items/", :target => "_blank"} 禁止されている出品、
@@ -108,8 +108,8 @@
       %a{:href => "/jp/seller_terms/"} 加盟店規約
       %span に同意したことになります。
 
-      -# .form-post
-      -# = f.submit class:"form-post",value:"出品する"
+      .form-post
+      = f.submit class:"form-post",value:"出品する"
     
       .form-back
         = link_to 'もどる', :back ,class:"form-back"
