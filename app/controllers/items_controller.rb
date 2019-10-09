@@ -1,19 +1,19 @@
 class ItemsController < ApplicationController
   before_action :new
-  # def new
-  #   @categories = Category.where(parent_id: nil)
-  #   region_id = params[:id].to_i
-  #   @regions = Region.all
-  #   @item_image = ItemImage.new
-  #   @item = Item.new
-  #   10.times { @item.item_images.build }
-  # end
+  def new
+    @categories = Category.where(parent_id: nil)
+    region_id = params[:id].to_i
+    @regions = Region.all
+    @item_image = ItemImage.new
+    @item = Item.new
+    10.times { @item.item_images.build }
+  end
 
-  # def create
-  #   @item = Item.new(create_params)
-  #   Item.create(create_params)
-  #   redirect_to root_path
-  # end
+  def create
+    @item = Item.new(create_params)
+    Item.create(create_params)
+    redirect_to root_path
+  end
   
   def show
     @item = Item.find(params[:id])
@@ -54,9 +54,9 @@ class ItemsController < ApplicationController
   end
   
   private
-    # def create_params
-    # params.require(:item).permit(:name,:size,:item_status,:shipping_fee,:days,:price,:explain,:region_id,:brandname,:category_id,item_images_attributes: [:image] ).merge(user_id: current_user.id)
-    # end
+    def create_params
+    params.require(:item).permit(:name,:size,:item_status,:shipping_fee,:days,:price,:explain,:region_id,:brandname,:category_id,item_images_attributes: [:image] ).merge(user_id: current_user.id)
+    end
     def update_params
       if params[:item_images_attributes].present?
         return create_params
