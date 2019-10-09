@@ -12,16 +12,16 @@
       %label{:for => "item_img"} 出品画像
       %span.form-require 必須
       %p 最大10枚までアップロードできます
-      #drop_zone 
-        - @item.item_images.each do |image|
-          .image-box
-            .image
-              =image_tag(image.image.url,data: image.id)
-            .bottom
-              .edit
-                編集
-              .delete
-                =link_to("削除", item_image_path(image.id), method: :delete) 
+      -# #drop_zone 
+      -#   - @item.item_images.each do |image|
+      -#     .image-box
+      -#       .image
+      -#         =image_tag(image.image.url,data: image.id)
+      -#       .bottom
+      -#         .edit
+      -#           編集
+      -#         .delete
+      -#           =link_to("削除", item_image_path(image.id), method: :delete) 
                   
         #text
           ドラッグ・アンドロップ
@@ -31,9 +31,9 @@
         = f.fields_for :item_images do |item_image|
           = item_image.file_field :image
       .delete_btn{height:"30px", width:"50px",color:"red"}
-        -# = f.file_field :image, :multiple => true
+  
 
-      %div.sell-contents
+      .sell-contents
         %label{:for => "name"} 商品名
         %span.form-require 必須
         = f.text_field :name, placeholder: "商品名  (必須 40文字まで)", type: "text", value: @item.name ,class:"input-default"
@@ -67,7 +67,7 @@
             -else
               %option{value: category.id} #{category.name}
               
-      %div.sell-contents
+      .sell-contents
       %label{for: "size"} サイズ
       %span.form-require 必須
       = f.select :size, class:"select-default", class:"jj" do

@@ -19,17 +19,17 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
- def edit
-    @item = Item.find(params[:id])
-  end
+#  def edit
+#     @item = Item.find(params[:id])
+#   end
 
-  def update
-    item = Item.find(params[:id])
-    if item.user_id == current_user.id
-      item.update(update_params)
-    end
-      redirect_to root_path
-  end
+#   def update
+#     item = Item.find(params[:id])
+#     if item.user_id == current_user.id
+#       item.update(update_params)
+#     end
+#       redirect_to root_path
+#   end
 
   def destroy
     # アイテムの削除
@@ -53,15 +53,15 @@ class ItemsController < ApplicationController
     redirect_to root_path, notice: "支払いが完了しました"
   end
   
-  private
-    def create_params
-      params.require(:item).permit(:name,:size,:item_status,:shipping_fee,:days,:price,:explain,:region_id,:brandname,:category_id,item_images_attributes: [:image] ).merge(user_id: current_user.id)
-    end
-    def update_params
-      if params[:item_images_attributes].present?
-        return create_params
-      else
-        return params.require(:item).permit(:name,:size,:item_status,:shipping_fee,:days,:price,:explain,:region_id,:brandname,:category_id).merge(user_id: current_user.id)
-      end
-    end
+  # private
+  #   def create_params
+  #     params.require(:item).permit(:name,:size,:item_status,:shipping_fee,:days,:price,:explain,:region_id,:brandname,:category_id,item_images_attributes: [:image] ).merge(user_id: current_user.id)
+  #   end
+  #   def update_params
+  #     if params[:item_images_attributes].present?
+  #       return create_params
+  #     else
+  #       return params.require(:item).permit(:name,:size,:item_status,:shipping_fee,:days,:price,:explain,:region_id,:brandname,:category_id).merge(user_id: current_user.id)
+  #     end
+  #   end
 end
