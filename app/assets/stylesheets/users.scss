@@ -26,7 +26,7 @@
   }
 .main-page{
   width: 100%;
-  height:1296px;
+  height:1456px;
   .main-page_box{
     margin: 40px auto 0;
     width: 1020px;
@@ -422,6 +422,7 @@
     font-size: 16px;
     line-height: 72px;
     padding: 0 16px;
+    text-align: center;
   }
 
   .senter-content-main{
@@ -617,15 +618,12 @@ font-size: 24px;
 .main-top-left1{
   ul.news-11{
     width:700px;
-    display:none;
+    // display: none;
   }
 }
 .main-senter-tab{
   width: 700px;
-  position: relative;
-  right: 350px;
 }
 .tab1-2{
-  // display:none;
   width: 700px;
 }
