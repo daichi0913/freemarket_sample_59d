@@ -20,7 +20,7 @@
       %output#list
         = f.fields_for :item_images do |item_image|
           = item_image.file_field :image
-
+        -# = f.file_field :image, :multiple => true
 
     %div.sell-contents
       %label{:for => "name"} 商品名
@@ -63,7 +63,7 @@
           %div.form-group
             %label{for: "from_where"} 発送元の地域
             %span.form-require 必須
-            = f.select :region_id, class:"from_where"do
+            = f.select :region_id, class:"from_where" do
               %option{selected:"selected"} ---
               -@regions. each do |region|
                 %option{value: region.id} #{region.name}
@@ -94,12 +94,17 @@
         .kakaku2
           %p
             販売手数料(10%)
-          .price1    
+          .price1
+            
+            
         .kakaku3
           .p
             販売利益
           .pricebox-all
 
+    -# .selling-fee 販売手数料(10%)
+    -# %label.for-interest 販売利益
+    
     .excuse
       %a{:href => "/jp/help_center/getting_started/prohibited_items/", :target => "_blank"} 禁止されている出品、
       %a{:href => "/jp/help_center/getting_started/prohibited_conduct/", :target => "_blank"} 行為
@@ -112,7 +117,7 @@
       %span に同意したことになります。
 
       .form-post
-        = f.submit class:"form-post",value:"出品する"
+      = f.submit class:"form-post",value:"出品する"
     
       .form-back
         = link_to 'もどる', :back ,class:"form-back"
