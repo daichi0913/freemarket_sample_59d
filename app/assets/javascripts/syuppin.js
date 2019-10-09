@@ -1,7 +1,13 @@
+//price
 $(function(){
   $(".forprice").on("keyup",function(){
-    var allprice = Math.round($(this).val()*0.1);
-    $(".price1").text("¥"+allprice.toLocaleString());
-    $(".pricebox-all").text("¥"+($(this).val() - allprice).toLocaleString());
+    var fee = Math.round($(this).val()*0.1);
+    if(fee >= 30 && fee < 1000000){
+      $(".price1").text("¥"+fee.toLocaleString());
+      $(".pricebox-all").text("¥"+($(this).val() - fee).toLocaleString());
+    }else{
+      $(".price1").text("");
+      $(".pricebox-all").text("");
+    }
   })
 })

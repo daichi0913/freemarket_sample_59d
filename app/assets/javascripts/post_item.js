@@ -29,7 +29,7 @@ $(function(){
   }
 
   function buildHTMLforsb(){
-    var size = `<div class="size-form"><label for="size">サイズ</label>
+    var size = `<div class="size-form"><div class="select-form-group"><label for="size">サイズ</label>
     <span class="form-require">必須</span><select name="item[size]" class="select-form"><option selected="selected">---</option>
     <option value="XXS以下">XXS以下</option>
     <option value="XS(SS)">XS(SS)</option>
@@ -41,8 +41,8 @@ $(function(){
     <option value="3XL(4L)">3XL(4L)</option>
     <option value="4XL(5L)以上">4XL(5L)以上</option>
     <option value="FREE SIZE">FREE SIZE</option>
-    </select><label for="brand">ブランド</label><span class="form-yourself">任意</span><input class="input-default", placeholder="例）シャネル",
-    type="text", value="" name="item[brandname]" id="item_brandname"></input></div>`
+    </select></div><div class="brand-form-group"><label for="brand">ブランド</label><span class="form-yourself">任意</span><input class="input-default", placeholder="例）シャネル",
+    type="text", value="" name="item[brandname]" id="item_brandname"></input></div></div>`
     
     return size;
 
