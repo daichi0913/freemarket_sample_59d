@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :new
+  before_action :call_item, except: :new
   def new
     @categories = Category.where(parent_id: nil)
     region_id = params[:id].to_i
@@ -16,36 +16,27 @@ class ItemsController < ApplicationController
   end
   
   def show
-    @item = Item.find(params[:id])
   end
 
- def edit
-    @item = Item.find(params[:id])
+  def edit
   end
 
   def update
-    item = Item.find(params[:id])
-    if item.user_id == current_user.id
-      item.update(update_params)
+    if @item.user_id == current_user.id
+      @item.update(update_params)
     end
       redirect_to root_path
   end
 
   def destroy
     # アイテムの削除
-    item = Item.find(params[:id])
-    if current_user.id == item.user.id
-      item.destroy
+    if current_user.id == @item.user.id
+      @item.destroy
     end
     redirect_to root_path
     
   end
-  def destroy2
-    item = Item.find(params[:id])
-    if current_user.id == item.user.id
-      item.item_images.destroy_all
-    end
-  end
+  
 
   def purchase
     Payjp.api_key = PAYJP_SECRET_KEY
@@ -63,5 +54,8 @@ class ItemsController < ApplicationController
       else
         return params.require(:item).permit(:name,:size,:item_status,:shipping_fee,:days,:price,:explain,:region_id,:brandname,:category_id).merge(user_id: current_user.id)
       end
+    end
+    def call_item
+      @item = Item.find(params[:id])
     end
 end
