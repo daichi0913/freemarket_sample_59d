@@ -1,5 +1,9 @@
 class ItemsController < ApplicationController
-  before_action :call_item, except: [:new, :create]
+  before_action :call_item, except: [:index, :new, :create]
+  def index
+    
+  end
+
   def new
     @categories = Category.where(parent_id: nil)
     @regions = Region.all
@@ -15,6 +19,7 @@ class ItemsController < ApplicationController
   end
   
   def show
+    @categories = Category.all
   end
 
   def edit
@@ -44,13 +49,6 @@ class ItemsController < ApplicationController
       end
     end
     
-  end
-  
-
-  def purchase
-    Payjp.api_key = PAYJP_SECRET_KEY
-    Payjp::Charge.create(currency: 'jpy', amount: 1000, card: params['payjp-token'])
-    redirect_to root_path, notice: "支払いが完了しました"
   end
   
   private
