@@ -21,7 +21,7 @@
         = f.fields_for :item_images do |item_image|
           = item_image.file_field :image
 
-    %div.sell-contents
+    .sell-contents
       %label{for: "name"} 商品名
       %span.form-require 必須
       = f.text_field :name, placeholder: "商品名  (必須 40文字まで)", type: "text", value: "",class:"input-default"
@@ -30,11 +30,11 @@
       %span.form-require 必須
       = f.text_area :explain, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", type: "text",size:"100×10", value: "",class:"input-default-datail"
 
-    %div.detail-to-status
+    .detail-to-status
       %h3.each-head 商品の詳細
       %label{for: "category"} カテゴリー
       %span.form-require 必須
-      %div.category_select_box
+      .category_select_box
         %select.category_select{name: "category_select"}
           %option{selected:"selected"} ---
           -@categories. each do |category|
@@ -45,9 +45,9 @@
       -# = f.select :item_status, {}, {class: "select-form"} do
       = f.select :item_status, options_for_select(Item.item_statuses), {include_blank:"---"}, {class: "input-default"}
 
-    %div.fee-to-days
+    .fee-to-days
       %h3.each-head 配送について
-      %div.shipping-box-forappend
+      .shipping-box-forappend
         %label{for: "shippin_fee"} 配送料の負担
         %span.form-require 必須
         = f.select :shipping_fee do
@@ -56,7 +56,7 @@
           %option{value: "着払い(購入者負担)"} 着払い(購入者負担)
 
       .form__box
-        %div.form-group
+        .form-group
           %label{for: "from_where"} 発送元の地域
           %span.form-require 必須
           = f.select :region_id, class:"from_where"do
@@ -64,7 +64,7 @@
             -@regions. each do |region|
               %option{value: region.id} #{region.name}
 
-      %div.shipping-box
+      .shipping-box
         %label{for: "how_many_days"} 発送までの日数
         %span.form-require 必須
         = f.select :days do
