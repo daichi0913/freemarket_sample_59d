@@ -101,7 +101,7 @@
             .main-top-right
               .main-top-right1
                 やることリスト
-            %ul
+            %ul.left-box
               .li
                 .main-tab-2
                   .main-tab1-2
@@ -120,37 +120,37 @@
                       .top-icon2
                         =fa_icon "angle-right"
                           
-              -# .main-senter-tab
-              -#   .senter-header-tab
-              -#     購入した商品
-              -#     .senter-content-main
-              -#       .senter-main-top
-              -#         .senter-main-top-left
-              -#           .senter-main-top-left1
-              -#             取引中
-              -#         .senter-main-top-right
-              -#           .senter-main-top-right1
-              -#             過去の取引
-              -#   .senter-main-tab
-              -#     .senter-main-tab1
-              -#       .senter-tab1
-              -#         .senter-tab1a
-              -#           .senter-tab1ax
-              -#           %img.senter-tab1a{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
-              -#         .senter-tab1b
-              -#           .senter-tab1bx
-              -#             現在の取引中です。
-              -#           .senter-tab1d
-              -#             .senter-tab1dtime
-              -#               =fa_icon "clock-o"
-              -#           .senter-tabspan
-              -#             8時間前
-              -#         .senter-top-icon
-              -#           =fa_icon "angle-right"
-              -#   .senter-main-tab-4
-              -#     .senter-main-tab1-4
-              -#       .senter-tab1-4
-              -#         .senter-tab1a-4　一覧を見る
+              .main-senter-tab
+                .senter-header-tab
+                  購入した商品
+                  .senter-content-main
+                    .senter-main-top
+                      .senter-main-top-left
+                        .senter-main-top-left1
+                          取引中
+                      .senter-main-top-right
+                        .senter-main-top-right1
+                          過去の取引
+                .senter-main-tab
+                  .senter-main-tab1
+                    .senter-tab1
+                      .senter-tab1a
+                        .senter-tab1ax
+                        %img.senter-tab1a{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+                      .senter-tab1b
+                        .senter-tab1bx
+                          現在の取引中です。
+                        .senter-tab1d
+                          .senter-tab1dtime
+                            =fa_icon "clock-o"
+                        .senter-tabspan
+                          8時間前
+                      .senter-top-icon
+                        =fa_icon "angle-right"
+                .senter-main-tab-4
+                  .senter-main-tab1-4
+                    .senter-tab1-4
+                      .senter-tab1a-4 一覧を見る
     = render partial: '/shared/side_bar'
 .top-bottom-view
 /////////////////////
