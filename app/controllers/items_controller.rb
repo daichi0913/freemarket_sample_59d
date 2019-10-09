@@ -2,7 +2,6 @@ class ItemsController < ApplicationController
   before_action :call_item, except: :new
   def new
     @categories = Category.where(parent_id: nil)
-    region_id = params[:id].to_i
     @regions = Region.all
     @item_image = ItemImage.new
     @item = Item.new
@@ -19,11 +18,18 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @regions = Region.all
+    @categories = Category.where(parent_id: nil)
   end
 
   def update
     if @item.user_id == current_user.id
-      @item.update(update_params)
+      if @item.update(update_params)
+        redirect_to root_path
+      else
+        render_edit
+      end
+
     end
       redirect_to root_path
   end
@@ -31,9 +37,12 @@ class ItemsController < ApplicationController
   def destroy
     # アイテムの削除
     if current_user.id == @item.user.id
-      @item.destroy
+      if @item.destroy
+        redirect_to root_path
+      else
+        render_show
+      end
     end
-    redirect_to root_path
     
   end
   
