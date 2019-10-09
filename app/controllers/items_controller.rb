@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :call_item, except: :new
+  before_action :call_item, except: [:new, :create]
   def new
     @categories = Category.where(parent_id: nil)
     @regions = Region.all
