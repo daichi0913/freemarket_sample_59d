@@ -12,10 +12,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # POST /resource
-  # def create
-  #   super
-  #   binding.pry
-  # end
+  def create
+    super
+    # binding.pry
+  end
 
   # GET /resource/edit
   # def edit
@@ -55,13 +55,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)
-    root_path
+    sms_confirmation_user_path(current_user.id)
   end
 
   # The path used after sign up for inactive accounts.
-  def after_inactive_sign_up_path_for(resource)
-    redirect_to sms_confirmation_user_path(current_user.id)
-  end
+  # def after_inactive_sign_up_path_for(resource)
+  # end
 
   private
     def check_captcha
