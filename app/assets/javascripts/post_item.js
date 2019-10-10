@@ -113,7 +113,7 @@ $(function(){
       <option value="ゆうパック">ゆうパック</option>
       <option value="ゆうメール">ゆうメール</option>
       </select></div>`
-      console.log(shippingfee)
+
       if(shippingfee === "送料込み(出品者負担)"){
         return html;
       }
@@ -123,7 +123,7 @@ $(function(){
     }
     deleteHTML();
 
-    $('.shipping-box-forappend').after(buildHTMLforshippingway($(this).val()));
+    $('.shipping-box-forappend').append(buildHTMLforshippingway($(this).val()));
 
 
   function deleteHTML(){
