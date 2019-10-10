@@ -40,7 +40,7 @@
         配送先と支払い方法の入力を完了してください。
       .buy-page
         = form_tag(action: :purchase, method: :post) do
-          %script.payjp-button{"data-key" => "#{PAYJP_PUBLIC_KEY}", :src => "https://checkout.pay.jp", :type => "text/javascript"}
+          %script.payjp-button{"data-key" => "#{Rails.application.credentials.PAYJP_PRIVATE_KEY}", :src => "https://checkout.pay.jp", :type => "text/javascript"}
       .item-buypage-main__center__main__haisou
         %p.a
           配送先

@@ -60,5 +60,7 @@ class ToppagesController < ApplicationController
       end
     end
   end
+  def search
+  end
     # binding.pry
 end
