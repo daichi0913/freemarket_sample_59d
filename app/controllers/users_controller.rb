@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :call_categories
+  before_action :move_to_signup, except: [:new]
+
   def index
 
   end
@@ -49,4 +51,9 @@ class UsersController < ApplicationController
   def call_categories
     @categories = Category.all
   end
+
+  def move_to_signup
+    redirect_to new_user_session_path unless user_signed_in?
+  end
+
 end
