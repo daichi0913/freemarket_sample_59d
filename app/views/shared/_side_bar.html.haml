@@ -1,7 +1,7 @@
 .l-content
   .l-content-box
     .l-content-list
-      .l-box2
+      = link_to user_path(current_user),class:"l-box2"do
         マイページ
         .list3
           =fa_icon "angle-right"
@@ -17,7 +17,7 @@
         いいね！一覧
         .list3
           =fa_icon "angle-right"
-      .l-box2
+      = link_to new_user_item_path(current_user.id),class: "l-box2" do
         出品する
         .list3
           =fa_icon "angle-right"
@@ -79,7 +79,7 @@
       発送元・お届け先住所変更
       .list3
         =fa_icon "angle-right"
-    .l-box2
+    =link_to credit_card_user_path(current_user),class:"l-box2" do
       支払い方法
       .list3
         =fa_icon "angle-right"
@@ -95,7 +95,7 @@
       電話番号
       .list3
         =fa_icon "angle-right"
-    .l-box2
+    =link_to logout_user_path(current_user),class:"l-box2"do
       ログアウト
       .list3
         =fa_icon "angle-right"
