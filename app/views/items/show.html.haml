@@ -86,7 +86,7 @@
         送料込み
     -unless user_signed_in? && current_user.id == @item.user.id
       .item-buy
-        = link_to "#" do
+        = link_to new_item_deal_path(current_user.id) do
           購入画面に進む
     .item-setumei
       %p{value: @item.id} #{@item.explain}

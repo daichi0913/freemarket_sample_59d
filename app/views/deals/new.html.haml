@@ -9,12 +9,12 @@
     .item-buypage-main__center__main
       .item-buypage-main__center__main__goods
         %li.e
-          = image_tag "https://msp.c.yimg.jp/yjimage?q=OomWdFwXyLHmIDMNTjT1doOtD9R5r31bLDcUm4SRlg2phRx1ucHfM8xgY2y1oBSLpWlCX5y23xRWT6xW1LSfa7qwD0yYjVBUZU2mGbWpXXaHji4aH7qhDn9Ah5w7JQ34DIpA.q9ZQR8NNvWj4w6J&sig=13aur9s5p&x=225&y=225"
+          = image_tag image_url(@item.item_images[0].image.url)
         %li.d
-          dazzlin 花柄ワンピース
+          =@item.name
       .item-buypage-main__center__main__price
         %li.c
-          ¥1,800
+          ¥#{@item.price}円
         %li.d
           送料込み
       .item-buypage-main__center__main__point
@@ -35,12 +35,12 @@
         %li.a
           支払い金額
         %li.b
-          ¥1,800
+          ¥#{@item.price}円
       .item-buypage-main__center__main__buy-info
         配送先と支払い方法の入力を完了してください。
       .buy-page
         = form_tag(action: :purchase, method: :post) do
-          %script.payjp-button{"data-key" => "#{Rails.application.credentials.PAYJP_PRIVATE_KEY}", :src => "https://checkout.pay.jp", :type => "text/javascript"}
+          %script.payjp-button{"data-key" => "#{Rails.application.credentials.PAYJP_SECRET_KEY}", :src => "https://checkout.pay.jp", :type => "text/javascript"}
       .item-buypage-main__center__main__haisou
         %p.a
           配送先
