@@ -100,8 +100,7 @@ $(function(){
     else{
       return size;
     }
-}
-  
+  }
   
   $(document).on('turbolinks:load', function(){
     $(document).off("change", ".category_select");
@@ -149,48 +148,47 @@ $(function(){
           });
         });
         
-  
-  $("#item_shipping_fee").on("change", function(){
-    function buildHTMLforshippingway(shippingfee){
-      var html = `<div class="shipping-way"><label for="shippin_way">配送の方法</label>
-      <span class="form-require">必須</span><select name="item[shipping_way]" id="item_shipping_way"><option selected="selected">---</option>
-      <option value="未定">未定</option>
-      <option value="らくらくメルカリ便">らくらくメルカリ便</option>
-      <option value="ゆうメール">ゆうメール</option>
-      <option value="レターパック">レターパック</option>
-      <option value="普通郵便(定形、定形外)">普通郵便(定形、定形外)</option>
-      <option value="クロネコヤマト">クロネコヤマト</option>
-      <option value="ゆうパック">ゆうパック</option>
-      <option value="クリックポスト">クリックポスト</option>
-      <option value="ゆうパケット">ゆうパケット</option>
-      </select></div>`
-      var html2 = `<div class="shipping-way"><label for="shippin_way">配送の方法</label>
-      <span class="form-require">必須</span><select name="item[shipping_way]" id="item_shipping_way"><option selected="selected">---</option>
-      <option value="未定">未定</option>
-      <option value="クロネコヤマト">クロネコヤマト</option>
-      <option value="ゆうパック">ゆうパック</option>
-      <option value="ゆうメール">ゆうメール</option>
-      </select></div>`
+    });
+    $("#item_shipping_fee").on("change", function(){
+      function buildHTMLforshippingway(shippingfee){
+        var html = `<div class="shipping-way"><label for="shippin_way">配送の方法</label>
+        <span class="form-require">必須</span><select name="item[shipping_way]" id="item_shipping_way"><option selected="selected">---</option>
+        <option value="未定">未定</option>
+        <option value="らくらくメルカリ便">らくらくメルカリ便</option>
+        <option value="ゆうメール">ゆうメール</option>
+        <option value="レターパック">レターパック</option>
+        <option value="普通郵便(定形、定形外)">普通郵便(定形、定形外)</option>
+        <option value="クロネコヤマト">クロネコヤマト</option>
+        <option value="ゆうパック">ゆうパック</option>
+        <option value="クリックポスト">クリックポスト</option>
+        <option value="ゆうパケット">ゆうパケット</option>
+        </select></div>`
+        var html2 = `<div class="shipping-way"><label for="shippin_way">配送の方法</label>
+        <span class="form-require">必須</span><select name="item[shipping_way]" id="item_shipping_way"><option selected="selected">---</option>
+        <option value="未定">未定</option>
+        <option value="クロネコヤマト">クロネコヤマト</option>
+        <option value="ゆうパック">ゆうパック</option>
+        <option value="ゆうメール">ゆうメール</option>
+        </select></div>`
 
-      if(shippingfee === "送料込み(出品者負担)"){
-        return html;
+        if(shippingfee === "送料込み(出品者負担)"){
+          return html;
+        }
+        else if(shippingfee === "着払い(購入者負担)"){
+          return html2;
+        }
       }
-      else if(shippingfee === "着払い(購入者負担)"){
-        return html2;
+      console.log("aaaaaaaa")
+      deleteHTML();
+      $('.shipping-box-forappend').append(buildHTMLforshippingway($(this).val()));
+      
+
+    function deleteHTML(){
+      var length = $('.shipping-way').length;
+      if(length===1){
+        $('.shipping-way').remove();
       }
     }
-    deleteHTML();
-
-    $('.shipping-box-forappend').append(buildHTMLforshippingway($(this).val()));
-    
-
-  function deleteHTML(){
-    var length = $('.shipping-way').length;
-    if(length===1){
-       $('.shipping-way').remove();
-    }
-  }
-  });
-  })
+    });
   })
 })
