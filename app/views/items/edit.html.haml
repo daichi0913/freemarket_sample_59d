@@ -85,11 +85,11 @@
 
       %label{for: "brand"} ブランド
       %span.form-yourself 任意
-      = f.text_field :brandname , class:"input-default",placeholder:"例）シャネル",type: "text"
+      = f.text_field :brandname , class:"input-default",placeholder:"例）シャネル",value:@item.brandname,type: "text"
       %label{for: "item_status"} 商品の状態
       %span.form-require 必須
       = f.select :item_status do
-        %option{selected:"selected"} #{@item.brandname}
+        %option{selected:"selected",value:@item.item_status} #{@item.item_status}
         %option{value: "新品、未使用"} 新品、未使用
         %option{value: "未使用に近い"} 未使用に近い
         %option{value: "目立った傷や汚れなし"} 目立った傷や汚れなし

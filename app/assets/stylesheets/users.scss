@@ -143,7 +143,7 @@
         background: #fff;
         .tab1a{
           position: relative;
-          overflow: hidden;
+          overflow: inherit;
           float: left;
           width: 48px;
           height: 48px;
@@ -160,6 +160,7 @@
         .tab1b{
           margin: 0 40px 0 68px;
           font-size: 14px;
+          text-align:left;
         }
         .tab1bx{
           overflow: hidden;
@@ -225,6 +226,7 @@
         .tab1b-1{
           margin: 0 40px 0 68px;
           font-size: 14px;
+          text-align:left;
         }
         .tab1bx-1{
           overflow: hidden;
@@ -273,10 +275,11 @@
         background: #fff;
         .tab1a-2{
           position: relative;
-          overflow: hidden;
+          // overflow: hidden;
           float: left;
           width: 48px;
           height: 48px;
+          left: 8px;
         }
         .tab1ax-2{
           position: absolute;
@@ -290,6 +293,7 @@
         .tab1b-2{
           margin: 0 40px 0 68px;
           font-size: 14px;
+          text-align:left;
         }
         .tab1bx-2{
           overflow: hidden;
@@ -355,6 +359,7 @@
         .tab1b-3{
           margin: 0 40px 0 68px;
           font-size: 14px;
+          text-align:left;
         }
         .tab1bx-3{
           overflow: hidden;
@@ -565,32 +570,35 @@
       a{
         color:#333;
       }
-      }
-      .list2{
-        color: #ccc;
-        font-weight: 600;
-        position: absolute;
-        top: 50%;
-        right: 5%;
-        font-size: 22px;
-        -webkit-transform: translate(0, -50%);
-        transform: translate(0, -50%);
-        -webkit-transition: all ease-out .2s;
-        transition: all ease-out .2s;
-        }
-          .list3{
-            color: #ccc;
-            font-weight: 600;
-            position: absolute;
-            top: 50%;
-            right: 5%;
-            font-size: 22px;
-            -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
-            -webkit-transition: all ease-out .2s;
-            transition: all ease-out .2s;
-            }
-          
+    }
+    .l-box2.active{
+      background-color:#eeeeee;
+    }
+    .list2{
+      color: #ccc;
+      font-weight: 600;
+      position: absolute;
+      top: 50%;
+      right: 5%;
+      font-size: 22px;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      -webkit-transition: all ease-out .2s;
+      transition: all ease-out .2s;
+    }
+    .list3{
+      color: #ccc;
+      font-weight: 600;
+      position: absolute;
+      top: 50%;
+      right: 5%;
+      font-size: 22px;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      -webkit-transition: all ease-out .2s;
+      transition: all ease-out .2s;
+    }
+
 .l-merupei-box{
   margin: 40px 0 0;
   font-weight: 600;
