@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :call_item, except: [:index, :new, :create]
+  before_action :move_to_signup, except: [:show]
   def index
     @categories = Category.all
     @items = Item.where("user_id = #{current_user.id}")
@@ -66,4 +67,9 @@ class ItemsController < ApplicationController
     def call_item
       @item = Item.find(params[:id])
     end
+
+    def move_to_signup
+      redirect_to new_user_session_path unless user_signed_in?
+    end
+  
 end
