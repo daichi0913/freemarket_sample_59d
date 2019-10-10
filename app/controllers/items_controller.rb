@@ -31,12 +31,14 @@ class ItemsController < ApplicationController
   def update
     if @item.user_id == current_user.id
       if @item.update(update_params)
+        binding.pry
         redirect_to root_path
       else
         render_edit
       end
 
     end
+      binding.pry
       redirect_to root_path
   end
 
