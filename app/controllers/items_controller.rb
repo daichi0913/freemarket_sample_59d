@@ -57,7 +57,7 @@ class ItemsController < ApplicationController
       params.require(:item).permit(:name,:size,:item_status,:shipping_fee,:days,:price,:explain,:region_id,:brandname,:category_id,item_images_attributes: [:image] ).merge(user_id: current_user.id)
     end
     def update_params
-      if params.require(:item)[:item_images_attributes].present?
+      if params[:item_images_attributes].present?
         return create_params
       else
         return params.require(:item).permit(:name,:size,:item_status,:shipping_fee,:days,:price,:explain,:region_id,:brandname,:category_id).merge(user_id: current_user.id)
