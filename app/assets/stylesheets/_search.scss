@@ -1,0 +1,15 @@
+.search-main{
+  height: 1500px;
+  width:100%;
+  display:flex;
+  &__left{
+    height:100%;
+    width: 30%;
+    background-color: red;
+  }
+  &__right{
+    height:100%;
+    width: 30%;
+    background-color: red;
+  }
+}

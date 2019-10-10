@@ -61,6 +61,7 @@ class ToppagesController < ApplicationController
     end
   end
   def search
+    @categories = Category.all
   end
     # binding.pry
 end

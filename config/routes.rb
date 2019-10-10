@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'toppages#index'
-  resources :toppages, only: [:index,:search]
+  resources :toppages, only: [:index]  
+  
   resources :users do
     member do
       get :logout
@@ -28,6 +29,7 @@ Rails.application.routes.draw do
       end
     end
   end
+
   resources :items, except: [:index, :new, :edit]
   resources :item_images, only: [:new,:create, :destroy]
   namespace :api do
