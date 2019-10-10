@@ -33,12 +33,11 @@ class ItemsController < ApplicationController
     if @item.user_id == current_user.id
       if @item.update(update_params)
         redirect_to root_path
+        return
       else
         render_edit
       end
-
     end
-      redirect_to root_path
   end
 
   def destroy
