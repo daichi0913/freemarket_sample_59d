@@ -49,7 +49,7 @@
             %th.brand-to-days
               ブランド
             %th.rightside-brand-to-days
-              = @item.brand.name
+              = @item.brandname
           %tr
             %th.brand-to-days
               商品状態
@@ -86,7 +86,7 @@
         送料込み
     -unless user_signed_in? && current_user.id == @item.user.id
       .item-buy
-        = link_to "#" do
+        = link_to new_item_deal_path(@item.id) do
           購入画面に進む
     .item-setumei
       %p{value: @item.id} #{@item.explain}
@@ -183,9 +183,8 @@
                     .items-text-price-3
                       ¥2,000,000
                     .items-math-3
-                      1
-                    .items-heart-3
                       = fa_icon "heart-o"
+                      1
             -else
               .items-box
                 .items-img
@@ -197,9 +196,8 @@
                     .items-text-price
                       ¥2,000,000
                     .items-math
-                      1
-                    .items-heart
                       = fa_icon "heart-o"
+                      1
             -if index == 5
               -break
             //////////////そのほかの出品パート２////////////////////////
@@ -221,9 +219,8 @@
                     .items-text-price-3
                       ¥2,000,000
                     .items-math-3
-                      1
-                    .items-heart-3
                       = fa_icon "heart-o"
+                      1
             -else
               .items-box
                 .items-img
@@ -235,9 +232,9 @@
                     .items-text-price
                       ¥2,000,000
                     .items-math
-                      1
-                    .items-heart
                       = fa_icon "heart-o"
+                      1
+
             -if index == 5
               -break
 

@@ -54,6 +54,8 @@ $(function(){
     var imageHover
     $('.photo-slide img').on("mouseenter", function(){
       var index = $('.photo-slide img').index(this);
+      $('.photo-slide img.active').removeClass("active");
+      $(this).addClass("active");
       $(".item-photo-main").animate({scrollLeft: index * 300}, 300);
     });
 

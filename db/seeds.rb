@@ -68,7 +68,7 @@ ItemImage.create!(
       region_id: rand(1..47), 
       name: Faker::Dessert.variety,
       size: Faker::Games::Pokemon.name,
-      item_status: "新品、未使用", 
+      item_status: Item.item_statuses.values[Item.item_statuses.length], 
       shipping_fee: Faker::Superhero.name, shipping_way: Faker::Movies::HarryPotter.location, days: Faker::TvShows::BojackHorseman.character, price: Faker::Number.between(from: 1, to: 10000000), explain: Faker::TvShows::BojackHorseman.tongue_twister, brandname: brands[rand(brands.length)], created_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all), updated_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all)}
       )
   end
@@ -76,7 +76,7 @@ ItemImage.create!(
   # ↓メンズ新着表示用
   30.times do
     Item.create!(
-     {user_id: rand(1..20), category_id: rand(140..151), brand_id: rand(1..4), region_id: rand(1..47), name: Faker::Dessert.variety, size: Faker::Games::Pokemon.name, item_status: "新品、未使用", deal_status: Faker::TvShows::StrangerThings.character, shipping_fee: Faker::Superhero.name, shipping_way: Faker::Movies::HarryPotter.location, days: Faker::TvShows::BojackHorseman.character, price: Faker::Number.between(from: 1000, to: 9000), explain: Faker::TvShows::BojackHorseman.tongue_twister, brandname: brands[rand(brands.length)], created_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all), updated_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all)}
+     {user_id: rand(1..20), category_id: rand(140..151), brand_id: rand(1..4), region_id: rand(1..47), name: Faker::Dessert.variety, size: Faker::Games::Pokemon.name, item_status: Item.item_statuses.values[Item.item_statuses.length], deal_status: Faker::TvShows::StrangerThings.character, shipping_fee: Faker::Superhero.name, shipping_way: Faker::Movies::HarryPotter.location, days: Faker::TvShows::BojackHorseman.character, price: Faker::Number.between(from: 1000, to: 9000), explain: Faker::TvShows::BojackHorseman.tongue_twister, brandname: brands[rand(brands.length)], created_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all), updated_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all)}
      )
  end
 
@@ -85,14 +85,14 @@ ItemImage.create!(
   # ↓家電新着表示用
   30.times do
     Item.create!(
-    {user_id: rand(1..20), category_id: rand(854..864), brand_id: rand(1..4), region_id: rand(1..47), name: Faker::Dessert.variety, size: Faker::Games::Pokemon.name, item_status: "新品、未使用", deal_status: Faker::TvShows::StrangerThings.character, shipping_fee: Faker::Superhero.name, shipping_way: Faker::Movies::HarryPotter.location, days: Faker::TvShows::BojackHorseman.character, price: Faker::Number.between(from: 1000, to: 9000), explain: Faker::TvShows::BojackHorseman.tongue_twister, brandname: brands[rand(brands.length)], created_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all), updated_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all)}
+    {user_id: rand(1..20), category_id: rand(854..864), brand_id: rand(1..4), region_id: rand(1..47), name: Faker::Dessert.variety, size: Faker::Games::Pokemon.name, item_status: Item.item_statuses.values[Item.item_statuses.length], deal_status: Faker::TvShows::StrangerThings.character, shipping_fee: Faker::Superhero.name, shipping_way: Faker::Movies::HarryPotter.location, days: Faker::TvShows::BojackHorseman.character, price: Faker::Number.between(from: 1000, to: 9000), explain: Faker::TvShows::BojackHorseman.tongue_twister, brandname: brands[rand(brands.length)], created_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all), updated_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all)}
     )
   end
 
   # ↓おもちゃ新着表示用
   30.times do
     Item.create!(
-    {user_id: rand(1..20), category_id: rand(578..587), brand_id: rand(1..4), region_id: rand(1..47), name: Faker::TvShows::BojackHorseman.character, size: Faker::Games::Pokemon.name, item_status: "新品、未使用", deal_status: Faker::TvShows::StrangerThings.character, shipping_fee: Faker::Superhero.name, shipping_way: Faker::Movies::HarryPotter.location, days: Faker::Dessert.variety, price: Faker::Number.between(from: 1000, to: 9000), explain: Faker::TvShows::BojackHorseman.tongue_twister, brandname: brands[rand(brands.length)], created_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all), updated_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all)}
+    {user_id: rand(1..20), category_id: rand(578..587), brand_id: rand(1..4), region_id: rand(1..47), name: Faker::TvShows::BojackHorseman.character, size: Faker::Games::Pokemon.name, item_status: Item.item_statuses.values[Item.item_statuses.length], deal_status: Faker::TvShows::StrangerThings.character, shipping_fee: Faker::Superhero.name, shipping_way: Faker::Movies::HarryPotter.location, days: Faker::Dessert.variety, price: Faker::Number.between(from: 1000, to: 9000), explain: Faker::TvShows::BojackHorseman.tongue_twister, brandname: brands[rand(brands.length)], created_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all), updated_at: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all)}
     )
 
   end

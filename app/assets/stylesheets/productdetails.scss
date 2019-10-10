@@ -27,8 +27,11 @@
     img{
     width: 60px;
     height: 60px;
+    opacity: .4;
   }
-
+  .active{
+    opacity: 1;
+  }
 }
 
 // ここまで商品詳細メイン画像＋スライド
@@ -93,6 +96,10 @@
 .items-text-name-3{
   height: 3em;
 }
+.items-text-name{
+  height: 3em;
+}
+
 .items-text-name1-3{
   margin: 8px 0 0;
 }
@@ -617,7 +624,7 @@ th.rightside-brand-to-days{
   display: inline-block;
   float: right;
 }
-.items-math-1{
+.items-math{
   display: inline-block;
   float: right;
   padding: 0 0 0 10px;
