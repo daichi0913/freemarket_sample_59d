@@ -22,13 +22,15 @@ Rails.application.routes.draw do
       get :finish
       get :credit_card_registration
     end
-    resources :items, only: [:index, :new, :edit] do
-      member do
-        delete 'destroy2'
+    resources :items, only: [:index, :new, :edit]
+  end
+  resources :items, except: [:index, :new, :edit] do
+    resources :deals do
+      collection do
+        post 'purchase'
       end
     end
   end
-  resources :items, except: [:index, :new, :edit]
   resources :item_images, only: [:new,:create, :destroy]
   namespace :api do
     resources :categories, only: :index, defaults: { format: 'json' }
@@ -41,10 +43,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :deals do
-    collection do
-      post 'purchase'
-    end
-  end
+  
 end
 
