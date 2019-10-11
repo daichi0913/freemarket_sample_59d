@@ -16,8 +16,15 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(create_params)
-    Item.create(create_params)
-    redirect_to root_path
+    if @item.user_id == current_user.id && params.require(:item)[:item_images_attributes].present?
+      if @item.save(create_params)
+        redirect_to root_path
+        return
+      else
+        render_new
+      end
+    end
+    redirect_to new_user_item_path(current_user)
   end
   
   def show
