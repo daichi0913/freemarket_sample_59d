@@ -85,9 +85,13 @@
       .price-free
         送料込み
     -unless user_signed_in? && current_user.id == @item.user.id
-      .item-buy
-        = link_to new_item_deal_path(@item.id) do
-          購入画面に進む
+      -if @item.deal.present?
+        .item-sold
+          この商品は売り切れました。
+      -else
+        .item-buy
+          = link_to new_item_deal_path(@item.id) do
+            購入画面に進む
     .item-setumei
       %p{value: @item.id} #{@item.explain}
     .item-hyouka

@@ -367,6 +367,20 @@ th.rightside-brand-to-days{
     font-size: 24px;
   }
 }
+.item-sold{
+  display: block;
+  margin-top: 16px;
+  background: #aaa;
+  font-size: 24px;
+  color: #fff;
+  line-height: 56px;
+  text-align: center;
+  font-weight: 600;
+  -webkit-transition: all ease-out .3s;
+  transition: all ease-out .3s;
+  font-size: 24px;
+  line-height: 60px;
+}
 .item-setumei{
   padding: 32px 0 0;
   white-space: pre-wrap;

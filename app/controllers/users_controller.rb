@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :call_categories
+  before_action :card_check, only: :credit_card
   # before_action :move_to_signup, except: [:new]
   skip_before_action :authenticate_user!, only: [:new]
   def index
@@ -31,9 +32,6 @@ class UsersController < ApplicationController
   end
 
   def credit_card
-    if current_user.card.present?
-      render template: "card/new"
-    end
   end
 
 
@@ -54,6 +52,11 @@ class UsersController < ApplicationController
     @categories = Category.all
   end
 
+  def card_check
+    if current_user.card.present?
+      redirect_to card_path
+    end
+  end
   # def move_to_signup
   #   redirect_to new_user_session_path unless authenticate_user?
   # end
