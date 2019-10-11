@@ -1,4 +1,6 @@
 class ToppagesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
+
   def index
     @categories = Category.all
     # @posts = Post..order(created_at: :desc)

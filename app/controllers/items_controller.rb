@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :call_item, except: [:index, :new, :create]
-  before_action :move_to_signup, except: [:show]
+  skip_before_action :authenticate_user!, only: [:show]
+  
   def index
     @categories = Category.all
     @items = Item.where("user_id = #{current_user.id}")

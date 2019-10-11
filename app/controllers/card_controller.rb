@@ -1,6 +1,7 @@
 class CardController < ApplicationController
   before_action :call_categories
-  require "payjp"
+
+  # require "payjp"
 
   def new
     card = Card.where(user_id: current_user.id)
@@ -8,7 +9,7 @@ class CardController < ApplicationController
   end
 
   def pay #payjpとCardのデータベース作成を実施します。
-    Payjp.api_key = Rails.application.credentials.PAYJP_PRIVATE_KEY
+    # Payjp.api_key = Rails.application.credentials.PAYJP_PRIVATE_KEY
     if params['payjp-token'].blank?
       redirect_to action: "new"
     else
