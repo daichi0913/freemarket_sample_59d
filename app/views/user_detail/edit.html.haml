@@ -13,10 +13,10 @@
               = fa_icon "chevron-right"
           .form-group
             %label{for: "brand"} お名前
-            %p メルカリ太郎
+            %p #{@user_detail ? @user_detail.name_kanji : "メルカリ 太朗"}
           .form-group
             %label{for: "brand"} お名前カナ
-            %p メルカリタロウ
+            %p #{@user_detail ? @user_detail.name_kana : "メルカリ タロウ"}
           .form-group
             %label{for: "brand"} 生年月日
             %p 1900/01/01
