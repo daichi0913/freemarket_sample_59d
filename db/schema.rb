@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_08_103020) do
+ActiveRecord::Schema.define(version: 2019_10_11_061013) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -68,6 +68,16 @@ ActiveRecord::Schema.define(version: 2019_10_08_103020) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "deals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
+    t.string "status", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_deals_on_item_id"
+    t.index ["user_id"], name: "index_deals_on_user_id"
   end
 
   create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -136,6 +146,7 @@ ActiveRecord::Schema.define(version: 2019_10_08_103020) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "users"
   add_foreign_key "brands", "brand_groups"
+  add_foreign_key "deals", "items"
   add_foreign_key "item_images", "items"
   add_foreign_key "items", "regions"
 end
