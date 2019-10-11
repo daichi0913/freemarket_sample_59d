@@ -90,7 +90,7 @@
                 .mypage-mini__image
               .mypage-mini__name
                 %p.mypage__mini__name__top
-                  mikat
+                  =current_user.nickname
                 .hyouka
                   %p.hyouka1  評価：9
                   %p.hyouka2  出品数：9
@@ -133,7 +133,8 @@
         = link_to new_user_session_path, class: "btn btn-dark btn-sm" do
           .user-login-ntn
             ログイン
-= render partial: '/shared/breadcrumbs'
+-unless request.fullpath.match(/^\/$/)
+  = render partial: '/shared/breadcrumbs'
 .button-box
   = link_to user_signed_in? ? new_user_item_path(current_user.id) : new_user_session_path do
     %li.text 出品

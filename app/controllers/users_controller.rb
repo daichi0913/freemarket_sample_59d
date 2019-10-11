@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :call_categories
-  before_action :move_to_signup, except: [:new]
-
+  # before_action :move_to_signup, except: [:new]
+  before_action :authenticate_user!, except: [:new]
   def index
 
   end
@@ -31,7 +31,9 @@ class UsersController < ApplicationController
   end
 
   def credit_card
-    
+    if current_user.card.present?
+      render controller: :card, action: :show
+    end
   end
 
 
@@ -52,8 +54,8 @@ class UsersController < ApplicationController
     @categories = Category.all
   end
 
-  def move_to_signup
-    redirect_to new_user_session_path unless user_signed_in?
-  end
+  # def move_to_signup
+  #   redirect_to new_user_session_path unless authenticate_user?
+  # end
 
 end

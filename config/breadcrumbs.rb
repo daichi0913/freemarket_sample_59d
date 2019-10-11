@@ -17,7 +17,7 @@ crumb :payment do
 end
 
 crumb :card do
-  link "クレジットカード情報入力", card_index_path(current_user.id)
+  link "クレジットカード情報入力", card_path(current_user.id)
   parent :payment
 end
 

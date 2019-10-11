@@ -9,7 +9,7 @@
         ありがとうございす。
       %p.b
         会員登録完了しました。
-      .mercari-atart
+      = link_to root_path, {class: "mercari-atart", style: "text-decoration:none; color:white;display:block;"} do
         メルカリをはじめる
 .finished-footer-view
   = render partial: 'shared/footer3'

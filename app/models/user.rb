@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_one_attached :image
   has_one :user_detail
+  has_one :card
   accepts_nested_attributes_for :user_detail
   has_many :items
   validates :nickname, presence: true, length: {maximum: 20}

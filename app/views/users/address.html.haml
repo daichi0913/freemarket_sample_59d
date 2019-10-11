@@ -9,7 +9,7 @@
       = form_for (users_url) do |f|
         .form__box-address
           .form-group
-            %label{for:  "nickname"} お名前
+            %label{for: "nickname"} お名前
             %span.form-require 必須
             = f.text_field :nickname, placeholder: "例) メルカリ", class: "input-address-name"
             = f.text_field :nickname, placeholder: "例) 太郎", class: "input-address-name-under"
@@ -53,6 +53,8 @@
             %span.form-require-ninni 任意
             = f.text_field :nickname, placeholder: "例) メルカリ太郎", class: "input-default"
         .form-group
-          = f.submit "次へ進む", class: "btn-default btn-red-address"
-    .finished-footer-1
-      = render partial: 'shared/footer4'
+          -# = f.submit "次へ進む", class: "btn-default btn-red-address"
+          = link_to credit_card_registration_user_path(current_user.id), {class: "btn-default btn-red-address", style: "display:block;text-align:center;"} do
+            次へ進む
+
+= render partial: '/shared/footers', locals: { categories: @categories }
