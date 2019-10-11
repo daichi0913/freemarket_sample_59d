@@ -103,3 +103,75 @@
   }
 }
 
+.footer-edit{
+  height:300px;
+  background-color:red;
+}
+.footer-edit2{
+  height:350px;
+  color:white;
+  background-color:#333;
+}
+.r-content-edit{
+  width: 67%;
+  height: 400px;
+  float: right;
+  background-color: aliceblue;
+  &__header{
+    height:50px;
+    width:100%;
+    background-color:white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    line-height:50px;
+  }
+  &__image{
+    height:156px;
+    width:100%;
+    background-image: image-url("kkkkk.jpg");
+    &__box{
+      width:90%;
+      height:50px;
+      position: relative;
+      top:75px;
+      margin: 0 auto;
+      &__in{
+        width:45%;
+        margin: 0 auto;
+        height:100%;
+        display: flex;
+        &__image{
+          height:60px;
+          width:60px;
+          border-radius:50%;
+          background-color:black;
+        }
+        .ll{
+          margin:5px 0 5px 10px;
+          height:43px;
+          width: 202px;
+        }
+      }
+    }
+  }
+  &__main{
+    height: 362px;
+    width:100%;
+    background-color:white;
+    textarea{
+      margin:40px 0 0 20px;
+      border-color: #bbbbc3;
+    }
+    .bottom-btn{
+      width:94%;
+      background: #ea352d;
+      height:50px;
+      color:white;
+      line-height:50px;
+      text-align:center;
+      margin:10px 0 0 20px;
+      font-size: 14px;
+    }
+  }
+}
