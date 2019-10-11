@@ -13,7 +13,7 @@
         .credit
           クレジットカード一覧
         .add-credit
-          =link_to new_card_path(current_user)do
+          =link_to new_card_path(current_user.id)do
             = fa_icon "credit-card"
             クレジットカードを追加する
       .credit_card_main__right__box__2

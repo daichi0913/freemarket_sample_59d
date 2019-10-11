@@ -31,7 +31,9 @@ class UsersController < ApplicationController
   end
 
   def credit_card
-    
+    if current_user.card.present?
+      render controller: :card, action: :show
+    end
   end
 
 
