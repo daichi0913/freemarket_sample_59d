@@ -88,7 +88,45 @@ $(function(){
     <option value="over31cm">31cm以上</option>
     
     </select></div>`
-    
+
+
+    var babysmall = `<div class="size-form"><div class="select-form-group"><label for="size">サイズ</label>
+    <span class="form-require">必須</span><select name="item[size]" class="select-form"><option selected="selected">---</option>
+    <option value="60cm">60cm</option>
+    <option value="70cm">70cm</option>
+    <option value="80cm">80cm</option>
+    <option value="90cm">90cm</option>
+    <option value="95cm">95cm</option>
+
+    </select></div>`
+
+    var babylarge = `<div class="size-form"><div class="select-form-group"><label for="size">サイズ</label>
+    <span class="form-require">必須</span><select name="item[size]" class="select-form"><option selected="selected">---</option>
+    <option value="100cm">100cm</option>
+    <option value="110cm">110cm</option>
+    <option value="120cm">120cm</option>
+    <option value="130cm">130cm</option>
+    <option value="140cm">140cm</option>
+    <option value="150cm">150cm</option>
+    <option value="160cm">160cm</option>
+
+    </select></div>`
+
+
+    var babyshoes = `<div class="size-form"><div class="select-form-group"><label for="size">サイズ</label>
+    <span class="form-require">必須</span><select name="item[size]" class="select-form"><option selected="selected">---</option>
+    <option value="under10.5cm">10.5cm以下</option>
+    <option value="11cm">11cm・11.5cm</option>
+    <option value="12cm">12cm・12.5cm</option>
+    <option value="13cm">13cm・13.5cm</option>
+    <option value="14cm">14cm・14.5cm</option>
+    <option value="15cm">15cm・15.5cm</option>
+    <option value="16cm">16cm・16.5cm</option>
+    <option value="over17cm">17cm以上</option>
+
+    </select></div>`
+
+
     const cate_id = $($('.category_select')[1]).val();
     console.log(cate_id)
     if(cate_id === "56"){
@@ -97,6 +135,19 @@ $(function(){
     else if(cate_id === "177"){
       return mensizecm;
     }
+    else if(cate_id === "329"){
+      return babyshoes;
+    }
+
+    else if(cate_id.match(/^260$|^272$|^281$/)){
+      return babysmall;
+    }
+    
+    else if(cate_id.match(/^290$|^305$|^320$/)){
+      return babylarge;
+    }
+
+
     else{
       return size;
     }
