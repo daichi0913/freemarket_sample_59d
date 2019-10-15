@@ -14,11 +14,12 @@ $(function(){
     let del = length - (index+1);
     if (del === 1){
       $($('.category_select')[index+1]).remove();
-      
-    } else if (del === 2){
+      }
+    else if (del === 2){
       $($('.category_select')[index+1]).remove();
       $($('.category_select')[index+1]).remove();
     }
+
 
   }
 
