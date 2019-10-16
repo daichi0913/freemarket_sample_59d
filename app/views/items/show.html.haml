@@ -122,7 +122,13 @@
           = link_to edit_user_item_path(current_user.id, @item.id), class: "input-default btn red" do
             商品の編集
           %p or
-          %button.input-default.btn.grey#item-delete-modal-on この商品を削除する
+          = audio_tag("coin2.mp3",id:"audio")
+          %button.input-default.audioButton.btn.grey#item-delete-modal-on 商品を編集する
+          = javascript_tag do
+            document.querySelector('.audioButton').onclick = function () {
+            document.querySelector("#audio").play();
+            Materialize.toast("You Answered", 4000,'rounded')
+            }
         .modal#item-delete-modal
           .modal-banner
             .modal-banner__body
