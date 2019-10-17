@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
     @regions = Region.all
     @item_image = ItemImage.new
     @item = Item.new
-    10.times { @item.item_images.build }
+    @item.item_images.build
   end
 
   def create
@@ -33,6 +33,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item.item_images.build
     @regions = Region.all
     @categories = Category.where(parent_id: nil)
   end
@@ -65,12 +66,14 @@ class ItemsController < ApplicationController
       params.require(:item).permit(:name,:size,:item_status,:shipping_fee,:days,:price,:explain,:region_id,:brandname,:category_id,item_images_attributes: [:image] ).merge(user_id: current_user.id)
     end
     def update_params
-      if params.require(:item).permit(item_images_attributes: [:image]).present?
-        binding.pry
-        params.require(:item).permit(:name,:size,:item_status,:shipping_fee,:days,:price,:explain,:region_id,:brandname,:category_id,item_images_attributes: [:image] ).merge(user_id: current_user.id)
-      else
-        return params.require(:item).permit(:name,:size,:item_status,:shipping_fee,:days,:price,:explain,:region_id,:brandname,:category_id).merge(user_id: current_user.id)
-      end
+      params.require(:item).permit(:name,:size,:item_status,:shipping_fee,:days,:price,:explain,:region_id,:brandname,:category_id,item_images_attributes: [:image, :_destroy, :id] ).merge(user_id: current_user.id)
+
+      # if params.require(:item).permit(item_images_attributes: [:image]).present?
+
+      #   params.require(:item).permit(:name,:size,:item_status,:shipping_fee,:days,:price,:explain,:region_id,:brandname,:category_id,item_images_attributes: [:image] ).merge(user_id: current_user.id)
+      # else
+      #   return params.require(:item).permit(:name,:size,:item_status,:shipping_fee,:days,:price,:explain,:region_id,:brandname,:category_id).merge(user_id: current_user.id)
+      # end
     end
     def call_item
       @item = Item.find(params[:id])

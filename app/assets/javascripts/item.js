@@ -17,17 +17,33 @@ $(function(){
   };
   //画像ファイルプレビュー表示
   $(document).on('turbolinks:load', function(){
+    let number = 1;
+    if (location.pathname.match(/items\/new$|items\/\d+\/edit$/)){
+      number = $('input[type="file"]').length;
+    }
+
+
     $('form').on('change', 'input[type="file"]', function(e) {
       var file = e.target.files[0],
-          reader = new FileReader(),
-          t = this;
+      reader = new FileReader(),
+      t = this;
       // 画像ファイル以外の場合は何もしない
       if(file.type.indexOf("image") < 0){
         return false;
       }
+
+      $(this).parents('label').css({'display':'none'});
+      console.log($(this).parents('label')[0])
+
       var insertHTML ='';
       insertHTML = buildMessageHTML;
       $("#drop_zone").append(insertHTML);
+
+      if($('input[type="file"]').length < 10){
+        $("#drop_zone").append(`<label for="item_item_images_attributes_${number}_image"><input type="file" name="item[item_images_attributes][${number}][image]" id="item_item_images_attributes_${number}_image"></label>`);
+        number += 1;
+      }
+      console.log($('input[type="file"]'))
       reader.onload = (function(file) {
         return function(e) {
           $(".image").append($('<img>').attr({

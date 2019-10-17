@@ -12,14 +12,17 @@
       %label{:for => "item_img"} 出品画像
       %span.form-require 必須
       %p 最大10枚までアップロードできます
-      #drop_zone 
+      #drop_zone
+        = f.fields_for :item_images do |item_image|
+          = item_image.label :image, {} do
+            = item_image.file_field :image, {}
         %pre.drop_zone_text
           %preserve
             ドラッグアンドドロップ
             またはクリックしてファイルをアップロード
       %output#list
-        = f.fields_for :item_images do |item_image|
-          = item_image.file_field :image
+        -# = f.fields_for :item_images do |item_image|
+          -# = item_image.file_field :image
 
 
     %div.sell-contents
